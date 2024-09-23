@@ -4,3 +4,9 @@ C:\Users\Admin\source\repos\ManagementPhoneStore\State\obj\Debug\State.csproj.As
 C:\Users\Admin\source\repos\ManagementPhoneStore\State\obj\Debug\State.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\ManagementPhoneStore\State\obj\Debug\State.dll
 C:\Users\Admin\source\repos\ManagementPhoneStore\State\obj\Debug\State.pdb
+D:\nam2\c#\ManagementPhoneStoreApp\State\bin\Debug\State.dll
+D:\nam2\c#\ManagementPhoneStoreApp\State\bin\Debug\State.pdb
+D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.csproj.AssemblyReference.cache
+D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.csproj.CoreCompileInputs.cache
+D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.dll
+D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.pdb

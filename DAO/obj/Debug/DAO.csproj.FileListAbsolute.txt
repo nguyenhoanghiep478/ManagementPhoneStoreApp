@@ -38,3 +38,7 @@ C:\Users\Admin\source\repos\ManagementPhoneStore\DAO\bin\Debug\System.Threading.
 C:\Users\Admin\source\repos\ManagementPhoneStore\DAO\obj\Debug\DAO.csproj.Up2Date
 C:\Users\Admin\source\repos\ManagementPhoneStore\DAO\obj\Debug\DAO.dll
 C:\Users\Admin\source\repos\ManagementPhoneStore\DAO\obj\Debug\DAO.pdb
+D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.dll
+D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.pdb

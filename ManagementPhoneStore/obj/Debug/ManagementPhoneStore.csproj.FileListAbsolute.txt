@@ -39,3 +39,11 @@ C:\Users\Admin\source\repos\ManagementPhoneStore\ManagementPhoneStore\obj\Debug\
 C:\Users\Admin\source\repos\ManagementPhoneStore\ManagementPhoneStore\obj\Debug\Manageme.DEBAEFFE.Up2Date
 C:\Users\Admin\source\repos\ManagementPhoneStore\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
 C:\Users\Admin\source\repos\ManagementPhoneStore\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb
+D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.AssemblyReference.cache
+D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.SuggestedBindingRedirects.cache
+D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe.config
+D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Properties.Resources.resources
+D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.GenerateResource.cache
+D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.CoreCompileInputs.cache
+D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
+D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb

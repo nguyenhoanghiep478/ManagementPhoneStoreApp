@@ -41,9 +41,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\IAbstractDAO.cs" />
+    <Compile Include="DAO\IHeDieuHanhDAO.cs" />
+    <Compile Include="DAO\IKhuVucKhoDAO.cs" />
     <Compile Include="DAO\impl\AbstractDAO.cs" />
+    <Compile Include="DAO\impl\HeDieuHanhDAO.cs" />
+    <Compile Include="DAO\impl\KhuVucKhoDAO.cs" />
+    <Compile Include="DAO\impl\NhomQuyenDAO.cs" />
+    <Compile Include="DAO\impl\PhieuKiemKeDAO.cs" />
     <Compile Include="DAO\impl\SanPhamDAO.cs" />
+    <Compile Include="DAO\INhomQuyenDAO.cs" />
     <Compile Include="DAO\ISanPhamDAO.cs" />
+    <Compile Include="DAO\IPhieuKiemKeDAO.cs" />
+    <Compile Include="Mapper\impl\HeDieuHanhRowMapper.cs" />
+    <Compile Include="Mapper\impl\KhuVucKhoRowMapper.cs" />
+    <Compile Include="Mapper\impl\NhomQuyenRowMapper.cs" />
+    <Compile Include="Mapper\impl\PhieuKiemKeRowMapper.cs" />
     <Compile Include="Mapper\IRowMapper.cs" />
     <Compile Include="Mapper\impl\SanPhamRowMapper.cs" />
   </ItemGroup>

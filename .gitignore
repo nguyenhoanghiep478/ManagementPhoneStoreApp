@@ -1,0 +1,4 @@
+# Ignore Visual Studio folder and files
+.vs/
+.vs/ManagementPhoneStoreApp/v17/.wsuo
+.vs/slnx.sqlite
