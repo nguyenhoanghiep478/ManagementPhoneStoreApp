@@ -12,7 +12,7 @@ namespace DAO.DAO.impl
 {
     public class NhanvVienDAO : AbstractDAO<NhanVien>, INhanVienDAO
     {
-        private readonly NhanViewRowMapper _rowMapper;
+        private readonly NhanViewRowMapper _rowMapper = new NhanViewRowMapper();
         public void delete(long id)
         {
             String query = "update from nhanvien set trangthai=@trangthai where manv=@manv";

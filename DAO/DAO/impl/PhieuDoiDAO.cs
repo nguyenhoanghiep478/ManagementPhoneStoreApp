@@ -13,7 +13,7 @@ namespace DAO.DAO.impl
 {
     public class PhieuDoiDAO : AbstractDAO<PhieuDoi>, IPhieuDoiDAO
     {
-        private readonly PhieuDoiRowMapper _rowMapper;
+        private readonly PhieuDoiRowMapper _rowMapper = new PhieuDoiRowMapper();
         public void delete(long id)
         {
             String query = "update from phieudoi set trangthai=@trangthai where maphieudoi=@maphieudoi";

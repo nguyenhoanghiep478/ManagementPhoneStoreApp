@@ -14,7 +14,7 @@ namespace DAO.DAO.impl
 {
     public class TaiKhoanDAO : AbstractDAO<TaiKhoan>, ITaiKhoanDao
     {
-        private readonly TaiKhoanRowMapper _rowMapper;
+        private readonly TaiKhoanRowMapper _rowMapper = new TaiKhoanRowMapper();
         public void delete(long id)
         {
             String query = "update from taikhoan set trangthai=@trangthai where manv=@manv";

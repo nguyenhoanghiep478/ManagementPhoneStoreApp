@@ -12,7 +12,7 @@ namespace DAO.DAO
 {
     public class KhachHangDAO : AbstractDAO<KhachHang>, IKhachHangDAO
     {
-        private readonly KhachHangRowMapper _rowMapper;
+        private readonly KhachHangRowMapper _rowMapper = new KhachHangRowMapper();
         public void delete(long id)
         {
             String query = "update from khachhang set trangthai=@trangthai where makh=@makh";
