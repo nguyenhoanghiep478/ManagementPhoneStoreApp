@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAO.DAO
 {
-    internal interface ISanPhamDAO : IGenericDAO<SanPham>
+    public interface ISanPhamDAO : IGenericDAO<SanPham>
     {
         List<SanPham> GetAll();
 

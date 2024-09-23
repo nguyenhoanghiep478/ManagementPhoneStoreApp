@@ -109,34 +109,46 @@ namespace DAO.impl
         {
             var results = new List<T>();
             string query = $"SELECT * FROM {tableName} WHERE 1 = 1";
-            List<SqlParameter> parameters = new List<SqlParameter>();
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
 
-            foreach(Criteria criteria in by)
+            if(by != null)
             {
-                if (criteria.Operation == ":")
+                foreach (Criteria criteria in by)
                 {
-                    query += $" AND {criteria.Key} = @{criteria.Key}";
-                    parameters.Add(new SqlParameter($"@{criteria.Key}", criteria.Value));
-                }
-                else if (criteria.Operation == ">")
-                {
-                    query += $" AND {criteria.Key} > @{criteria.Key}";
-                    parameters.Add(new SqlParameter($"@{criteria.Key}", criteria.Value));
-                }
-                else if (criteria.Operation == "<")
-                {
-                    query += $" AND {criteria.Key} < @{criteria.Key}";
-                    parameters.Add(new SqlParameter($"@{criteria.Key}", criteria.Value));
-                }
-                else if (criteria.Operation == "LIKE")
-                {
-                    query += $" AND {criteria.Key} LIKE @{criteria.Key}";
-                    parameters.Add(new SqlParameter($"@{criteria.Key}", $"%{criteria.Value}%"));
-                }
-                else if (criteria.Operation == "IN")
-                {
-                    var inValues = (List<int>)criteria.Value;
-                    query += $" AND {criteria.Key} IN ({string.Join(",", inValues)})";
+                    if (criteria.Operation == ":")
+                    {
+                        query += $" AND {criteria.Key} = @{criteria.Key}";
+                        parameters.Add(new MySqlParameter($"@{criteria.Key}", criteria.Value));
+                    }
+                    else if (criteria.Operation == ">")
+                    {
+                        query += $" AND {criteria.Key} > @{criteria.Key}";
+                        parameters.Add(new MySqlParameter($"@{criteria.Key}", criteria.Value));
+                    }
+                    else if (criteria.Operation == "<")
+                    {
+                        query += $" AND {criteria.Key} < @{criteria.Key}";
+                        parameters.Add(new MySqlParameter($"@{criteria.Key}", criteria.Value));
+                    }
+                    else if (criteria.Operation == "LIKE")
+                    {
+                        query += $" AND {criteria.Key} LIKE @{criteria.Key}";
+                        parameters.Add(new MySqlParameter($"@{criteria.Key}", $"%{criteria.Value}%"));
+                    }
+                    else if (criteria.Operation == "IN")
+                    {
+                        var inValues = (List<int>)criteria.Value;
+                        var inParameters = new List<string>();
+
+                        for (int i = 0; i < inValues.Count; i++)
+                        {
+                            var paramName = $"@{criteria.Key}_in_{i}";
+                            inParameters.Add(paramName);
+                            parameters.Add(new MySqlParameter(paramName, inValues[i]));
+                        }
+
+                        query += $" AND {criteria.Key} IN ({string.Join(",", inParameters)})";
+                    }
                 }
             }
 

@@ -4,3 +4,15 @@ C:\Users\Admin\source\repos\ManagementPhoneStore\Entity\obj\Debug\Entity.csproj.
 C:\Users\Admin\source\repos\ManagementPhoneStore\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\ManagementPhoneStore\Entity\obj\Debug\Entity.dll
 C:\Users\Admin\source\repos\ManagementPhoneStore\Entity\obj\Debug\Entity.pdb
+D:\nam2\c#\ManagementPhoneStoreApp\Entity\bin\Debug\Entity.dll
+D:\nam2\c#\ManagementPhoneStoreApp\Entity\bin\Debug\Entity.pdb
+D:\nam2\c#\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+D:\nam2\c#\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+D:\nam2\c#\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.dll
+D:\nam2\c#\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\Entity\bin\Debug\Entity.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\Entity\bin\Debug\Entity.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.pdb
