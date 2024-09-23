@@ -13,7 +13,7 @@ namespace DAO.DAO.impl
 {
     public class ChiTietKiemKeDAO : AbstractDAO<ChiTietKiemKe>, IChiTietKiemKeDAO
     {
-        private readonly ChiTietKiemKeRowMapper _rowMapper;
+        private readonly ChiTietKiemKeRowMapper _rowMapper =  new ChiTietKiemKeRowMapper();
         public void delete(long id)
         {
             String query = "update ctkiemke set trangthai = 0 where  = ?";

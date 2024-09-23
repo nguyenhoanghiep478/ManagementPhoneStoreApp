@@ -40,7 +40,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\impl\ChiTietKiemKeDAO.cs" />
+    <Compile Include="DAO\impl\ChiTietQuyenDAO.cs" />
+    <Compile Include="DAO\impl\ChiTietSanPhamDAO.cs" />
+    <Compile Include="DAO\impl\DanhMucChucNangDAO.cs" />
     <Compile Include="DAO\IAbstractDAO.cs" />
+    <Compile Include="DAO\IChiTietKiemKeDAO.cs" />
+    <Compile Include="DAO\IChiTietQuyenDAO.cs" />
+    <Compile Include="DAO\IChiTietSanPham.cs" />
+    <Compile Include="DAO\IDanhMucChucNang.cs" />
     <Compile Include="DAO\IHeDieuHanhDAO.cs" />
     <Compile Include="DAO\IKhuVucKhoDAO.cs" />
     <Compile Include="DAO\impl\AbstractDAO.cs" />
@@ -50,11 +58,18 @@
     <Compile Include="DAO\impl\PhieuKiemKeDAO.cs" />
     <Compile Include="DAO\impl\SanPhamDAO.cs" />
     <Compile Include="DAO\INhomQuyenDAO.cs" />
+    <Compile Include="DAO\IPhienBanSanPham.cs" />
     <Compile Include="DAO\ISanPhamDAO.cs" />
     <Compile Include="DAO\IPhieuKiemKeDAO.cs" />
+    <Compile Include="DAO\impl\PhienBanSanPhamDAO.cs" />
+    <Compile Include="Mapper\impl\ChiTietKiemKeRowMapper.cs" />
+    <Compile Include="Mapper\impl\ChiTietQuyenRowMapper.cs" />
+    <Compile Include="Mapper\impl\ChiTietSanPhamRowMapper.cs" />
+    <Compile Include="Mapper\impl\DanhMucChucNangRowMapper.cs" />
     <Compile Include="Mapper\impl\HeDieuHanhRowMapper.cs" />
     <Compile Include="Mapper\impl\KhuVucKhoRowMapper.cs" />
     <Compile Include="Mapper\impl\NhomQuyenRowMapper.cs" />
+    <Compile Include="Mapper\impl\PhienBanSanPhamRowMapper.cs" />
     <Compile Include="Mapper\impl\PhieuKiemKeRowMapper.cs" />
     <Compile Include="Mapper\IRowMapper.cs" />
     <Compile Include="Mapper\impl\SanPhamRowMapper.cs" />

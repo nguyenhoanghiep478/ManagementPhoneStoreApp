@@ -10,3 +10,9 @@ D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.csproj.AssemblyReferenc
 D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.csproj.CoreCompileInputs.cache
 D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.dll
 D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\State.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\State.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\obj\Debug\State.csproj.AssemblyReference.cache
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\obj\Debug\State.csproj.CoreCompileInputs.cache
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\obj\Debug\State.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\obj\Debug\State.pdb

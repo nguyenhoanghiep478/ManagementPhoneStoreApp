@@ -12,6 +12,6 @@ namespace DAO.DAO
         long insert(ChiTietSanPham sanPham);
         void update(ChiTietSanPham sanPham);
         void delete(long id);
-        List<ChiTietSanPham> FindByMaImei(string maImei);
+        ChiTietSanPham FindByMaImei(string maImei);
     }
 }

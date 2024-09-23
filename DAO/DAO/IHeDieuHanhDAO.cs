@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAO.DAO
 {
-    internal interface IHeDieuHanhDAO :IGenericDAO<HeDieuHanh>
+    public interface IHeDieuHanhDAO :IGenericDAO<HeDieuHanh>
     {
         List<HeDieuHanh> GetAll();
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAO.DAO
 {
-    internal interface IPhieuKiemKeDAO :IGenericDAO<PhieuKiemKe>
+    public interface IPhieuKiemKeDAO :IGenericDAO<PhieuKiemKe>
     {
         List<PhieuKiemKe> GetAll();
 

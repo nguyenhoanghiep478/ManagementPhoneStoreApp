@@ -13,10 +13,10 @@ namespace DAO.DAO.impl
 {
     public class KhuVucKhoDAO : AbstractDAO<KhuVucKho>, IKhuVucKhoDAO
     {
-        private readonly KhuVucKhoRowMapper _rowMapper;
+        private readonly KhuVucKhoRowMapper _rowMapper = new KhuVucKhoRowMapper();
         public void delete(long id)
         {
-            String query = "update from khuvuckho set trangthai=@trangthai where makhuvuc=@makhuvuc";
+            String query = "update khuvuckho set trangthai=@trangthai where makhuvuc=@makhuvuc";
             Update(query,0, id);
         }
 

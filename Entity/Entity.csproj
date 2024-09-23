@@ -41,9 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietKiemKe.cs" />
+    <Compile Include="ChiTietQuyen.cs" />
+    <Compile Include="ChiTietSanPham.cs" />
+    <Compile Include="DanhMucChucNang.cs" />
     <Compile Include="HeDieuHanh.cs" />
     <Compile Include="KhuVucKho.cs" />
     <Compile Include="NhomQuyen.cs" />
+    <Compile Include="PhienBanSanPham.cs" />
     <Compile Include="PhieuKiemKe.cs" />
     <Compile Include="SanPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

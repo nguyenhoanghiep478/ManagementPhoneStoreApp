@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAO.DAO
 {
-    internal interface IKhuVucKhoDAO :IGenericDAO<KhuVucKho>
+    public interface IKhuVucKhoDAO :IGenericDAO<KhuVucKho>
     {
         List<KhuVucKho> GetAll();
 

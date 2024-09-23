@@ -13,7 +13,7 @@ namespace DAO.DAO.impl
 {
     internal class PhienBanSanPhamDAO : AbstractDAO<PhienBanSanPham>, IPhienBanSanPham
     {
-        private readonly PhienBanSanPhamRowMapper _rowMapper;
+        private readonly PhienBanSanPhamRowMapper _rowMapper = new PhienBanSanPhamRowMapper();
         public void delete(long id)
         {
             String query = "update phienbansanpham set trangthai = 0 where maphienbansp = ?";
@@ -35,7 +35,7 @@ namespace DAO.DAO.impl
 
         public long insert(PhienBanSanPham phienBanSanPham)
         {
-             string query = @"
+            string query = @"
             INSERT INTO phienbansanpham 
             (
                 maphienbansp, masp, rom, ram, mausac, gianhap, giaxuat, soluongton, trangthai
@@ -54,7 +54,7 @@ namespace DAO.DAO.impl
                 phienBanSanPham.GiaNhap ?? (object)DBNull.Value,
                 phienBanSanPham.GiaXuat ?? (object)DBNull.Value,
                 phienBanSanPham.SoLuongTon,
-                phienBanSanPham.TrangThai ? 1 : 0 
+                phienBanSanPham.TrangThai ? 1 : 0
             );
         }
 

@@ -13,10 +13,11 @@ namespace DAO.DAO.impl
 {
     public class SanPhamDAO : AbstractDAO<SanPham>, ISanPhamDAO
     {   
-        private readonly SanPhamRowMapper _rowMapper;
+        private readonly SanPhamRowMapper _rowMapper = new SanPhamRowMapper();
+   
         public void delete(long id)
         {
-            String query = "DELETE from san pham Where Id = ?";
+            String query = "Update sanpham set status = 0 Where Id = ?";
             Update(query, id);
         }
 

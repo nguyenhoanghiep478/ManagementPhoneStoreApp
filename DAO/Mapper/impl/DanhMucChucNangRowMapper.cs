@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAO.Mapper.impl
 {
-    public class DanhMucChucNangMapper : IRowMapper<DanhMucChucNang>
+    public class DanhMucChucNangRowMapper : IRowMapper<DanhMucChucNang>
     {
         public DanhMucChucNang MapRow(IDataReader reader)
         {

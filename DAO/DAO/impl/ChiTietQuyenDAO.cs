@@ -13,7 +13,7 @@ namespace DAO.DAO.impl
 {
     public class ChiTietQuyenDAO : AbstractDAO<ChiTietQuyen>, IChiTietQuyenDAO
     {
-        private readonly ChiTietQuyenRowMapper _rowMapper;
+        private readonly ChiTietQuyenRowMapper _rowMapper = new ChiTietQuyenRowMapper();
         public void delete(long id)
         {
             String query = "update ctquyen set trangthai = 0 where manhomquyen = ?";

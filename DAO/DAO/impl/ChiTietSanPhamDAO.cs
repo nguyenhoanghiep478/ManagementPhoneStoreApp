@@ -12,7 +12,7 @@ namespace DAO.DAO.impl
 {
     public class ChiTietSanPhamDAO : AbstractDAO<ChiTietSanPham>, IChiTietSanPham
     {
-        private readonly ChiTietSanPhamRowMapper _rowMapper;
+        private readonly ChiTietSanPhamRowMapper _rowMapper = new ChiTietSanPhamRowMapper();
         public void delete(long id)
         {
             String query = "update ctsanpham set trangthai = 0 where maimei = ?";
@@ -74,5 +74,7 @@ namespace DAO.DAO.impl
                  chiTietSanPham.MaImei 
             );
         }
+
+     
     }
 }

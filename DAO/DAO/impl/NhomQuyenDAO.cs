@@ -13,7 +13,7 @@ namespace DAO.DAO.impl
 {
     public class NhomQuyenDAO : AbstractDAO<NhomQuyen>, INhomQuyenDAO
     {
-        private readonly NhomQuyenRowMapper _rowMapper;
+        private readonly NhomQuyenRowMapper _rowMapper = new NhomQuyenRowMapper();
         public void delete(long id)
         {
             String query = "update  nhomquyen set trangthai=@trangthai where manhomquyen=@manhomquyen ";

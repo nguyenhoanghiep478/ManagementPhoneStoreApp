@@ -12,7 +12,7 @@ namespace DAO.DAO.impl
 {
     public class HeDieuHanhDAO :AbstractDAO<HeDieuHanh>,IHeDieuHanhDAO
     {
-        private readonly HeDieuHanhRowMapper _rowMapper;
+        private readonly HeDieuHanhRowMapper _rowMapper = new HeDieuHanhRowMapper();
         public void delete(long id)
         {
             String query = @"UPDATE hedieuhanh set trangthai=@trangthai";

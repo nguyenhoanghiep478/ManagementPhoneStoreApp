@@ -15,7 +15,7 @@ namespace DAO.DAO.impl
     internal class PhieuKiemKeDAO : AbstractDAO<PhieuKiemKe>, IPhieuKiemKeDAO
     {
 
-        private readonly PhieuKiemKeRowMapper _rowMapper;
+        private readonly PhieuKiemKeRowMapper _rowMapper = new PhieuKiemKeRowMapper();
         public void delete(long id)
         {
             
