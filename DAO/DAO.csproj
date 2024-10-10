@@ -40,8 +40,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\IChiTietPhieuXuatDAO.cs" />
     <Compile Include="DAO\IKhachHangDAO.cs" />
     <Compile Include="DAO\impl\ChiTietKiemKeDAO.cs" />
+    <Compile Include="DAO\impl\ChiTietPhieuXuatDAO.cs" />
     <Compile Include="DAO\impl\ChiTietQuyenDAO.cs" />
     <Compile Include="DAO\impl\ChiTietSanPhamDAO.cs" />
     <Compile Include="DAO\impl\DanhMucChucNangDAO.cs" />
@@ -58,19 +60,26 @@
     <Compile Include="DAO\impl\KhuVucKhoDAO.cs" />
     <Compile Include="DAO\impl\NhanvVienDAO.cs" />
     <Compile Include="DAO\impl\NhomQuyenDAO.cs" />
+    <Compile Include="DAO\impl\PhieuBaoHanhDAO.cs" />
     <Compile Include="DAO\impl\PhieuDoiDAO.cs" />
     <Compile Include="DAO\impl\PhieuKiemKeDAO.cs" />
+    <Compile Include="DAO\impl\PhieuTraDAO.cs" />
+    <Compile Include="DAO\impl\PhieuXuatDAO.cs" />
     <Compile Include="DAO\impl\SanPhamDAO.cs" />
     <Compile Include="DAO\impl\TaiKhoanDAO.cs" />
     <Compile Include="DAO\INhanVienDAO.cs" />
     <Compile Include="DAO\INhomQuyenDAO.cs" />
     <Compile Include="DAO\IPhienBanSanPham.cs" />
+    <Compile Include="DAO\IPhieuBaoHanhDAO.cs" />
     <Compile Include="DAO\IPhieuDoiDAO.cs" />
+    <Compile Include="DAO\IPhieuTraDAO.cs" />
+    <Compile Include="DAO\IPhieuXuatDAO.cs" />
     <Compile Include="DAO\ISanPhamDAO.cs" />
     <Compile Include="DAO\IPhieuKiemKeDAO.cs" />
     <Compile Include="DAO\impl\PhienBanSanPhamDAO.cs" />
     <Compile Include="DAO\ITaiKhoanDao.cs" />
     <Compile Include="Mapper\impl\ChiTietKiemKeRowMapper.cs" />
+    <Compile Include="Mapper\impl\ChiTietPhieuXuatRowMapper.cs" />
     <Compile Include="Mapper\impl\ChiTietQuyenRowMapper.cs" />
     <Compile Include="Mapper\impl\ChiTietSanPhamRowMapper.cs" />
     <Compile Include="Mapper\impl\DanhMucChucNangRowMapper.cs" />
@@ -80,8 +89,11 @@
     <Compile Include="Mapper\impl\NhanViewRowMapper.cs" />
     <Compile Include="Mapper\impl\NhomQuyenRowMapper.cs" />
     <Compile Include="Mapper\impl\PhienBanSanPhamRowMapper.cs" />
+    <Compile Include="Mapper\impl\PhieuBaoHanhRowMapper.cs" />
     <Compile Include="Mapper\impl\PhieuDoiRowMapper.cs" />
     <Compile Include="Mapper\impl\PhieuKiemKeRowMapper.cs" />
+    <Compile Include="Mapper\impl\PhieuTraRowMapper.cs" />
+    <Compile Include="Mapper\impl\PhieuXuatRowMapper.cs" />
     <Compile Include="Mapper\impl\TaiKhoanRowMapper.cs" />
     <Compile Include="Mapper\IRowMapper.cs" />
     <Compile Include="Mapper\impl\SanPhamRowMapper.cs" />
