@@ -35,5 +35,44 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IChiTietSanPhamService.cs" />
+    <Compile Include="IDungLuongRamService.cs" />
+    <Compile Include="IDungLuongRomService.cs" />
+    <Compile Include="IHeDieuHanhService.cs" />
+    <Compile Include="IKhachHangService.cs" />
+    <Compile Include="IKhuVucKhoService.cs" />
+    <Compile Include="IMauSacService.cs" />
+    <Compile Include="INhaCungCapService.cs" />
+    <Compile Include="INhanVienService.cs" />
+    <Compile Include="INhomQuyenService.cs" />
+    <Compile Include="IPhienBanSanPhamService.cs" />
+    <Compile Include="IPhieuKiemKeService.cs" />
+    <Compile Include="IPhieuNhapService.cs" />
+    <Compile Include="IPhieuXuatService.cs" />
+    <Compile Include="ISanPhamService.cs" />
+    <Compile Include="ITaiKhoanService.cs" />
+    <Compile Include="IThongKeService.cs" />
+    <Compile Include="IThuongHieuService.cs" />
+    <Compile Include="IXuatXuService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{6c4e2169-a94e-41ad-b512-d7c93e4f82a3}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{445811bc-25e1-469c-a505-a0110887d0d7}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{f47c92e4-24f4-416a-b7d2-68a4de26e3b4}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\State\State.csproj">
+      <Project>{6de0b7c2-df65-4347-a671-b38b65f313b1}</Project>
+      <Name>State</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

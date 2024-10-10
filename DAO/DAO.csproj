@@ -42,7 +42,10 @@
   <ItemGroup>
     <Compile Include="DAO\IChiTietPhieuNhapDAO.cs" />
     <Compile Include="DAO\IChiTietPhieuXuatDAO.cs" />
+    <Compile Include="DAO\IDLRamDAO.cs" />
+    <Compile Include="DAO\IDLRomDAO.cs" />
     <Compile Include="DAO\IKhachHangDAO.cs" />
+    <Compile Include="DAO\IMauSacDao.cs" />
     <Compile Include="DAO\impl\ChiTietKiemKeDAO.cs" />
     <Compile Include="DAO\impl\ChiTietPhieuNhapDAO.cs" />
     <Compile Include="DAO\impl\ChiTietPhieuXuatDAO.cs" />
@@ -57,9 +60,12 @@
     <Compile Include="DAO\IHeDieuHanhDAO.cs" />
     <Compile Include="DAO\IKhuVucKhoDAO.cs" />
     <Compile Include="DAO\impl\AbstractDAO.cs" />
+    <Compile Include="DAO\impl\DLRamDAO.cs" />
+    <Compile Include="DAO\impl\DLRomDAO.cs" />
     <Compile Include="DAO\impl\HeDieuHanhDAO.cs" />
     <Compile Include="DAO\impl\KhachHangDAO.cs" />
     <Compile Include="DAO\impl\KhuVucKhoDAO.cs" />
+    <Compile Include="DAO\impl\MauSacDAO.cs" />
     <Compile Include="DAO\impl\NhaCungCapDAO.cs" />
     <Compile Include="DAO\impl\NhanvVienDAO.cs" />
     <Compile Include="DAO\impl\NhomQuyenDAO.cs" />
@@ -72,6 +78,7 @@
     <Compile Include="DAO\impl\SanPhamDAO.cs" />
     <Compile Include="DAO\impl\TaiKhoanDAO.cs" />
     <Compile Include="DAO\impl\ThuongHieuDAO.cs" />
+    <Compile Include="DAO\impl\XuatXuDAO.cs" />
     <Compile Include="DAO\INhanVienDAO.cs" />
     <Compile Include="DAO\INhomQuyenDAO.cs" />
     <Compile Include="DAO\IPhienBanSanPham.cs" />
@@ -85,6 +92,7 @@
     <Compile Include="DAO\impl\PhienBanSanPhamDAO.cs" />
     <Compile Include="DAO\ITaiKhoanDao.cs" />
     <Compile Include="DAO\IThuongHieuDAO.cs" />
+    <Compile Include="DAO\lXuatXuDAO.cs" />
     <Compile Include="DAO\NhaCungCapDAO.cs" />
     <Compile Include="Mapper\impl\ChiTietKiemKeRowMapper.cs" />
     <Compile Include="Mapper\impl\ChiTietPhieuNhapRowMapper.cs" />
@@ -92,9 +100,12 @@
     <Compile Include="Mapper\impl\ChiTietQuyenRowMapper.cs" />
     <Compile Include="Mapper\impl\ChiTietSanPhamRowMapper.cs" />
     <Compile Include="Mapper\impl\DanhMucChucNangRowMapper.cs" />
+    <Compile Include="Mapper\impl\DLRamRowMapper.cs" />
+    <Compile Include="Mapper\impl\DLRomRowMapper.cs" />
     <Compile Include="Mapper\impl\HeDieuHanhRowMapper.cs" />
     <Compile Include="Mapper\impl\KhachHangRowMapper.cs" />
     <Compile Include="Mapper\impl\KhuVucKhoRowMapper.cs" />
+    <Compile Include="Mapper\impl\MauSacRowMapper.cs" />
     <Compile Include="Mapper\impl\NhaCungCapRowMapper.cs" />
     <Compile Include="Mapper\impl\NhanViewRowMapper.cs" />
     <Compile Include="Mapper\impl\NhomQuyenRowMapper.cs" />
@@ -107,6 +118,7 @@
     <Compile Include="Mapper\impl\PhieuXuatRowMapper.cs" />
     <Compile Include="Mapper\impl\TaiKhoanRowMapper.cs" />
     <Compile Include="Mapper\impl\ThuongHieuRowMapper.cs" />
+    <Compile Include="Mapper\impl\XuatXuRowMapper.cs" />
     <Compile Include="Mapper\IRowMapper.cs" />
     <Compile Include="Mapper\impl\SanPhamRowMapper.cs" />
   </ItemGroup>

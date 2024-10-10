@@ -35,5 +35,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ThongKeDoanhThuDTO.cs" />
+    <Compile Include="ThongKeKhachHangDTO.cs" />
+    <Compile Include="ThongKeNhaCungCapDTO.cs" />
+    <Compile Include="ThongKeTheoThangDTO.cs" />
+    <Compile Include="ThongKeTonKhoDTO.cs" />
+    <Compile Include="ThongKeTungNgayTrongThangDTO.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
