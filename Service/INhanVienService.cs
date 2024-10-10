@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTO
+namespace Service
 {
-    public class Class1
+    internal interface INhanVienService
     {
     }
 }
