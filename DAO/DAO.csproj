@@ -67,7 +67,7 @@
     <Compile Include="DAO\impl\KhuVucKhoDAO.cs" />
     <Compile Include="DAO\impl\MauSacDAO.cs" />
     <Compile Include="DAO\impl\NhaCungCapDAO.cs" />
-    <Compile Include="DAO\impl\NhanvVienDAO.cs" />
+    <Compile Include="DAO\impl\NhanVienDAO.cs" />
     <Compile Include="DAO\impl\NhomQuyenDAO.cs" />
     <Compile Include="DAO\impl\PhieuBaoHanhDAO.cs" />
     <Compile Include="DAO\impl\PhieuDoiDAO.cs" />
@@ -93,7 +93,7 @@
     <Compile Include="DAO\ITaiKhoanDao.cs" />
     <Compile Include="DAO\IThuongHieuDAO.cs" />
     <Compile Include="DAO\lXuatXuDAO.cs" />
-    <Compile Include="DAO\NhaCungCapDAO.cs" />
+    <Compile Include="DAO\INhaCungCapDAO.cs" />
     <Compile Include="Mapper\impl\ChiTietKiemKeRowMapper.cs" />
     <Compile Include="Mapper\impl\ChiTietPhieuNhapRowMapper.cs" />
     <Compile Include="Mapper\impl\ChiTietPhieuXuatRowMapper.cs" />

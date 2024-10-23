@@ -14,9 +14,13 @@ namespace DAO.DAO.impl
     {
         private readonly ChiTietSanPhamRowMapper _rowMapper = new ChiTietSanPhamRowMapper();
 
-        public bool checkImeiExists(List<ChiTietSanPham> arr)
+        public bool checkImeiExists(List<long> imeis)
         {
-            return false;
+            String query = "select * from ctsanpham where maimei in (";
+            query += string.Join(", ", imeis.Select(_ => "?"));
+            query += ")";
+            List<ChiTietSanPham> result = this.Query(query,_rowMapper,imeis);
+            return result.Count > 0;
         }
 
         public void delete(long id)
