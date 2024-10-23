@@ -13,5 +13,7 @@ namespace DAO.DAO
         void update(PhienBanSanPham sanPham);
         void delete(long id);
         PhienBanSanPham FindByMaPhienBanSanPham(int maphienban);
+        List<PhienBanSanPham> FindByMaSp(string v);
+        bool CheckImeiExists(List<ChiTietSanPham> arr);
     }
 }

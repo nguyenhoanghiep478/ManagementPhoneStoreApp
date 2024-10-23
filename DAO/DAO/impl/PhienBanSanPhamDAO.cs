@@ -11,9 +11,12 @@ using System.Threading.Tasks;
 
 namespace DAO.DAO.impl
 {
-    internal class PhienBanSanPhamDAO : AbstractDAO<PhienBanSanPham>, IPhienBanSanPham
+    public class PhienBanSanPhamDAO : AbstractDAO<PhienBanSanPham>, IPhienBanSanPham
     {
         private readonly PhienBanSanPhamRowMapper _rowMapper = new PhienBanSanPhamRowMapper();
+
+      
+
         public void delete(long id)
         {
             String query = "update phienbansanpham set trangthai = 0 where maphienbansp = ?";
@@ -31,6 +34,12 @@ namespace DAO.DAO.impl
             };
             criterias.Add(criteria);
             return SearchBy(criterias, _rowMapper, "phienbansanpham").FirstOrDefault(null);
+        }
+
+        public List<PhienBanSanPham> FindByMaSp(string masp)
+        {
+            String sql = "SELECT * FROM phienbansanpham WHERE masp = ? and trangthai = 1";
+            return this.Query(sql,_rowMapper, masp);
         }
 
         public long insert(PhienBanSanPham phienBanSanPham)

@@ -21,6 +21,12 @@ namespace DAO.DAO.impl
             Update(query, id);
         }
 
+        public SanPham FindByMaPb(string pb)
+        {
+            String sql = "SELECT * FROM sanpham sp join phienbansanpham pb on sp.masp=pb.masp WHERE maphienbansp=?";
+            return this.Query(sql, _rowMapper, pb).FirstOrDefault(null);
+        }
+
         public List<SanPham> FindLikeName(string name)
         {   
             List<Criteria> criterias = new List<Criteria>();    
