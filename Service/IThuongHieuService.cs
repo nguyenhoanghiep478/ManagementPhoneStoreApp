@@ -9,10 +9,11 @@ namespace Service
 {
     public interface IThuongHieuService
     {
+
         List<ThuongHieu> GetAll();
         ThuongHieu GetByIndex(int index);
         int GetIndexByMaLH(int maloaihang);
-        bool Add(string name);
+        bool Add(ThuongHieu th);
         bool Delete(ThuongHieu lh);
         bool Update(ThuongHieu lh);
         List<ThuongHieu> Search(string text);
