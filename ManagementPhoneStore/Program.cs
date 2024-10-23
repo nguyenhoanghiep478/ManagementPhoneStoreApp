@@ -22,12 +22,9 @@ namespace ManagementPhoneStore
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            SanPhamDAO sanPhamDAO = new SanPhamDAO();
-            List<SanPham> sanPhams = sanPhamDAO.FindLikeName("Vivo");
-            foreach(SanPham sanPham in sanPhams)
-            {
-                Console.WriteLine(sanPham);
-            }
+            ChiTietSanPhamDAO sanPhamDAO = new ChiTietSanPhamDAO();
+            sanPhamDAO.delete(107725056444798);
+          
         }
     }
 }

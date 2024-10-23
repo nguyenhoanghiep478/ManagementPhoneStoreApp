@@ -31,7 +31,7 @@ namespace Service.impl
 
         public bool CheckImeiExists(List<ChiTietSanPham> arr)
         {
-            return cauhinhDAO.CheckImeiExists(arr);
+            return ChiTietSanPhamDAO.checkImeiExists(arr);
         }
 
         public List<PhienBanSanPham> GetAll(int masp)

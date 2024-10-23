@@ -36,6 +36,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="impl\DungLuongRamService.cs" />
+    <Compile Include="impl\DungLuongRomService.cs" />
+    <Compile Include="impl\HeDieuHanhService.cs" />
     <Compile Include="IChiTietSanPhamService.cs" />
     <Compile Include="IDungLuongRamService.cs" />
     <Compile Include="IDungLuongRomService.cs" />
@@ -43,6 +46,9 @@
     <Compile Include="IKhachHangService.cs" />
     <Compile Include="IKhuVucKhoService.cs" />
     <Compile Include="IMauSacService.cs" />
+    <Compile Include="impl\ChiTietSanPhamService.cs" />
+    <Compile Include="impl\PhienBanSanPhamService.cs" />
+    <Compile Include="impl\SanPhamService.cs" />
     <Compile Include="INhaCungCapService.cs" />
     <Compile Include="INhanVienService.cs" />
     <Compile Include="INhomQuyenService.cs" />
@@ -55,6 +61,9 @@
     <Compile Include="IThongKeService.cs" />
     <Compile Include="IThuongHieuService.cs" />
     <Compile Include="IXuatXuService.cs" />
+    <Compile Include="impl\KhuVucKhoService.cs" />
+    <Compile Include="impl\NhaChungCapService.cs" />
+    <Compile Include="impl\ThuongHieuService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">

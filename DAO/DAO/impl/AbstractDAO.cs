@@ -39,7 +39,6 @@ namespace DAO.impl
                 }
             }
         }
-
         private void CloseObjects(IDbConnection connection, IDbCommand command, IDataReader reader)
         {
             reader?.Close();
@@ -70,8 +69,7 @@ namespace DAO.impl
         {
             using (var connection = GetConnection())
             using (var command = new MySqlCommand(sql, connection))
-            {
-                SetParameter(command, parameters);
+            {           SetParameter(command, parameters);
                 connection.Open();
                 command.ExecuteNonQuery();
             }

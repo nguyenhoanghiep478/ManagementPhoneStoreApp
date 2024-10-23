@@ -16,12 +16,12 @@ namespace DAO.DAO.impl
 
         public bool checkImeiExists(List<ChiTietSanPham> arr)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public void delete(long id)
         {
-            String query = "update ctsanpham set trangthai = 0 where maimei = ?";
+            String query = "update ctsanpham set tinhtrang = 0 where maimei = ?";
             Update(query, id);
         }
 
