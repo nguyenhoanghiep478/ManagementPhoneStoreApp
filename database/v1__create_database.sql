@@ -1486,33 +1486,26 @@ ALTER TABLE `ctkiemke`
 
 ALTER TABLE `sanpham`
   ADD CONSTRAINT `FK_sanpham_khuvuckho` FOREIGN KEY (`khuvuckho`) REFERENCES `khuvuckho` (`makhuvuc`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_sanpham_thuonghieu` FOREIGN KEY (`thuonghieu`) REFERENCES `thuonghieu` (`mathuonghieu`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  ADD CONSTRAINT `FK_sanpham_thuonghieu` FOREIGN KEY (`thuonghieu`) REFERENCES `thuonghieu` (`mathuonghieu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_sanpham_hedieuhanh` FOREIGN KEY (`hedieuhanh`) REFERENCES `hedieuhanh` (`mahedieuhanh`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 --
 -- Constaints for table `ctsanpham`
 --
 ALTER TABLE `ctsanpham`
-	ADD CONSTRAINT `FK_ctsanpham_phienbansanpham` FOREIGN KEY (`maphienbansanpham`) REFERENCES `phienbansanpham` (`maphienbansanpham`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	ADD CONSTRAINT `FK_ctsanpham_phienbansanpham` FOREIGN KEY (`maphienbansp`) REFERENCES `phienbansanpham` (`maphienbansp`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 	ADD CONSTRAINT `FK_ctsanpham_phieunhap` FOREIGN KEY (`maphieunhap`) REFERENCES `phieunhap` (`maphieunhap`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 	ADD CONSTRAINT `FK_ctsanpham_phieuxuat` FOREIGN KEY (`maphieuxuat`) REFERENCES `phieuxuat` (`maphieuxuat`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `ctkiemke`
---
-ALTER TABLE `ctkiemke`
-  ADD CONSTRAINT `FK_ctkiemke_phieukiemke` FOREIGN KEY (`maphieukiemmke`) REFERENCES `phieukiemke` (`maphieu`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
 
   -- Constraints for table `ctphieunhap`
 ALTER TABLE `ctphieunhap`
   ADD CONSTRAINT `FK_ctphieunhap_phieunhap` FOREIGN KEY (`maphieunhap`) REFERENCES `phieunhap` (`maphieunhap`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_ctphieunhap_phienbansanpham` FOREIGN KEY (`maphienbansp`) REFERENCES `phienbansanpham` (`maphienbansanpham`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FK_ctphieunhap_phienbansanpham` FOREIGN KEY (`maphienbansp`) REFERENCES `phienbansanpham` (`maphienbansp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 --
 -- Constraints for table `ctphieuxuat`
 --
 ALTER TABLE `ctphieuxuat`
   ADD CONSTRAINT `FK__phieuxuat` FOREIGN KEY (`maphieuxuat`) REFERENCES `phieuxuat` (`maphieuxuat`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_phieuxuat_phienbansanpham` FOREIGN KEY (`maphienbansanpham`) REFERENCES `phienbansanpham` (`maphienbansp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FK_phieuxuat_phienbansanpham` FOREIGN KEY (`maphienbansp`) REFERENCES `phienbansanpham` (`maphienbansp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 --
 -- Constaints for table 'phieubaohanh'
 --
@@ -1523,7 +1516,7 @@ ALTER TABLE `phieubaohanh`
 --
 ALTER TABLE `ctquyen`
   ADD CONSTRAINT `FK__nhomquyen` FOREIGN KEY (`manhomquyen`) REFERENCES `nhomquyen` (`manhomquyen`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_ctquyen_danhmucchucnang` FOREIGN KEY (`machucnang`) REFERENCES `danhmucchucnang` (`machucnang`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FK_ctquyen_danhmucchucnang` FOREIGN KEY (`machucnang`) REFERENCES `danhmucchucnang` (`machucnang`) ON DELETE NO ACTION ON UPDATE NO ACTION; 
 
 --
 -- Constraints for table `phienbansanpham`
@@ -1538,8 +1531,8 @@ ALTER TABLE `phienbansanpham`
 -- Constraints for table `phieudoi`
 --
 ALTER TABLE `phieudoi`
-  ADD CONSTRAINT `FK_phieudoi_ctsanpham` FOREIGN KEY (`maimei`) REFERENCES `ctsanpham` (`maimei`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_phieudoi_taikhoan` FOREIGN KEY (`nguoitao`) REFERENCES `taikhoan` (`manv`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FK_phieudoi_ctsanpham` FOREIGN KEY (`maimei`) REFERENCES `ctsanpham` (`maimei`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ --  ADD CONSTRAINT `FK_phieudoi_taikhoan` FOREIGN KEY (`nguoitao`) REFERENCES `taikhoan` (`manv`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `phieukiemke`
