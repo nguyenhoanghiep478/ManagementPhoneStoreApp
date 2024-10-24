@@ -16,9 +16,10 @@ namespace Service
         private static readonly object lockObj = new object();
         public bool add(HeDieuHanh hdh)
         {
-            heDieuHanhList.Add(hdh);
+            
             if (!isDuplicate(hdh.Tenhedieuhanh) && heDieuHanhDao.insert(hdh) > 0)
             {
+                heDieuHanhList.Add(hdh);
                 return true;
             }
             return false;
@@ -74,8 +75,8 @@ namespace Service
             {
                 return false;
             }
-            heDieuHanhList.RemoveAt(index);
             heDieuHanhDao.delete((long)hdh.Mahedieuhanh);
+            heDieuHanhList.RemoveAt(index);
             return true;
         }
     }

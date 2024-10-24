@@ -39,9 +39,10 @@ namespace Service
 
         public bool add(DLRom rom)
         {
-            dLRomList.Add(rom);
+           
             if (!isDuplicate(rom.Kichthuocrom) && dLRomDAO.insert(rom) > 0)
             {
+                dLRomList.Add(rom);
                 return true;
             }
             return false;
@@ -53,8 +54,8 @@ namespace Service
             {
                 return false;
             }
-            dLRomList.RemoveAt(index);
             dLRomDAO.delete(rom.Madlrom);
+            dLRomList.RemoveAt(index);
             return true;
         }
 

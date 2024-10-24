@@ -64,10 +64,9 @@ namespace Service
 
         public bool Add(KhuVucKho kvk)
         {
-            if (!CheckDup(kvk.Tenkhuvuc))
+            if (!CheckDup(kvk.Tenkhuvuc)&&dao.insert(kvk)>0)
             {
                 listKhuVucKho.Add(kvk);
-                dao.insert(kvk);
                 return true;
             }
             return false;
@@ -87,8 +86,8 @@ namespace Service
             {
                 return false;
             }
+            dao.delete((long)kvk.Makhuvuc);
             listKhuVucKho.RemoveAt(index);
-            dao.insert(kvk);
             return true;
         }
 
@@ -98,8 +97,8 @@ namespace Service
             {
                 if (listKhuVucKho[i].Makhuvuc.Equals(kvk.Makhuvuc))
                 {
-                    listKhuVucKho[i] = kvk;
                     dao.update(kvk);
+                    listKhuVucKho[i] = kvk;
                     return true;
                 }
             }

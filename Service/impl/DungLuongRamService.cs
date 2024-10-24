@@ -16,9 +16,10 @@ namespace Service
         private static readonly object lockObj = new object();
         public bool add(DLRam ram)
         {
-            dLRamList.Add(ram);
+           
             if (!isDuplicate(ram.Kichthuocram)&& dlRamDAO.insert(ram) > 0)
             {
+                dLRamList.Add(ram);
                 return true;
             }
             return false;
@@ -87,8 +88,8 @@ namespace Service
             {
                 return false;
             }
-            dLRamList.RemoveAt(index);
             dlRamDAO.delete(ram.Madlram);
+            dLRamList.RemoveAt(index);
             return true;
         }
        
