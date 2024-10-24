@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAO.DAO.impl
 {
-    public class NhanvVienDAO : AbstractDAO<NhanVien>, INhanVienDAO
+    public class NhanVienDAO : AbstractDAO<NhanVien>, INhanVienDAO
     {
         private readonly NhanViewRowMapper _rowMapper = new NhanViewRowMapper();
         public void delete(long id)

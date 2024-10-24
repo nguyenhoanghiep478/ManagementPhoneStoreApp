@@ -21,17 +21,23 @@ namespace Service.impl
 
         public bool Add(List<PhienBanSanPham> listch) 
         {
-            throw new NotImplementedException();
+            bool check = false;
+            foreach(PhienBanSanPham phienbansp in listch){
+                 check = cauhinhDAO.insert(phienbansp) != 0;
+            }
+           
+            return check;
         }
 
         public bool CheckDuplicate(List<PhienBanSanPham> listch, PhienBanSanPham ch)
         {
-            throw new NotImplementedException();
+            return listch.Any(pb => pb.Equals(ch));
         }
 
         public bool CheckImeiExists(List<ChiTietSanPham> arr)
-        {
-            return ChiTietSanPhamDAO.checkImeiExists(arr);
+        {   
+            List<long> imeis = arr.Select(x => long.Parse(x.MaImei)).ToList();
+            return chiTietSanPham.checkImeiExists(imeis);
         }
 
         public List<PhienBanSanPham> GetAll(int masp)

@@ -38,7 +38,7 @@ namespace DAO.DAO.impl
             return SearchBy(null, _rowMapper , "xuatxu");
         }
 
-        public long insert(XuatXuDAO xuatXu)
+        public long insert(XuatXu xuatXu)
         {
             string query = @"
                 INSERT INTO XuatXu 
@@ -56,12 +56,8 @@ namespace DAO.DAO.impl
              );
         }
 
-        public long insert(XuatXu xuatXu)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void update(XuatXuDAO xuatXu)
+        public void update(XuatXu xuatXu)
         {
             string query = @"
             UPDATE XuatXu 
@@ -78,9 +74,5 @@ namespace DAO.DAO.impl
             );
         }
 
-        public void update(XuatXu xuatXu)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
