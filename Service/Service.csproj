@@ -47,8 +47,12 @@
     <Compile Include="IKhuVucKhoService.cs" />
     <Compile Include="IMauSacService.cs" />
     <Compile Include="impl\ChiTietSanPhamService.cs" />
+    <Compile Include="impl\KhachHangService.cs" />
+    <Compile Include="impl\NhanVienService.cs" />
+    <Compile Include="impl\NhomQuyenService.cs" />
     <Compile Include="impl\PhienBanSanPhamService.cs" />
     <Compile Include="impl\SanPhamService.cs" />
+    <Compile Include="impl\TaiKhoanService.cs" />
     <Compile Include="INhaCungCapService.cs" />
     <Compile Include="INhanVienService.cs" />
     <Compile Include="INhomQuyenService.cs" />

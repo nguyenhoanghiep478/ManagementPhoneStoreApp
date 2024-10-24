@@ -17,7 +17,7 @@ namespace DAO.impl
 {
     public class AbstractDAO<T> : IGenericDAO<T>
     {
-        private string connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306;";
+        private string connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=1234567;Port=3306;";
 
         private MySqlConnection GetConnection()
         {
