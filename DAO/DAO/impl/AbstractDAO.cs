@@ -17,7 +17,7 @@ namespace DAO.impl
 {
     public class AbstractDAO<T> : IGenericDAO<T>
     {
-        private string connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306;";
+        private string connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=1234567;Port=3306;";
 
         private MySqlConnection GetConnection()
         {
@@ -26,16 +26,37 @@ namespace DAO.impl
 
         private void SetParameter(MySqlCommand command, params object[] parameters)
         {
-            for (int i = 0; i < parameters.Length; i++)
+            int parameterIndex = 0; 
+            foreach (var parameter in parameters)
             {
-                var parameter = parameters[i];
-                if (parameter == null)
+            
+                if (parameter is List<long> list)
                 {
-                    command.Parameters.AddWithValue($"@param{i}", DBNull.Value);
+                    for (int j = 0; j < list.Count; j++)
+                    {
+                        var listItem = list[j];
+                        if (listItem == null)
+                        {
+                            command.Parameters.AddWithValue($"@param{parameterIndex}", DBNull.Value);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue($"@param{parameterIndex}", listItem);
+                        }
+                        parameterIndex++; 
+                    }
                 }
                 else
                 {
-                    command.Parameters.AddWithValue($"@param{i}", parameter);
+                    if (parameter == null)
+                    {
+                        command.Parameters.AddWithValue($"@param{parameterIndex}", DBNull.Value);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue($"@param{parameterIndex}", parameter);
+                    }
+                    parameterIndex++;
                 }
             }
         }
@@ -70,8 +91,7 @@ namespace DAO.impl
         {
             using (var connection = GetConnection())
             using (var command = new MySqlCommand(sql, connection))
-            {
-                SetParameter(command, parameters);
+            {           SetParameter(command, parameters);
                 connection.Open();
                 command.ExecuteNonQuery();
             }

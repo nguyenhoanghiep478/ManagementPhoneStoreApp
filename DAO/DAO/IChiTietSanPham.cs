@@ -7,11 +7,15 @@ using System.Threading.Tasks;
 
 namespace DAO.DAO
 {
-    internal interface IChiTietSanPham
+    public interface IChiTietSanPham
     {
         long insert(ChiTietSanPham sanPham);
         void update(ChiTietSanPham sanPham);
         void delete(long id);
         ChiTietSanPham FindByMaImei(string maImei);
+        List<ChiTietSanPham> FindByMaPhieuXuat(int maphieuxuat);
+        List<ChiTietSanPham> FindByMaPhieuNhap(int maphieunhap);
+        List<ChiTietSanPham> FindByPhienBanSanPham(int pbsp);
+        bool checkImeiExists(List<long> imeis);
     }
 }
