@@ -13,9 +13,19 @@ namespace DAO.DAO.impl
     public class ChiTietSanPhamDAO : AbstractDAO<ChiTietSanPham>, IChiTietSanPham
     {
         private readonly ChiTietSanPhamRowMapper _rowMapper = new ChiTietSanPhamRowMapper();
+
+        public bool checkImeiExists(List<long> imeis)
+        {
+            String query = "select * from ctsanpham where maimei in (";
+            query += string.Join(", ", imeis.Select(_ => "?"));
+            query += ")";
+            List<ChiTietSanPham> result = this.Query(query,_rowMapper,imeis);
+            return result.Count > 0;
+        }
+
         public void delete(long id)
         {
-            String query = "update ctsanpham set trangthai = 0 where maimei = ?";
+            String query = "update ctsanpham set tinhtrang = 0 where maimei = ?";
             Update(query, id);
         }
 
@@ -32,6 +42,44 @@ namespace DAO.DAO.impl
             return SearchBy(criterias, _rowMapper, "chitietsanpham").FirstOrDefault(null);
         }
 
+        public List<ChiTietSanPham> FindByMaPhieuNhap(int maphieunhap)
+        {
+            List<Criteria> criterias = new List<Criteria>();
+            Criteria criteria = new Criteria()
+            {
+                Key = "maphieunhap",
+                Operation = ":",
+                Value = maphieunhap,
+            };
+            criterias.Add(criteria);
+            return SearchBy(criterias, _rowMapper, "chitietsanpham");
+        }
+
+        public List<ChiTietSanPham> FindByMaPhieuXuat(int maphieuxuat)
+        {
+            List<Criteria> criterias = new List<Criteria>();
+            Criteria criteria = new Criteria()
+            {
+                Key = "maphieuxuat",
+                Operation = ":",
+                Value = maphieuxuat,
+            };
+            criterias.Add(criteria);
+            return SearchBy(criterias, _rowMapper, "chitietsanpham");
+        }
+
+        public List<ChiTietSanPham> FindByPhienBanSanPham(int pbsp)
+        {
+            List<Criteria> criterias = new List<Criteria>();
+            Criteria criteria = new Criteria()
+            {
+                Key = "maphienbansp",
+                Operation = ":",
+                Value = pbsp,
+            };
+            criterias.Add(criteria);
+            return SearchBy(criterias, _rowMapper, "chitietsanpham");
+        }
 
         public long insert(ChiTietSanPham chiTietSanPham)
         {

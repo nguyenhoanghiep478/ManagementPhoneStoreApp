@@ -1481,59 +1481,88 @@ ALTER TABLE `ctkiemke`
   ADD CONSTRAINT `FK_ctkiemke_phieukiemke` FOREIGN KEY (`maphieukiemmke`) REFERENCES `phieukiemke` (`maphieu`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `ctphieuxuat`
+-- Constaints for table `sanpham`
+--
+
+ALTER TABLE `sanpham`
+  ADD CONSTRAINT `FK_sanpham_khuvuckho` FOREIGN KEY (`khuvuckho`) REFERENCES `khuvuckho` (`makhuvuc`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_sanpham_thuonghieu` FOREIGN KEY (`thuonghieu`) REFERENCES `thuonghieu` (`mathuonghieu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_sanpham_hedieuhanh` FOREIGN KEY (`hedieuhanh`) REFERENCES `hedieuhanh` (`mahedieuhanh`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+--
+-- Constaints for table `ctsanpham`
+--
+ALTER TABLE `ctsanpham`
+	ADD CONSTRAINT `FK_ctsanpham_phienbansanpham` FOREIGN KEY (`maphienbansp`) REFERENCES `phienbansanpham` (`maphienbansp`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	ADD CONSTRAINT `FK_ctsanpham_phieunhap` FOREIGN KEY (`maphieunhap`) REFERENCES `phieunhap` (`maphieunhap`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+	ADD CONSTRAINT `FK_ctsanpham_phieuxuat` FOREIGN KEY (`maphieuxuat`) REFERENCES `phieuxuat` (`maphieuxuat`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+  -- Constraints for table `ctphieunhap`
+ALTER TABLE `ctphieunhap`
+  ADD CONSTRAINT `FK_ctphieunhap_phieunhap` FOREIGN KEY (`maphieunhap`) REFERENCES `phieunhap` (`maphieunhap`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_ctphieunhap_phienbansanpham` FOREIGN KEY (`maphienbansp`) REFERENCES `phienbansanpham` (`maphienbansp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+--
+-- Constraints for table `ctphieuxuat`
 --
 ALTER TABLE `ctphieuxuat`
-  ADD CONSTRAINT `FK__phieuxuat` FOREIGN KEY (`maphieuxuat`) REFERENCES `phieuxuat` (`maphieuxuat`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  ADD CONSTRAINT `FK__phieuxuat` FOREIGN KEY (`maphieuxuat`) REFERENCES `phieuxuat` (`maphieuxuat`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_phieuxuat_phienbansanpham` FOREIGN KEY (`maphienbansp`) REFERENCES `phienbansanpham` (`maphienbansp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 --
--- Các ràng buộc cho bảng `ctquyen`
+-- Constaints for table 'phieubaohanh'
+--
+ALTER TABLE `phieubaohanh`
+ ADD CONSTRAINT `FK_phieubaohanh_ctsanpham` FOREIGN KEY (`maimei`) REFERENCES `ctsanpham` (`maimei`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+--
+-- Constraints for table `ctquyen`
 --
 ALTER TABLE `ctquyen`
-  ADD CONSTRAINT `FK__nhomquyen` FOREIGN KEY (`manhomquyen`) REFERENCES `nhomquyen` (`manhomquyen`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FK__nhomquyen` FOREIGN KEY (`manhomquyen`) REFERENCES `nhomquyen` (`manhomquyen`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_ctquyen_danhmucchucnang` FOREIGN KEY (`machucnang`) REFERENCES `danhmucchucnang` (`machucnang`) ON DELETE NO ACTION ON UPDATE NO ACTION; 
 
 --
--- Các ràng buộc cho bảng `phienbansanpham`
+-- Constraints for table `phienbansanpham`
 --
 ALTER TABLE `phienbansanpham`
-  ADD CONSTRAINT `FK_phienbansanpham_sanpham` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FK_phienbansanpham_sanpham` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_phienbansanpham_dungluongram` FOREIGN KEY (`ram`) REFERENCES `dungluongram` (`madlram`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_phienbansanpham_dungluongrom` FOREIGN KEY (`rom`) REFERENCES `dungluongrom` (`madlrom`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_phienbansanpham_mausac` FOREIGN KEY (`mausac`) REFERENCES `mausac` (`mamau`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `phieudoi`
+-- Constraints for table `phieudoi`
 --
 ALTER TABLE `phieudoi`
-  ADD CONSTRAINT `FK_phieudoi_ctsanpham` FOREIGN KEY (`maimei`) REFERENCES `ctsanpham` (`maimei`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_phieudoi_taikhoan` FOREIGN KEY (`nguoitao`) REFERENCES `taikhoan` (`manv`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FK_phieudoi_ctsanpham` FOREIGN KEY (`maimei`) REFERENCES `ctsanpham` (`maimei`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ --  ADD CONSTRAINT `FK_phieudoi_taikhoan` FOREIGN KEY (`nguoitao`) REFERENCES `taikhoan` (`manv`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `phieukiemke`
+-- Constraints for table `phieukiemke`
 --
 ALTER TABLE `phieukiemke`
   ADD CONSTRAINT `FK_phieukiemke_taikhoan` FOREIGN KEY (`nguoitaophieukiemke`) REFERENCES `taikhoan` (`manv`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `phieunhap`
+-- Constraints for table `phieunhap`
 --
 ALTER TABLE `phieunhap`
   ADD CONSTRAINT `FK_phieunhap_nhacungcap` FOREIGN KEY (`manhacungcap`) REFERENCES `nhacungcap` (`manhacungcap`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_phieunhap_taikhoan` FOREIGN KEY (`nguoitao`) REFERENCES `taikhoan` (`manv`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `phieutra`
+-- Constraints for table `phieutra`
 --
 ALTER TABLE `phieutra`
   ADD CONSTRAINT `FK_phieutra_ctsanpham` FOREIGN KEY (`maimei`) REFERENCES `ctsanpham` (`maimei`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_phieutra_taikhoan` FOREIGN KEY (`nguoitao`) REFERENCES `taikhoan` (`manv`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `phieuxuat`
+-- Constraints for table `phieuxuat`
 --
 ALTER TABLE `phieuxuat`
   ADD CONSTRAINT `FK_phieuxuat_khachhang` FOREIGN KEY (`makh`) REFERENCES `khachhang` (`makh`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_phieuxuat_taikhoan` FOREIGN KEY (`nguoitaophieuxuat`) REFERENCES `taikhoan` (`manv`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Các ràng buộc cho bảng `taikhoan`
+-- Constraints for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD CONSTRAINT `FK_taikhoan_nhanvien` FOREIGN KEY (`manv`) REFERENCES `nhanvien` (`manv`) ON DELETE NO ACTION ON UPDATE NO ACTION,
