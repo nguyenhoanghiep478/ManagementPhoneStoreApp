@@ -44,7 +44,7 @@ namespace DAO.DAO.impl
 
                 var thongKeKhachHang = new ThongKeKhachHangDTO
                 {
-                    MaKH = (int) khachHang.MakH ,
+                    MaKH = (int)khachHang.MakH,
                     TenKH = khachHang.TenKhachHang,
                     SoLuongPhieu = soLuongPhieu,
                     Tongtien = (long)tongTien
@@ -57,7 +57,7 @@ namespace DAO.DAO.impl
             return result;
         }
 
-    public static List<ThongKeNhaCungCapDTO> GetThongKeNCC(string filterText, DateTime start, DateTime end)
+        public static List<ThongKeNhaCungCapDTO> GetThongKeNCC(string filterText, DateTime start, DateTime end)
         {
             var result = new List<ThongKeNhaCungCapDTO>();
 
