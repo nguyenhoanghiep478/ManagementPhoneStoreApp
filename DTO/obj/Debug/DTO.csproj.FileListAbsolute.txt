@@ -1,0 +1,7 @@
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.exe.config
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.exe
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.exe
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.pdb

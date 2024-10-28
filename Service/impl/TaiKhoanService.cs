@@ -1,7 +1,10 @@
-﻿using Entity;
+﻿using DAO.DAO;
+using DAO.DAO.impl;
+using Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +14,10 @@ namespace Service.impl
     {
         private List<TaiKhoan> _taikhoans = new List<TaiKhoan>();
         private List<NhomQuyen> _nhomquyen = new List<NhomQuyen>();
+        private ITaiKhoanDao _taiKhoanDAO = new TaiKhoanDAO();
+        public static Lazy<TaiKhoanService> instance = new Lazy<TaiKhoanService>();
 
+        public static TaiKhoanService Instance { get { return instance.Value; } }
         public List<TaiKhoan> GetTaiKhoanAll()
         {
             return _taikhoans;
@@ -58,7 +64,11 @@ namespace Service.impl
         public void AddAcc(TaiKhoan tk)
         {
             if (tk != null && !_taikhoans.Any(x => x.Manv == tk.Manv))
-            {
+            {   
+
+
+
+                _taiKhoanDAO.insert(tk);
                 _taikhoans.Add(tk);
             }
             else

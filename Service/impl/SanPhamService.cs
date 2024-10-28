@@ -20,7 +20,7 @@ namespace Service.impl
 
         private readonly ISanPhamDAO spDAO = new SanPhamDAO();
         private readonly IPhienBanSanPhamService cauhinhBus ;
-        private List<SanPham> listSP = new List<SanPham>();
+        private  List<SanPham> listSP = new List<SanPham>();
 
         public bool Add(SanPham sp, List<PhienBanSanPham> listch)
         {

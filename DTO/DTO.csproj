@@ -36,6 +36,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="ThongKeDoanhThuDTO.cs" />
     <Compile Include="ThongKeKhachHangDTO.cs" />
     <Compile Include="ThongKeNhaCungCapDTO.cs" />

@@ -137,3 +137,4 @@ C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Deb
 C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\Manageme.DEBAEFFE.Up2Date
 C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
 C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Form1.resources
