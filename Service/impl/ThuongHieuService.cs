@@ -49,8 +49,8 @@ namespace Service
             {
                 return false;
             }
-            thuongHieuList.Remove(lh);
             dao.delete(lh.Mathuonghieu);
+            thuongHieuList.Remove(lh);
             return true;
         }
 
@@ -111,8 +111,8 @@ namespace Service
             {
                 if (thuongHieuList[i].Mathuonghieu.Equals(lh.Mathuonghieu))
                 {
-                    thuongHieuList[i] = lh;
                     dao.update(lh);
+                    thuongHieuList[i] = lh;
                     return true;
                 }
             }
@@ -130,11 +130,10 @@ namespace Service
 
         public bool Add(ThuongHieu th)
         {
-            if (!CheckDup(th.Tenthuonghieu))
+            if (!CheckDup(th.Tenthuonghieu)&&dao.insert(th)>0)
             {
                 thuongHieuList.Add(th);
-                dao.insert(th);
-               
+
             }
             return false;
         }

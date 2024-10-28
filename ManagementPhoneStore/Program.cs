@@ -1,6 +1,6 @@
 ﻿
-using DAO.DAO.impl;
 using Entity;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +21,15 @@ namespace ManagementPhoneStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            SanPhamDAO sanPhamDAO = new SanPhamDAO();
-            List<SanPham> sanPhams = sanPhamDAO.FindLikeName("Vivo");
-            foreach(SanPham sanPham in sanPhams)
-            {
-                Console.WriteLine(sanPham);
-            }
+            Application.Run(new LoginGUI());
+            //IChiTietSanPhamService chiTietSanPham = new ChiTietSanPhamService();
+            List<long> imeis = new List<long>();
+            imeis.Add(107725056444798);
+            imeis.Add(107725056444797);
+            //chiTietSanPham.delete(107725056444797);
+            //Console.WriteLine(chiTietSanPham.checkImeiExists(imeis));
+
+
         }
     }
 }

@@ -14,14 +14,18 @@ namespace DAO.DAO.impl
     {
         private readonly ChiTietSanPhamRowMapper _rowMapper = new ChiTietSanPhamRowMapper();
 
-        public bool checkImeiExists(List<ChiTietSanPham> arr)
+        public bool checkImeiExists(List<long> imeis)
         {
-            throw new NotImplementedException();
+            String query = "select * from ctsanpham where maimei in (";
+            query += string.Join(", ", imeis.Select(_ => "?"));
+            query += ")";
+            List<ChiTietSanPham> result = this.Query(query,_rowMapper,imeis);
+            return result.Count > 0;
         }
 
         public void delete(long id)
         {
-            String query = "update ctsanpham set trangthai = 0 where maimei = ?";
+            String query = "update ctsanpham set tinhtrang = 0 where maimei = ?";
             Update(query, id);
         }
 

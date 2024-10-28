@@ -38,7 +38,7 @@ namespace DAO.DAO
             return SearchBy(null, _rowMapper , "mausac");
         }
 
-        public long insert(MauSacDAO mauSac)
+        public long insert(MauSac mauSac)
         {
             string query = @"
                 INSERT INTO MauSac 
@@ -56,12 +56,7 @@ namespace DAO.DAO
              );
         }
 
-        public long insert(MauSac mauSac)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void update(MauSacDAO mauSac)
+         public void update(MauSac mauSac)
         {
             string query = @"
             UPDATE mauSac 
@@ -78,9 +73,6 @@ namespace DAO.DAO
             );
         }
 
-        public void update(MauSac mauSac)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

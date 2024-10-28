@@ -50,10 +50,9 @@ namespace Service
 
         public bool Add(NhaCungCap nhaCungCap)
         {
-            if (!CheckDup(nhaCungCap.Tennhacungcap))
+            if (!CheckDup(nhaCungCap.Tennhacungcap)&&dao.insert(nhaCungCap)>0)
             {
                 nhaCungCapList.Add(nhaCungCap);
-                dao.insert(nhaCungCap);
                 return true;
             }
             return false;
@@ -64,8 +63,8 @@ namespace Service
             {
                 return false;
             }
-            nhaCungCapList.RemoveAt(index);
             dao.delete(ncc.Manhacungcap);
+            nhaCungCapList.RemoveAt(index);
             return true;
         }
 
@@ -172,8 +171,8 @@ namespace Service
             {
                 if (nhaCungCapList[i].Manhacungcap.Equals(ncc.Manhacungcap))
                 {
-                    nhaCungCapList[i] = ncc;
                     dao.update(ncc);
+                    nhaCungCapList[i] = ncc;
                     return true;
                 }
             }

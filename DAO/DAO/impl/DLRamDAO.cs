@@ -13,7 +13,7 @@ namespace DAO.DAO.impl
 {
     public class DLRamDAO : AbstractDAO<DLRam>, IDLRamDAO
     {   
-        private readonly DLRamRowMapper _rowMapper;
+        private readonly DLRamRowMapper _rowMapper = new DLRamRowMapper();
         public void delete(long id)
         {
             String query = "DELETE from dung luong ram Where Id = ?";

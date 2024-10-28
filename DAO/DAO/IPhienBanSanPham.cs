@@ -14,6 +14,5 @@ namespace DAO.DAO
         void delete(long id);
         PhienBanSanPham FindByMaPhienBanSanPham(int maphienban);
         List<PhienBanSanPham> FindByMaSp(string v);
-        bool CheckImeiExists(List<ChiTietSanPham> arr);
     }
 }

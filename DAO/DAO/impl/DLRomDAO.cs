@@ -13,7 +13,7 @@ namespace DAO.DAO.impl
 {
     public class DLRomDAO : AbstractDAO<DLRom>, IDLRomDAO
     {   
-        private readonly DLRomRowMapper _rowMapper;
+        private readonly DLRomRowMapper _rowMapper = new DLRomRowMapper();
         public void delete(long id)
         {
             String query = "DELETE from dung luong rom Where Id = ?";
