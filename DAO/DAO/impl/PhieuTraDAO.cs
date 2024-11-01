@@ -18,8 +18,8 @@ namespace DAO.DAO.impl
 
         public void Delete(long id)
         {
-            string query = "UPDATE phieutra SET trangthai = @trangthai WHERE maphieutra = @maphieutra";
-            Update(query, 0, id); // Assuming '0' represents a "deleted" status
+            string query = "UPDATE phieutra SET trangthai = 0 WHERE maphieutra = @param0";
+            Update(query, id); // Assuming '0' represents a "deleted" status
             //need altering
         }
 
@@ -50,7 +50,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                   @maimei, @lydo, @thoigian, @nguoitao
+                   @param0, @param1, @param2, @param3
                 );";
             return Save(query,
                 phieutra.Maimei,
@@ -65,12 +65,12 @@ namespace DAO.DAO.impl
             string query = @"
                 UPDATE phieutra 
                 SET 
-                    maimei = @maimei,
-                    lydo = @lydo,
-                    thoigian = @thoigian,
-                    nguoitao = @nguoitao
+                    maimei = @param0,
+                    lydo = @param1,
+                    thoigian = @param2,
+                    nguoitao = @param3
                 WHERE 
-                    maphieutra = @maphieutra;";
+                    maphieutra = @param4;";
 
             Update(query,
                 phieutra.Maimei,

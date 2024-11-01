@@ -47,7 +47,7 @@ namespace DAO.DAO
                 ) 
                 VALUES 
                 (
-                    @mamau, @tenmau, @trangthai
+                   @param0, @param1, @param2
                 );";
             return Save(query,
                  mauSac.Mamau,
@@ -61,10 +61,10 @@ namespace DAO.DAO
             string query = @"
             UPDATE mauSac 
             SET 
-                tenmau = @tenmau,
-                trangthai = @trangthai
+                tenmau = @param0,
+                trangthai = @param1
                 WHERE 
-            masp = @masp;"; 
+            masp = @param2;"; 
 
             Update(query,
                 mauSac.Tenmau,

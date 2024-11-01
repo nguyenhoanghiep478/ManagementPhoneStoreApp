@@ -18,8 +18,8 @@ namespace DAO.DAO.impl
 
         public void Delete(long id)
         {
-            string query = "UPDATE phieuxuat SET trangthai = @trangthai WHERE maphieuxuat = @maphieuxuat";
-            Update(query, 0, id);  // soft deletion
+            string query = "UPDATE phieuxuat SET trangthai = 0 WHERE maphieuxuat = @param0";
+            Update(query, id);  // soft deletion
         }
 
         public List<PhieuXuat> FindLikeName(string name)
@@ -49,7 +49,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                   @maphieuxuat, @thoigian, @tongtien, @nguoitaophieuxuat, @makh, @trangthai
+                  @param0, @param1, @param2, @param3, @param4, @param5
                 );";
             return Save(query,
                 phieuxuat.Maphieuxuat,
@@ -66,13 +66,13 @@ namespace DAO.DAO.impl
             string query = @"
                 UPDATE phieuxuat 
                 SET 
-                    thoigian = @thoigian,
-                    tongtien = @tongtien,
-                    nguoitaophieuxuat = @nguoitaophieuxuat,
-                    makh = @makh,
-                    trangthai = @trangthai
+                    thoigian = @param0,
+                    tongtien = @param1,
+                    nguoitaophieuxuat = @param2,
+                    makh = @param3,
+                    trangthai = @param4
                 WHERE 
-                    maphieuxuat = @maphieuxuat;";
+                    maphieuxuat = @param5;";
 
             Update(query,
                 phieuxuat.Thoigian,

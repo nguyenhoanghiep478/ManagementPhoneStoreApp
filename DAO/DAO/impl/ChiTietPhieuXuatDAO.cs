@@ -26,7 +26,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @maphieuxuat, @maphienbansp, @soluong, @dongia
+                    @param0, @param1, @param2, @param3
                 );";
 
             return Save(query,
@@ -43,10 +43,10 @@ namespace DAO.DAO.impl
             string query = @"
                 UPDATE ctphieuxuat 
                 SET 
-                    soluong = @soluong,
-                    dongia = @dongia
+                    soluong = @param0,
+                    dongia = @param1
                 WHERE 
-                    maphieuxuat = @maphieuxuat AND maphienbansp = @maphienbansp;";
+                    maphieuxuat = @param2 AND maphienbansp = @param3;";
 
             Update(query,
                 chiTietPhieuXuat.Soluong,
@@ -59,7 +59,7 @@ namespace DAO.DAO.impl
         // Delete by composite key (maphieuxuat and maphienbansp)
         public void delete(int maphieuxuat, int maphienbansp)
         {
-            string query = "DELETE FROM ctphieuxuat WHERE maphieuxuat = @maphieuxuat AND maphienbansp = @maphienbansp;";
+            string query = "DELETE FROM ctphieuxuat WHERE maphieuxuat = @param0 AND maphienbansp = @param2;";
             Update(query, maphieuxuat, maphienbansp);
         }
 

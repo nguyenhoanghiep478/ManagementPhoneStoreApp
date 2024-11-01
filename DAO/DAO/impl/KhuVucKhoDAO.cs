@@ -47,7 +47,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @makhuvuc,@tenkhuvuc,@ghichu,@trangthai
+                   @param0, @param1, @param2, @param3, @param4
                 );";
             return Save(query,
                  khuvuckho.Makhuvuc,
@@ -63,11 +63,11 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE khuvuckho
             SET 
-                tenkhuvuc = @tenkhuvuc,
-                ghichu = @ghichu,
-                trangthai = @trangthai
+                tenkhuvuc = @param0,
+                ghichu = @param1,
+                trangthai = @param2
                 WHERE 
-            makhuvuc = @makhuvuc;";
+            makhuvuc = @param3;";
 
             Update(query,
                 khuvuckho.Tenkhuvuc,

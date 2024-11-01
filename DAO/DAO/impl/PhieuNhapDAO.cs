@@ -36,7 +36,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @maphieunhap, @thoigian, @manhacungcap, @nguoitao, @tongtien, @trangthai
+                    @param0, @param1, @param2, @param3, @param4, @param5
                 );";
             return Save(query,
                 phieuNhap.Maphieunhap,
@@ -53,13 +53,13 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE PhieuNhap 
             SET 
-                thoigian = @thoigian,
-                manhacungcap = @manhacungcap,
-                nguoitao = @nguoitao,
-                tongtien = @tongtien,
-                trangthai = @trangthai
+                thoigian = @param0,
+                manhacungcap = @param1,
+                nguoitao = @param2,
+                tongtien = @param3,
+                trangthai = @param4
             WHERE 
-                maphieunhap = @maphieunhap;";
+                maphieunhap = @param5;";
 
             Update(query,
                 phieuNhap.Thoigian,

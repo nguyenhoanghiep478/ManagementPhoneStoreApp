@@ -35,7 +35,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @manhacungcap, @tennhacungcap, @diachi, @email, @sdt, @trangthai
+                    @param0, @param1, @param2, @param3, @param4, @param5
                 );";
             return Save(query,
                 nhaCungCap.Manhacungcap,
@@ -52,13 +52,13 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE NhaCungCap 
             SET 
-                tennhacungcap = @tennhacungcap,
-                diachi = @diachi,
-                email = @email,
-                sdt = @sdt,
-                trangthai = @trangthai
+                tennhacungcap = @param0,
+                diachi = @param1,
+                email = @param2,
+                sdt = @param3,
+                trangthai = @param4
             WHERE 
-                manhacungcap = @manhacungcap;";
+                manhacungcap = @param5;";
 
             Update(query,
                 nhaCungCap.Tennhacungcap,

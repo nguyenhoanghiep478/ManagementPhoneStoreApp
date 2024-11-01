@@ -138,3 +138,9 @@ C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Deb
 C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
 C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Form1.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.exe
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.exe.config
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe.config

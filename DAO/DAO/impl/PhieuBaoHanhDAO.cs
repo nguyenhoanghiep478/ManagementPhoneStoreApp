@@ -14,8 +14,8 @@ namespace DAO.DAO.impl
 
         public void Delete(long id)
         {
-            string query = "UPDATE phieubaohanh SET trangthai = @trangthai WHERE maphieubaohanh = @maphieubaohanh";
-            Update(query, 0, id);  // Assuming `0` represents a "deleted" status
+            string query = "UPDATE phieubaohanh SET trangthai = 0 WHERE maphieubaohanh = @param0";
+            Update(query,id);  // Assuming `0` represents a "deleted" status
         }
 
         public List<PhieuBaoHanh> FindLikeName(string name)
@@ -45,7 +45,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                   @maphieubaohanh, @maimei, @lydo, @thoigian, @thoigiantra
+                 @param0, @param1, @param2, @param3, @param4
                 );";
             return Save(query,
                 phieubaohanh.Maphieubaohanh,
@@ -61,12 +61,12 @@ namespace DAO.DAO.impl
             string query = @"
                 UPDATE phieubaohanh 
                 SET 
-                    maimei = @maimei,
-                    lydo = @lydo,
-                    thoigian = @thoigian,
-                    thoigiantra = @thoigiantra
+                    maimei = @param0,
+                    lydo = @param1,
+                    thoigian = @param2,
+                    thoigiantra = @param3
                 WHERE 
-                    maphieubaohanh = @maphieubaohanh;";
+                    maphieubaohanh = @param4;";
 
             Update(query,
                 phieubaohanh.Maimei,

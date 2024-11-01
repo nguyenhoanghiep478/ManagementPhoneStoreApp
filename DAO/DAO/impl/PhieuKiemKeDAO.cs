@@ -48,12 +48,11 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @maphieu,@thoigian,@nguoitaophieukiemke
+                    @param0, @param1, @param2
                 );";
             return Save(query,
                  phieuKiemKe.Maphieu,
                  phieuKiemKe.Thoigian ?? (object)DBNull.Value,
-
                  phieuKiemKe.Nguoitaophieukiemke 
 
              );
@@ -65,9 +64,9 @@ namespace DAO.DAO.impl
             UPDATE phieukiemke
             SET 
                
-                thoigian = @ thoigian
+                thoigian = @param1
                 WHERE 
-               maphieu = @maphieu;";
+               maphieu = @param0;";
 
             Update(query,
                 phieuKiemKe.Maphieu,

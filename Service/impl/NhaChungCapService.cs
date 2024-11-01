@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    internal class NhaChungCapService : INhaCungCapService
+    public class NhaChungCapService : INhaCungCapService
     {
         private List<NhaCungCap> nhaCungCapList;
         private static NhaChungCapService instance = null;
         private NhaCungCapDAO dao;
         private static readonly object lockObj = new object();
 
-        private NhaChungCapService()
+        public NhaChungCapService()
         {
 
             dao = new NhaCungCapDAO();

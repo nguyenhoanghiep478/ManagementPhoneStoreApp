@@ -36,7 +36,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @mathuonghieu, @tenthuonghieu, @trangthai
+                   @param0, @param1, @param2
                 );";
             return Save(query,
                  thuongHieu.Mathuonghieu,
@@ -50,10 +50,10 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE thuonghieu 
             SET 
-                tenthuonghieu = @tenthuonghieu,
-                trangthai = @trangthai
+                tenthuonghieu = @param0,
+                trangthai = @param1
             WHERE 
-                mathuonghieu = @mathuonghieu;";
+                mathuonghieu = @param2;";
 
             Update(query,
                 thuongHieu.Tenthuonghieu,
