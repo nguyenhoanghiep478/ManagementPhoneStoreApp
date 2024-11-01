@@ -16,9 +16,3 @@ D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\obj\Debug\S
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\obj\Debug\State.csproj.CoreCompileInputs.cache
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\obj\Debug\State.dll
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\obj\Debug\State.pdb
-C:\Users\ADMIN\Source\Repos\CSharp_project\State\bin\Debug\State.dll
-C:\Users\ADMIN\Source\Repos\CSharp_project\State\bin\Debug\State.pdb
-C:\Users\ADMIN\Source\Repos\CSharp_project\State\obj\Debug\State.csproj.AssemblyReference.cache
-C:\Users\ADMIN\Source\Repos\CSharp_project\State\obj\Debug\State.csproj.CoreCompileInputs.cache
-C:\Users\ADMIN\Source\Repos\CSharp_project\State\obj\Debug\State.dll
-C:\Users\ADMIN\Source\Repos\CSharp_project\State\obj\Debug\State.pdb
