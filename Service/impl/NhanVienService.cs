@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Service.impl
 {
-    internal class NhanVienService : INhanVienService
+    public class NhanVienService : INhanVienService
     {
         private List<NhanVien> _nhanVien = new List<NhanVien>();
 

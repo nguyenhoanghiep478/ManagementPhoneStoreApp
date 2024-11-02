@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service
+namespace Service.impl
 {
-    internal class NhaChungCapService : INhaCungCapService
+    public  class NhaChungCapService : INhaCungCapService
     {
         private List<NhaCungCap> nhaCungCapList;
         private static NhaChungCapService instance = null;
@@ -38,6 +38,11 @@ namespace Service
                 }
                 return instance;
             }
+        }
+        public void test(SanPham sp)
+        {
+            SanPhamDAO sdp=new SanPhamDAO();
+            sdp.insert(sp);
         }
         public bool CheckDup(string name)
         {

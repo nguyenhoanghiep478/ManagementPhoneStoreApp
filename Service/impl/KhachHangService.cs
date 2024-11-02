@@ -1,4 +1,5 @@
-﻿using Entity;
+﻿using DAO.DAO;
+using Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,11 @@ namespace Service.impl
 {
     public class KhachHangService : IKhachHangService
     {
-        private List<KhachHang> _khachhangs = new List<KhachHang>();
-        
+        private List<KhachHang> _khachhangs;
+        private KhachHangDAO dao=new KhachHangDAO();
         public List<KhachHang> getAll()
         {
+            _khachhangs=dao.GetAll();
             return _khachhangs;
         }
 
@@ -44,7 +46,8 @@ namespace Service.impl
         public Boolean add(KhachHang khachhang)
         {
             if (khachhang != null && !_khachhangs.Any(kh => kh.MakH == khachhang.MakH))
-            {
+            {   
+                dao.insert(khachhang);
                 _khachhangs.Add(khachhang);
                 return true;
             }
@@ -58,6 +61,7 @@ namespace Service.impl
         {
             if (_khachhangs.Remove(khachhang))
             {
+                dao.delete((long)khachhang.MakH);
                 return true;
             }
             return false;

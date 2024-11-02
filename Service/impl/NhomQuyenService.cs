@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Service.impl
 {
-    internal class NhomQuyenService : INhomQuyenService
+    public class NhomQuyenService : INhomQuyenService
     {
         private List<NhomQuyen> _nhomquyen = new List<NhomQuyen>();
         private Dictionary<string, List<ChiTietQuyen>> _chitietquyen = new Dictionary<string, List<ChiTietQuyen>>();
