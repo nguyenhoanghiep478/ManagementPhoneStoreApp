@@ -42,7 +42,7 @@ namespace DAO.DAO.impl
         ) 
         VALUES 
         (
-            @manhomquyen, @machucnang, @hanhdong
+            @param0, @param1, @param2
         );";
 
             return Save(query,
@@ -57,10 +57,10 @@ namespace DAO.DAO.impl
             string query = @"
         UPDATE ChiTietQuyen
         SET 
-            machucnang = @machucnang,
-            hanhdong = @hanhdong
+            machucnang = @param0,
+            hanhdong = @param1
         WHERE 
-            manhomquyen = @manhomquyen;";
+            manhomquyen = @param2;";
 
             Update(query,
                chiTietQuyen.MaChucNang ?? (object)DBNull.Value,

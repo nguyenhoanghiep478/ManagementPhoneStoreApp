@@ -47,7 +47,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @madlrom, @kichthuocrom, @trangthai
+                   @param0, @param1, @param2
                 );";
             return Save(query,
                  dLRom.Madlrom,
@@ -61,10 +61,10 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE DLRom 
             SET 
-                kichthuocrom = @kichthuocrom,
-                trangthai = @trangthai
+                kichthuocrom = @param0,
+                trangthai = @param1
                 WHERE 
-            masp = @madlrom;"; 
+            masp = @param2;"; 
 
             Update(query,
                 dLRom.Kichthuocrom,

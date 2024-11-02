@@ -56,9 +56,9 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @masp, @tensp, @hinhanh, @xuatxu, @chipxuly, @dungluongpin, 
-                    @kichthuocman, @hedieuhanh, @phienbanhdh, @camerasau, @cameratruoc, 
-                    @thoigianbaohanh, @thuonghieu, @khuvuckho, @soluongton, @trangthai
+                   @param0, @param1, @param2, @param3, @param4, @param5,@param6,
+                    @param7,@param8,@param9,@param10,@param11,@param12,@param13,@param14,@param15,@param16
+        
                 );";
             return Save(query,
                  sanPham.Masp,
@@ -85,23 +85,23 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE SanPham 
             SET 
-                tensp = @tensp,
-                hinhanh = @hinhanh,
-                xuatxu = @xuatxu,
-                chipxuly = @chipxuly,
-                dungluongpin = @dungluongpin,
-                kichthuocman = @kichthuocman,
-                hedieuhanh = @hedieuhanh,
-                phienbanhdh = @phienbanhdh,
-                camerasau = @camerasau,
-                cameratruoc = @cameratruoc,
-                thoigianbaohanh = @thoigianbaohanh,
-                thuonghieu = @thuonghieu,
-                khuvuckho = @khuvuckho,
-                soluongton = @soluongton,
-                trangthai = @trangthai
+                tensp = @param0,
+                hinhanh = @param1,
+                xuatxu = @param2,
+                chipxuly = @param3,
+                dungluongpin = @param4,
+                kichthuocman = @param5,
+                hedieuhanh = @param6,
+                phienbanhdh = @param7,
+                camerasau = @param8,
+                cameratruoc = @param9,
+                thoigianbaohanh = @param10,
+                thuonghieu = @param11,
+                khuvuckho = @param12,
+                soluongton = @param13,
+                trangthai = @param14
                 WHERE 
-            masp = @masp;"; 
+            masp = @param15;"; 
 
             Update(query,
                 sanPham.Tensp,

@@ -47,7 +47,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @maxuatxu, @tenxuatxu, @trangthai
+                    @param0, @param1, @param2
                 );";
             return Save(query,
                  xuatXu.Maxuatxu,

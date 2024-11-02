@@ -6,16 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service.impl
+namespace Service
 {
-    public  class NhaChungCapService : INhaCungCapService
+    public class NhaChungCapService : INhaCungCapService
     {
         private List<NhaCungCap> nhaCungCapList;
         private static NhaChungCapService instance = null;
         private NhaCungCapDAO dao;
         private static readonly object lockObj = new object();
 
-        private NhaChungCapService()
+        public NhaChungCapService()
         {
 
             dao = new NhaCungCapDAO();
@@ -38,11 +38,6 @@ namespace Service.impl
                 }
                 return instance;
             }
-        }
-        public void test(SanPham sp)
-        {
-            SanPhamDAO sdp=new SanPhamDAO();
-            sdp.insert(sp);
         }
         public bool CheckDup(string name)
         {

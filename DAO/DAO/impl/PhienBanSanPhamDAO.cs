@@ -51,7 +51,7 @@ namespace DAO.DAO.impl
             ) 
             VALUES 
             (
-                @maphienbansp, @masp, @rom, @ram, @mausac, @gianhap, @giaxuat, @soluongton, @trangthai
+              @param0, @param1, @param2, @param3, @param4, @param5,@param6,@param7,@param8
             );";
 
             return Save(query,
@@ -72,16 +72,16 @@ namespace DAO.DAO.impl
             string query = @"
                 UPDATE phienbansanpham
                 SET 
-                    masp = @masp,
-                    rom = @rom,
-                    ram = @ram,
-                    mausac = @mausac,
-                    gianhap = @gianhap,
-                    giaxuat = @giaxuat,
-                    soluongton = @soluongton,
-                    trangthai = @trangthai
+                    masp = @param0,
+                    rom = @param2,
+                    ram = @param3,
+                    mausac = @param4,
+                    gianhap = @param5,
+                    giaxuat = @param6,
+                    soluongton = @param7,
+                    trangthai = @param8
                 WHERE 
-                    maphienbansp = @maphienbansp;";
+                    maphienbansp = @param9;";
 
              Update(query,
                 phienBanSanPham.MaSanPham ?? (object)DBNull.Value,

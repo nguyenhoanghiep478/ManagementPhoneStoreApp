@@ -15,6 +15,15 @@ namespace Entity
         private string sdt;
         private int trangthai;
 
+        public NhaCungCap() { } 
+        public NhaCungCap(int manhacungcap,string ten, string diachi,string email,string sdt,int trangthai) { 
+            this.Manhacungcap = manhacungcap; 
+            this.Tennhacungcap = ten;   
+            this.Diachi = diachi;
+            this.Email = email;
+            this.Sdt = sdt;
+            this.Trangthai = trangthai;
+        }
         public int Manhacungcap
         {
             get { return manhacungcap; }

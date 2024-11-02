@@ -47,7 +47,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @madlram, @kichthuocram, @trangthai
+                    @param0, @param1, @param2
                 );";
             return Save(query,
                  dLRam.Madlram,
@@ -61,10 +61,10 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE DLRam 
             SET 
-                kichthuocram = @kichthuocram,
-                trangthai = @trangthai
+                kichthuocram = @param0,
+                trangthai = @param1
                 WHERE 
-            masp = @madlram;"; 
+            masp = @param2;"; 
 
             Update(query,
                 dLRam.Kichthuocram,
