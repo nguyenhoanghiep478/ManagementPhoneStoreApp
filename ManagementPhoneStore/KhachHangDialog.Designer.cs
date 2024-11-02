@@ -175,8 +175,8 @@ namespace ManagementPhoneStore
         public void initInfo()
         {
             ten.Text = kh.TenKhachHang;
-            sodienthoai.Text =kh.DiaChi;
-            diachi.Text = kh.Sdt;
+            sodienthoai.Text =kh.Sdt;
+            diachi.Text = kh.DiaChi;
         }
 
         public void initView()
@@ -258,7 +258,8 @@ namespace ManagementPhoneStore
                 temp.TenKhachHang = ten.Text;
                 temp.DiaChi = diachi.Text;
                 temp.Sdt = sodienthoai.Text;
-
+                temp.TrangThai = 1;
+                temp.NgayThamGia = DateTime.Now;
                 
                 khForm.khService.add(temp);
                 khForm.LoadDataToListView(khForm.khService.getAll());
@@ -273,8 +274,9 @@ namespace ManagementPhoneStore
                 temp.TenKhachHang = ten.Text;
                 temp.DiaChi = sodienthoai.Text;
                 temp.Sdt= diachi.Text;
-             
+                temp.TrangThai = 1;
                 temp.MakH = kh.MakH;
+                temp.NgayThamGia = DateTime.Now;
                 //khForm.khService.update(temp);
                 khForm.LoadDataToListView(khForm.khService.getAll());
                 Dispose();

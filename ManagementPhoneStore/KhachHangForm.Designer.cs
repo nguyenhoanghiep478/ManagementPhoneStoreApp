@@ -1,5 +1,4 @@
 ﻿using Entity;
-using Service;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System;
@@ -366,8 +365,8 @@ namespace ManagementPhoneStore
                 listView1.Items.Add(listViewItem);
             }
         }
-        public KhachHangService khService = new KhachHangService();
         #endregion
+        public KhachHangService khService = new KhachHangService();
 
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;

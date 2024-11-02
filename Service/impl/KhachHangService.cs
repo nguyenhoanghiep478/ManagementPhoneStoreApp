@@ -117,5 +117,18 @@ namespace Service.impl
             }
             throw new Exception("Error");
         }
+        public bool update(KhachHang kvk)
+        {
+            for (int i = 0; i < _khachhangs.Count; i++)
+            {
+                if (_khachhangs[i].MakH.Equals(kvk.MakH))
+                {
+                    dao.update(kvk);
+                    _khachhangs[i] = kvk;
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
