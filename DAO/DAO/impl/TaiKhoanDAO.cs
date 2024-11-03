@@ -25,6 +25,13 @@ namespace DAO.DAO.impl
         {
             List<Criteria> criterias = new List<Criteria>();
            
+            Criteria criteria = new Criteria()
+            {
+                Key = "tendangnhap",
+                Operation = "LIKE",
+                Value = tendangnhap,
+            };
+            criterias.Add(criteria);
             return SearchBy(criterias, _rowMapper, "taikhoan");
         }
 
