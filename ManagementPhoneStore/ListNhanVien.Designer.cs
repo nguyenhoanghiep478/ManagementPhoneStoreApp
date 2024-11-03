@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System;
 using System.Drawing;
+using System.Linq;
 
 namespace ManagementPhoneStore
 {
@@ -163,12 +164,53 @@ namespace ManagementPhoneStore
         public ListNhanVien()
         {
             InitializeComponent();
-            LoadDataToListView(nvService.GetAll());
+            LoadDataToListView(getNV());
+            add_Even();
         }
-
+        public List<NhanVien> getNV()
+        {
+            List<int>id_TK=tkService.GetTaiKhoanAll().Select(tk=>tk.Manv).ToList();
+            List<NhanVien>l=nvService.GetAll().Where(nv=>!id_TK.Contains(nv.Manv)).ToList();
+            return l;
+        }
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
 
+        }
+        private void add_Click(object sender, EventArgs e)
+        {
+            if (GetSelectedIndex() < 0)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên!:)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                this.Close();
+
+                var tkd = new TaiKhoanDialog(new TaiKhoanForm(),nvService.GetByIndex(GetSelectedIndex()).Manv, "Thêm tài khoản", "create",null);
+                tkd.ShowDialog();
+            }
+        }
+        
+        private void text_Change(object sender, EventArgs e)
+        {
+            String text = search.Text.ToLower();
+            
+           List<NhanVien>l= search_NV(text);
+            LoadDataToListView(l);
+        }
+
+        private List<NhanVien>search_NV(string text)
+        {
+            List<NhanVien> l = nvService.GetAll();
+            return l.Where(nv => nv.Hoten.Contains(text) || nv.Sdt.Contains(text) || nv.Email.Contains(text)).ToList();
+            
+        }
+
+        public void add_Even()
+        {
+            search.TextChanged += text_Change;
+            select.Click += add_Click;
         }
         public void LoadDataToListView(List<NhanVien> data)
         {
@@ -192,7 +234,7 @@ namespace ManagementPhoneStore
         }
         public NhanVienService nvService = new NhanVienService();
         #endregion
-
+        public TaiKhoanService tkService = TaiKhoanService.Instance;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

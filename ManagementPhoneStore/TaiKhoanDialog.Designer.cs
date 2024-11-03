@@ -3,6 +3,9 @@ using ManagementPhoneStore.util;
 using System.Windows.Forms;
 using System;
 using Service.impl;
+using System.Linq;
+using System.Collections.Generic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ManagementPhoneStore
 {
@@ -193,14 +196,21 @@ namespace ManagementPhoneStore
 
         }
 
+       
+
         public void initInfo()
         {
-            ten.Text = tk.Tendangnhap;
-            matkhau.Text = tk.Matkhau;
-            trangthai.SelectedIndex = tk.Trangthai==1?0:1;
-            nhomquyen.SelectedItem = tkForm.tkService.GetNhomQuyen((int)tk.Manhomquyen);
+            if (tk != null)
+            {
+                ten.Text = tk.Tendangnhap;
+                trangthai.SelectedIndex = (int)tk.Trangthai;
+                nhomquyen.SelectedItem = tkForm.nqService
+                    .GetAll()
+                    .Where(nhomquyen => nhomquyen.Manhomquyen.Equals(tk.Manhomquyen))
+                    .First().Tennhomquyen;
+            }
+      
         }
-
         public void initView()
         {
             ten.ReadOnly = true;
@@ -209,11 +219,12 @@ namespace ManagementPhoneStore
             nhomquyen.Enabled = false;
 
         }
-        public TaiKhoanDialog(TaiKhoanForm tkform, TaiKhoan TK, string title, string type)
+        public TaiKhoanDialog(TaiKhoanForm tkform,int id_nv, string title, string type,TaiKhoan tk)
         {
             this.tkForm = tkform;
-            this.tk = tk;
+            this.id_nv = id_nv;
             this.title = title;
+            this.tk = tk;
             this.type = type;
             InitializeComponent();
             load_Combobox();
@@ -234,11 +245,10 @@ namespace ManagementPhoneStore
                 case "update":
 
                     this.Controls.Add(update);
-                    initInfo();
+                  
                     break;
 
                 case "view":
-
                     initInfo();
                     initView();
                     break;
@@ -280,31 +290,79 @@ namespace ManagementPhoneStore
         }
         private void add_Click(object sender, EventArgs e)
         {
-            if (Validate())
+            if (ValidateInput())
             {
-                TaiKhoan temp = new TaiKhoan();
-                temp.Tendangnhap = ten.Text;
-                temp.Matkhau = matkhau.Text;
-                temp.Trangthai = trangthai.SelectedIndex ;
-                temp.Manhomquyen =tkForm.nqService.GetByIndex(nhomquyen.SelectedIndex).Manhomquyen ;
-                tkForm.tkService.AddAcc(temp);
-                tkForm.LoadDataToListView(tkForm.tkService.GetTaiKhoanAll());
-                Dispose();
+                string tendangnhap = ten.Text; // Lấy tên đăng nhập từ TextBox
+                int check = 0;
+
+                // Kiểm tra xem tên đăng nhập đã tồn tại trong danh sách tài khoản hay chưa
+                foreach (var i in ltk)
+                {
+                    if (i.Tendangnhap.Equals(ten.Text))
+                    {
+                        check++;
+                        break;
+                    }
+                }
+                
+                // Nếu tên đăng nhập chưa tồn tại
+                if (check == 0)
+                {
+                    string pass =MyBcrypt.HashPassword(matkhau.Text);
+                    int manhom = (int)lnq[nhomquyen.SelectedIndex].Manhomquyen; // Lấy mã nhóm quyền từ danh sách
+                    int tt = trangthai.SelectedIndex; // Lấy trạng thái đã chọn
+
+                    // Tạo đối tượng TaiKhoanDTO mới
+                    TaiKhoan tk = new TaiKhoan(id_nv,pass, manhom, tendangnhap,tt, "123");
+
+                    // Chèn tài khoản vào cơ sở dữ liệu
+                   TaiKhoanService.Instance.AddAcc(tk);
+
+                    // Thêm tài khoản vào bus
+             
+
+                    // Cập nhật bảng hiển thị
+                    tkForm.LoadDataToListView(TaiKhoanService.Instance.GetTaiKhoanAll());
+
+                    // Đóng form hiện tại
+                    this.Dispose();
+                }
+                else
+                {
+                    // Hiển thị thông báo nếu tên tài khoản đã tồn tại
+                    MessageBox.Show("Tên tài khoản đã tồn tại. Vui lòng đổi tên khác!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ten.Focus(); // Đặt tiêu điểm trở lại TextBox username
+                }
             }
         }
         private void update_Click(object sender, EventArgs e)
         {
-            if (Validate())
+            if (!string.IsNullOrEmpty(ten.Text)) // Kiểm tra xem tên đăng nhập có rỗng không
             {
+                string tendangnhap = ten.Text; // Lấy tên đăng nhập từ TextBox
+                string pass =MyBcrypt.HashPassword(matkhau.Text); // Mã hóa mật khẩu
+                int manhom = (int)lnq[nhomquyen.SelectedIndex].Manhomquyen; // Lấy mã nhóm quyền từ danh sách
+                int tt = trangthai.SelectedIndex; // Lấy trạng thái đã chọn
 
-                TaiKhoan temp = new TaiKhoan();
-                temp.Tendangnhap = ten.Text;
-                temp.Matkhau = matkhau.Text;
-                temp.Trangthai = trangthai.SelectedIndex;
-                temp.Manhomquyen = tkForm.nqService.GetByIndex(nhomquyen.SelectedIndex).Manhomquyen;
-                tkForm.tkService.UpdateAcc(nhomquyen.SelectedIndex,temp);
-                tkForm.LoadDataToListView(tkForm.tkService.GetTaiKhoanAll());
-                Dispose();
+                // Tạo đối tượng TaiKhoanDTO mới
+                TaiKhoan tk = new TaiKhoan(id_nv, pass, manhom, tendangnhap, tt, "123");
+
+                // Cập nhật tài khoản trong cơ sở dữ liệu
+                TaiKhoanService.Instance.UpdateAcc(tkForm.GetSelectedIndex(),tk);
+
+                // Cập nhật tài khoản trong bus
+               
+
+                // Cập nhật bảng hiển thị
+                tkForm.LoadDataToListView(TaiKhoanService.Instance.GetTaiKhoanAll());
+
+                // Đóng form hiện tại
+                this.Dispose();
+            }
+            else
+            {
+                // Hiển thị thông báo nếu tên đăng nhập trống
+                MessageBox.Show("Vui lòng không để trống tên", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void cancel_Click(object sender, EventArgs e)
@@ -315,10 +373,37 @@ namespace ManagementPhoneStore
         {
 
         }
-       
+        public bool ValidateInput()
+        {
+            if (string.IsNullOrEmpty(ten.Text))
+            {
+                MessageBox.Show("Vui lòng không để trống tên đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (ten.Text.Length < 6)
+            {
+                MessageBox.Show("Tên đăng nhập ít nhất 6 kí tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (string.IsNullOrEmpty(matkhau.Text))
+            {
+                MessageBox.Show("Vui lòng không để trống mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (matkhau.Text.Length < 6)
+            {
+                MessageBox.Show("Mật khẩu ít nhất 6 ký tự", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private List<NhomQuyen> lnq = new NhomQuyenService().GetAll();
+        List<TaiKhoan>ltk=TaiKhoanService.Instance.GetTaiKhoanAll();
+        private TaiKhoan tk;
         private string title;
         private string type;
-        private TaiKhoan tk;
+        private int id_nv;
         private TaiKhoanForm tkForm;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

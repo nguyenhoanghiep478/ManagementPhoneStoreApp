@@ -154,6 +154,7 @@ namespace ManagementPhoneStore
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(678, 569);
             this.Controls.Add(this.cancel);
+      
             this.Controls.Add(this.diachi);
             this.Controls.Add(this.sodienthoai);
             this.Controls.Add(this.ten);
@@ -277,7 +278,7 @@ namespace ManagementPhoneStore
                 temp.TrangThai = 1;
                 temp.MakH = kh.MakH;
                 temp.NgayThamGia = DateTime.Now;
-                //khForm.khService.update(temp);
+                khForm.khService.update(temp);
                 khForm.LoadDataToListView(khForm.khService.getAll());
                 Dispose();
             }

@@ -249,6 +249,7 @@ namespace ManagementPhoneStore
         }
         public void ImportExcel()
         {
+
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 Title = "Open file",
@@ -261,6 +262,13 @@ namespace ManagementPhoneStore
             {
                 try
                 {
+                    // Kiểm tra xem tệp có tồn tại hay không
+                    if (!File.Exists(openFileDialog.FileName))
+                    {
+                        MessageBox.Show("Tệp không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     using (FileStream fileStream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
                     {
                         IWorkbook workbook = new XSSFWorkbook(fileStream);
@@ -271,9 +279,8 @@ namespace ManagementPhoneStore
                             IRow excelRow = excelSheet.GetRow(row);
                             if (excelRow == null) continue;
 
-                           
                             string tenkh = excelRow.GetCell(0)?.StringCellValue;
-                            string sdt = excelRow.GetCell(1)?.StringCellValue;
+                            string sdt = excelRow.GetCell(1)?.NumericCellValue.ToString();
                             string diachi = excelRow.GetCell(2)?.StringCellValue;
 
                             if (string.IsNullOrWhiteSpace(tenkh) || string.IsNullOrWhiteSpace(sdt) ||
@@ -283,8 +290,8 @@ namespace ManagementPhoneStore
                             }
                             else
                             {
-                                
-                                khService.add(new KhachHang(null,tenkh,diachi,sdt,null,DateTime.Now));
+                                // Giả định khService là một dịch vụ để thêm khách hàng
+                                khService.add(new KhachHang(null, tenkh, diachi, sdt, 1, DateTime.Now));
                             }
                         }
                     }
@@ -293,11 +300,15 @@ namespace ManagementPhoneStore
                 }
                 catch (FileNotFoundException)
                 {
-                    MessageBox.Show("Lỗi đọc file", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi đọc file: Tệp không được tìm thấy", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (IOException)
+                catch (IOException ex)
                 {
-                    MessageBox.Show("Lỗi đọc file", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi đọc file: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -306,7 +317,6 @@ namespace ManagementPhoneStore
                 MessageBox.Show($"Có {invalidCount} dữ liệu không hợp lệ không được thêm vào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-          
             LoadDataToListView(khService.getAll());
         }
         public static bool IsPhoneNumber(string str)

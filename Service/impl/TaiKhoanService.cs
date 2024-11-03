@@ -47,6 +47,17 @@ namespace Service.impl
                 throw new IndexOutOfRangeException("Error");
             }
         }
+        public TaiKhoan getByIndex(int index)
+        {
+            if (index >= 0 && index <_taikhoans.Count)
+            {
+                return _taikhoans[index];
+            }
+            else
+            {
+                throw new IndexOutOfRangeException("Error");
+            }
+        }
 
         public NhomQuyen GetNhomQuyen(int manhom)
         {
@@ -81,6 +92,7 @@ namespace Service.impl
         {
             if (index >= 0 &&  index < _taikhoans.Count)
             {
+                _taiKhoanDAO.update(tk);
                 _taikhoans[index] = tk;
             }
             else
@@ -94,6 +106,7 @@ namespace Service.impl
             var taikhoan = _taikhoans.FirstOrDefault(tk => tk.Manv == manv);
             if (taikhoan != null)
             {
+                _taiKhoanDAO.delete(manv);
                 _taikhoans.Remove(taikhoan);
             }
             else
