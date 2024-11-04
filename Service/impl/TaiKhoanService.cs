@@ -18,6 +18,11 @@ namespace Service.impl
         public static Lazy<TaiKhoanService> instance = new Lazy<TaiKhoanService>();
 
         public static TaiKhoanService Instance { get { return instance.Value; } }
+
+        public TaiKhoanService() 
+        {
+            this._taikhoans = _taiKhoanDAO.GetAll();
+        }
         public List<TaiKhoan> GetTaiKhoanAll()
         {
             return _taikhoans;
