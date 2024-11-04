@@ -6,6 +6,7 @@ using Service.impl;
 using System.Linq;
 using System.Collections.Generic;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Service;
 
 namespace ManagementPhoneStore
 {
@@ -43,6 +44,8 @@ namespace ManagementPhoneStore
             this.ten = new System.Windows.Forms.TextBox();
             this.matkhau = new System.Windows.Forms.TextBox();
             this.add = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+
             this.cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -108,6 +111,17 @@ namespace ManagementPhoneStore
             this.add.TabIndex = 9;
             this.add.Text = "THÊM ĐƠN VỊ";
             this.add.UseVisualStyleBackColor = false;
+            //update 
+            this.update.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update.ForeColor = System.Drawing.SystemColors.Window;
+            this.update.Location = new System.Drawing.Point(120, 537);
+            this.update.Margin = new System.Windows.Forms.Padding(0);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(157, 50);
+            this.update.TabIndex = 9;
+            this.update.Text = "SỬA ĐƠN VỊ";
+            this.update.UseVisualStyleBackColor = false;
             // 
             // cancel
             // 
@@ -148,12 +162,9 @@ namespace ManagementPhoneStore
             // 
             this.nhomquyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nhomquyen.FormattingEnabled = true;
-            this.nhomquyen.Items.AddRange(new object[] {
-            "Admin",
-            "Nhân viên nhập hàng",
-            "Nhân viên xuất hàng"});
+          
             this.nhomquyen.Location = new System.Drawing.Point(12, 347);
-            nhomquyen.SelectedIndex = 0;
+           
             this.nhomquyen.Name = "nhomquyen";
             this.nhomquyen.Size = new System.Drawing.Size(580, 28);
             this.nhomquyen.TabIndex = 12;
@@ -186,6 +197,7 @@ namespace ManagementPhoneStore
             this.Controls.Add(this.ten);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
+         
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TaiKhoanDialog";
@@ -202,6 +214,13 @@ namespace ManagementPhoneStore
         {
             if (tk != null)
             {
+                this.Controls.Remove(label3);
+                this.Controls.Remove(matkhau);
+                this.label4.Location = label5.Location;
+                this.label5.Location = label3.Location;
+                trangthai.Location = nhomquyen.Location;
+                nhomquyen.Location = matkhau.Location;
+
                 ten.Text = tk.Tendangnhap;
                 trangthai.SelectedIndex = (int)tk.Trangthai;
                 nhomquyen.SelectedItem = tkForm.nqService
@@ -213,8 +232,8 @@ namespace ManagementPhoneStore
         }
         public void initView()
         {
-            ten.ReadOnly = true;
-            matkhau.ReadOnly = true;
+            ten.ReadOnly = true;  
+         
             trangthai.Enabled = false;
             nhomquyen.Enabled = false;
 
@@ -245,7 +264,7 @@ namespace ManagementPhoneStore
                 case "update":
 
                     this.Controls.Add(update);
-                  
+                     initInfo();
                     break;
 
                 case "view":
@@ -259,8 +278,9 @@ namespace ManagementPhoneStore
         }
         public void add_Event()
         {
-            update.Click += update_Click;
+          
             add.Click += add_Click;
+            update.Click += update_Click;
             cancel.Click += cancel_Click;
         }
 
@@ -397,7 +417,6 @@ namespace ManagementPhoneStore
             }
             return true;
         }
-
         private List<NhomQuyen> lnq = new NhomQuyenService().GetAll();
         List<TaiKhoan>ltk=TaiKhoanService.Instance.GetTaiKhoanAll();
         private TaiKhoan tk;

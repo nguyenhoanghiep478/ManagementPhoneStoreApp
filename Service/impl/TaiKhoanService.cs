@@ -15,9 +15,16 @@ namespace Service.impl
         private List<TaiKhoan> _taikhoans = new List<TaiKhoan>();
         private List<NhomQuyen> _nhomquyen = new List<NhomQuyen>();
         private ITaiKhoanDao _taiKhoanDAO = new TaiKhoanDAO();
+        private INhomQuyenDAO _nhomQuyenDAO = new NhomQuyenDAO();
         public static Lazy<TaiKhoanService> instance = new Lazy<TaiKhoanService>();
 
         public static TaiKhoanService Instance { get { return instance.Value; } }
+
+        public TaiKhoanService()
+        {
+            this._taikhoans = _taiKhoanDAO.GetAll();
+            _nhomquyen=_nhomQuyenDAO.GetAll();
+        }
         public List<TaiKhoan> GetTaiKhoanAll()
         {
             return _taikhoans;
@@ -25,7 +32,7 @@ namespace Service.impl
 
         public TaiKhoan GetTaiKhoan(int index)
         {
-            if (index >= 0 &&  index < _taikhoans.Count)
+            if (index >= 0 && index < _taikhoans.Count)
             {
                 return _taikhoans[index];
             }
@@ -37,21 +44,10 @@ namespace Service.impl
 
         public int GetTaiKhoanByMaNV(int manv)
         {
-            var taikhoan = _taikhoans.FirstOrDefault(tk  => tk.Manv == manv);
+            var taikhoan = _taikhoans.FirstOrDefault(tk => tk.Manv == manv);
             if (taikhoan != null)
             {
                 return taikhoan.Manv;
-            }
-            else
-            {
-                throw new IndexOutOfRangeException("Error");
-            }
-        }
-        public TaiKhoan getByIndex(int index)
-        {
-            if (index >= 0 && index <_taikhoans.Count)
-            {
-                return _taikhoans[index];
             }
             else
             {
@@ -75,7 +71,7 @@ namespace Service.impl
         public void AddAcc(TaiKhoan tk)
         {
             if (tk != null && !_taikhoans.Any(x => x.Manv == tk.Manv))
-            {   
+            {
 
 
 
@@ -90,9 +86,9 @@ namespace Service.impl
 
         public void UpdateAcc(int index, TaiKhoan tk)
         {
-            if (index >= 0 &&  index < _taikhoans.Count)
+            if (index >= 0 && index < _taikhoans.Count)
             {
-                _taiKhoanDAO.update(tk);
+                _taiKhoanDAO.insert(tk);
                 _taikhoans[index] = tk;
             }
             else
@@ -114,14 +110,14 @@ namespace Service.impl
                 throw new Exception("Error");
             }
         }
-        
+
         public List<TaiKhoan> Search(string txt, string type)
         {
-            if(type == "Tendangnhap")
+            if (type == "Tendangnhap")
             {
                 return _taikhoans.Where(tk => tk.Tendangnhap.Contains(txt)).ToList();
             }
-            else if(type == "Manv")
+            else if (type == "Manv")
             {
                 if (int.TryParse(txt, out int maNV))
                 {
@@ -135,6 +131,17 @@ namespace Service.impl
             else
             {
                 throw new Exception("Error");
+            }
+        }
+        public TaiKhoan getByIndex(int index)
+        {
+            if (index >= 0 && index < _taikhoans.Count)
+            {
+                return _taikhoans[index];
+            }
+            else
+            {
+                throw new IndexOutOfRangeException("Error");
             }
         }
     }

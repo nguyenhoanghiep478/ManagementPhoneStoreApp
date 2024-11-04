@@ -150,6 +150,10 @@ namespace ManagementPhoneStore
             this.PerformLayout();
 
         }
+        public int getId()
+        {
+            return Convert.ToInt16(listView1.SelectedItems[0].SubItems[0].Text);
+        }
         public int GetSelectedIndex()
         {
             int index = listView1.SelectedIndices.Count > 0 ? listView1.SelectedIndices[0] : -1;
@@ -187,7 +191,7 @@ namespace ManagementPhoneStore
             {
                 this.Close();
 
-                var tkd = new TaiKhoanDialog(new TaiKhoanForm(),nvService.GetByIndex(GetSelectedIndex()).Manv, "Thêm tài khoản", "create",null);
+                var tkd = new TaiKhoanDialog(new TaiKhoanForm(), getId(), "Thêm tài khoản", "create", null);
                 tkd.ShowDialog();
             }
         }

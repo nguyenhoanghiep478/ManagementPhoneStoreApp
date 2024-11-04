@@ -1,4 +1,5 @@
-﻿using Entity;
+﻿using DAO.DAO.impl;
+using Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,10 @@ namespace Service.impl
         {
             return _nhomquyen;
         }
+        public NhomQuyenService()
+        {
+            _nhomquyen = new NhomQuyenDAO().GetAll();
+        }
 
         public NhomQuyen GetByIndex(int index)
         {
@@ -28,7 +33,10 @@ namespace Service.impl
                 throw new IndexOutOfRangeException("error");
             }
         }
-
+        public String getNameByMA(int id)
+        {
+          return   _nhomquyen.Where(nq => nq.Manhomquyen.Equals(id)).First().Tennhomquyen;
+        }
         public bool Add(string tennhomquyen, List<ChiTietQuyen> ctquyen)
         {
             if (!string.IsNullOrEmpty(tennhomquyen) && ctquyen != null)

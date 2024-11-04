@@ -1,4 +1,5 @@
-﻿using Entity;
+﻿using DAO.DAO.impl;
+using Entity;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,7 +11,7 @@ namespace Service.impl
 {
     public class NhanVienService : INhanVienService
     {
-        private List<NhanVien> _nhanVien = new List<NhanVien>();
+        private List<NhanVien> _nhanVien = new NhanVienDAO().GetAll();
 
         public List<NhanVien> GetAll()
         {

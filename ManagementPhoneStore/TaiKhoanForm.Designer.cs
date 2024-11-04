@@ -4,6 +4,10 @@ using System.Windows.Forms;
 using System;
 using Service.impl;
 using ManagementPhoneStore.util;
+using DAO.DAO.impl;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+using System.IO;
 
 namespace ManagementPhoneStore
 {
@@ -174,7 +178,7 @@ namespace ManagementPhoneStore
         public TaiKhoanForm()
         {
             InitializeComponent();
-            LoadDataToListView(tkService.GetTaiKhoanAll());
+            LoadDataToListView(tkService.GetTaiKhoanAll() );
             add_Event();
         }
 
@@ -189,19 +193,144 @@ namespace ManagementPhoneStore
 
 
         }
-       
+      
         private void detail_Click(object sender, EventArgs e)
         {
             if (GetSelectedIndex() != -1)
             {
-                TaiKhoanDialog taiKhoanDialog = new TaiKhoanDialog(this, tkService.getByIndex(GetSelectedIndex()).Manv, "SỬA TÀI KHOẢN",
+                TaiKhoanDialog taiKhoanDialog = new TaiKhoanDialog(this, tkService.getByIndex(GetSelectedIndex()).Manv, "TÀI KHOẢN",
                   "view", tkService.getByIndex(GetSelectedIndex()));
+                taiKhoanDialog.ShowDialog();
             }
         }
         private void import_Click(object sender, EventArgs e)
         {
-            //ImportExcel();
+            ImportExcel();
         }
+
+        private void ImportExcel()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Open file",
+                Filter = "Excel Files|*.xlsx;*.xls"
+            };
+
+            int invalidCount = 0;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    using (FileStream fileStream = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        IWorkbook workbook = new XSSFWorkbook(fileStream);
+                        ISheet excelSheet = workbook.GetSheetAt(0);
+
+                        for (int row = 1; row <= excelSheet.LastRowNum; row++) // Bắt đầu từ dòng 2
+                        {
+                            IRow excelRow = excelSheet.GetRow(row);
+                            if (excelRow == null) continue;
+
+                            int manv = (int)excelRow.GetCell(0)?.NumericCellValue;
+                            string tendangnhap = excelRow.GetCell(1)?.StringCellValue;
+                            string matkhau = excelRow.GetCell(2)?.StringCellValue;
+                            string nhomquyen = excelRow.GetCell(3)?.StringCellValue;
+
+                            int check1 = 0, check2 = 0, check3 = 0, check4 = 0;
+
+                            // Kiểm tra các giá trị rỗng
+                            if (string.IsNullOrWhiteSpace(manv.ToString()) || string.IsNullOrWhiteSpace(tendangnhap) ||
+                                string.IsNullOrWhiteSpace(matkhau) || string.IsNullOrWhiteSpace(nhomquyen))
+                            {
+                                check1 = 1;
+                            }
+
+                            int manhomquyen = 0;
+                            var nvbus = new NhanVienService();
+                            var nvlist = nvbus.GetAll();
+
+                            foreach (var nv in nvlist)
+                            {
+                                if (nv.Manv == manv)
+                                {
+                                    check2 = 0;
+                                    break;
+                                }
+                                else
+                                {
+                                    check2 = 1;
+                                }
+                            }
+
+                            var curlist =tkService.GetTaiKhoanAll();
+                            foreach (var tk in curlist)
+                            {
+                                if (tk.Tendangnhap.Equals(tendangnhap))
+                                {
+                                    check3 = 1;
+                                    break;
+                                }
+                                else
+                                {
+                                    check3 = 0;
+                                }
+                            }
+
+                            var nhomquyenbus = new NhomQuyenService();
+                            var quyenlist = nhomquyenbus.GetAll();
+                            foreach (var quyen in quyenlist)
+                            {
+                                if (quyen.Tennhomquyen.Trim().Equals(nhomquyen.Trim()))
+                                {
+                                    check4 = 0;
+                                    manhomquyen = (int)quyen.Manhomquyen;
+                                    break;
+                                }
+                                else
+                                {
+                                    check4 = 1;
+                                }
+                            }
+
+                            if (check1 != 0 || check2 != 0 || check3 != 0 || check4 != 0)
+                            {
+                                invalidCount++;
+                            }
+                            else
+                            {
+                                string hashedPassword = MyBcrypt.HashPassword(matkhau);
+                                var newAccount = new TaiKhoan(manv,  hashedPassword ,manhomquyen,tendangnhap, 1,"123");
+                                tkService.AddAcc(newAccount);
+                              
+                            }
+                        }
+                    }
+
+                    MessageBox.Show("Nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (FileNotFoundException)
+                {
+                    MessageBox.Show("Lỗi đọc file: Tệp không được tìm thấy", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show("Lỗi đọc file: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            if (invalidCount > 0)
+            {
+                MessageBox.Show($"Có {invalidCount} dữ liệu không hợp lệ không được thêm vào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            LoadDataToListView(tkService.GetTaiKhoanAll());
+        }
+
         public void export_Click(object sender, EventArgs e)
         {
             try
@@ -224,6 +353,7 @@ namespace ManagementPhoneStore
             {
                 TaiKhoanDialog taiKhoanDialog=new TaiKhoanDialog(this,tkService.getByIndex(GetSelectedIndex()).Manv,"SỬA TÀI KHOẢN",
                     "update",tkService.getByIndex(GetSelectedIndex()));
+                taiKhoanDialog.ShowDialog();
             }
         }
         private void delete_Click(object sender, EventArgs e)
@@ -251,7 +381,7 @@ namespace ManagementPhoneStore
             {
                 ListViewItem listViewItem = new ListViewItem(item.Manv.ToString()); // Tên nhà cung cấp
                 listViewItem.SubItems.Add(item.Tendangnhap); // Địa chỉ
-                listViewItem.SubItems.Add(item.Manhomquyen.ToString()); // Địa chỉ
+                listViewItem.SubItems.Add(nqService.getNameByMA((int)item.Manhomquyen)); // Địa chỉ
                 listViewItem.SubItems.Add(item.Trangthai==1?"Hoạt  động":"Ngưng hoạt đông"); // Địa chỉ
 
                 // Thêm mục vào ListView
