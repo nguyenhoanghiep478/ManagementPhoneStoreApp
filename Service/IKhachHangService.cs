@@ -14,6 +14,7 @@ namespace Service
         int getIndexByMaDV(int maKhachHang); // get index by ma khach hang
 
         Boolean add (KhachHang khachhang);
+        Boolean update(KhachHang khachhang);
         Boolean remove (KhachHang khachhang); //soft delete
         List<KhachHang> searchBy(String filter, String field); // search by field with value filter (vd Mã Khách Hàng , Tên Khách Hàng,Địa chỉ , Số điện thoại, )
         String getTenKhachHang(int maKhachHang);

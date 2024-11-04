@@ -23,7 +23,9 @@ namespace ManagementPhoneStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginGUI());
+      
+            Application.Run(new KhachHangForm());
+
             //IChiTietSanPhamService chiTietSanPham = new ChiTietSanPhamService();
             ITaiKhoanService sevice = TaiKhoanService.Instance;
             //foreach(TaiKhoan tai in sevice.GetTaiKhoanAll())

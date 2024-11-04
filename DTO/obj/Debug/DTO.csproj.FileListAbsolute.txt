@@ -5,3 +5,10 @@ D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\bin\Debug\DTO
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.pdb
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.exe
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.pdb
+D:\nam2\c#\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.exe.config
+D:\nam2\c#\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.exe
+D:\nam2\c#\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.pdb
+D:\nam2\c#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\nam2\c#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\nam2\c#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.exe
+D:\nam2\c#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.pdb

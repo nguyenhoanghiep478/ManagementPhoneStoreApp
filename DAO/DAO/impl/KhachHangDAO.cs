@@ -15,7 +15,7 @@ namespace DAO.DAO
         private readonly KhachHangRowMapper _rowMapper = new KhachHangRowMapper();
         public void delete(long id)
         {
-            String query = "update from khachhang set trangthai=0 where makh=@param0";
+            String query = "update khachhang set trangthai=0 where makh=@param0";
             Update(query,id);
         }
 
@@ -40,7 +40,7 @@ namespace DAO.DAO
         public long insert(KhachHang khachhang)
         {
             string query = @"
-                INSERT INTO nhanvien
+                INSERT INTO khachhang
                 (
                   makh,tenkhachhang,diachi,sdt,trangthai,ngaythamgia
                 ) 
@@ -62,7 +62,7 @@ namespace DAO.DAO
         public void update(KhachHang khachhang)
         {
             string query = @"
-            UPDATE nhanvien 
+            UPDATE khachhang
             SET 
               tenkhachhang=@param1,
               diachi=@param2,

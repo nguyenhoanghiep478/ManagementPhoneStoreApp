@@ -17,7 +17,7 @@ namespace DAO.Mapper.impl
             return new NhomQuyen
             {
                 Manhomquyen = reader.GetInt32(reader.GetOrdinal("manhomquyen")),
-                Tennhomquyen = reader.IsDBNull(reader.GetOrdinal("tennhomquyen")) ? null : reader.GetString(reader.GetOrdinal("tenhedieuhanh")),
+                Tennhomquyen = reader.IsDBNull(reader.GetOrdinal("tennhomquyen")) ? null : reader.GetString(reader.GetOrdinal("tennhomquyen")),
                 Trangthai = reader.GetInt32(reader.GetOrdinal("trangthai"))
             };
         }
