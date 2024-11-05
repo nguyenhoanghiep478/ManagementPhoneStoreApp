@@ -45,7 +45,6 @@ namespace ManagementPhoneStore
             this.matkhau = new System.Windows.Forms.TextBox();
             this.add = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
-
             this.cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,6 +82,7 @@ namespace ManagementPhoneStore
             // 
             // ten
             // 
+            this.ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ten.Location = new System.Drawing.Point(12, 83);
             this.ten.Multiline = true;
             this.ten.Name = "ten";
@@ -92,6 +92,7 @@ namespace ManagementPhoneStore
             // 
             // matkhau
             // 
+            this.matkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.matkhau.Location = new System.Drawing.Point(12, 216);
             this.matkhau.Multiline = true;
             this.matkhau.Name = "matkhau";
@@ -111,7 +112,9 @@ namespace ManagementPhoneStore
             this.add.TabIndex = 9;
             this.add.Text = "THÊM ĐƠN VỊ";
             this.add.UseVisualStyleBackColor = false;
-            //update 
+            // 
+            // update
+            // 
             this.update.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.update.ForeColor = System.Drawing.SystemColors.Window;
@@ -162,9 +165,7 @@ namespace ManagementPhoneStore
             // 
             this.nhomquyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nhomquyen.FormattingEnabled = true;
-          
             this.nhomquyen.Location = new System.Drawing.Point(12, 347);
-           
             this.nhomquyen.Name = "nhomquyen";
             this.nhomquyen.Size = new System.Drawing.Size(580, 28);
             this.nhomquyen.TabIndex = 12;
@@ -177,7 +178,6 @@ namespace ManagementPhoneStore
             this.trangthai.Items.AddRange(new object[] {
             "Ngưng Hoạt động",
             "Hoạt động"});
-            trangthai.SelectedIndex = 1;
             this.trangthai.Location = new System.Drawing.Point(12, 457);
             this.trangthai.Name = "trangthai";
             this.trangthai.Size = new System.Drawing.Size(580, 28);
@@ -193,11 +193,12 @@ namespace ManagementPhoneStore
             this.Controls.Add(this.nhomquyen);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cancel);
+            this.Controls.Add(add);
+            this.Controls.Add(update);
             this.Controls.Add(this.matkhau);
             this.Controls.Add(this.ten);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-         
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TaiKhoanDialog";
@@ -257,19 +258,22 @@ namespace ManagementPhoneStore
             switch (type)
             {
                 case "create":
-                    this.Controls.Add(add);
+                    this.Controls.Remove(update);
 
                     break;
 
                 case "update":
 
-                    this.Controls.Add(update);
+                    this.Controls.Remove(add);
                      initInfo();
                     break;
 
                 case "view":
                     initInfo();
                     initView();
+                    this.Controls.Remove(cancel);
+                    this.Controls.Remove(update);
+                    this.Controls.Remove(add);
                     break;
 
                 default:
@@ -307,6 +311,7 @@ namespace ManagementPhoneStore
                 nhomquyen.Items.Add(nq.Tennhomquyen);
             }
             nhomquyen.SelectedIndex = 0;
+            trangthai.SelectedIndex = 1;
         }
         private void add_Click(object sender, EventArgs e)
         {

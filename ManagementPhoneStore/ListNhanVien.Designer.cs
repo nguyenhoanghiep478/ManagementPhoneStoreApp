@@ -206,7 +206,7 @@ namespace ManagementPhoneStore
 
         private List<NhanVien>search_NV(string text)
         {
-            List<NhanVien> l = nvService.GetAll();
+            List<NhanVien> l = getNV();
             return l.Where(nv => nv.Hoten.Contains(text) || nv.Sdt.Contains(text) || nv.Email.Contains(text)).ToList();
             
         }

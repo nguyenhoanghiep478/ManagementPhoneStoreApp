@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System;
-using Service.impl;
 using ManagementPhoneStore.util;
-using DAO.DAO.impl;
+
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System.IO;
+using Service.impl;
 
 namespace ManagementPhoneStore
 {
@@ -50,6 +50,8 @@ namespace ManagementPhoneStore
             this.delete = new System.Windows.Forms.Button();
             this.import = new System.Windows.Forms.Button();
             this.export = new System.Windows.Forms.Button();
+            this.search_tk = new System.Windows.Forms.TextBox();
+            this.tk_prop = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -72,7 +74,7 @@ namespace ManagementPhoneStore
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-           
+            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã nhân viên";
@@ -147,11 +149,33 @@ namespace ManagementPhoneStore
             this.export.Text = "xuất";
             this.export.UseVisualStyleBackColor = true;
             // 
+            // search_tk
+            // 
+            this.search_tk.Location = new System.Drawing.Point(176, 75);
+            this.search_tk.Name = "search_tk";
+            this.search_tk.Size = new System.Drawing.Size(198, 22);
+            this.search_tk.TabIndex = 7;
+            // 
+            // tk_prop
+            // 
+            this.tk_prop.FormattingEnabled = true;
+            this.tk_prop.Items.AddRange(new object[] {
+            "Tất cả",
+            "Mã nhân viên",
+            "Tên đăng nhập"});
+            this.tk_prop.Location = new System.Drawing.Point(37, 73);
+            this.tk_prop.Name = "tk_prop";
+            this.tk_prop.Size = new System.Drawing.Size(121, 24);
+            this.tk_prop.TabIndex = 8;
+            tk_prop.SelectedIndex = 0;
+            // 
             // TaiKhoanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 553);
+            this.Controls.Add(this.tk_prop);
+            this.Controls.Add(this.search_tk);
             this.Controls.Add(this.export);
             this.Controls.Add(this.import);
             this.Controls.Add(this.delete);
@@ -162,6 +186,7 @@ namespace ManagementPhoneStore
             this.Name = "TaiKhoanForm";
             this.Text = "TaiKhoan";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         public int GetSelectedIndex()
@@ -181,7 +206,17 @@ namespace ManagementPhoneStore
             LoadDataToListView(tkService.GetTaiKhoanAll() );
             add_Event();
         }
-
+        private void search_tk_TextChanged(object sender, EventArgs e)
+        {
+            if (Validation.IsEmpty(search_tk.Text))
+            {
+                LoadDataToListView(tkService.GetTaiKhoanAll());
+            }
+            else
+            {
+                LoadDataToListView(tkService.Search(search_tk.Text, tk_prop.SelectedItem.ToString()));
+            }
+        }
         private void add_Event()
         {
             add.Click += add_Click;
@@ -190,7 +225,7 @@ namespace ManagementPhoneStore
             delete.Click += delete_Click;
             import.Click += import_Click;
             export.Click += export_Click;
-
+            search_tk.TextChanged += search_tk_TextChanged;
 
         }
       
@@ -234,7 +269,31 @@ namespace ManagementPhoneStore
 
                             int manv = (int)excelRow.GetCell(0)?.NumericCellValue;
                             string tendangnhap = excelRow.GetCell(1)?.StringCellValue;
-                            string matkhau = excelRow.GetCell(2)?.StringCellValue;
+                            var cell = excelRow.GetCell(2);
+
+                            // Kiểm tra nếu ô không phải là null
+                            string matkhau;
+                            if (cell != null)
+                            {
+                                // Kiểm tra kiểu dữ liệu của ô
+                                if (cell.CellType == NPOI.SS.UserModel.CellType.String)
+                                {
+                                    matkhau = cell.StringCellValue; // Nếu là chuỗi, lấy giá trị chuỗi
+                                }
+                                else if (cell.CellType == NPOI.SS.UserModel.CellType.Numeric)
+                                {
+                                    matkhau = cell.NumericCellValue.ToString(); // Nếu là số, chuyển sang chuỗi
+                                }
+                                else
+                                {
+                                    matkhau = string.Empty; // Trường hợp khác, gán chuỗi rỗng
+                                }
+                            }
+                            else
+                            {
+                                // Gán chuỗi rỗng nếu ô là null
+                                matkhau = string.Empty;
+                            }
                             string nhomquyen = excelRow.GetCell(3)?.StringCellValue;
 
                             int check1 = 0, check2 = 0, check3 = 0, check4 = 0;
@@ -403,5 +462,7 @@ namespace ManagementPhoneStore
         private Button delete;
         private Button import;
         private Button export;
+        private TextBox search_tk;
+        private ComboBox tk_prop;
     }
 }

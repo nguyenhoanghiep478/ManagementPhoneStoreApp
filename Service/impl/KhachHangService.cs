@@ -69,23 +69,30 @@ namespace Service.impl
 
         public List<KhachHang> searchBy(String filter, string field)
         {
-            switch (field.ToLower())
+           filter = filter.ToLower();
+            switch (field)
             {
-                case "MakH":
+                case "Tất cả":
+                   return _khachhangs.Where(kh=>kh.MakH.ToString().Equals(filter)
+                    ||kh.TenKhachHang.ToLower().Contains(filter)
+                    || kh.DiaChi.ToLower().Contains(filter)
+                    ||kh.Sdt.ToLower().Contains(filter)).ToList();
+                    break;
+                case "Mã khách hàng":
                     if (int.TryParse(filter, out int makhachhang))
                     {
                         return _khachhangs.Where(kh => kh.MakH == makhachhang).ToList();
                     }
                     break;
 
-                case "TenKhachHang":
-                    return _khachhangs.Where(kh => kh.TenKhachHang.Contains(filter)).ToList();
+                case "Tên khách hàng":
+                    return _khachhangs.Where(kh => kh.TenKhachHang.ToLower().Contains(filter)).ToList();
 
-                case "DiaChi":
-                    return _khachhangs.Where(kh => kh.DiaChi.Contains(filter)).ToList();
+                case "Địa chỉ":
+                    return _khachhangs.Where(kh => kh.DiaChi.ToLower().Contains(filter)).ToList();
 
-                case "Sdt":
-                    return _khachhangs.Where(kh => kh.Sdt.Contains(filter)).ToList();
+                case "Số điện thoại":
+                    return _khachhangs.Where(kh => kh.Sdt.ToLower().Contains(filter)).ToList();
 
                 default:
                     throw new Exception("Error");

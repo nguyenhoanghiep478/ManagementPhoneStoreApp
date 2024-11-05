@@ -88,7 +88,7 @@ namespace Service.impl
         {
             if (index >= 0 && index < _taikhoans.Count)
             {
-                _taiKhoanDAO.insert(tk);
+                _taiKhoanDAO.update(tk);
                 _taikhoans[index] = tk;
             }
             else
@@ -113,11 +113,17 @@ namespace Service.impl
 
         public List<TaiKhoan> Search(string txt, string type)
         {
-            if (type == "Tendangnhap")
+            txt=txt.ToLower();
+            if(type=="Tất cả")
             {
-                return _taikhoans.Where(tk => tk.Tendangnhap.Contains(txt)).ToList();
+                return _taikhoans.Where(tk=>tk.Manv.ToString().Equals(txt)
+                ||tk.Tendangnhap.ToLower().Contains(txt)).ToList();
             }
-            else if (type == "Manv")
+            else if (type == "Tên đăng nhập")
+            {
+                return _taikhoans.Where(tk => tk.Tendangnhap.ToLower().Contains(txt)).ToList();
+            }
+            else if (type == "Mã nhân viên")
             {
                 if (int.TryParse(txt, out int maNV))
                 {
