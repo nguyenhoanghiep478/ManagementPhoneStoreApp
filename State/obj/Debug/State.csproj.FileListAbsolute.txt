@@ -16,3 +16,14 @@ D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.csproj.AssemblyReferenc
 D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.csproj.CoreCompileInputs.cache
 D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.dll
 D:\nam2\c#\ManagementPhoneStoreApp\State\obj\Debug\State.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\BCrypt.Net-Next.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\System.Buffers.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\System.Memory.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\System.Numerics.Vectors.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\BCrypt.Net-Next.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\System.Buffers.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\System.Memory.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\System.Numerics.Vectors.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\State\obj\Debug\State.csproj.Up2Date

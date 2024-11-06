@@ -77,6 +77,7 @@
     <Compile Include="DAO\impl\PhieuXuatDAO.cs" />
     <Compile Include="DAO\impl\SanPhamDAO.cs" />
     <Compile Include="DAO\impl\TaiKhoanDAO.cs" />
+    <Compile Include="DAO\impl\ThongKeDAO.cs" />
     <Compile Include="DAO\impl\ThuongHieuDAO.cs" />
     <Compile Include="DAO\impl\XuatXuDAO.cs" />
     <Compile Include="DAO\INhanVienDAO.cs" />
@@ -179,6 +180,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{445811bc-25e1-469c-a505-a0110887d0d7}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{f47c92e4-24f4-416a-b7d2-68a4de26e3b4}</Project>
       <Name>Entity</Name>

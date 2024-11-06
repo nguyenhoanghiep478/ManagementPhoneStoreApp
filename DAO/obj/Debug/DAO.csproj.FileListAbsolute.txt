@@ -170,3 +170,8 @@ D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.ca
 D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.Up2Date
 D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.dll
 D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DAO\bin\Debug\DTO.exe
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DAO\bin\Debug\BCrypt.Net-Next.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DAO\bin\Debug\DTO.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DAO\bin\Debug\DTO.exe.config
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DAO\bin\Debug\BCrypt.Net-Next.xml

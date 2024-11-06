@@ -25,29 +25,11 @@ namespace Service.impl
             this._taikhoans = _taiKhoanDAO.GetAll();
             _nhomquyen=_nhomQuyenDAO.GetAll();
         }
-        public List<TaiKhoan> GetTaiKhoanAll()
+        public TaiKhoan getByIndex(int index)
         {
-            return _taikhoans;
-        }
-
-        public TaiKhoan GetTaiKhoan(int index)
-        {
-            if (index >= 0 && index < _taikhoans.Count)
+            if (index >= 0 && index <_taikhoans.Count)
             {
                 return _taikhoans[index];
-            }
-            else
-            {
-                throw new IndexOutOfRangeException("Error");
-            }
-        }
-
-        public int GetTaiKhoanByMaNV(int manv)
-        {
-            var taikhoan = _taikhoans.FirstOrDefault(tk => tk.Manv == manv);
-            if (taikhoan != null)
-            {
-                return taikhoan.Manv;
             }
             else
             {
@@ -72,9 +54,7 @@ namespace Service.impl
         {
             if (tk != null && !_taikhoans.Any(x => x.Manv == tk.Manv))
             {
-
-
-
+                tk.Matkhau = PasswordHelper.HashPassword(tk.Matkhau);      
                 _taiKhoanDAO.insert(tk);
                 _taikhoans.Add(tk);
             }
@@ -86,7 +66,7 @@ namespace Service.impl
 
         public void UpdateAcc(int index, TaiKhoan tk)
         {
-            if (index >= 0 && index < _taikhoans.Count)
+            if (index >= 0 &&  index < _taikhoans.Count)
             {
                 _taiKhoanDAO.update(tk);
                 _taikhoans[index] = tk;
@@ -110,20 +90,14 @@ namespace Service.impl
                 throw new Exception("Error");
             }
         }
-
+        
         public List<TaiKhoan> Search(string txt, string type)
         {
-            txt=txt.ToLower();
-            if(type=="Tất cả")
+            if(type == "Tendangnhap")
             {
-                return _taikhoans.Where(tk=>tk.Manv.ToString().Equals(txt)
-                ||tk.Tendangnhap.ToLower().Contains(txt)).ToList();
+                return _taikhoans.Where(tk => tk.Tendangnhap.Contains(txt)).ToList();
             }
-            else if (type == "Tên đăng nhập")
-            {
-                return _taikhoans.Where(tk => tk.Tendangnhap.ToLower().Contains(txt)).ToList();
-            }
-            else if (type == "Mã nhân viên")
+            else if(type == "Manv")
             {
                 if (int.TryParse(txt, out int maNV))
                 {
@@ -137,17 +111,6 @@ namespace Service.impl
             else
             {
                 throw new Exception("Error");
-            }
-        }
-        public TaiKhoan getByIndex(int index)
-        {
-            if (index >= 0 && index < _taikhoans.Count)
-            {
-                return _taikhoans[index];
-            }
-            else
-            {
-                throw new IndexOutOfRangeException("Error");
             }
         }
     }
