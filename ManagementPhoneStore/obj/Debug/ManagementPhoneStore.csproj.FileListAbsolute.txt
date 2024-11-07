@@ -136,10 +136,8 @@ C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Deb
 C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
 C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Form1.resources
-D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.exe
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.pdb
-D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.exe.config
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.pdb
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe.config
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.dll
@@ -192,3 +190,6 @@ D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneSt
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangForm.resources
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapDialog.resources
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapForm.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginFormcs.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginGUI.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll

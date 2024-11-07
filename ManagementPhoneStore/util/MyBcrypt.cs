@@ -12,11 +12,10 @@ namespace ManagementPhoneStore.util
         public static string HashPassword(string password)
         {
             // Mã hóa mật khẩu với số lần băm là 12
-            return BCrypt.Net.BCrypt.HashPassword(password, 12);
+            return BCrypt.Net.BCrypt.HashPassword(password);
         }
         public static bool VerifyPassword(string enteredPassword, string hashedPassword)
         {
-            // Kiểm tra mật khẩu đã nhập với mật khẩu đã mã hóa
             return BCrypt.Net.BCrypt.Verify(enteredPassword, hashedPassword);
         }
     }

@@ -1,7 +1,5 @@
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\obj\Debug\Service.csproj.AssemblyReference.cache
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
-D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\Service.exe.config
-D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\Service.exe
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\Service.pdb
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\DAO.dll
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\DTO.exe
@@ -40,7 +38,9 @@ D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\K4os.Hash.xxHash.xml
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\System.Numerics.Vectors.xml
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\obj\Debug\Service.csproj.Up2Date
-D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\obj\Debug\Service.exe
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\obj\Debug\Service.pdb
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\BCrypt.Net-Next.dll
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\BCrypt.Net-Next.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\Service.dll.config
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\bin\Debug\Service.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\Service\obj\Debug\Service.dll

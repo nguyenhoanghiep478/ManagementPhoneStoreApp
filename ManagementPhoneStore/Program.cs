@@ -1,5 +1,6 @@
 ﻿
 using Entity;
+using ManagementPhoneStore.util;
 using Service;
 using Service.impl;
 using System;
@@ -24,15 +25,11 @@ namespace ManagementPhoneStore
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
       
-            Application.Run(new KhachHangForm());
+            Application.Run(new TaiKhoanForm());
 
             //IChiTietSanPhamService chiTietSanPham = new ChiTietSanPhamService();
-            ITaiKhoanService sevice = TaiKhoanService.Instance;
-            //foreach(TaiKhoan tai in sevice.GetTaiKhoanAll())
-            //{
-            //    Console.WriteLine(tai);
-            //}
-            Console.WriteLine(sevice.GetTaiKhoanAll());
+           
+
 
         }
     }

@@ -143,6 +143,17 @@
     <Compile Include="ListNhanVien.Designer.cs">
       <DependentUpon>ListNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFormcs.Designer.cs">
+      <DependentUpon>LoginFormcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoanDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListNhanVien.resx">
       <DependentUpon>ListNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFormcs.resx">
+      <DependentUpon>LoginFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginGUI.resx">
+      <DependentUpon>LoginGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoanDialog.resx">
       <DependentUpon>TaiKhoanDialog.cs</DependentUpon>
@@ -208,13 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -238,6 +251,12 @@
       <Project>{e4ac08f1-d21d-47b8-9c2b-43ce3b1eb0a5}</Project>
       <Name>Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
