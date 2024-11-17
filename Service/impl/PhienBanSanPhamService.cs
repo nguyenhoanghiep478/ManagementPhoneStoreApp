@@ -22,7 +22,11 @@ namespace Service.impl
         public bool Add(List<PhienBanSanPham> listch) 
         {
             bool check = false;
-            foreach(PhienBanSanPham phienbansp in listch){
+            if (listch == null || listch.Count == 0)
+            {
+                return false;
+            }
+            foreach (PhienBanSanPham phienbansp in listch){
                  check = cauhinhDAO.insert(phienbansp) != 0;
             }
            
@@ -63,6 +67,10 @@ namespace Service.impl
         public void GetStringListImei()
         {
             throw new NotImplementedException();
+        }
+        public bool delete(PhienBanSanPham phienBanSanPham)
+        {
+            cauhinhDAO.delete(phienBanSanPham.MaPhienBanSanPham); return true;
         }
     }
 }

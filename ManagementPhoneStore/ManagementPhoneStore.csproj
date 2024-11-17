@@ -42,8 +42,23 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="ClosedXML, Version=0.104.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.104.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.Parser.1.2.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="Enums.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
       <HintPath>..\packages\Enums.NET.4.0.1\lib\net45\Enums.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
     </Reference>
     <Reference Include="ExtendedNumerics.BigDecimal, Version=2025.1001.2.129, Culture=neutral, PublicKeyToken=65f1315a45ad8949, processorArchitecture=MSIL">
       <HintPath>..\packages\ExtendedNumerics.BigDecimal.2025.1001.2.129\lib\net472\ExtendedNumerics.BigDecimal.dll</HintPath>
@@ -53,6 +68,9 @@
     </Reference>
     <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL">
       <HintPath>..\packages\MathNet.Numerics.Signed.5.0.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
@@ -68,6 +86,9 @@
     </Reference>
     <Reference Include="NPOI.OpenXmlFormats, Version=2.7.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <HintPath>..\packages\NPOI.2.7.1\lib\net472\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RBush.4.0.0\lib\net47\RBush.dll</HintPath>
     </Reference>
     <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
       <HintPath>..\packages\SixLabors.Fonts.1.0.1\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
@@ -123,6 +144,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KhachHangDialog.cs">
@@ -149,10 +171,34 @@
     <Compile Include="LoginFormcs.Designer.cs">
       <DependentUpon>LoginFormcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Log_InGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log_InGUI.Designer.cs">
+      <DependentUpon>Log_InGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SanPhamDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SanPhamDialog.Designer.cs">
+      <DependentUpon>SanPhamDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SanPhamGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SanPhamGUI.Designer.cs">
+      <DependentUpon>SanPhamGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SanPhamXemDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SanPhamXemDS.Designer.cs">
+      <DependentUpon>SanPhamXemDS.cs</DependentUpon>
     </Compile>
     <Compile Include="TaiKhoanDialog.cs">
       <SubType>Form</SubType>
@@ -165,6 +211,18 @@
     </Compile>
     <Compile Include="TaiKhoanForm.Designer.cs">
       <DependentUpon>TaiKhoanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThuocTinhDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThuocTinhDialog.Designer.cs">
+      <DependentUpon>ThuocTinhDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThuocTinhGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThuocTinhGUI.Designer.cs">
+      <DependentUpon>ThuocTinhGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="util\MyBcrypt.cs" />
     <Compile Include="util\ListViewExport.cs" />
@@ -181,11 +239,29 @@
     <EmbeddedResource Include="LoginGUI.resx">
       <DependentUpon>LoginGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Log_InGUI.resx">
+      <DependentUpon>Log_InGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SanPhamDialog.resx">
+      <DependentUpon>SanPhamDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SanPhamGUI.resx">
+      <DependentUpon>SanPhamGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SanPhamXemDS.resx">
+      <DependentUpon>SanPhamXemDS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoanDialog.resx">
       <DependentUpon>TaiKhoanDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoanForm.resx">
       <DependentUpon>TaiKhoanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThuocTinhDialog.resx">
+      <DependentUpon>ThuocTinhDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThuocTinhGUI.resx">
+      <DependentUpon>ThuocTinhGUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Class1.cs" />
     <Compile Include="Form1.cs">

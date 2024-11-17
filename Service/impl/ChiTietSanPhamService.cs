@@ -14,11 +14,13 @@ namespace Service.impl
     {
         private readonly IChiTietSanPham chiTietSanPhamDao = new ChiTietSanPhamDAO();
         private readonly IPhienBanSanPhamService pbspService;
+        private static readonly Lazy<ChiTietSanPhamService> instance =
+    new Lazy<ChiTietSanPhamService>(() => new ChiTietSanPhamService(new PhienBanSanPhamService()));
 
-        private static readonly Lazy<ChiTietSanPhamService> instance = new Lazy<ChiTietSanPhamService>();
 
-        private ChiTietSanPhamService()
+        private ChiTietSanPhamService(IPhienBanSanPhamService pbspService)
         {
+            this.pbspService = pbspService;
             listpbsp = pbspService.GetAll(0);
             listctsp = new List<ChiTietSanPham>();
         }

@@ -9,6 +9,8 @@ using System.IO.Ports;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI;
+using Service.impl;
 
 namespace ManagementPhoneStore
 {
@@ -25,12 +27,19 @@ namespace ManagementPhoneStore
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
       
-            Application.Run(new TaiKhoanForm());
+            Application.Run(new SanPhamGUI());
 
             //IChiTietSanPhamService chiTietSanPham = new ChiTietSanPhamService();
            
 
 
+            //Application.Run(new Log_InGUI());
+            //IChiTietSanPhamService chiTietSanPham = new ChiTietSanPhamService();
+            List<long> imeis = new List<long>();
+            imeis.Add(107725056444798);
+            imeis.Add(107725056444797);
+            //chiTietSanPham.delete(107725056444797);
+            //Console.WriteLine(chiTietSanPham.checkImeiExists(imeis));        
         }
     }
 }

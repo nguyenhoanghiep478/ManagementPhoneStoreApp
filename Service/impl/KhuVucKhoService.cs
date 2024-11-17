@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Service.impl
 {
-    internal class KhuVucKhoService :IKhuVucKhoService
+    public class KhuVucKhoService :IKhuVucKhoService
     {
         private List<KhuVucKho> listKhuVucKho;
         private static KhuVucKhoService instance = null;

@@ -14,6 +14,12 @@ namespace Service
         private static HeDieuHanhService instance = null;
         private HeDieuHanhDAO heDieuHanhDao;
         private static readonly object lockObj = new object();
+
+        public HeDieuHanhService() 
+        {
+            heDieuHanhDao = new HeDieuHanhDAO();
+            heDieuHanhList= heDieuHanhDao.GetAll();
+        }
         public bool add(HeDieuHanh hdh)
         {
             
@@ -78,6 +84,20 @@ namespace Service
             heDieuHanhDao.delete((long)hdh.Mahedieuhanh);
             heDieuHanhList.RemoveAt(index);
             return true;
+        }
+        public HeDieuHanh selectById(int mahdh)
+        {
+            HeDieuHanh hdhnull = new HeDieuHanh();
+            heDieuHanhDao = new HeDieuHanhDAO();
+            heDieuHanhList = heDieuHanhDao.GetAll();
+            foreach (HeDieuHanh hdh in heDieuHanhList)
+            {
+                if (hdh.Mahedieuhanh.Equals(mahdh))
+                {
+                    return hdh;
+                }
+            }
+            return hdhnull;
         }
     }
 }

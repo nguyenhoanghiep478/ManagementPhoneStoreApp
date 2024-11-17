@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    internal class ThuongHieuService : IThuongHieuService
+    public class ThuongHieuService : IThuongHieuService
     {
         private List<ThuongHieu> thuongHieuList;
         private static ThuongHieuService instance=null;
@@ -130,10 +130,10 @@ namespace Service
 
         public bool Add(ThuongHieu th)
         {
-            if (!CheckDup(th.Tenthuonghieu)&&dao.insert(th)>0)
+            if (!CheckDup(th.Tenthuonghieu) && dao.insert(th) > 0)
             {
                 thuongHieuList.Add(th);
-
+                return true;
             }
             return false;
         }
