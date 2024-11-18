@@ -244,6 +244,12 @@
     <Compile Include="ThongKeTongQuanGUI.Designer.cs">
       <DependentUpon>ThongKeTongQuanGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongKeTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKeTonKho.Designer.cs">
+      <DependentUpon>ThongKeTonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThuocTinhDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeTongQuanGUI.resx">
       <DependentUpon>ThongKeTongQuanGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKeTonKho.resx">
+      <DependentUpon>ThongKeTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThuocTinhDialog.resx">
       <DependentUpon>ThuocTinhDialog.cs</DependentUpon>

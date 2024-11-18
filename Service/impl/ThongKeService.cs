@@ -86,6 +86,7 @@ namespace Service
         public Dictionary<int, List<ThongKeTonKhoDTO>> FilterTonKho(string text, DateTime timeStart, DateTime timeEnd)
         {
             var result = ThongKeDAO.GetThongKeTonKho(text, timeStart, timeEnd);
+            this.listTonKho = result;
             return result;
         }
 

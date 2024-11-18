@@ -326,3 +326,4 @@ D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCh
 D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.pdb
 D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.xml
 D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeTongQuanGUI.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeTonKho.resources

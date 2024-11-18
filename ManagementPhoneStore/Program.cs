@@ -27,7 +27,7 @@ namespace ManagementPhoneStore
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
       
-            Application.Run(new ThongKeTongQuanGUI());
+            Application.Run(new ThongKeTonKho());
 
             //IChiTietSanPhamService chiTietSanPham = new ChiTietSanPhamService();
            
