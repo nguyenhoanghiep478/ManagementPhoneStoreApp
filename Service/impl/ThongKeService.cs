@@ -15,10 +15,15 @@ namespace Service
     public class ThongKeService : IThongKeService
     {
         private ThongKeDAO thongkeDAO = new ThongKeDAO();
+        private KhachHangDAO khachHangDAO = new KhachHangDAO();
+        private SanPhamDAO sanPhamDAO = new SanPhamDAO();   
         private List<ThongKeKhachHangDTO> tkkh;
         private List<ThongKeNhaCungCapDTO> tkncc;
+        private List<KhachHang> khachhangs;
+        private List<SanPham> sanphams;
         private Dictionary<int, List<ThongKeTonKhoDTO>> listTonKho;
-
+        private readonly static Lazy<ThongKeService> instance = new Lazy<ThongKeService>(() => new ThongKeService());
+        public static ThongKeService Instance { get { return instance.Value; } }
         public List<ThongKeKhachHangDTO> GetAllKhachHang()
         {
             tkkh = ThongKeDAO.GetThongKeKhachHang("", DateTime.MinValue, DateTime.Now);
@@ -29,6 +34,36 @@ namespace Service
         {
             tkkh = ThongKeDAO.GetThongKeKhachHang(text, start, end);
             return tkkh;
+        }
+
+        public int countKhachHangFromTo(DateTime start, DateTime end)
+        {
+           
+         
+            this.khachhangs = khachHangDAO.GetAll();
+        
+           
+            int count = khachhangs
+                .Where(kh => kh.NgayThamGia >= start && kh.NgayThamGia <= end)
+                .Count();
+
+            return count;
+        }
+
+        public int countKhachHang()
+        {
+
+           
+           this.khachhangs = khachHangDAO.GetAll();
+          
+           
+           return khachhangs.Count;
+        }
+
+        public int countSanPham()
+        {
+            this.sanphams = sanPhamDAO.GetAll();
+            return sanphams.Count;
         }
 
         public List<ThongKeNhaCungCapDTO> GetAllNCC()

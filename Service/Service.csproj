@@ -51,11 +51,17 @@
     <Compile Include="IMauSacService.cs" />
     <Compile Include="impl\ChiTietSanPhamService.cs" />
     <Compile Include="impl\KhachHangService.cs" />
+    <Compile Include="impl\MauSacServive.cs" />
+    <Compile Include="impl\NhaCungCapService.cs" />
     <Compile Include="impl\NhanVienService.cs" />
     <Compile Include="impl\NhomQuyenService.cs" />
     <Compile Include="impl\PhienBanSanPhamService.cs" />
+    <Compile Include="impl\PhieuNhapService.cs" />
+    <Compile Include="impl\PhieuXuatService.cs" />
     <Compile Include="impl\SanPhamService.cs" />
     <Compile Include="impl\TaiKhoanService.cs" />
+    <Compile Include="impl\ThongKeService.cs" />
+    <Compile Include="impl\XuatXuService.cs" />
     <Compile Include="INhaCungCapService.cs" />
     <Compile Include="INhanVienService.cs" />
     <Compile Include="INhomQuyenService.cs" />

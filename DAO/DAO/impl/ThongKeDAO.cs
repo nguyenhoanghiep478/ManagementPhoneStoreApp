@@ -347,12 +347,12 @@ namespace DAO.DAO.impl
             {
                 var currentDate = new DateTime(nam, thang, day);
 
-                // Tính tổng chi phí trong ngày
+             
                 var chiphiNgay = phieuNhapList
                     .Where(pn => pn.Thoigian.Date == currentDate.Date)
                     .Sum(pn => pn.Tongtien);
 
-                // Tính tổng doanh thu trong ngày
+               
                 var doanhThuNgay = phieuXuatList
                     .Where(px => px.Thoigian.Date == currentDate.Date)
                     .Sum(px => px.Tongtien);

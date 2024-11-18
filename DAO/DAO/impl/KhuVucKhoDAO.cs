@@ -16,7 +16,7 @@ namespace DAO.DAO.impl
         private readonly KhuVucKhoRowMapper _rowMapper = new KhuVucKhoRowMapper();
         public void delete(long id)
         {
-            String query = "update khuvuckho set trangthai=@trangthai where makhuvuc=@makhuvuc";
+            String query = "update khuvuckho set trangthai=@param0 where makhuvuc=@param1";
             Update(query,0, id);
         }
 

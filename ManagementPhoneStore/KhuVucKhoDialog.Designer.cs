@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ten = new System.Windows.Forms.TextBox();
+            this.tenKhuVucKho = new System.Windows.Forms.TextBox();
             this.ghichu = new System.Windows.Forms.TextBox();
             this.add = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
@@ -68,14 +68,15 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Ghi chú";
             // 
-            // ten
+            // tenKhuVucKho
             // 
-            this.ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ten.Location = new System.Drawing.Point(18, 94);
-            this.ten.Multiline = true;
-            this.ten.Name = "ten";
-            this.ten.Size = new System.Drawing.Size(683, 52);
-            this.ten.TabIndex = 5;
+            this.tenKhuVucKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenKhuVucKho.Location = new System.Drawing.Point(18, 94);
+            this.tenKhuVucKho.Multiline = true;
+            this.tenKhuVucKho.Name = "tenKhuVucKho";
+            this.tenKhuVucKho.Size = new System.Drawing.Size(683, 52);
+            this.tenKhuVucKho.TabIndex = 5;
+            this.tenKhuVucKho.TextChanged += new System.EventHandler(this.tenKhuVucKho_TextChanged);
             // 
             // ghichu
             // 
@@ -99,6 +100,7 @@
             this.add.TabIndex = 9;
             this.add.Text = "THÊM ĐƠN VỊ";
             this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // cancel
             // 
@@ -112,6 +114,7 @@
             this.cancel.TabIndex = 10;
             this.cancel.Text = "HỦY BỎ";
             this.cancel.UseVisualStyleBackColor = false;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // KhuVucKhoDialog
             // 
@@ -122,11 +125,12 @@
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.add);
             this.Controls.Add(this.ghichu);
-            this.Controls.Add(this.ten);
+            this.Controls.Add(this.tenKhuVucKho);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "KhuVucKhoDialog";
+            this.Load += new System.EventHandler(this.KhuVucKhoDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,7 +138,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox ten;
+        private System.Windows.Forms.TextBox tenKhuVucKho;
         private System.Windows.Forms.TextBox ghichu;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button cancel;

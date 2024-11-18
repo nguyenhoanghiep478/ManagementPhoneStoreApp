@@ -66,6 +66,15 @@
     <Reference Include="ICSharpCode.SharpZipLib, Version=1.4.2.13, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.1.4.2\lib\netstandard2.0\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL">
       <HintPath>..\packages\MathNet.Numerics.Signed.5.0.0\lib\net461\MathNet.Numerics.dll</HintPath>
     </Reference>
@@ -87,6 +96,8 @@
     <Reference Include="NPOI.OpenXmlFormats, Version=2.7.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <HintPath>..\packages\NPOI.2.7.1\lib\net472\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RBush.4.0.0\lib\net47\RBush.dll</HintPath>
     </Reference>
@@ -135,6 +146,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -145,8 +157,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemBar.cs" />
     <Compile Include="KhachHangDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +172,18 @@
     </Compile>
     <Compile Include="KhachHangForm.Designer.cs">
       <DependentUpon>KhachHangForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVucKhoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhuVucKhoDialog.Designer.cs">
+      <DependentUpon>KhuVucKhoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVucKhoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhuVucKhoForm.Designer.cs">
+      <DependentUpon>KhuVucKhoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ListNhanVien.cs">
       <SubType>Form</SubType>
@@ -212,6 +238,12 @@
     <Compile Include="TaiKhoanForm.Designer.cs">
       <DependentUpon>TaiKhoanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongKeTongQuanGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKeTongQuanGUI.Designer.cs">
+      <DependentUpon>ThongKeTongQuanGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThuocTinhDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,14 +262,17 @@
     <EmbeddedResource Include="KhachHangDialog.resx">
       <DependentUpon>KhachHangDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhuVucKhoDialog.resx">
+      <DependentUpon>KhuVucKhoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhuVucKhoForm.resx">
+      <DependentUpon>KhuVucKhoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListNhanVien.resx">
       <DependentUpon>ListNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginFormcs.resx">
       <DependentUpon>LoginFormcs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginGUI.resx">
-      <DependentUpon>LoginGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Log_InGUI.resx">
       <DependentUpon>Log_InGUI.cs</DependentUpon>
@@ -257,6 +292,9 @@
     <EmbeddedResource Include="TaiKhoanForm.resx">
       <DependentUpon>TaiKhoanForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThongKeTongQuanGUI.resx">
+      <DependentUpon>ThongKeTongQuanGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThuocTinhDialog.resx">
       <DependentUpon>ThuocTinhDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,9 +307,6 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoginGUI.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhaCungCapDialog.cs">
       <SubType>Form</SubType>
@@ -319,6 +354,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{445811bc-25e1-469c-a505-a0110887d0d7}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{f47c92e4-24f4-416a-b7d2-68a4de26e3b4}</Project>
       <Name>Entity</Name>

@@ -14,7 +14,7 @@ namespace Service.impl
         private static KhuVucKhoService instance = null;
         private KhuVucKhoDAO dao;
         private static readonly object lockObj = new object();
-
+      
         private KhuVucKhoService()
         {
 
@@ -112,8 +112,6 @@ namespace Service.impl
             // Dựa trên 'type', thực hiện tìm kiếm theo các thuộc tính khác nhau
             switch (type.ToLower())
             {
-
-
                 case "makhuvuc":
                     // Tìm kiếm theo ma khuvuckho
                     ketQua = listKhuVucKho.Where(ncc => ncc.Makhuvuc.Equals(Convert.ToInt32(txt))).ToList();
@@ -132,7 +130,6 @@ namespace Service.impl
                     // Tìm kiếm theo trangthai khuvuckho
                     ketQua = listKhuVucKho.Where(ncc => ncc.Trangthai.Equals(Convert.ToInt32(txt))).ToList();
                     break;
-
                 default:
                     ketQua =listKhuVucKho;
                     break;
@@ -149,6 +146,19 @@ namespace Service.impl
                 kq[i] = listKhuVucKho[i].Tenkhuvuc;
             }
             return kq;
+        }
+
+        public int getAutoIncrement()
+        {
+            List<KhuVucKho> list = GetAll();
+            if (list == null || list.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return list.Max(kvk => (int)kvk.Makhuvuc) + 1;
+            }
         }
     }
 }
