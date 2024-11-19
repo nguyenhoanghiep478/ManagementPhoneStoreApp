@@ -12,11 +12,11 @@ namespace Service.impl
 {
     public class TaiKhoanService : ITaiKhoanService
     {
-        private List<TaiKhoan> _taikhoans = new List<TaiKhoan>();
+        private  List<TaiKhoan> _taikhoans = new List<TaiKhoan>();
         private List<NhomQuyen> _nhomquyen = new List<NhomQuyen>();
         private ITaiKhoanDao _taiKhoanDAO = new TaiKhoanDAO();
         private INhomQuyenDAO _nhomQuyenDAO = new NhomQuyenDAO();
-        public static Lazy<TaiKhoanService> instance = new Lazy<TaiKhoanService>();
+        public static Lazy<TaiKhoanService> instance = new Lazy<TaiKhoanService>(() => new TaiKhoanService());
 
         public static TaiKhoanService Instance { get { return instance.Value; } }
 
@@ -25,29 +25,11 @@ namespace Service.impl
             this._taikhoans = _taiKhoanDAO.GetAll();
             _nhomquyen=_nhomQuyenDAO.GetAll();
         }
-        public List<TaiKhoan> GetTaiKhoanAll()
+        public TaiKhoan getByIndex(int index)
         {
-            return _taikhoans;
-        }
-
-        public TaiKhoan GetTaiKhoan(int index)
-        {
-            if (index >= 0 && index < _taikhoans.Count)
+            if (index >= 0 && index <_taikhoans.Count)
             {
                 return _taikhoans[index];
-            }
-            else
-            {
-                throw new IndexOutOfRangeException("Error");
-            }
-        }
-
-        public int GetTaiKhoanByMaNV(int manv)
-        {
-            var taikhoan = _taikhoans.FirstOrDefault(tk => tk.Manv == manv);
-            if (taikhoan != null)
-            {
-                return taikhoan.Manv;
             }
             else
             {
@@ -72,9 +54,7 @@ namespace Service.impl
         {
             if (tk != null && !_taikhoans.Any(x => x.Manv == tk.Manv))
             {
-
-
-
+                tk.Matkhau = PasswordHelper.HashPassword(tk.Matkhau);      
                 _taiKhoanDAO.insert(tk);
                 _taikhoans.Add(tk);
             }
@@ -86,9 +66,9 @@ namespace Service.impl
 
         public void UpdateAcc(int index, TaiKhoan tk)
         {
-            if (index >= 0 && index < _taikhoans.Count)
+            if (index >= 0 &&  index < _taikhoans.Count)
             {
-                _taiKhoanDAO.insert(tk);
+                _taiKhoanDAO.update(tk);
                 _taikhoans[index] = tk;
             }
             else
@@ -110,14 +90,20 @@ namespace Service.impl
                 throw new Exception("Error");
             }
         }
-
+        
         public List<TaiKhoan> Search(string txt, string type)
         {
-            if (type == "Tendangnhap")
+            txt = txt.ToLower();
+            if (type.Equals("Tất cả") )
             {
-                return _taikhoans.Where(tk => tk.Tendangnhap.Contains(txt)).ToList();
+                return _taikhoans.Where(tk => tk.Manv.ToString().Equals(txt)
+                || tk.Tendangnhap.ToLower().Contains(txt)).ToList();
             }
-            else if (type == "Manv")
+            else if (type.Equals("Tên đăng nhập"))
+            {
+                return _taikhoans.Where(tk => tk.Tendangnhap.ToLower().Contains(txt)).ToList();
+            }
+            else if (type.Equals("Mã nhân viên"))
             {
                 if (int.TryParse(txt, out int maNV))
                 {
@@ -133,16 +119,27 @@ namespace Service.impl
                 throw new Exception("Error");
             }
         }
-        public TaiKhoan getByIndex(int index)
+
+        public List<TaiKhoan> GetTaiKhoanAll()
         {
-            if (index >= 0 && index < _taikhoans.Count)
+          return this._taikhoans;
+        }
+
+        public TaiKhoan GetTaiKhoan(int index)
+        {
+            return this._taikhoans[index];
+        }
+
+        public int GetTaiKhoanByMaNV(int manv)
+        {
+           for(int i = 0;i < _taikhoans.Count; i++)
             {
-                return _taikhoans[index];
-            }
-            else
-            {
-                throw new IndexOutOfRangeException("Error");
-            }
+                if (_taikhoans[i].Manv == manv)
+                {
+                    return i;
+                }
+            };
+            return 0;
         }
     }
 }

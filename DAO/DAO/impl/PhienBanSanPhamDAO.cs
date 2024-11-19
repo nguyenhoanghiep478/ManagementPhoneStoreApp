@@ -28,7 +28,7 @@ namespace DAO.DAO.impl
             List<Criteria> criterias = new List<Criteria>();
             Criteria criteria = new Criteria()
             {
-                Key = "maphienban",
+                Key = "maphienbansp",
                 Operation = ":",
                 Value = maphienban,
             };

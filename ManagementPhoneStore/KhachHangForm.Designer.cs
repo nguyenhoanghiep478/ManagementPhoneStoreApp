@@ -9,6 +9,7 @@ using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
 
 namespace ManagementPhoneStore
 {
@@ -40,6 +41,7 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,6 +54,8 @@ namespace ManagementPhoneStore
             this.detail = new System.Windows.Forms.Button();
             this.import = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
+            this.kh_prop = new System.Windows.Forms.ComboBox();
+            this.search_kh = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -118,7 +122,6 @@ namespace ManagementPhoneStore
             this.add.TabIndex = 2;
             this.add.Text = "Thêm";
             this.add.UseVisualStyleBackColor = true;
-         
             // 
             // update
             // 
@@ -156,12 +159,39 @@ namespace ManagementPhoneStore
             this.delete.Text = "Xóa";
             this.delete.UseVisualStyleBackColor = true;
             // 
+            // kh_prop
+            // 
+            this.kh_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kh_prop.FormattingEnabled = true;
+            this.kh_prop.Items.AddRange(new object[] {
+            "Tất cả",
+            "Mã khách hàng",
+            "Tên khách hàng",
+            "Địa chỉ",
+            "Số điện thoại"});
+            this.kh_prop.Location = new System.Drawing.Point(37, 76);
+            this.kh_prop.Name = "kh_prop";
+            this.kh_prop.Size = new System.Drawing.Size(121, 28);
+            this.kh_prop.TabIndex = 7;
+            this.kh_prop.Text = "MakH";
+            kh_prop.SelectedIndex = 0;
+            // 
+            // search_kh
+            // 
+            this.search_kh.Location = new System.Drawing.Point(195, 79);
+            this.search_kh.Name = "search_kh";
+            this.search_kh.Size = new System.Drawing.Size(264, 22);
+            this.search_kh.TabIndex = 9;
+        
+            // 
             // KhachHangForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1082, 553);
+            this.Controls.Add(this.search_kh);
+            this.Controls.Add(this.kh_prop);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.import);
             this.Controls.Add(this.detail);
@@ -173,6 +203,7 @@ namespace ManagementPhoneStore
             this.Text = "NhaCungCap";
             this.Load += new System.EventHandler(this.NhaCungCap_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         public int GetSelectedIndex()
@@ -201,8 +232,19 @@ namespace ManagementPhoneStore
             delete.Click += delete_Click;
             import.Click += import_Click;
             export.Click += export_Click;
+            search_kh.TextChanged += search_kh_TextChanged;
 
-
+        }
+        private void search_kh_TextChanged(object sender, EventArgs e)
+        {
+            if (Validation.IsEmpty(search_kh.Text))
+            {
+                LoadDataToListView(khService.getAll());
+            }
+            else
+            {
+                LoadDataToListView(khService.searchBy(search_kh.Text,kh_prop.SelectedItem.ToString()));
+            }
         }
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
@@ -390,5 +432,7 @@ namespace ManagementPhoneStore
         private Button detail;
         private Button import;
         private Button delete;
+        private ComboBox kh_prop;
+        private TextBox search_kh;
     }
 }

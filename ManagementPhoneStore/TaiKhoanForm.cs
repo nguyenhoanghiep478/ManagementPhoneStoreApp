@@ -12,6 +12,6 @@ namespace ManagementPhoneStore
 {
     public partial class TaiKhoanForm : Form
     {
-      
+       
     }
 }

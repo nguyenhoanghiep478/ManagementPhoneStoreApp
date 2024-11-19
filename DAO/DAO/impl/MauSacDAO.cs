@@ -16,7 +16,7 @@ namespace DAO.DAO
         private readonly MauSacRowMapper _rowMapper = new MauSacRowMapper();
         public void delete(long id)
         {
-            String query = "update  mausac set trangthai=@trangthai where mamau=@mamau ";
+            String query = "UPDATE mausac SET trangthai = 0 WHERE mamau = ? ";
             Update(query, id);
         }
 
@@ -64,7 +64,7 @@ namespace DAO.DAO
                 tenmau = @param0,
                 trangthai = @param1
                 WHERE 
-            masp = @param2;"; 
+            mamau = @param2;"; 
 
             Update(query,
                 mauSac.Tenmau,

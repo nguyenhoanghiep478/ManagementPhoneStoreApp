@@ -170,3 +170,57 @@ D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.ca
 D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.Up2Date
 D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.dll
 D:\nam2\c#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DAO\bin\Debug\DTO.exe
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DAO\bin\Debug\BCrypt.Net-Next.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DAO\bin\Debug\DTO.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DAO\bin\Debug\DTO.exe.config
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\DAO\bin\Debug\BCrypt.Net-Next.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\DAO.dll.config
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\DAO.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\DAO.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\BouncyCastle.Cryptography.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\DTO.exe
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\Entity.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\Google.Protobuf.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\K4os.Compression.LZ4.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\K4os.Hash.xxHash.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\MySql.Data.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\State.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Buffers.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.IO.Pipelines.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Memory.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Numerics.Vectors.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\ZstdSharp.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\BCrypt.Net-Next.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\DTO.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\DTO.exe.config
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\Entity.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\State.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\BouncyCastle.Cryptography.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\Google.Protobuf.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\Google.Protobuf.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\K4os.Compression.LZ4.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\K4os.Hash.xxHash.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\MySql.Data.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Buffers.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.IO.Pipelines.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Memory.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Numerics.Vectors.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\bin\Debug\BCrypt.Net-Next.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.Up2Date
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.pdb

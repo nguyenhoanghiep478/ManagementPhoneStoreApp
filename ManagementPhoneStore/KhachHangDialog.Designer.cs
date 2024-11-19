@@ -74,6 +74,7 @@ namespace ManagementPhoneStore
             // 
             // ten
             // 
+            this.ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ten.Location = new System.Drawing.Point(12, 83);
             this.ten.Multiline = true;
             this.ten.Name = "ten";
@@ -82,6 +83,7 @@ namespace ManagementPhoneStore
             // 
             // sodienthoai
             // 
+            this.sodienthoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sodienthoai.Location = new System.Drawing.Point(12, 358);
             this.sodienthoai.Multiline = true;
             this.sodienthoai.Name = "sodienthoai";
@@ -90,6 +92,7 @@ namespace ManagementPhoneStore
             // 
             // diachi
             // 
+            this.diachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.diachi.Location = new System.Drawing.Point(12, 215);
             this.diachi.Multiline = true;
             this.diachi.Name = "diachi";
@@ -154,7 +157,8 @@ namespace ManagementPhoneStore
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(678, 569);
             this.Controls.Add(this.cancel);
-      
+            this.Controls.Add(this.update);
+            this.Controls.Add(this.add);
             this.Controls.Add(this.diachi);
             this.Controls.Add(this.sodienthoai);
             this.Controls.Add(this.ten);
@@ -203,13 +207,13 @@ namespace ManagementPhoneStore
             switch (type)
             {
                 case "create":
-                    this.Controls.Add(add);
+                    this.Controls.Remove(update);
                    
                     break;
 
                 case "update":
-             
-                    this.Controls.Add(update);
+
+                    this.Controls.Remove(add);
                     initInfo();
                     break;
 
@@ -217,7 +221,10 @@ namespace ManagementPhoneStore
                  
                     initInfo();
                     initView();
-                    cancel.Location = new System.Drawing.Point(242,461);
+                    this.Controls.Remove(update);
+                    this.Controls.Remove(add);
+                    this.Controls.Remove(cancel);
+
                     break;
 
                 default:

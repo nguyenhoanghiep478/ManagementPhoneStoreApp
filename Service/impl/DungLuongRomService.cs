@@ -14,9 +14,14 @@ namespace Service
         private static DungLuongRomService instance = null;
         private DLRomDAO dLRomDAO;
         private static readonly object lockObj = new object();
-
+        public DungLuongRomService()
+        {
+            dLRomList = this.getAll();
+        }
         public List<DLRom> getAll()
         {
+            dLRomDAO = new DLRomDAO();
+            this.dLRomList = dLRomDAO.GetAll();
             return dLRomList;
         }
 

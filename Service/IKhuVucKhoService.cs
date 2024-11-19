@@ -18,5 +18,8 @@ namespace Service
         bool Update(KhuVucKho kvk);
         List<KhuVucKho> Search(string txt, string type); // search by type with value txt (vd : Mã Khu Vực Kho, Tên khu vực kho)
         string[] GetArrTenKhuVuc();
+        int getAutoIncrement();
+
+        bool CheckDup(string name);
     }
 }

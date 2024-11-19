@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using DAO.Mapper.impl;
 using DAO.utils;
 using DAO.impl;
+using Google.Protobuf.WellKnownTypes;
+using static System.Net.Mime.MediaTypeNames;
+using System.Data.SqlClient;
 
 namespace DAO.DAO.impl
 {
     public class ThongKeDAO
     {
+        const string connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306;";
         public static List<ThongKeKhachHangDTO> GetThongKeKhachHang(string filterText, DateTime start, DateTime end)
         {
             var result = new List<ThongKeKhachHangDTO>();
@@ -100,12 +104,115 @@ namespace DAO.DAO.impl
             return result;
         }
 
-        public static Dictionary<int, List<ThongKeTonKhoDTO>> GetThongKeTonKho(string filterText, DateTime start, DateTime end)
+        public static Dictionary<int, List<ThongKeTonKhoDTO>> GetThongKeTonKho(string filterText, DateTime timeStart, DateTime timeEnd)
         {
             var result = new Dictionary<int, List<ThongKeTonKhoDTO>>();
-            // SOS SOS =(((
+
+            // Thiết lập thời gian kết thúc với giờ, phút, giây
+            timeEnd = new DateTime(timeEnd.Year, timeEnd.Month, timeEnd.Day, 23, 59, 0);
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string sql = @"
+                    WITH nhap AS (
+                      SELECT maphienbansp, SUM(soluong) AS sl_nhap
+                      FROM ctphieunhap
+                      JOIN phieunhap ON phieunhap.maphieunhap = ctphieunhap.maphieunhap
+                      WHERE thoigian BETWEEN @timeStart AND @timeEnd
+                      GROUP BY maphienbansp
+                    ),
+                    xuat AS (
+                      SELECT maphienbansp, SUM(soluong) AS sl_xuat
+                      FROM ctphieuxuat
+                      JOIN phieuxuat ON phieuxuat.maphieuxuat = ctphieuxuat.maphieuxuat
+                      WHERE thoigian BETWEEN @timeStart AND @timeEnd
+                      GROUP BY maphienbansp
+                    ),
+                    nhap_dau AS (
+                      SELECT ctphieunhap.maphienbansp, SUM(ctphieunhap.soluong) AS sl_nhap_dau
+                      FROM phieunhap
+                      JOIN ctphieunhap ON phieunhap.maphieunhap = ctphieunhap.maphieunhap
+                      WHERE phieunhap.thoigian < @timeStart
+                      GROUP BY ctphieunhap.maphienbansp
+                    ),
+                    xuat_dau AS (
+                      SELECT ctphieuxuat.maphienbansp, SUM(ctphieuxuat.soluong) AS sl_xuat_dau
+                      FROM phieuxuat
+                      JOIN ctphieuxuat ON phieuxuat.maphieuxuat = ctphieuxuat.maphieuxuat
+                      WHERE phieuxuat.thoigian < @timeStart
+                      GROUP BY ctphieuxuat.maphienbansp
+                    ),
+                    dau_ky AS (
+                      SELECT
+                        phienbansanpham.maphienbansp,
+                        COALESCE(nhap_dau.sl_nhap_dau, 0) - COALESCE(xuat_dau.sl_xuat_dau, 0) AS soluongdauky
+                      FROM phienbansanpham
+                      LEFT JOIN nhap_dau ON phienbansanpham.maphienbansp = nhap_dau.maphienbansp
+                      LEFT JOIN xuat_dau ON phienbansanpham.maphienbansp = xuat_dau.maphienbansp
+                    ),
+                    temp_table AS (
+                      SELECT sanpham.masp, phienbansanpham.maphienbansp, sanpham.tensp, dau_ky.soluongdauky, 
+                             COALESCE(nhap.sl_nhap, 0) AS soluongnhap, COALESCE(xuat.sl_xuat, 0) AS soluongxuat, 
+                             (dau_ky.soluongdauky + COALESCE(nhap.sl_nhap, 0) - COALESCE(xuat.sl_xuat, 0)) AS soluongcuoiky,
+                             kichthuocram, kichthuocrom, tenmau
+                      FROM dau_ky
+                      LEFT JOIN nhap ON dau_ky.maphienbansp = nhap.maphienbansp
+                      LEFT JOIN xuat ON dau_ky.maphienbansp = xuat.maphienbansp
+                      JOIN phienbansanpham ON phienbansanpham.maphienbansp = dau_ky.maphienbansp
+                      JOIN sanpham ON phienbansanpham.masp = sanpham.masp
+                      JOIN dungluongram ON phienbansanpham.ram = dungluongram.madlram
+                      JOIN dungluongrom ON phienbansanpham.rom = dungluongrom.madlrom
+                      JOIN mausac ON phienbansanpham.mausac = mausac.mamau
+                    )
+                    SELECT * FROM temp_table
+                    WHERE tensp LIKE @text OR masp LIKE @text
+                    ORDER BY masp;
+                "
+                    ;
+
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    {
+                        cmd.Parameters.AddWithValue("@timeStart", timeStart);
+                        cmd.Parameters.AddWithValue("@timeEnd", timeEnd);
+                        cmd.Parameters.AddWithValue("@text", "%" + filterText + "%");
+
+                        con.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int masp = reader.GetInt32(reader.GetOrdinal("masp"));
+                                int maphienbansp = reader.GetInt32(reader.GetOrdinal("maphienbansp"));
+                                string tensp = reader.GetString(reader.GetOrdinal("tensp"));
+                                int soluongdauky = reader.GetInt32(reader.GetOrdinal("soluongdauky"));
+                                int soluongnhap = reader.GetInt32(reader.GetOrdinal("soluongnhap"));
+                                int soluongxuat = reader.GetInt32(reader.GetOrdinal("soluongxuat"));
+                                int soluongcuoiky = reader.GetInt32(reader.GetOrdinal("soluongcuoiky"));
+                                int ram = reader.GetInt32(reader.GetOrdinal("kichthuocram"));
+                                int rom = reader.GetInt32(reader.GetOrdinal("kichthuocrom"));
+                                string mausac = reader.GetString(reader.GetOrdinal("tenmau"));
+
+                                var dto = new ThongKeTonKhoDTO(masp, maphienbansp, tensp, ram, rom, mausac, soluongdauky, soluongnhap, soluongxuat, soluongcuoiky);
+                                if (!result.ContainsKey(masp))
+                                {
+                                    result[masp] = new List<ThongKeTonKhoDTO>();
+                                }
+                                result[masp].Add(dto);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             return result;
         }
+
 
         public List<ThongKeDoanhThuDTO> GetDoanhThuTheoTungNam(int yearStart, int yearEnd)
         {
@@ -240,12 +347,12 @@ namespace DAO.DAO.impl
             {
                 var currentDate = new DateTime(nam, thang, day);
 
-                // Tính tổng chi phí trong ngày
+             
                 var chiphiNgay = phieuNhapList
                     .Where(pn => pn.Thoigian.Date == currentDate.Date)
                     .Sum(pn => pn.Tongtien);
 
-                // Tính tổng doanh thu trong ngày
+               
                 var doanhThuNgay = phieuXuatList
                     .Where(px => px.Thoigian.Date == currentDate.Date)
                     .Sum(px => px.Tongtien);

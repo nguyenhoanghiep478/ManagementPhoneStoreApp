@@ -1,5 +1,6 @@
 ﻿
 using Entity;
+using ManagementPhoneStore.util;
 using Service;
 using Service.impl;
 using System;
@@ -8,6 +9,8 @@ using System.IO.Ports;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI;
+using Service.impl;
 
 namespace ManagementPhoneStore
 {
@@ -24,16 +27,19 @@ namespace ManagementPhoneStore
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
       
-            Application.Run(new KhachHangForm());
+            Application.Run(new ThongKeTonKho());
 
             //IChiTietSanPhamService chiTietSanPham = new ChiTietSanPhamService();
-            ITaiKhoanService sevice = TaiKhoanService.Instance;
-            //foreach(TaiKhoan tai in sevice.GetTaiKhoanAll())
-            //{
-            //    Console.WriteLine(tai);
-            //}
-            Console.WriteLine(sevice.GetTaiKhoanAll());
+           
 
+
+            //Application.Run(new Log_InGUI());
+            //IChiTietSanPhamService chiTietSanPham = new ChiTietSanPhamService();
+            List<long> imeis = new List<long>();
+            imeis.Add(107725056444798);
+            imeis.Add(107725056444797);
+            //chiTietSanPham.delete(107725056444797);
+            //Console.WriteLine(chiTietSanPham.checkImeiExists(imeis));        
         }
     }
 }

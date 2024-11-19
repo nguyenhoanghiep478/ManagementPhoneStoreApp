@@ -27,75 +27,15 @@ namespace ManagementPhoneStore
 
         private void InitializeComponent()
         {
-            // Form settings
-            this.Text = "Đăng nhập";
-            this.Size = new Size(1000, 500);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.SuspendLayout();
+            // 
+            // LoginGUI
+            // 
+            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Name = "LoginGUI";
+            this.Load += new System.EventHandler(this.LoginGUI_Load);
+            this.ResumeLayout(false);
 
-            // Main Panel
-            pnlMain = new Panel
-            {
-                Size = new Size(500, 500),
-                BackColor = Color.White,
-                Location = new Point(500, 0)
-            };
-            this.Controls.Add(pnlMain);
-
-            // Title Label
-            lblTitle = new Label
-            {
-                Text = "ĐĂNG NHẬP VÀO HỆ THỐNG",
-                Font = new Font("Roboto", 12, FontStyle.Bold),
-                Location = new Point(50, 20),
-                AutoSize = true
-            };
-            pnlMain.Controls.Add(lblTitle);
-
-            // Username TextBox
-            txtUsername = new TextBox
-            {
-                Size = new Size(400, 30),
-                Location = new Point(50, 60),
-                ForeColor = Color.Gray
-            };
-            pnlMain.Controls.Add(txtUsername);
-
-            // Password TextBox
-            txtPassword = new TextBox
-            {
-                Size = new Size(400, 30),
-                Location = new Point(50, 100),
-                ForeColor = Color.Gray,
-                UseSystemPasswordChar = false // Initially show placeholder
-            };
-            pnlMain.Controls.Add(txtPassword);
-
-            // Login Button
-            btnLogin = new Button
-            {
-                Text = "ĐĂNG NHẬP",
-                Size = new Size(400, 40),
-                Location = new Point(50, 150),
-                BackColor = Color.Black,
-                ForeColor = Color.White
-            };
-            btnLogin.Click += BtnLogin_Click;
-            btnLogin.MouseEnter += BtnLogin_MouseEnter;
-            btnLogin.MouseLeave += BtnLogin_MouseLeave;
-            pnlMain.Controls.Add(btnLogin);
-
-            // Forgot Password Label
-            lblForgotPassword = new Label
-            {
-                Text = "Quên mật khẩu",
-                Font = new Font("Roboto", 10, FontStyle.Italic),
-                Location = new Point(50, 200),
-                AutoSize = true,
-                ForeColor = Color.Blue
-            };
-            lblForgotPassword.Click += LblForgotPassword_Click;
-            pnlMain.Controls.Add(lblForgotPassword);
         }
 
         private void SetPlaceholder(TextBox textBox, string placeholder, bool isPassword = false)
@@ -138,6 +78,11 @@ namespace ManagementPhoneStore
         private void BtnLogin_MouseLeave(object sender, EventArgs e)
         {
             btnLogin.BackColor = Color.Black;
+        }
+
+        private void LoginGUI_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void LblForgotPassword_Click(object sender, EventArgs e)

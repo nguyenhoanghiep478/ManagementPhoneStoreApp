@@ -12,3 +12,10 @@ D:\nam2\c#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.AssemblyReference.ca
 D:\nam2\c#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\nam2\c#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.exe
 D:\nam2\c#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.exe.config
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.exe
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.exe
+D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.pdb
