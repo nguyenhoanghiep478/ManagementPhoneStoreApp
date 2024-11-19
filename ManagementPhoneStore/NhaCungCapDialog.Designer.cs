@@ -45,6 +45,7 @@ namespace ManagementPhoneStore
             this.sodienthoai = new System.Windows.Forms.TextBox();
             this.add = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -160,14 +161,28 @@ namespace ManagementPhoneStore
             this.cancel.UseVisualStyleBackColor = false;
             this.cancel.Click += new System.EventHandler(this.cancel_Click_1);
             // 
+            // update
+            // 
+            this.update.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update.ForeColor = System.Drawing.SystemColors.Window;
+            this.update.Location = new System.Drawing.Point(359, 269);
+            this.update.Margin = new System.Windows.Forms.Padding(0);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(149, 54);
+            this.update.TabIndex = 11;
+            this.update.Text = "Sủa đơn vị";
+            this.update.UseVisualStyleBackColor = false;
+            // 
             // NhaCungCapDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1083, 335);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.update);
             this.Controls.Add(this.cancel);
-          
             this.Controls.Add(this.sodienthoai);
             this.Controls.Add(this.diachi);
             this.Controls.Add(this.email);
@@ -204,9 +219,47 @@ namespace ManagementPhoneStore
         {
             this.nccForm = nccform;
             this.ncc = ncc; 
-                this.title = title;
+            this.title = title;
             this.type = type;
            InitializeComponent();
+            Inittype();
+            add_Event();
+        }
+        private void Inittype()
+        {
+            this.label1.Text = title;
+            switch (type)
+            {
+                case "create":
+                    this.Controls.Add(add);
+                    this.update.Visible = false;
+                    break;
+
+                case "update":
+
+                    this.Controls.Add(update);
+                    this.add.Visible = false;
+                    initInfo();
+                    break;
+
+                case "view":
+
+                    initInfo();
+                    initView();
+                    cancel.Location = new System.Drawing.Point(242, 461);
+                    this.add.Visible = false;
+                    this.update.Visible = false;
+                    break;
+
+                default:
+                    throw new InvalidOperationException();
+            }
+        }
+        public void add_Event()
+        {
+            update.Click += update_Click;
+            add.Click += add_Click;
+            cancel.Click += cancel_Click;
         }
         public bool Validate()
         {
@@ -241,9 +294,9 @@ namespace ManagementPhoneStore
                 temp.Diachi=diachi.Text;
                 temp.Email=email.Text;
                 temp.Sdt=sodienthoai.Text;
-                temp.Manhacungcap = 11;
+                temp.Trangthai = 1;
                 nccForm.nccService.Add(temp);
-                nccForm.LoadDataToListView(nccForm.l);
+                nccForm.LoadDataToListView(nccForm.nccService.GetAll());
                 Dispose();
             }
         }
@@ -256,9 +309,10 @@ namespace ManagementPhoneStore
                 temp.Diachi = diachi.Text;
                 temp.Email = email.Text;
                 temp.Sdt = sodienthoai.Text;
-                temp.Manhacungcap = 11;
+                temp.Trangthai = 1;
+                temp.Manhacungcap =ncc.Manhacungcap;
                 nccForm.nccService.Update(temp);
-                nccForm.LoadDataToListView(nccForm.l);
+                nccForm.LoadDataToListView(nccForm.nccService.GetAll());
                 Dispose();
             }
         }
@@ -285,11 +339,8 @@ namespace ManagementPhoneStore
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.TextBox diachi;
         private System.Windows.Forms.TextBox sodienthoai;
-        private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button update;
-
-
-
     }
 }

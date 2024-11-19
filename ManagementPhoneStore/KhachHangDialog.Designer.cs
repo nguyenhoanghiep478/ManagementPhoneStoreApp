@@ -261,7 +261,6 @@ namespace ManagementPhoneStore
                 temp.Sdt = sodienthoai.Text;
                 temp.TrangThai = 1;
                 temp.NgayThamGia = DateTime.Now;
-                
                 khForm.khService.add(temp);
                 khForm.LoadDataToListView(khForm.khService.getAll());
                 Dispose();

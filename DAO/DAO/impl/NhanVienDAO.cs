@@ -15,7 +15,7 @@ namespace DAO.DAO.impl
         private readonly NhanViewRowMapper _rowMapper = new NhanViewRowMapper();
         public void delete(long id)
         {
-            String query = "update from nhanvien set trangthai=@param0 where manv=@param1";
+            String query = "update nhanvien set trangthai=@param0 where manv=@param1";
             Update(query, 0, id);
         }
 
@@ -42,7 +42,7 @@ namespace DAO.DAO.impl
             string query = @"
                 INSERT INTO nhanvien
                 (
-                   manv,hoten,giotinh,ngaysinh,sdt,email,trangthai
+                   manv,hoten,gioitinh,ngaysinh,sdt,email,trangthai
                 ) 
                 VALUES 
                 (

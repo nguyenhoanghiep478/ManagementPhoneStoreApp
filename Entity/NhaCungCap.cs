@@ -8,7 +8,7 @@ namespace Entity
 {
     public class NhaCungCap
     {
-        private int manhacungcap;
+        private int? manhacungcap;
         private string tennhacungcap;
         private string diachi;
         private string email;
@@ -16,7 +16,7 @@ namespace Entity
         private int trangthai;
 
         public NhaCungCap() { } 
-        public NhaCungCap(int manhacungcap,string ten, string diachi,string email,string sdt,int trangthai) { 
+        public NhaCungCap(int? manhacungcap,string ten, string diachi,string email,string sdt,int trangthai) { 
             this.Manhacungcap = manhacungcap; 
             this.Tennhacungcap = ten;   
             this.Diachi = diachi;
@@ -24,7 +24,7 @@ namespace Entity
             this.Sdt = sdt;
             this.Trangthai = trangthai;
         }
-        public int Manhacungcap
+        public int? Manhacungcap
         {
             get { return manhacungcap; }
             set { manhacungcap = value; }

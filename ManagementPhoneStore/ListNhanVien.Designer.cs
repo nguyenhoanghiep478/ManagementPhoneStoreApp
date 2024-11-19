@@ -174,7 +174,7 @@ namespace ManagementPhoneStore
         public List<NhanVien> getNV()
         {
             List<int>id_TK=tkService.GetTaiKhoanAll().Select(tk=>tk.Manv).ToList();
-            List<NhanVien>l=nvService.GetAll().Where(nv=>!id_TK.Contains(nv.Manv)).ToList();
+            List<NhanVien>l=nvService.GetAll().Where(nv=>!id_TK.Contains((int)nv.Manv)).ToList();
             return l;
         }
         private void NhaCungCap_Load(object sender, EventArgs e)

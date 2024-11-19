@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace ManagementPhoneStore
 {
-    public partial class NhanVienGui : Form
+    public partial class NhanVienForm : Form
     {
-        public NhanVienGui()
+        private void button1_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
+
         }
     }
 }

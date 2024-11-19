@@ -8,7 +8,7 @@ namespace Entity
 {
     public class NhanVien
     {
-        private int manv;
+        private int? manv;
         private string hoten;
         private int? giotinh;
         private DateTime ngaysinh;
@@ -16,7 +16,7 @@ namespace Entity
         private string email;
         private int? trangthai;
 
-        public NhanVien(int manv, string hoten, int? giotinh, DateTime ngaysinh, string sdt, string email, int? trangthai)
+        public NhanVien(int? manv, string hoten, int? giotinh, DateTime ngaysinh, string sdt, string email, int? trangthai)
         {
             this.manv = manv;
             this.hoten = hoten;
@@ -28,7 +28,7 @@ namespace Entity
         }
         public NhanVien() { }
 
-        public int Manv
+        public int? Manv
         {
             get { return manv; }
             set { manv = value; }
