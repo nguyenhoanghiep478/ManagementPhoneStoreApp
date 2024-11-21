@@ -56,7 +56,7 @@ namespace Service
         }
         public bool Delete(NhaCungCap ncc, int index)
         {
-            dao.delete(ncc.Manhacungcap);
+            dao.delete((long)ncc.Manhacungcap);
             nhaCungCapList.RemoveAt(index);
             return true;
         }

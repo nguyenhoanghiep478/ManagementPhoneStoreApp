@@ -39,7 +39,7 @@ namespace DAO.DAO.impl
                 Value = maImei,
             };
             criterias.Add(criteria);
-            return SearchBy(criterias, _rowMapper, "chitietsanpham").FirstOrDefault(null);
+            return SearchBy(criterias, _rowMapper, "ctsanpham").FirstOrDefault(null);
         }
 
         public List<ChiTietSanPham> FindByMaPhieuNhap(int maphieunhap)
@@ -52,7 +52,7 @@ namespace DAO.DAO.impl
                 Value = maphieunhap,
             };
             criterias.Add(criteria);
-            return SearchBy(criterias, _rowMapper, "chitietsanpham");
+            return SearchBy(criterias, _rowMapper, "ctsanpham");
         }
 
         public List<ChiTietSanPham> FindByMaPhieuXuat(int maphieuxuat)
@@ -65,7 +65,7 @@ namespace DAO.DAO.impl
                 Value = maphieuxuat,
             };
             criterias.Add(criteria);
-            return SearchBy(criterias, _rowMapper, "chitietsanpham");
+            return SearchBy(criterias, _rowMapper, "ctsanpham");
         }
 
         public List<ChiTietSanPham> FindByPhienBanSanPham(int pbsp)
@@ -78,13 +78,13 @@ namespace DAO.DAO.impl
                 Value = pbsp,
             };
             criterias.Add(criteria);
-            return SearchBy(criterias, _rowMapper, "chitietsanpham");
+            return SearchBy(criterias, _rowMapper, "ctsanpham");
         }
 
         public long insert(ChiTietSanPham chiTietSanPham)
         {
             string query = @"
-                INSERT INTO ChiTietSanPham 
+                INSERT INTO ctsanpham 
                 (
                     maimei, maphienbansp, maphieunhap, maphieuxuat, tinhtrang
                 ) 
@@ -105,7 +105,7 @@ namespace DAO.DAO.impl
         public void update(ChiTietSanPham chiTietSanPham)
         {
             string query = @"
-                UPDATE ChiTietSanPham 
+                UPDATE ctsanpham 
                 SET 
                     maphienbansp = @param0,
                     maphieunhap = @param1,

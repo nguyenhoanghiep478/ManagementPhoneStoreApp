@@ -47,7 +47,7 @@ namespace GUI
                     ListViewItem item = new ListViewItem(sanPham.Masp.ToString());
                     item.SubItems.Add(sanPham.Tensp.ToString());
                     item.SubItems.Add(sanPham.Soluongton.ToString());
-                    item.SubItems.Add(thuongHieuService.GetTenThuongHieu(sanPham.Masp).ToString());
+                    item.SubItems.Add(thuongHieuService.GetTenThuongHieu((int)sanPham.Thuonghieu).ToString());
                     item.SubItems.Add(heDieuHanhService.selectById((int)sanPham.Hedieuhanh).Tenhedieuhanh.ToString());
                     item.SubItems.Add(sanPham.Kichthuocman.ToString() + " inch");
                     item.SubItems.Add(sanPham.Chipxuly.ToString());

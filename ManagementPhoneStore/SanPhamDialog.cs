@@ -95,7 +95,7 @@ namespace ManagementPhoneStore
             textBox_Thoigianbh.Text = sanPham.Thoigianbaohanh.ToString();
             comboBox_Xuatxu.Text = xuatXuService.GetTenXuatXu((int)sanPham.Xuatxu);
             comboBox_Hedieuhanh.Text = heDieuHanhService.selectById((int)sanPham.Hedieuhanh).Tenhedieuhanh.ToString();
-            comboBox_Thuonghieu.Text = thuongHieuService.GetTenThuongHieu(sanPham.Masp).ToString();
+            comboBox_Thuonghieu.Text = thuongHieuService.GetTenThuongHieu((int)sanPham.Thuonghieu).ToString();
             int kvkIndex = khuVucKhoService.GetIndexByMaKVK((int)sanPham.Khuvuckho);
             comboBox_Khuvuckho.Text = khuVucKhoService.GetByIndex(kvkIndex).Tenkhuvuc.ToString();
         }
@@ -125,7 +125,7 @@ namespace ManagementPhoneStore
             textBox_Thoigianbh.Text = sanPham.Thoigianbaohanh.ToString();
             comboBox_Xuatxu.Text = xuatXuService.GetTenXuatXu((int)sanPham.Xuatxu);
             comboBox_Hedieuhanh.Text = heDieuHanhService.selectById((int)sanPham.Hedieuhanh).Tenhedieuhanh.ToString();
-            comboBox_Thuonghieu.Text = thuongHieuService.GetTenThuongHieu(sanPham.Masp).ToString();
+            comboBox_Thuonghieu.Text = thuongHieuService.GetTenThuongHieu((int)sanPham.Thuonghieu).ToString();
             int kvkIndex = khuVucKhoService.GetIndexByMaKVK((int)sanPham.Khuvuckho);
             comboBox_Khuvuckho.Text = khuVucKhoService.GetByIndex(kvkIndex).Tenkhuvuc.ToString();
         }
@@ -315,7 +315,7 @@ namespace ManagementPhoneStore
                 return;
             }
 
-            if (int.TryParse(textBox_Kichthuocman.Text, out int kichthuocman))
+            if(double.TryParse(textBox_Kichthuocman.Text, out double kichthuocman))
             {
                 sanPham.Kichthuocman = kichthuocman;
             }
@@ -638,6 +638,83 @@ namespace ManagementPhoneStore
             {
                 MessageBox.Show("Bạn chưa chọn dòng nào trong danh sách.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SanPham sanPham = new SanPham();
+            sanPham.Masp = this.masp;
+            sanPham.Tensp = textBox_Tensp.Text;
+            sanPham.Xuatxu = FindXuatxu(comboBox_Xuatxu.Text).Maxuatxu;
+            sanPham.Chipxuly = textBox_chip.Text;
+            if (int.TryParse(textBox_Pin.Text, out int pin))
+            {
+                sanPham.Dungluongpin = pin;
+            }
+            else
+            {
+                MessageBox.Show("Dung lượng pin không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (double.TryParse(textBox_Kichthuocman.Text, out double kichthuocman))
+            {
+                sanPham.Kichthuocman = kichthuocman;
+            }
+            else
+            {
+                MessageBox.Show("Kích thước màn không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            sanPham.Camerasau = textBox_Camerasau.Text;
+            sanPham.Cameratruoc = textBox_Cameratruoc.Text;
+            sanPham.Hedieuhanh = FindHedieuhanh(comboBox_Hedieuhanh.Text).Mahedieuhanh;
+            if (int.TryParse(textBox_Phienbanhdh.Text, out int pb))
+            {
+                sanPham.Phienbanhdh = pb;
+            }
+            else
+            {
+                MessageBox.Show("Phiên bản hệ điều hành không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (int.TryParse(textBox_Thoigianbh.Text, out int thoigianbh))
+            {
+                sanPham.Thoigianbaohanh = thoigianbh;
+            }
+            else
+            {
+                MessageBox.Show("Thời gian bảo hành không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            sanPham.Thuonghieu = FindThuonghieu(comboBox_Thuonghieu.Text).Mathuonghieu;
+            sanPham.Khuvuckho = FindKhuvuckho(comboBox_Khuvuckho.Text).Makhuvuc;
+            sanPham.Trangthai = true;
+            if (string.IsNullOrEmpty(selectedImagePath))
+            {
+                sanPham.Hinhanh = sanPhamService.GetByMaSP(masp).Hinhanh;
+            }
+            else
+            {
+                string projectFolder = Application.StartupPath;
+                string imageFolder = Path.Combine(projectFolder, "img_product");
+                string fileName = $"{sanPham.Masp}_{Path.GetFileName(selectedImagePath)}";
+                string destinationPath = Path.Combine(imageFolder, fileName);
+
+                if (!Directory.Exists(imageFolder))
+                {
+                    Directory.CreateDirectory(imageFolder);
+                }
+
+                File.Copy(selectedImagePath, destinationPath, true);
+
+                sanPham.Hinhanh = Path.Combine(fileName);
+            }
+
+            this.Close();
+            MessageBox.Show("Sửa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            sanPhamService.Update(sanPham);
         }
     }
 }

@@ -82,6 +82,11 @@ namespace ManagementPhoneStore
                 string mausac = mauSacService.GetTenMau(phienBanSanPham.MauSac);
                 comboBox1.Items.Add(rom + "-" + ram + "-" + mausac);
             }
+            if (comboBox1.Items.Count == 0)
+            {
+                MessageBox.Show("Sản phẩm chưa có danh sách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             comboBox1.SelectedIndex = 0;
             comboBox1.MeasureItem += new MeasureItemEventHandler(ComboBox_MeasureItem);
             comboBox1.DrawItem += new DrawItemEventHandler(ComboBox_DrawItem);

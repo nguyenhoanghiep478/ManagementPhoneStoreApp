@@ -91,7 +91,7 @@ namespace DAO.DAO.impl
 
                 var thongKeNhaCungCap = new ThongKeNhaCungCapDTO
                 {
-                    MaNCC = nhaCungCap.Manhacungcap,
+                    MaNCC = (int)nhaCungCap.Manhacungcap,
                     TenNCC = nhaCungCap.Tennhacungcap,
                     SoLuong = soLuongPhieu,
                     Tongtien = tongTien
