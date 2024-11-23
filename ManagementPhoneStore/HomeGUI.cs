@@ -1,4 +1,5 @@
 ﻿using ManagementPhoneStore;
+using Service.impl;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -7,10 +8,17 @@ namespace GUI
 {
     public partial class HomeGUI : Form
     {
-        public HomeGUI()
+        private int manv;
+        private TaiKhoanService taiKhoanService=new TaiKhoanService();
+        private NhanVienService NhanVienService = new NhanVienService();
+        private NhomQuyenService NhomQuyenService = new NhomQuyenService();
+        public HomeGUI(int manv)
         {
+            this.manv = manv;
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            label1.Text=NhanVienService.GetNameById(manv);
+            label2.Text=NhomQuyenService.getNameByMA(manv);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -25,14 +33,20 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SanPhamGUI spform = new SanPhamGUI();
-            spform.Show();
+            SanPhamGUI sanPhamGUI = new SanPhamGUI();
+            sanPhamGUI.TopLevel = false;
+            sanPhamGUI.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(sanPhamGUI);
+            sanPhamGUI.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HomeGUI homeForm = new HomeGUI();
-            homeForm.Show();
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(panel3);
+            panelContainer.Controls.Add(panel4);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -42,14 +56,14 @@ namespace GUI
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
-            HomeGUI homeForm = new HomeGUI();
+            HomeGUI homeForm = new HomeGUI(manv);
             homeForm.Show();
         }
 
         private void HomeGUI_Load(object sender, EventArgs e)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.LightBlue;
+            this.BackColor = Color.DarkGray;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -76,6 +90,11 @@ namespace GUI
         private void button3_Click(object sender, EventArgs e)
         {
             ThuocTinhGUI ttform = new ThuocTinhGUI();
+            ttform.TopLevel = false;
+            ttform.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(ttform);
             ttform.Show();
         }
 
@@ -151,6 +170,16 @@ namespace GUI
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

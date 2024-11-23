@@ -26,6 +26,11 @@ namespace GUI
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.AliceBlue;
+
+            this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
+            this.TopLevel = false;
+
             LoadDanhSachSanPham();
             comboBox1.Items.Clear();
             comboBox1.Items.Add("Tất cả");
@@ -58,7 +63,38 @@ namespace GUI
                     listView1.Items.Add(item);
                 }
             }
+            listView1.OwnerDraw = true;
+            listView1.DrawColumnHeader += listView_DrawColumnHeader;
+            listView1.DrawSubItem += listView_DrawSubItem;
         }
+
+        private void listView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            using (Brush headerBrush = new SolidBrush(Color.FromArgb(235, 235, 235)))
+            {
+                e.Graphics.FillRectangle(headerBrush, e.Bounds);
+            }
+
+            using (Font customFont = new Font("Arial", 9, FontStyle.Bold))
+            {
+                TextFormatFlags flags = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter;
+                TextRenderer.DrawText(e.Graphics, e.Header.Text, customFont, e.Bounds, Color.Black, flags);
+            }
+
+            if (e.ColumnIndex < listView1.Columns.Count - 1)
+            {
+                using (Pen pen = new Pen(Color.LightGray, 1))
+                {
+                    e.Graphics.DrawLine(pen, e.Bounds.Right - 1, e.Bounds.Top, e.Bounds.Right - 1, e.Bounds.Bottom);
+                }
+            }
+        }
+
+        private void listView_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)

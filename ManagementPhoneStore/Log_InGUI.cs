@@ -21,7 +21,7 @@ namespace ManagementPhoneStore
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             CustomTextBox(textBox2,10);
-            textBox1.Text = "baopro";
+            textBox1.Text = "admin";
             textBox2.Text = "chithanh";
         }
         private void CustomTextBox(TextBox textBox, int padding)
@@ -49,11 +49,12 @@ namespace ManagementPhoneStore
                 if (taiKhoan.Tendangnhap.Equals(textBox1.Text) && MyBcrypt.VerifyPassword(textBox2.Text, taiKhoan.Matkhau))
                 {
                     this.Hide();
-                    HomeGUI homeGUI = new HomeGUI();
+                    HomeGUI homeGUI = new HomeGUI(taiKhoan.Manv);
                     homeGUI.ShowDialog();
                     this.Close();
                 }
             }
+            MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

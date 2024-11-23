@@ -28,6 +28,9 @@ namespace ManagementPhoneStore
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.thuoctinh = thuoctinh;
+            listView1.OwnerDraw = true;
+            listView1.DrawColumnHeader += listView_DrawColumnHeader;
+            listView1.DrawSubItem += listView_DrawSubItem;
             if (this.thuoctinh.Equals("thuonghieu"))
             {
                 initThuonghieu();
@@ -53,6 +56,34 @@ namespace ManagementPhoneStore
                 initMausac();
             }
         }
+
+        private void listView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            using (Brush headerBrush = new SolidBrush(Color.FromArgb(235, 235, 235)))
+            {
+                e.Graphics.FillRectangle(headerBrush, e.Bounds);
+            }
+
+            using (Font customFont = new Font("Arial", 9, FontStyle.Bold))
+            {
+                TextFormatFlags flags = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter;
+                TextRenderer.DrawText(e.Graphics, e.Header.Text, customFont, e.Bounds, Color.Black, flags);
+            }
+
+            if (e.ColumnIndex < listView1.Columns.Count - 1)
+            {
+                using (Pen pen = new Pen(Color.LightGray, 1))
+                {
+                    e.Graphics.DrawLine(pen, e.Bounds.Right - 1, e.Bounds.Top, e.Bounds.Right - 1, e.Bounds.Bottom);
+                }
+            }
+        }
+
+        private void listView_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
         private void initThuonghieu()
         {
             label1.Text = "THƯƠNG HIỆU SẢN PHẨM";
@@ -64,12 +95,12 @@ namespace ManagementPhoneStore
 
             ColumnHeader columnHeader1 = new ColumnHeader();
             columnHeader1.Text = "Mã thương hiệu";
-            columnHeader1.Width = 203;
+            columnHeader1.Width = 206;
             columnHeader1.TextAlign = HorizontalAlignment.Center; 
 
             ColumnHeader columnHeader2 = new ColumnHeader();
             columnHeader2.Text = "Tên thương hiệu";
-            columnHeader2.Width = 203;
+            columnHeader2.Width = 205;
             columnHeader2.TextAlign = HorizontalAlignment.Center; 
 
             listView1.Columns.Add(columnHeader1);
@@ -96,12 +127,12 @@ namespace ManagementPhoneStore
 
             ColumnHeader columnHeader1 = new ColumnHeader();
             columnHeader1.Text = "Mã xuất xứ";
-            columnHeader1.Width = 203;
+            columnHeader1.Width = 206;
             columnHeader1.TextAlign = HorizontalAlignment.Center;
 
             ColumnHeader columnHeader2 = new ColumnHeader();
             columnHeader2.Text = "Tên xuất xứ";
-            columnHeader2.Width = 203;
+            columnHeader2.Width = 205;
             columnHeader2.TextAlign = HorizontalAlignment.Center;
 
             listView1.Columns.Add(columnHeader1);
@@ -128,12 +159,12 @@ namespace ManagementPhoneStore
 
             ColumnHeader columnHeader1 = new ColumnHeader();
             columnHeader1.Text = "Mã hệ điều hành";
-            columnHeader1.Width = 203;
+            columnHeader1.Width = 206;
             columnHeader1.TextAlign = HorizontalAlignment.Center;
 
             ColumnHeader columnHeader2 = new ColumnHeader();
             columnHeader2.Text = "Tên hệ điều hành";
-            columnHeader2.Width = 203;
+            columnHeader2.Width = 205;
             columnHeader2.TextAlign = HorizontalAlignment.Center;
 
             listView1.Columns.Add(columnHeader1);
@@ -161,12 +192,12 @@ namespace ManagementPhoneStore
 
             ColumnHeader columnHeader1 = new ColumnHeader();
             columnHeader1.Text = "Mã RAM";
-            columnHeader1.Width = 203;
+            columnHeader1.Width = 206;
             columnHeader1.TextAlign = HorizontalAlignment.Center;
 
             ColumnHeader columnHeader2 = new ColumnHeader();
             columnHeader2.Text = "Dung lượng RAM";
-            columnHeader2.Width = 203;
+            columnHeader2.Width = 205;
             columnHeader2.TextAlign = HorizontalAlignment.Center;
 
             listView1.Columns.Add(columnHeader1);
@@ -194,12 +225,12 @@ namespace ManagementPhoneStore
 
             ColumnHeader columnHeader1 = new ColumnHeader();
             columnHeader1.Text = "Mã ROM";
-            columnHeader1.Width = 203;
+            columnHeader1.Width = 206;
             columnHeader1.TextAlign = HorizontalAlignment.Center;
 
             ColumnHeader columnHeader2 = new ColumnHeader();
             columnHeader2.Text = "Dung lượng ROM";
-            columnHeader2.Width = 203;
+            columnHeader2.Width = 205;
             columnHeader2.TextAlign = HorizontalAlignment.Center;
 
             listView1.Columns.Add(columnHeader1);
@@ -227,12 +258,12 @@ namespace ManagementPhoneStore
 
             ColumnHeader columnHeader1 = new ColumnHeader();
             columnHeader1.Text = "Mã màu sắc";
-            columnHeader1.Width = 203;
+            columnHeader1.Width = 206;
             columnHeader1.TextAlign = HorizontalAlignment.Center;
 
             ColumnHeader columnHeader2 = new ColumnHeader();
             columnHeader2.Text = "Tên màu sắc";
-            columnHeader2.Width = 203;
+            columnHeader2.Width = 205;
             columnHeader2.TextAlign = HorizontalAlignment.Center;
 
             listView1.Columns.Add(columnHeader1);

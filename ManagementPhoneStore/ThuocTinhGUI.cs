@@ -16,6 +16,10 @@ namespace ManagementPhoneStore
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.AliceBlue;
+
+            this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
+            this.TopLevel = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
