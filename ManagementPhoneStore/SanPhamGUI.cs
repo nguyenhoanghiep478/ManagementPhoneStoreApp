@@ -87,35 +87,36 @@ namespace GUI
         }
         private void ComboBox_MeasureItem(object sender, MeasureItemEventArgs e)
         {
-            e.ItemHeight = 20;  // Điều chỉnh chiều cao mục của ComboBox
+            e.ItemHeight = 36;  // Điều chỉnh chiều cao mục của ComboBox
         }
 
         private void ComboBox_DrawItem(object sender, DrawItemEventArgs e)
         {
             // Lấy ComboBox đang được vẽ
             ComboBox comboBox = sender as ComboBox;
-
-            // Kiểm tra nếu ComboBox có item
             if (comboBox != null && e.Index >= 0)
             {
-                // Lấy mục cần vẽ
                 string itemText = comboBox.Items[e.Index].ToString();
 
-                // Nếu mục được chọn, tô màu nền khác
+                StringFormat stringFormat = new StringFormat()
+                {
+                    LineAlignment = StringAlignment.Center
+                };
+
                 if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
                 {
-                    // Tô màu nền khi mục được chọn
                     e.Graphics.FillRectangle(Brushes.CornflowerBlue, e.Bounds);
-                    e.Graphics.DrawString(itemText, e.Font, Brushes.White, e.Bounds);  // Màu chữ trắng khi chọn
+                    e.Graphics.DrawString(itemText, e.Font, Brushes.White, e.Bounds, stringFormat);
                 }
                 else
                 {
-                    // Tô màu nền mặc định khi không chọn
                     e.Graphics.FillRectangle(Brushes.White, e.Bounds);
-                    e.Graphics.DrawString(itemText, e.Font, Brushes.Black, e.Bounds);  // Màu chữ đen khi không chọn
+                    e.Graphics.DrawString(itemText, e.Font, Brushes.Black, e.Bounds, stringFormat);
                 }
             }
         }
+
+
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {

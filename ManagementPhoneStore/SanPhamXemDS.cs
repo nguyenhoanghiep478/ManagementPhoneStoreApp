@@ -106,28 +106,28 @@ namespace ManagementPhoneStore
         {
             // Lấy ComboBox đang được vẽ
             ComboBox comboBox = sender as ComboBox;
-
-            // Kiểm tra nếu ComboBox có item
             if (comboBox != null && e.Index >= 0)
             {
-                // Lấy mục cần vẽ
                 string itemText = comboBox.Items[e.Index].ToString();
 
-                // Nếu mục được chọn, tô màu nền khác
+                StringFormat stringFormat = new StringFormat()
+                {
+                    LineAlignment = StringAlignment.Center
+                };
+
                 if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
                 {
-                    // Tô màu nền khi mục được chọn
                     e.Graphics.FillRectangle(Brushes.CornflowerBlue, e.Bounds);
-                    e.Graphics.DrawString(itemText, e.Font, Brushes.White, e.Bounds);  // Màu chữ trắng khi chọn
+                    e.Graphics.DrawString(itemText, e.Font, Brushes.White, e.Bounds, stringFormat);
                 }
                 else
                 {
-                    // Tô màu nền mặc định khi không chọn
                     e.Graphics.FillRectangle(Brushes.White, e.Bounds);
-                    e.Graphics.DrawString(itemText, e.Font, Brushes.Black, e.Bounds);  // Màu chữ đen khi không chọn
+                    e.Graphics.DrawString(itemText, e.Font, Brushes.Black, e.Bounds, stringFormat);
                 }
             }
         }
+
         private DLRom FindRom(string rom)
         {
             List<DLRom> dLRoms = dungLuongRomService.getAll();
@@ -232,6 +232,11 @@ namespace ManagementPhoneStore
                 listView1.Items.AddRange(filteredItems.ToArray());
                 textBox1.Text = filteredItems.Count.ToString();
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
