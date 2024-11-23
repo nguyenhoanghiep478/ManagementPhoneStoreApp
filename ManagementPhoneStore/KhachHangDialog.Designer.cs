@@ -242,7 +242,7 @@ namespace ManagementPhoneStore
         {
             if (Validation.IsEmpty(ten.Text))
             {
-                MessageBox.Show("Tên nhà cung cấp không được rỗng", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Tên  không được rỗng", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (Validation.IsEmpty(diachi.Text))
@@ -262,21 +262,30 @@ namespace ManagementPhoneStore
         {
             if (Validate())
             {
-                KhachHang temp = new KhachHang();
-                temp.TenKhachHang = ten.Text;
-                temp.DiaChi = diachi.Text;
-                temp.Sdt = sodienthoai.Text;
-                temp.TrangThai = 1;
-                temp.NgayThamGia = DateTime.Now;
-                khForm.khService.add(temp);
-                khForm.LoadDataToListView(khForm.khService.getAll());
-                Dispose();
+                if (!khForm.khService.checkNameExist(ten.Text))
+                {
+                    KhachHang temp = new KhachHang();
+                    temp.TenKhachHang = ten.Text;
+                    temp.DiaChi = diachi.Text;
+                    temp.Sdt = sodienthoai.Text;
+                    temp.TrangThai = 1;
+                    temp.NgayThamGia = DateTime.Now;
+                    khForm.khService.add(temp);
+                    khForm.LoadDataToListView(khForm.khService.getAll());
+                    Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Tên khách hàng đã tồn tại", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+               
             }
         }
         private void update_Click(object sender, EventArgs e)
         {
             if (Validate())
             {
+               
                 KhachHang temp = new KhachHang();
                 temp.TenKhachHang = ten.Text;
                 temp.DiaChi = sodienthoai.Text;

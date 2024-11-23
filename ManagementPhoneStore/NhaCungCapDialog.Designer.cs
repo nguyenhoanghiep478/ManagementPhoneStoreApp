@@ -34,6 +34,9 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHangForm));
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -289,15 +292,24 @@ namespace ManagementPhoneStore
         {
             if (Validate())
             {
-                NhaCungCap temp=new NhaCungCap();
-                temp.Tennhacungcap=ten.Text;
-                temp.Diachi=diachi.Text;
-                temp.Email=email.Text;
-                temp.Sdt=sodienthoai.Text;
-                temp.Trangthai = 1;
-                nccForm.nccService.Add(temp);
-                nccForm.LoadDataToListView(nccForm.nccService.GetAll());
-                Dispose();
+                if (!nccForm.nccService.CheckDup(ten.Text))
+                {
+                    NhaCungCap temp = new NhaCungCap();
+                    temp.Tennhacungcap = ten.Text;
+                    temp.Diachi = diachi.Text;
+                    temp.Email = email.Text;
+                    temp.Sdt = sodienthoai.Text;
+                    temp.Trangthai = 1;
+
+                    nccForm.nccService.Add(temp);
+                    nccForm.LoadDataToListView(nccForm.nccService.GetAll());
+                    Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Tên nhà cung cấp đã tồn tại", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+             
             }
         }
         private void update_Click(object sender, EventArgs e)

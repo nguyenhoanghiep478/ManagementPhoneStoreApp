@@ -42,7 +42,8 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienForm));
             this.listViewNhanVien = new System.Windows.Forms.ListView();
             this.maNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.hoTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,14 +51,17 @@ namespace ManagementPhoneStore
             this.ngaySinh = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sđt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.add = new System.Windows.Forms.Button();
-            this.update = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
-            this.detail = new System.Windows.Forms.Button();
-            this.import = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.nv_prop = new System.Windows.Forms.ComboBox();
+            this.refresh = new System.Windows.Forms.Button();
             this.export = new System.Windows.Forms.Button();
             this.search_nv = new System.Windows.Forms.TextBox();
-            this.nv_prop = new System.Windows.Forms.ComboBox();
+            this.import = new System.Windows.Forms.Button();
+            this.detail = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listViewNhanVien
@@ -75,9 +79,9 @@ namespace ManagementPhoneStore
             this.listViewNhanVien.FullRowSelect = true;
             this.listViewNhanVien.GridLines = true;
             this.listViewNhanVien.HideSelection = false;
-            this.listViewNhanVien.Location = new System.Drawing.Point(178, 125);
+            this.listViewNhanVien.Location = new System.Drawing.Point(15, 169);
             this.listViewNhanVien.Name = "listViewNhanVien";
-            this.listViewNhanVien.Size = new System.Drawing.Size(904, 426);
+            this.listViewNhanVien.Size = new System.Drawing.Size(1443, 382);
             this.listViewNhanVien.TabIndex = 0;
             this.listViewNhanVien.UseCompatibleStateImageBehavior = false;
             this.listViewNhanVien.View = System.Windows.Forms.View.Details;
@@ -86,102 +90,60 @@ namespace ManagementPhoneStore
             // 
             this.maNhanVien.Text = "Mã Nhân Viên";
             this.maNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.maNhanVien.Width = 150;
+            this.maNhanVien.Width = 240;
             // 
             // hoTen
             // 
             this.hoTen.Text = "Ho Tên";
             this.hoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.hoTen.Width = 150;
+            this.hoTen.Width = 240;
             // 
             // gioTinh
             // 
             this.gioTinh.Text = "Giới Tính";
             this.gioTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gioTinh.Width = 150;
+            this.gioTinh.Width = 240;
             // 
             // ngaySinh
             // 
             this.ngaySinh.Text = "Ngày Sinh";
             this.ngaySinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ngaySinh.Width = 150;
+            this.ngaySinh.Width = 240;
             // 
             // sđt
             // 
             this.sđt.Text = "Số Điện Thoại";
             this.sđt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sđt.Width = 150;
+            this.sđt.Width = 240;
             // 
             // email
             // 
             this.email.Text = "Email";
             this.email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.email.Width = 150;
+            this.email.Width = 240;
             // 
-            // add
+            // panel2
             // 
-            this.add.Location = new System.Drawing.Point(155, 85);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(75, 23);
-            this.add.TabIndex = 7;
-            this.add.Text = "Thêm";
-            this.add.UseVisualStyleBackColor = true;
-            // 
-            // update
-            // 
-            this.update.Location = new System.Drawing.Point(248, 83);
-            this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(75, 23);
-            this.update.TabIndex = 2;
-            this.update.Text = "Sửa";
-            this.update.UseVisualStyleBackColor = true;
-            // 
-            // delete
-            // 
-            this.delete.Location = new System.Drawing.Point(355, 83);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(75, 23);
-            this.delete.TabIndex = 3;
-            this.delete.Text = "Xóa";
-            this.delete.UseVisualStyleBackColor = true;
-            // 
-            // detail
-            // 
-            this.detail.Location = new System.Drawing.Point(461, 83);
-            this.detail.Name = "detail";
-            this.detail.Size = new System.Drawing.Size(75, 23);
-            this.detail.TabIndex = 4;
-            this.detail.Text = "Chi Tiết";
-            this.detail.UseVisualStyleBackColor = true;
-            // 
-            // import
-            // 
-            this.import.Location = new System.Drawing.Point(564, 83);
-            this.import.Name = "import";
-            this.import.Size = new System.Drawing.Size(75, 23);
-            this.import.TabIndex = 5;
-            this.import.Text = "Nhập";
-            this.import.UseVisualStyleBackColor = true;
-            // 
-            // export
-            // 
-            this.export.Location = new System.Drawing.Point(663, 83);
-            this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(75, 23);
-            this.export.TabIndex = 6;
-            this.export.Text = "Xuất";
-            this.export.UseVisualStyleBackColor = true;
-            // 
-            // search_nv
-            // 
-            this.search_nv.Location = new System.Drawing.Point(755, 83);
-            this.search_nv.Name = "search_nv";
-            this.search_nv.Size = new System.Drawing.Size(264, 22);
-            this.search_nv.TabIndex = 9;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.nv_prop);
+            this.panel2.Controls.Add(this.refresh);
+            this.panel2.Controls.Add(this.export);
+            this.panel2.Controls.Add(this.search_nv);
+            this.panel2.Controls.Add(this.import);
+            this.panel2.Controls.Add(this.detail);
+            this.panel2.Controls.Add(this.delete);
+            this.panel2.Controls.Add(this.update);
+            this.panel2.Controls.Add(this.add);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1471, 110);
+            this.panel2.TabIndex = 1;
             // 
             // nv_prop
             // 
-            this.nv_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nv_prop.FormattingEnabled = true;
             this.nv_prop.Items.AddRange(new object[] {
             "Tất cả",
@@ -191,30 +153,163 @@ namespace ManagementPhoneStore
             "Ngày sinh",
             "Số điện thoại",
             "Email"});
-            this.nv_prop.Location = new System.Drawing.Point(755, 35);
+            this.nv_prop.Location = new System.Drawing.Point(837, 32);
             this.nv_prop.Name = "nv_prop";
-            this.nv_prop.Size = new System.Drawing.Size(121, 28);
+            this.nv_prop.Size = new System.Drawing.Size(141, 28);
             this.nv_prop.TabIndex = 7;
-            nv_prop.SelectedIndex = 0;
-            // s
+            this.nv_prop.Text = "Tất cả";
+            // 
+            // refresh
+            // 
+            this.refresh.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh.Image = ((System.Drawing.Image)(resources.GetObject("refresh.Image")));
+            this.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refresh.Location = new System.Drawing.Point(1303, 32);
+            this.refresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(139, 50);
+            this.refresh.TabIndex = 5;
+            this.refresh.Text = "Làm mới";
+            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.refresh.UseVisualStyleBackColor = true;
+            // 
+            // export
+            // 
+            this.export.AutoSize = true;
+            this.export.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.export.FlatAppearance.BorderSize = 0;
+            this.export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.export.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.export.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.export.Image = ((System.Drawing.Image)(resources.GetObject("export.Image")));
+            this.export.Location = new System.Drawing.Point(336, 11);
+            this.export.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(93, 90);
+            this.export.TabIndex = 2;
+            this.export.Text = "XUẤT EXCEL";
+            this.export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.export.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.export.UseVisualStyleBackColor = true;
+            // 
+            // search_nv
+            // 
+            this.search_nv.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_nv.Location = new System.Drawing.Point(996, 32);
+            this.search_nv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search_nv.Multiline = true;
+            this.search_nv.Name = "search_nv";
+            this.search_nv.Size = new System.Drawing.Size(300, 50);
+            this.search_nv.TabIndex = 6;
+            // 
+            // import
+            // 
+            this.import.AutoSize = true;
+            this.import.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.import.FlatAppearance.BorderSize = 0;
+            this.import.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.import.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.import.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.import.Image = ((System.Drawing.Image)(resources.GetObject("import.Image")));
+            this.import.Location = new System.Drawing.Point(435, 11);
+            this.import.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.import.Name = "import";
+            this.import.Size = new System.Drawing.Size(84, 90);
+            this.import.TabIndex = 2;
+            this.import.Text = "NHẬP EXCEL";
+            this.import.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.import.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.import.UseVisualStyleBackColor = true;
+            // 
+            // detail
+            // 
+            this.detail.AutoSize = true;
+            this.detail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.detail.FlatAppearance.BorderSize = 0;
+            this.detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.detail.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detail.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.detail.Image = ((System.Drawing.Image)(resources.GetObject("detail.Image")));
+            this.detail.Location = new System.Drawing.Point(255, 11);
+            this.detail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detail.Name = "detail";
+            this.detail.Size = new System.Drawing.Size(75, 90);
+            this.detail.TabIndex = 2;
+            this.detail.Text = "CHI TIẾT";
+            this.detail.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.detail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.detail.UseVisualStyleBackColor = true;
+            // 
+            // delete
+            // 
+            this.delete.AutoSize = true;
+            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete.FlatAppearance.BorderSize = 0;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.delete.Image = ((System.Drawing.Image)(resources.GetObject("delete.Image")));
+            this.delete.Location = new System.Drawing.Point(175, 11);
+            this.delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 90);
+            this.delete.TabIndex = 2;
+            this.delete.Text = "XÓA";
+            this.delete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.delete.UseVisualStyleBackColor = true;
+            // 
+            // update
+            // 
+            this.update.AutoSize = true;
+            this.update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.update.FlatAppearance.BorderSize = 0;
+            this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.update.Image = ((System.Drawing.Image)(resources.GetObject("update.Image")));
+            this.update.Location = new System.Drawing.Point(95, 11);
+            this.update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(75, 90);
+            this.update.TabIndex = 1;
+            this.update.Text = "SỬA";
+            this.update.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.update.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.update.UseVisualStyleBackColor = true;
+            // 
+            // add
+            // 
+            this.add.AutoSize = true;
+            this.add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.add.FlatAppearance.BorderSize = 0;
+            this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.add.Image = ((System.Drawing.Image)(resources.GetObject("add.Image")));
+            this.add.Location = new System.Drawing.Point(15, 11);
+            this.add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 90);
+            this.add.TabIndex = 0;
+            this.add.Text = "THÊM";
+            this.add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.add.UseVisualStyleBackColor = true;
+            // 
             // NhanVienForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 553);
-            this.Controls.Add(this.add);
-            this.Controls.Add(this.export);
-            this.Controls.Add(this.import);
-            this.Controls.Add(this.detail);
-            this.Controls.Add(this.delete);
-            this.Controls.Add(this.update);
-            this.Controls.Add(this.search_nv);
-            this.Controls.Add(this.nv_prop);
+            this.ClientSize = new System.Drawing.Size(1470, 553);
             this.Controls.Add(this.listViewNhanVien);
+            this.Controls.Add(this.panel2);
             this.Name = "NhanVienForm";
             this.Text = "NhanVienGUI";
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
         public int GetSelectedIndex()
@@ -243,11 +338,15 @@ namespace ManagementPhoneStore
             import.Click += import_Click;
             export.Click += export_Click;
             search_nv.TextChanged += search_nv_TextChanged;
-
+            refresh.Click += refresh_click;
         }
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
 
+        }
+        private void refresh_click(object sender, EventArgs e)
+        {
+            LoadDataToListView(nvService.GetAll());
         }
         private void detail_Click(object sender, EventArgs e)
         {
@@ -295,7 +394,7 @@ namespace ManagementPhoneStore
                 LoadDataToListView(nvService.GetAll());
             }
             else
-            {   
+            {
                 LoadDataToListView(nvService.Search(search_nv.Text, nv_prop.SelectedItem.ToString()));
             }
         }
@@ -510,15 +609,17 @@ namespace ManagementPhoneStore
         private System.Windows.Forms.ColumnHeader ngaySinh;
         private System.Windows.Forms.ColumnHeader sđt;
         private System.Windows.Forms.ColumnHeader email;
+        public NhanVienService nvService = new NhanVienService();
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button export;
+        private System.Windows.Forms.Button import;
+        private System.Windows.Forms.Button detail;
+        private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button update;
-        private System.Windows.Forms.Button delete;
-        private System.Windows.Forms.Button detail;
-        private System.Windows.Forms.Button import;
-        private System.Windows.Forms.Button export;
+        private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.TextBox search_nv;
         private System.Windows.Forms.ComboBox nv_prop;
-        public NhanVienService nvService = new NhanVienService();
-        
+
     }
 }

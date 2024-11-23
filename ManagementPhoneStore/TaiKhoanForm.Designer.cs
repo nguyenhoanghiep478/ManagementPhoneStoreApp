@@ -7,6 +7,7 @@ using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using System.IO;
 using Service.impl;
+using ManagementPhoneStore.Properties;
 
 namespace ManagementPhoneStore
 {
@@ -38,19 +39,24 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaiKhoanForm));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.add = new System.Windows.Forms.Button();
-            this.update = new System.Windows.Forms.Button();
-            this.detail = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
-            this.import = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tk_prop = new System.Windows.Forms.ComboBox();
+            this.refresh = new System.Windows.Forms.Button();
             this.export = new System.Windows.Forms.Button();
             this.search_tk = new System.Windows.Forms.TextBox();
-            this.tk_prop = new System.Windows.Forms.ComboBox();
+            this.import = new System.Windows.Forms.Button();
+            this.detail = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -69,91 +75,51 @@ namespace ManagementPhoneStore
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 138);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1058, 305);
+            this.listView1.Size = new System.Drawing.Size(1447, 344);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã nhân viên";
-            this.columnHeader1.Width = 200;
+            this.columnHeader1.Width = 350;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên đăng nhập";
-            this.columnHeader2.Width = 400;
+            this.columnHeader2.Width = 397;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Nhóm quyền";
-            this.columnHeader3.Width = 200;
+            this.columnHeader3.Width = 350;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Trạng thái";
-            this.columnHeader4.Width = 258;
+            this.columnHeader4.Width = 350;
             // 
-            // add
+            // panel2
             // 
-            this.add.Location = new System.Drawing.Point(201, 34);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(75, 23);
-            this.add.TabIndex = 1;
-            this.add.Text = "thêm";
-            this.add.UseVisualStyleBackColor = true;
-            // 
-            // update
-            // 
-            this.update.Location = new System.Drawing.Point(283, 33);
-            this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(75, 23);
-            this.update.TabIndex = 2;
-            this.update.Text = "sửa";
-            this.update.UseVisualStyleBackColor = true;
-            // 
-            // detail
-            // 
-            this.detail.Location = new System.Drawing.Point(364, 34);
-            this.detail.Name = "detail";
-            this.detail.Size = new System.Drawing.Size(75, 23);
-            this.detail.TabIndex = 3;
-            this.detail.Text = "chitiet";
-            this.detail.UseVisualStyleBackColor = true;
-            // 
-            // delete
-            // 
-            this.delete.Location = new System.Drawing.Point(445, 34);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(75, 23);
-            this.delete.TabIndex = 4;
-            this.delete.Text = "xóa";
-            this.delete.UseVisualStyleBackColor = true;
-            // 
-            // import
-            // 
-            this.import.Location = new System.Drawing.Point(526, 34);
-            this.import.Name = "import";
-            this.import.Size = new System.Drawing.Size(75, 23);
-            this.import.TabIndex = 5;
-            this.import.Text = "nhập";
-            this.import.UseVisualStyleBackColor = true;
-            // 
-            // export
-            // 
-            this.export.Location = new System.Drawing.Point(607, 34);
-            this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(75, 23);
-            this.export.TabIndex = 6;
-            this.export.Text = "xuất";
-            this.export.UseVisualStyleBackColor = true;
-            // 
-            // search_tk
-            // 
-            this.search_tk.Location = new System.Drawing.Point(176, 75);
-            this.search_tk.Name = "search_tk";
-            this.search_tk.Size = new System.Drawing.Size(198, 22);
-            this.search_tk.TabIndex = 7;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.tk_prop);
+            this.panel2.Controls.Add(this.refresh);
+            this.panel2.Controls.Add(this.export);
+            this.panel2.Controls.Add(this.search_tk);
+            this.panel2.Controls.Add(this.import);
+            this.panel2.Controls.Add(this.detail);
+            this.panel2.Controls.Add(this.delete);
+            this.panel2.Controls.Add(this.update);
+            this.panel2.Controls.Add(this.add);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1471, 110);
+            this.panel2.TabIndex = 1;
             // 
             // tk_prop
             // 
@@ -162,30 +128,164 @@ namespace ManagementPhoneStore
             "Tất cả",
             "Mã nhân viên",
             "Tên đăng nhập"});
-            this.tk_prop.Location = new System.Drawing.Point(37, 73);
+            this.tk_prop.Location = new System.Drawing.Point(837, 32);
             this.tk_prop.Name = "tk_prop";
-            this.tk_prop.Size = new System.Drawing.Size(121, 24);
-            this.tk_prop.TabIndex = 8;
-            tk_prop.SelectedIndex = 0;
+            this.tk_prop.Size = new System.Drawing.Size(141, 28);
+            this.tk_prop.TabIndex = 7;
+            this.tk_prop.Text = "Tất cả";
+            // 
+            // refresh
+            // 
+            this.refresh.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh.Image = ((System.Drawing.Image)(resources.GetObject("refresh.Image")));
+            this.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refresh.Location = new System.Drawing.Point(1303, 32);
+            this.refresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(139, 50);
+            this.refresh.TabIndex = 5;
+            this.refresh.Text = "Làm mới";
+            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.refresh.UseVisualStyleBackColor = true;
+            // 
+            // export
+            // 
+            this.export.AutoSize = true;
+            this.export.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.export.FlatAppearance.BorderSize = 0;
+            this.export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.export.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.export.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.export.Image = ((System.Drawing.Image)(resources.GetObject("export.Image")));
+            this.export.Location = new System.Drawing.Point(336, 11);
+            this.export.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(93, 90);
+            this.export.TabIndex = 2;
+            this.export.Text = "XUẤT EXCEL";
+            this.export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.export.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.export.UseVisualStyleBackColor = true;
+            // 
+            // search_tk
+            // 
+            this.search_tk.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_tk.Location = new System.Drawing.Point(996, 32);
+            this.search_tk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search_tk.Multiline = true;
+            this.search_tk.Name = "search_tk";
+            this.search_tk.Size = new System.Drawing.Size(300, 50);
+            this.search_tk.TabIndex = 6;
+            // 
+            // import
+            // 
+            this.import.AutoSize = true;
+            this.import.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.import.FlatAppearance.BorderSize = 0;
+            this.import.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.import.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.import.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.import.Image = ((System.Drawing.Image)(resources.GetObject("import.Image")));
+            this.import.Location = new System.Drawing.Point(435, 11);
+            this.import.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.import.Name = "import";
+            this.import.Size = new System.Drawing.Size(84, 90);
+            this.import.TabIndex = 2;
+            this.import.Text = "NHẬP EXCEL";
+            this.import.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.import.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.import.UseVisualStyleBackColor = true;
+            // 
+            // detail
+            // 
+            this.detail.AutoSize = true;
+            this.detail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.detail.FlatAppearance.BorderSize = 0;
+            this.detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.detail.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detail.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.detail.Image = ((System.Drawing.Image)(resources.GetObject("detail.Image")));
+            this.detail.Location = new System.Drawing.Point(255, 11);
+            this.detail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detail.Name = "detail";
+            this.detail.Size = new System.Drawing.Size(75, 90);
+            this.detail.TabIndex = 2;
+            this.detail.Text = "CHI TIẾT";
+            this.detail.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.detail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.detail.UseVisualStyleBackColor = true;
+            // 
+            // delete
+            // 
+            this.delete.AutoSize = true;
+            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete.FlatAppearance.BorderSize = 0;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.delete.Image = ((System.Drawing.Image)(resources.GetObject("delete.Image")));
+            this.delete.Location = new System.Drawing.Point(175, 11);
+            this.delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 90);
+            this.delete.TabIndex = 2;
+            this.delete.Text = "XÓA";
+            this.delete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.delete.UseVisualStyleBackColor = true;
+            // 
+            // update
+            // 
+            this.update.AutoSize = true;
+            this.update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.update.FlatAppearance.BorderSize = 0;
+            this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.update.Image = ((System.Drawing.Image)(resources.GetObject("update.Image")));
+            this.update.Location = new System.Drawing.Point(95, 11);
+            this.update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(75, 90);
+            this.update.TabIndex = 1;
+            this.update.Text = "SỬA";
+            this.update.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.update.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.update.UseVisualStyleBackColor = true;
+            // 
+            // add
+            // 
+            this.add.AutoSize = true;
+            this.add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.add.FlatAppearance.BorderSize = 0;
+            this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.add.Image = ((System.Drawing.Image)(resources.GetObject("add.Image")));
+            this.add.Location = new System.Drawing.Point(15, 11);
+            this.add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 90);
+            this.add.TabIndex = 0;
+            this.add.Text = "THÊM";
+            this.add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.add.UseVisualStyleBackColor = true;
             // 
             // TaiKhoanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 553);
-            this.Controls.Add(this.tk_prop);
-            this.Controls.Add(this.search_tk);
-            this.Controls.Add(this.export);
-            this.Controls.Add(this.import);
-            this.Controls.Add(this.delete);
-            this.Controls.Add(this.detail);
-            this.Controls.Add(this.update);
-            this.Controls.Add(this.add);
+            this.ClientSize = new System.Drawing.Size(1471, 553);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.listView1);
             this.Name = "TaiKhoanForm";
             this.Text = "TaiKhoan";
+            this.Load += new System.EventHandler(this.TaiKhoanForm_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
         public int GetSelectedIndex()
@@ -225,9 +325,12 @@ namespace ManagementPhoneStore
             import.Click += import_Click;
             export.Click += export_Click;
             search_tk.TextChanged += search_tk_TextChanged;
-
+            refresh.Click += refresh_Click;
         }
-      
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            LoadDataToListView(tkService.GetTaiKhoanAll());
+        }
         private void detail_Click(object sender, EventArgs e)
         {
             if (GetSelectedIndex() != -1)
@@ -455,13 +558,15 @@ namespace ManagementPhoneStore
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private Button add;
-        private Button update;
-        private Button detail;
-        private Button delete;
-        private Button import;
-        private Button export;
-        private TextBox search_tk;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button export;
+        private System.Windows.Forms.Button import;
+        private System.Windows.Forms.Button detail;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.Button refresh;
+        private System.Windows.Forms.TextBox search_tk;
         private ComboBox tk_prop;
     }
 }

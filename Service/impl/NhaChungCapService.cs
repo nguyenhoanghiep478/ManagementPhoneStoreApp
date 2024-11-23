@@ -20,7 +20,7 @@ namespace Service
         {
 
             dao = new NhaCungCapDAO();
-            nhaCungCapList = dao.GetAll();
+            nhaCungCapList = dao.GetAll().Where(ncc=>ncc.Trangthai.Equals(1)).ToList();
         }
         public static NhaChungCapService Instance
         {
@@ -40,6 +40,8 @@ namespace Service
                 return instance;
             }
         }
+       
+       
         public bool CheckDup(string name)
         {
             foreach (NhaCungCap th in nhaCungCapList)

@@ -14,13 +14,6 @@ namespace Service
         private static NhaCungCapService instance = null;
         private NhaCungCapDAO dao;
         private static readonly object lockObj = new object();
-
-        private NhaCungCapService()
-        {
-
-            dao = new NhaCungCapDAO();
-            nhaCungCapList = dao.GetAll().Where(ncc=>ncc.Trangthai==1).ToList();
-        }
         public static NhaCungCapService Instance
         {
             get

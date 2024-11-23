@@ -19,5 +19,6 @@ namespace Service
         string[] GetArrTenNhaCungCap();
         string GetTenNhaCungCap(int mancc);
         NhaCungCap FindCT(List<NhaCungCap> ncc, string tenncc);
+        bool CheckDup(string text);
     }
 }

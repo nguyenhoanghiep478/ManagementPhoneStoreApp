@@ -61,19 +61,21 @@ namespace ManagementPhoneStore
             // hoVaTenLabel
             // 
             this.hoVaTenLabel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.hoVaTenLabel.Location = new System.Drawing.Point(12, 98);
+            this.hoVaTenLabel.Location = new System.Drawing.Point(15, 122);
+            this.hoVaTenLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hoVaTenLabel.Name = "hoVaTenLabel";
-            this.hoVaTenLabel.Size = new System.Drawing.Size(100, 23);
+            this.hoVaTenLabel.Size = new System.Drawing.Size(125, 29);
             this.hoVaTenLabel.TabIndex = 0;
             this.hoVaTenLabel.Text = "Họ Và Tên";
             // 
             // hoVaTenText
             // 
-            this.hoVaTenText.Location = new System.Drawing.Point(15, 135);
-            this.hoVaTenText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.hoVaTenText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hoVaTenText.Location = new System.Drawing.Point(19, 169);
+            this.hoVaTenText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.hoVaTenText.Multiline = true;
             this.hoVaTenText.Name = "hoVaTenText";
-            this.hoVaTenText.Size = new System.Drawing.Size(524, 41);
+            this.hoVaTenText.Size = new System.Drawing.Size(654, 50);
             this.hoVaTenText.TabIndex = 1;
             // 
             // contextMenuStrip1
@@ -90,53 +92,56 @@ namespace ManagementPhoneStore
             // 
             // emailLabel
             // 
-            this.emailLabel.Location = new System.Drawing.Point(12, 202);
+            this.emailLabel.Location = new System.Drawing.Point(15, 252);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(44, 16);
+            this.emailLabel.Size = new System.Drawing.Size(55, 20);
             this.emailLabel.TabIndex = 4;
             this.emailLabel.Text = "Email";
             // 
             // emailText
             // 
-            this.emailText.Location = new System.Drawing.Point(15, 239);
-            this.emailText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.emailText.Location = new System.Drawing.Point(19, 299);
+            this.emailText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.emailText.Multiline = true;
             this.emailText.Name = "emailText";
-            this.emailText.Size = new System.Drawing.Size(524, 41);
+            this.emailText.Size = new System.Drawing.Size(654, 50);
             this.emailText.TabIndex = 5;
             // 
             // sđtText
             // 
-            this.sđtText.Location = new System.Drawing.Point(12, 353);
-            this.sđtText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sđtText.Location = new System.Drawing.Point(15, 441);
+            this.sđtText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.sđtText.Multiline = true;
             this.sđtText.Name = "sđtText";
-            this.sđtText.Size = new System.Drawing.Size(524, 41);
+            this.sđtText.Size = new System.Drawing.Size(654, 50);
             this.sđtText.TabIndex = 6;
             // 
             // soDienThoaiLabel
             // 
-            this.soDienThoaiLabel.Location = new System.Drawing.Point(12, 299);
+            this.soDienThoaiLabel.Location = new System.Drawing.Point(15, 374);
+            this.soDienThoaiLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.soDienThoaiLabel.Name = "soDienThoaiLabel";
-            this.soDienThoaiLabel.Size = new System.Drawing.Size(116, 34);
+            this.soDienThoaiLabel.Size = new System.Drawing.Size(145, 42);
             this.soDienThoaiLabel.TabIndex = 7;
             this.soDienThoaiLabel.Text = "Số Điện Thoại";
             // 
             // gioiTinhLabel
             // 
-            this.gioiTinhLabel.Location = new System.Drawing.Point(12, 423);
+            this.gioiTinhLabel.Location = new System.Drawing.Point(15, 529);
+            this.gioiTinhLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gioiTinhLabel.Name = "gioiTinhLabel";
-            this.gioiTinhLabel.Size = new System.Drawing.Size(64, 18);
+            this.gioiTinhLabel.Size = new System.Drawing.Size(80, 22);
             this.gioiTinhLabel.TabIndex = 8;
             this.gioiTinhLabel.Text = "Giới Tính";
             // 
             // namRadio
             // 
             this.namRadio.AutoSize = true;
-            this.namRadio.Location = new System.Drawing.Point(15, 468);
-            this.namRadio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.namRadio.Location = new System.Drawing.Point(19, 585);
+            this.namRadio.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.namRadio.Name = "namRadio";
-            this.namRadio.Size = new System.Drawing.Size(57, 20);
+            this.namRadio.Size = new System.Drawing.Size(65, 24);
             this.namRadio.TabIndex = 9;
             this.namRadio.TabStop = true;
             this.namRadio.Text = "Nam";
@@ -145,10 +150,10 @@ namespace ManagementPhoneStore
             // nuRadio
             // 
             this.nuRadio.AutoSize = true;
-            this.nuRadio.Location = new System.Drawing.Point(205, 468);
-            this.nuRadio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nuRadio.Location = new System.Drawing.Point(256, 585);
+            this.nuRadio.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.nuRadio.Name = "nuRadio";
-            this.nuRadio.Size = new System.Drawing.Size(45, 20);
+            this.nuRadio.Size = new System.Drawing.Size(51, 24);
             this.nuRadio.TabIndex = 10;
             this.nuRadio.TabStop = true;
             this.nuRadio.Text = "Nữ";
@@ -156,20 +161,21 @@ namespace ManagementPhoneStore
             // 
             // ngayLabel
             // 
-            this.ngayLabel.Location = new System.Drawing.Point(12, 514);
+            this.ngayLabel.Location = new System.Drawing.Point(15, 642);
+            this.ngayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ngayLabel.Name = "ngayLabel";
-            this.ngayLabel.Size = new System.Drawing.Size(116, 27);
+            this.ngayLabel.Size = new System.Drawing.Size(145, 34);
             this.ngayLabel.TabIndex = 11;
             this.ngayLabel.Text = "Ngày Sinh";
             // 
             // nhanVienDate
             // 
             this.nhanVienDate.AllowDrop = true;
-            this.nhanVienDate.Location = new System.Drawing.Point(15, 561);
-            this.nhanVienDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nhanVienDate.Location = new System.Drawing.Point(19, 701);
+            this.nhanVienDate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.nhanVienDate.Name = "nhanVienDate";
             this.nhanVienDate.RightToLeftLayout = true;
-            this.nhanVienDate.Size = new System.Drawing.Size(295, 22);
+            this.nhanVienDate.Size = new System.Drawing.Size(368, 27);
             this.nhanVienDate.TabIndex = 12;
             // 
             // panel1
@@ -178,9 +184,9 @@ namespace ManagementPhoneStore
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.Location = new System.Drawing.Point(-1, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(599, 76);
+            this.panel1.Size = new System.Drawing.Size(749, 95);
             this.panel1.TabIndex = 14;
             this.panel1.Tag = "";
             // 
@@ -188,19 +194,20 @@ namespace ManagementPhoneStore
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(187, 22);
+            this.label1.Location = new System.Drawing.Point(234, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 31);
+            this.label1.Size = new System.Drawing.Size(276, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "Xem Nhân Viên";
             // 
             // cancel
             // 
             this.cancel.BackColor = System.Drawing.Color.Tomato;
-            this.cancel.Location = new System.Drawing.Point(316, 604);
-            this.cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cancel.Location = new System.Drawing.Point(395, 755);
+            this.cancel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(163, 43);
+            this.cancel.Size = new System.Drawing.Size(204, 54);
             this.cancel.TabIndex = 15;
             this.cancel.Text = "Hủy Bỏ";
             this.cancel.UseVisualStyleBackColor = false;
@@ -208,10 +215,10 @@ namespace ManagementPhoneStore
             // add
             // 
             this.add.BackColor = System.Drawing.Color.Tomato;
-            this.add.Location = new System.Drawing.Point(87, 604);
-            this.add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.add.Location = new System.Drawing.Point(109, 755);
+            this.add.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(163, 43);
+            this.add.Size = new System.Drawing.Size(204, 54);
             this.add.TabIndex = 16;
             this.add.Text = "Thêm";
             this.add.UseVisualStyleBackColor = false;
@@ -219,21 +226,21 @@ namespace ManagementPhoneStore
             // update
             // 
             this.update.BackColor = System.Drawing.Color.Tomato;
-            this.update.Location = new System.Drawing.Point(87, 604);
-            this.update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.update.Location = new System.Drawing.Point(109, 755);
+            this.update.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(163, 43);
+            this.update.Size = new System.Drawing.Size(204, 54);
             this.update.TabIndex = 17;
             this.update.Text = "Sửa";
             this.update.UseVisualStyleBackColor = false;
             this.update.Click += new System.EventHandler(this.button1_Click_2);
             // 
-            // NhanVienChiTietGUI
+            // NhanVienChiTietForm
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 658);
+            this.ClientSize = new System.Drawing.Size(746, 822);
             this.Controls.Add(this.update);
             this.Controls.Add(this.add);
             this.Controls.Add(this.cancel);
@@ -249,8 +256,9 @@ namespace ManagementPhoneStore
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.hoVaTenText);
             this.Controls.Add(this.hoVaTenLabel);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "NhanVienChiTietGUI";
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.Name = "NhanVienChiTietForm";
             this.Text = "NhanVienChiTietGUIcs";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -429,10 +437,18 @@ namespace ManagementPhoneStore
 
                 DateTime ngaySinh = nhanVienDate.Value;
                 temp.Ngaysinh = ngaySinh;
+                if (!nvGui.nvService.checkDup(temp.Hoten))
+                {
+                    nvGui.nvService.InsertNv(temp);
+                    nvGui.LoadDataToListView(nvGui.nvService.GetAll());
+                    Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Họ và tên nhân viên đã tồn tại", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                nvGui.nvService.InsertNv(temp);
-                nvGui.LoadDataToListView(nvGui.nvService.GetAll());
-                Dispose();
+                }
+             
             }
         }
         private void update_Click(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace Service.impl
         private KhachHangDAO dao=new KhachHangDAO();
         public List<KhachHang> getAll()
         {
-            _khachhangs=dao.GetAll();
+            _khachhangs=dao.GetAll().Where(kh=>kh.TrangThai.Equals(1)).ToList();
             return _khachhangs;
         }
 
@@ -29,7 +29,10 @@ namespace Service.impl
                 throw new IndexOutOfRangeException("Error");
             }
         }
-
+        public bool checkNameExist(String name)
+        {
+            return _khachhangs.Any(kh => kh.TenKhachHang.Equals(name));
+        }
         public int getIndexByMaDV(int maKhachHang)
         {
             var khachhang = _khachhangs.FirstOrDefault(kh => kh.MakH == maKhachHang);

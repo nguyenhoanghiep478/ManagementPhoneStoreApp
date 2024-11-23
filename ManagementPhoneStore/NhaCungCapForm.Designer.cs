@@ -41,21 +41,25 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhaCungCapForm));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.add = new System.Windows.Forms.Button();
-            this.update = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
-            this.import = new System.Windows.Forms.Button();
-            this.detail = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ncc_prop = new System.Windows.Forms.ComboBox();
+            this.refresh1 = new System.Windows.Forms.Button();
             this.export = new System.Windows.Forms.Button();
             this.search_ncc = new System.Windows.Forms.TextBox();
-            this.ncc_prop = new System.Windows.Forms.ComboBox();
+            this.import = new System.Windows.Forms.Button();
+            this.detail = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+            this.add = new System.Windows.Forms.Button();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -73,9 +77,9 @@ namespace ManagementPhoneStore
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(181, 126);
+            this.listView1.Location = new System.Drawing.Point(12, 155);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(900, 426);
+            this.listView1.Size = new System.Drawing.Size(1444, 386);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -84,132 +88,221 @@ namespace ManagementPhoneStore
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã NCC";
-            this.columnHeader1.Width = 180;
+            this.columnHeader1.Width = 280;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên nhà cung cấp";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 180;
+            this.columnHeader2.Width = 324;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Địa chỉ";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 180;
+            this.columnHeader3.Width = 280;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Email";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 180;
+            this.columnHeader4.Width = 280;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Số điện thoại";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 180;
+            this.columnHeader5.Width = 280;
             // 
-            // add
+            // panel2
             // 
-            this.add.Location = new System.Drawing.Point(135, 65);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(75, 23);
-            this.add.TabIndex = 1;
-            this.add.Text = "Thêm";
-            this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // update
-            // 
-            this.update.Location = new System.Drawing.Point(247, 65);
-            this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(75, 23);
-            this.update.TabIndex = 2;
-            this.update.Text = "Sửa";
-            this.update.UseVisualStyleBackColor = true;
-            // 
-            // delete
-            // 
-            this.delete.Location = new System.Drawing.Point(361, 65);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(75, 23);
-            this.delete.TabIndex = 3;
-            this.delete.Text = "Xóa";
-            this.delete.UseVisualStyleBackColor = true;
-            // 
-            // import
-            // 
-            this.import.Location = new System.Drawing.Point(594, 65);
-            this.import.Name = "import";
-            this.import.Size = new System.Drawing.Size(75, 23);
-            this.import.TabIndex = 4;
-            this.import.Text = "Nhập";
-            this.import.UseVisualStyleBackColor = true;
-            // 
-            // detail
-            // 
-            this.detail.Location = new System.Drawing.Point(479, 65);
-            this.detail.Name = "detail";
-            this.detail.Size = new System.Drawing.Size(75, 23);
-            this.detail.TabIndex = 4;
-            this.detail.Text = "Chi tiết";
-            this.detail.UseVisualStyleBackColor = true;
-            this.detail.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // export
-            // 
-            this.export.Location = new System.Drawing.Point(709, 65);
-            this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(75, 23);
-            this.export.TabIndex = 5;
-            this.export.Text = "Xuất";
-            this.export.UseVisualStyleBackColor = true;
-            // 
-            // search_ncc
-            // 
-            this.search_ncc.Location = new System.Drawing.Point(806, 66);
-            this.search_ncc.Name = "search_ncc";
-            this.search_ncc.Size = new System.Drawing.Size(264, 22);
-            this.search_ncc.TabIndex = 9;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.ncc_prop);
+            this.panel2.Controls.Add(this.refresh1);
+            this.panel2.Controls.Add(this.export);
+            this.panel2.Controls.Add(this.search_ncc);
+            this.panel2.Controls.Add(this.import);
+            this.panel2.Controls.Add(this.detail);
+            this.panel2.Controls.Add(this.delete);
+            this.panel2.Controls.Add(this.update);
+            this.panel2.Controls.Add(this.add);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1471, 110);
+            this.panel2.TabIndex = 1;
             // 
             // ncc_prop
             // 
-            this.ncc_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ncc_prop.FormattingEnabled = true;
             this.ncc_prop.Items.AddRange(new object[] {
             "Tất cả",
             "Mã ncc",
             "Tên ncc",
             "Địa chỉ",
-            "Email",
+            "Emai",
             "Số điện thoại"});
-            this.ncc_prop.Location = new System.Drawing.Point(806, 32);
+            this.ncc_prop.Location = new System.Drawing.Point(837, 32);
             this.ncc_prop.Name = "ncc_prop";
-            this.ncc_prop.Size = new System.Drawing.Size(121, 28);
+            this.ncc_prop.Size = new System.Drawing.Size(141, 28);
             this.ncc_prop.TabIndex = 7;
-            ncc_prop.SelectedIndex = 0;
+            this.ncc_prop.Text = "Tất cả";
+            // 
+            // refresh1
+            // 
+            this.refresh1.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh1.Image = ((System.Drawing.Image)(resources.GetObject("refresh1.Image")));
+            this.refresh1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refresh1.Location = new System.Drawing.Point(1303, 32);
+            this.refresh1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.refresh1.Name = "refresh1";
+            this.refresh1.Size = new System.Drawing.Size(139, 50);
+            this.refresh1.TabIndex = 5;
+            this.refresh1.Text = "Làm mới";
+            this.refresh1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refresh1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.refresh1.UseVisualStyleBackColor = true;
+            // 
+            // export
+            // 
+            this.export.AutoSize = true;
+            this.export.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.export.FlatAppearance.BorderSize = 0;
+            this.export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.export.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.export.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.export.Image = ((System.Drawing.Image)(resources.GetObject("export.Image")));
+            this.export.Location = new System.Drawing.Point(336, 11);
+            this.export.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(93, 90);
+            this.export.TabIndex = 2;
+            this.export.Text = "XUẤT EXCEL";
+            this.export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.export.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.export.UseVisualStyleBackColor = true;
+            // 
+            // search_ncc
+            // 
+            this.search_ncc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_ncc.Location = new System.Drawing.Point(996, 32);
+            this.search_ncc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search_ncc.Multiline = true;
+            this.search_ncc.Name = "search_ncc";
+            this.search_ncc.Size = new System.Drawing.Size(300, 50);
+            this.search_ncc.TabIndex = 6;
+            // 
+            // import
+            // 
+            this.import.AutoSize = true;
+            this.import.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.import.FlatAppearance.BorderSize = 0;
+            this.import.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.import.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.import.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.import.Image = ((System.Drawing.Image)(resources.GetObject("import.Image")));
+            this.import.Location = new System.Drawing.Point(435, 11);
+            this.import.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.import.Name = "import";
+            this.import.Size = new System.Drawing.Size(84, 90);
+            this.import.TabIndex = 2;
+            this.import.Text = "NHẬP EXCEL";
+            this.import.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.import.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.import.UseVisualStyleBackColor = true;
+            // 
+            // detail
+            // 
+            this.detail.AutoSize = true;
+            this.detail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.detail.FlatAppearance.BorderSize = 0;
+            this.detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.detail.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detail.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.detail.Image = ((System.Drawing.Image)(resources.GetObject("detail.Image")));
+            this.detail.Location = new System.Drawing.Point(255, 11);
+            this.detail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detail.Name = "detail";
+            this.detail.Size = new System.Drawing.Size(75, 90);
+            this.detail.TabIndex = 2;
+            this.detail.Text = "CHI TIẾT";
+            this.detail.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.detail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.detail.UseVisualStyleBackColor = true;
+            // 
+            // delete
+            // 
+            this.delete.AutoSize = true;
+            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete.FlatAppearance.BorderSize = 0;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.delete.Image = ((System.Drawing.Image)(resources.GetObject("delete.Image")));
+            this.delete.Location = new System.Drawing.Point(175, 11);
+            this.delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 90);
+            this.delete.TabIndex = 2;
+            this.delete.Text = "XÓA";
+            this.delete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.delete.UseVisualStyleBackColor = true;
+            // 
+            // update
+            // 
+            this.update.AutoSize = true;
+            this.update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.update.FlatAppearance.BorderSize = 0;
+            this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.update.Image = ((System.Drawing.Image)(resources.GetObject("update.Image")));
+            this.update.Location = new System.Drawing.Point(95, 11);
+            this.update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(75, 90);
+            this.update.TabIndex = 1;
+            this.update.Text = "SỬA";
+            this.update.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.update.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.update.UseVisualStyleBackColor = true;
+            // 
+            // add
+            // 
+            this.add.AutoSize = true;
+            this.add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.add.FlatAppearance.BorderSize = 0;
+            this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.add.Image = ((System.Drawing.Image)(resources.GetObject("add.Image")));
+            this.add.Location = new System.Drawing.Point(15, 11);
+            this.add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 90);
+            this.add.TabIndex = 0;
+            this.add.Text = "THÊM";
+            this.add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.add.UseVisualStyleBackColor = true;
             // 
             // NhaCungCapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1082, 553);
-            this.Controls.Add(this.export);
-            this.Controls.Add(this.detail);
-            this.Controls.Add(this.import);
-            this.Controls.Add(this.delete);
-            this.Controls.Add(this.update);
-            this.Controls.Add(this.add);
+            this.ClientSize = new System.Drawing.Size(1468, 553);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.search_ncc);
-            this.Controls.Add(this.ncc_prop);
+            this.Controls.Add(this.panel2);
             this.Name = "NhaCungCapForm";
             this.Text = "NhaCungCap";
             this.Load += new System.EventHandler(this.NhaCungCap_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
         public int GetSelectedIndex()
@@ -240,10 +333,15 @@ namespace ManagementPhoneStore
             export.Click += export_Click;
             search_ncc.TextChanged += search_ncc_TextChanged;
 
+            refresh1.Click += refresh_Click;
         }
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
 
+        }
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            LoadDataToListView(nccService.GetAll());
         }
         private void detail_Click(object sender, EventArgs e)
         {
@@ -452,13 +550,15 @@ namespace ManagementPhoneStore
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private Button add;
-        private Button update;
-        private Button delete;
-        private Button import;
-        private Button detail;
-        private Button export;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button export;
+        private System.Windows.Forms.Button import;
+        private System.Windows.Forms.Button detail;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.Button refresh1;
         private System.Windows.Forms.TextBox search_ncc;
-        private System.Windows.Forms.ComboBox ncc_prop;
+        private ComboBox ncc_prop;
     }
 }

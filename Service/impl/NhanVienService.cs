@@ -12,7 +12,7 @@ namespace Service.impl
 {
     public class NhanVienService : INhanVienService
     {
-        private List<NhanVien> _nhanVien = new NhanVienDAO().GetAll();
+        private List<NhanVien> _nhanVien = new NhanVienDAO().GetAll().Where(nv=>nv.Trangthai.Equals(1)).ToList();
         private readonly INhanVienDAO nvDAO = new NhanVienDAO();
         public List<NhanVien> GetAll()
         {
@@ -55,9 +55,14 @@ namespace Service.impl
             return _nhanVien.Select(n => n.Hoten).ToArray();
         }
 
+        public bool checkDup(string name)
+        {
+            return nvDAO.GetAll().Any(nv=>nv.Hoten.Equals(name));
+        }
         public void InsertNv(NhanVien nv)
         {
-            nvDAO.insert(nv);
+            long i= nvDAO.insert(nv);
+            nv.Manv = (int?)i;
             _nhanVien.Add(nv);
             //if (nv != null && !_nhanVien.Any(n => n.Manv == nv.Manv))
             //{

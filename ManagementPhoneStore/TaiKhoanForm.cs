@@ -12,6 +12,14 @@ namespace ManagementPhoneStore
 {
     public partial class TaiKhoanForm : Form
     {
-       
+        private void TaiKhoanForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

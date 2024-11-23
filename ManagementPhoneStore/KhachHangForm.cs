@@ -12,6 +12,19 @@ namespace ManagementPhoneStore
 {
     public partial class KhachHangForm : Form
     {
-       
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
