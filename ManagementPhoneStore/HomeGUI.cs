@@ -122,8 +122,8 @@ namespace GUI
 
         private void button11_Click(object sender, EventArgs e)
         {
-            ThongKeTonKho thongkeForm = new ThongKeTonKho();
-            thongkeForm.Show();
+            //ThongKeTonKho thongkeForm = new ThongKeTonKho();
+            //thongkeForm.Show();
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -134,8 +134,14 @@ namespace GUI
 
         private void button13_Click(object sender, EventArgs e)
         {
-            LoginFormcs loginForm = new LoginFormcs();
+            Log_InGUI loginForm = new Log_InGUI();
+            this.Hide();
             loginForm.Show();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -62,12 +62,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -87,19 +93,23 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(-3, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.Size = new System.Drawing.Size(260, 144);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -126,7 +136,7 @@
             // 
             // pictureBox1
             // 
-            //this.pictureBox1.Image = global::GUI.Properties.Resources.account_32px;
+            this.pictureBox1.Image = global::ManagementPhoneStore.Properties.Resources.account_32px;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 75);
@@ -136,6 +146,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Controls.Add(this.pictureBox18);
             this.panel2.Controls.Add(this.pictureBox17);
             this.panel2.Controls.Add(this.pictureBox16);
@@ -162,67 +173,69 @@
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(3, 103);
+            this.panel2.Location = new System.Drawing.Point(0, 109);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(197, 381);
+            this.panel2.Size = new System.Drawing.Size(257, 1387);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox18
             // 
-            //this.pictureBox18.Image = global::GUI.Properties.Resources.log_out;
-            this.pictureBox18.Location = new System.Drawing.Point(30, 351);
+            this.pictureBox18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox18.Image = global::ManagementPhoneStore.Properties.Resources.log_out;
+            this.pictureBox18.Location = new System.Drawing.Point(42, 588);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox18.Size = new System.Drawing.Size(30, 30);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox18.TabIndex = 13;
             this.pictureBox18.TabStop = false;
             // 
             // pictureBox17
             // 
-            //this.pictureBox17.Image = global::GUI.Properties.Resources.permission;
-            this.pictureBox17.Location = new System.Drawing.Point(30, 321);
+            this.pictureBox17.Image = global::ManagementPhoneStore.Properties.Resources.permission;
+            this.pictureBox17.Location = new System.Drawing.Point(45, 529);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox17.Size = new System.Drawing.Size(30, 30);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 13;
             this.pictureBox17.TabStop = false;
             // 
             // pictureBox16
             // 
-            //this.pictureBox16.Image = global::GUI.Properties.Resources.statistical;
-            this.pictureBox16.Location = new System.Drawing.Point(31, 292);
+            this.pictureBox16.Image = global::ManagementPhoneStore.Properties.Resources.statistical;
+            this.pictureBox16.Location = new System.Drawing.Point(45, 483);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox16.Size = new System.Drawing.Size(30, 30);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox16.TabIndex = 21;
             this.pictureBox16.TabStop = false;
             // 
             // pictureBox15
             // 
-            //this.pictureBox15.Image = global::GUI.Properties.Resources.account1;
-            this.pictureBox15.Location = new System.Drawing.Point(31, 264);
+            this.pictureBox15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox15.Image = global::ManagementPhoneStore.Properties.Resources.account;
+            this.pictureBox15.Location = new System.Drawing.Point(45, 437);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox15.Size = new System.Drawing.Size(30, 30);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox15.TabIndex = 20;
             this.pictureBox15.TabStop = false;
             // 
             // pictureBox14
             // 
-            //this.pictureBox14.Image = global::GUI.Properties.Resources.staff;
-            this.pictureBox14.Location = new System.Drawing.Point(30, 234);
+            this.pictureBox14.Image = global::ManagementPhoneStore.Properties.Resources.staff;
+            this.pictureBox14.Location = new System.Drawing.Point(45, 391);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox14.Size = new System.Drawing.Size(30, 30);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 19;
             this.pictureBox14.TabStop = false;
             // 
             // pictureBox13
             // 
-            //this.pictureBox13.Image = global::GUI.Properties.Resources.supplier;
-            this.pictureBox13.Location = new System.Drawing.Point(31, 208);
+            this.pictureBox13.Image = global::ManagementPhoneStore.Properties.Resources.supplier;
+            this.pictureBox13.Location = new System.Drawing.Point(42, 345);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox13.Size = new System.Drawing.Size(30, 30);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 18;
             this.pictureBox13.TabStop = false;
@@ -230,10 +243,10 @@
             // 
             // pictureBox12
             // 
-            //this.pictureBox12.Image = global::GUI.Properties.Resources.customer;
-            this.pictureBox12.Location = new System.Drawing.Point(31, 179);
+            this.pictureBox12.Image = global::ManagementPhoneStore.Properties.Resources.customer;
+            this.pictureBox12.Location = new System.Drawing.Point(42, 299);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox12.Size = new System.Drawing.Size(30, 30);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 17;
             this.pictureBox12.TabStop = false;
@@ -241,50 +254,51 @@
             // 
             // pictureBox11
             // 
-            //this.pictureBox11.Image = global::GUI.Properties.Resources.export;
-            this.pictureBox11.Location = new System.Drawing.Point(31, 150);
+            this.pictureBox11.Image = global::ManagementPhoneStore.Properties.Resources.export;
+            this.pictureBox11.Location = new System.Drawing.Point(42, 253);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox11.Size = new System.Drawing.Size(30, 30);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 16;
             this.pictureBox11.TabStop = false;
             // 
             // pictureBox10
             // 
-            //this.pictureBox10.Image = global::GUI.Properties.Resources.import;
-            this.pictureBox10.Location = new System.Drawing.Point(31, 121);
+            this.pictureBox10.Image = global::ManagementPhoneStore.Properties.Resources.import;
+            this.pictureBox10.Location = new System.Drawing.Point(42, 207);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 15;
             this.pictureBox10.TabStop = false;
             // 
             // pictureBox9
             // 
-            //this.pictureBox9.Image = global::GUI.Properties.Resources.area;
-            this.pictureBox9.Location = new System.Drawing.Point(31, 93);
+            this.pictureBox9.Image = global::ManagementPhoneStore.Properties.Resources.area;
+            this.pictureBox9.Location = new System.Drawing.Point(42, 161);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 14;
             this.pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
-            //this.pictureBox8.Image = global::GUI.Properties.Resources.brand;
-            this.pictureBox8.Location = new System.Drawing.Point(31, 64);
+            this.pictureBox8.Image = global::ManagementPhoneStore.Properties.Resources.brand;
+            this.pictureBox8.Location = new System.Drawing.Point(42, 115);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 13;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox7
             // 
-            //this.pictureBox7.Image = global::GUI.Properties.Resources.product;
-            this.pictureBox7.Location = new System.Drawing.Point(31, 34);
+            this.pictureBox7.Image = global::ManagementPhoneStore.Properties.Resources.product;
+            this.pictureBox7.Location = new System.Drawing.Point(42, 69);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 12;
             this.pictureBox7.TabStop = false;
@@ -292,19 +306,20 @@
             // 
             // pictureBox6
             // 
-            //this.pictureBox6.Image = global::GUI.Properties.Resources.home;
-            this.pictureBox6.Location = new System.Drawing.Point(31, 3);
+            this.pictureBox6.Image = global::ManagementPhoneStore.Properties.Resources.home;
+            this.pictureBox6.Location = new System.Drawing.Point(42, 23);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox6.Size = new System.Drawing.Size(30, 30);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(9, 351);
+            this.button13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(9, 578);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(175, 25);
+            this.button13.Size = new System.Drawing.Size(230, 40);
             this.button13.TabIndex = 11;
             this.button13.Text = "Đăng xuất";
             this.button13.UseVisualStyleBackColor = true;
@@ -312,9 +327,10 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(9, 322);
+            this.button12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(9, 519);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(175, 25);
+            this.button12.Size = new System.Drawing.Size(230, 40);
             this.button12.TabIndex = 2;
             this.button12.Text = "Phân quyền";
             this.button12.UseVisualStyleBackColor = true;
@@ -322,9 +338,10 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(9, 293);
+            this.button11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(9, 473);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(175, 25);
+            this.button11.Size = new System.Drawing.Size(230, 40);
             this.button11.TabIndex = 10;
             this.button11.Text = "Thống kê";
             this.button11.UseVisualStyleBackColor = true;
@@ -332,9 +349,10 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(9, 264);
+            this.button10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(9, 427);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(175, 25);
+            this.button10.Size = new System.Drawing.Size(230, 40);
             this.button10.TabIndex = 9;
             this.button10.Text = "Tài khoản";
             this.button10.UseVisualStyleBackColor = true;
@@ -342,9 +360,10 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(9, 235);
+            this.button9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(9, 381);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(175, 25);
+            this.button9.Size = new System.Drawing.Size(230, 40);
             this.button9.TabIndex = 8;
             this.button9.Text = "Nhân viên";
             this.button9.UseVisualStyleBackColor = true;
@@ -352,9 +371,10 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(9, 206);
+            this.button8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(9, 335);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(175, 25);
+            this.button8.Size = new System.Drawing.Size(230, 40);
             this.button8.TabIndex = 7;
             this.button8.Text = "Nhà cung cấp";
             this.button8.UseVisualStyleBackColor = true;
@@ -362,9 +382,10 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(9, 177);
+            this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(9, 289);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(175, 25);
+            this.button7.Size = new System.Drawing.Size(230, 40);
             this.button7.TabIndex = 6;
             this.button7.Text = "Khách hàng";
             this.button7.UseVisualStyleBackColor = true;
@@ -372,9 +393,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(9, 148);
+            this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(9, 243);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(175, 25);
+            this.button6.Size = new System.Drawing.Size(230, 40);
             this.button6.TabIndex = 5;
             this.button6.Text = "Phiếu xuất";
             this.button6.UseVisualStyleBackColor = true;
@@ -382,9 +404,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(9, 119);
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(9, 197);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(175, 25);
+            this.button5.Size = new System.Drawing.Size(230, 40);
             this.button5.TabIndex = 4;
             this.button5.Text = "Phiếu nhập";
             this.button5.UseVisualStyleBackColor = true;
@@ -392,9 +415,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(9, 90);
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(9, 151);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 25);
+            this.button4.Size = new System.Drawing.Size(230, 40);
             this.button4.TabIndex = 3;
             this.button4.Text = "Khu vực kho";
             this.button4.UseVisualStyleBackColor = true;
@@ -402,9 +426,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(9, 61);
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(9, 105);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 25);
+            this.button3.Size = new System.Drawing.Size(230, 40);
             this.button3.TabIndex = 2;
             this.button3.Text = "Thuộc tính";
             this.button3.UseVisualStyleBackColor = true;
@@ -412,9 +437,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(9, 32);
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(9, 59);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 25);
+            this.button2.Size = new System.Drawing.Size(230, 40);
             this.button2.TabIndex = 1;
             this.button2.Text = "Sản phẩm";
             this.button2.UseVisualStyleBackColor = true;
@@ -422,10 +448,11 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(9, 3);
+            this.button1.Location = new System.Drawing.Point(9, 13);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 25);
+            this.button1.Size = new System.Drawing.Size(230, 40);
             this.button1.TabIndex = 0;
             this.button1.Text = "Trang chủ";
             this.button1.UseVisualStyleBackColor = true;
@@ -434,18 +461,19 @@
             // panel3
             // 
             this.panel3.AutoSize = true;
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(206, 3);
+            this.panel3.Location = new System.Drawing.Point(253, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(595, 147);
+            this.panel3.Size = new System.Drawing.Size(1119, 211);
             this.panel3.TabIndex = 2;
             // 
             // pictureBox2
             // 
-            //this.pictureBox2.Image = global::GUI.Properties.Resources.LẬP_TRÌNH_C_11;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Image = global::ManagementPhoneStore.Properties.Resources.LẬP_TRÌNH_C_11;
+            this.pictureBox2.Location = new System.Drawing.Point(259, 25);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(589, 141);
+            this.pictureBox2.Size = new System.Drawing.Size(608, 158);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -454,86 +482,141 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Location = new System.Drawing.Point(206, 153);
+            this.panel4.Controls.Add(this.panel7);
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Location = new System.Drawing.Point(253, 207);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(592, 331);
+            this.panel4.Size = new System.Drawing.Size(1116, 551);
             this.panel4.TabIndex = 3;
             // 
-            // label5
+            // panel7
             // 
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(451, 183);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 117);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Dễ dàng xác định được thông tin về từng thiết bị điện thoại một cách nhanh chóng " +
-    "và chính xác ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.panel7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Controls.Add(this.pictureBox4);
+            this.panel7.Location = new System.Drawing.Point(467, 45);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 416);
+            this.panel7.TabIndex = 1;
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(241, 183);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(27, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 117);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Ngăn chặn việc sử dụng các thiết bị đánh cắp. Điều này giúp tăng tính bảo mật cho" +
-    " các hoạt động quản lý điện thoại.";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 117);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Mã IMEI là một số duy nhất được gán cho từng thiết bị điện thoại, do đó hệ thống " +
-    "quản lý điện thoại theo mã IMEI sẽ đảm bảo tính chính xác và độ tin cậy cao.";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBox5
-            // 
-            //this.pictureBox5.Image = global::GUI.Properties.Resources.tinhhieuqua_128px;
-            this.pictureBox5.Location = new System.Drawing.Point(452, 41);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(112, 132);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
+            this.label4.Size = new System.Drawing.Size(146, 21);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "TÍNH BẢO MẬT";
             // 
             // pictureBox4
             // 
-            //this.pictureBox4.Image = global::GUI.Properties.Resources.tinhbaomat_128px;
-            this.pictureBox4.Location = new System.Drawing.Point(244, 45);
+            this.pictureBox4.Image = global::ManagementPhoneStore.Properties.Resources.tinhbaomat_128px;
+            this.pictureBox4.Location = new System.Drawing.Point(16, 18);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.Size = new System.Drawing.Size(168, 134);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel6.Controls.Add(this.label8);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.pictureBox5);
+            this.panel6.Location = new System.Drawing.Point(818, 45);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 416);
+            this.panel6.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(27, 165);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(147, 21);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "TÍNH HIỆU QUẢ";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBox5.Image = global::ManagementPhoneStore.Properties.Resources.tinhhieuqua_128px;
+            this.pictureBox5.Location = new System.Drawing.Point(16, 18);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(168, 134);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.pictureBox3);
+            this.panel5.Location = new System.Drawing.Point(103, 45);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 416);
+            this.panel5.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 165);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(168, 21);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "TÍNH CHÍNH XÁC";
+            // 
             // pictureBox3
             // 
-            //this.pictureBox3.Image = global::GUI.Properties.Resources.tinhchinhxac_128px;
-            this.pictureBox3.Location = new System.Drawing.Point(38, 45);
+            this.pictureBox3.Image = global::ManagementPhoneStore.Properties.Resources.tinhchinhxac_128px;
+            this.pictureBox3.Location = new System.Drawing.Point(16, 18);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.Size = new System.Drawing.Size(168, 134);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 192);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 104);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Mã IMEI là một số duy nhất được gán cho từng thiết bị điện thoại, do đó hệ thống " +
+    "quản lý điện thoại theo mã IMEI sẽ đảm bảo tính chính xác và độ tin cậy cao.";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(20, 192);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(164, 104);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Ngăn chặn việc sử dụng các thiết bị điện thoại giả mạo hoặc bị đánh cắp. Điều này" +
+    " giúp tang tính bảo mật cho các hoạt động quản lý điện thoại.";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(20, 192);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(164, 104);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Dễ dàng xác định được thông tin về từng thiết bị điện thoại một cách nhanh chóng " +
+    "và chính xác, giúp cho việc quản lý điện thoại được thực hiện một cách hiệu quả " +
+    "hơn.";
             // 
             // HomeGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -562,9 +645,11 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -594,9 +679,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.PictureBox pictureBox15;
@@ -610,8 +692,17 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
