@@ -372,7 +372,7 @@ namespace ManagementPhoneStore
         {
             if (GetSelectedIndex() != -1)
             {
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng?", "Xóa khách hàng",
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhà cung cấp?", "Xóa nhà cung cấp",
                                       MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
                 if (result == DialogResult.OK)
@@ -429,7 +429,7 @@ namespace ManagementPhoneStore
                             string tenncc = excelRow.GetCell(0)?.StringCellValue;
                             string diachi = excelRow.GetCell(1)?.StringCellValue.ToString();
                             string email = excelRow.GetCell(2)?.StringCellValue;
-                            string sdt = excelRow.GetCell(3)?.StringCellValue;
+                            string sdt = excelRow.GetCell(3)?.NumericCellValue.ToString();
 
                             if (string.IsNullOrWhiteSpace(tenncc) ||  // Kiểm tra tên nhà cung cấp không rỗng
                                 string.IsNullOrWhiteSpace(diachi) || // Kiểm tra địa chỉ không rỗng

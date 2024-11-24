@@ -53,8 +53,11 @@ namespace Service
 
         public bool Add(NhaCungCap nhaCungCap)
         {
-            if (!CheckDup(nhaCungCap.Tennhacungcap)&&dao.insert(nhaCungCap)>0)
+            long i = 0;
+            i = dao.insert(nhaCungCap);
+            if (!CheckDup(nhaCungCap.Tennhacungcap)&&i>0)
             {
+                nhaCungCap.Manhacungcap = (int?)i;
                 nhaCungCapList.Add(nhaCungCap);
                 return true;
             }
@@ -145,8 +148,13 @@ namespace Service
                     ).ToList();
                     break;
                 case "Mã ncc":
-                    // Tìm kiếm theo tên nhà cung cấp
-                    ketQua = nhaCungCapList.Where(ncc => ncc.Manhacungcap.Equals(Convert.ToInt32(txt))).ToList();
+                    // Kiểm tra nếu giá trị nhập là số
+                    if (int.TryParse(txt, out int maNCC))
+                    {
+                        // Tìm kiếm theo Mã nhà cung cấp
+                        ketQua = nhaCungCapList.Where(ncc => ncc.Manhacungcap.Equals(maNCC)).ToList();
+                    }
+                   
                     break;
                 case "Tên ncc":
                     // Tìm kiếm theo tên nhà cung cấp

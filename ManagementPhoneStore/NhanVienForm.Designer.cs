@@ -79,9 +79,9 @@ namespace ManagementPhoneStore
             this.listViewNhanVien.FullRowSelect = true;
             this.listViewNhanVien.GridLines = true;
             this.listViewNhanVien.HideSelection = false;
-            this.listViewNhanVien.Location = new System.Drawing.Point(15, 169);
+            this.listViewNhanVien.Location = new System.Drawing.Point(15, 153);
             this.listViewNhanVien.Name = "listViewNhanVien";
-            this.listViewNhanVien.Size = new System.Drawing.Size(1443, 382);
+            this.listViewNhanVien.Size = new System.Drawing.Size(1443, 398);
             this.listViewNhanVien.TabIndex = 0;
             this.listViewNhanVien.UseCompatibleStateImageBehavior = false;
             this.listViewNhanVien.View = System.Windows.Forms.View.Details;
@@ -302,6 +302,7 @@ namespace ManagementPhoneStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1470, 553);
             this.Controls.Add(this.listViewNhanVien);
             this.Controls.Add(this.panel2);
@@ -377,7 +378,7 @@ namespace ManagementPhoneStore
         {
             if (GetSelectedIndex() != -1)
             {
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng?", "Xóa khách hàng",
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên", "Xóa nhân viên",
                                       MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
                 if (result == DialogResult.OK)

@@ -1,6 +1,8 @@
 ﻿using Entity;
 using ManagementPhoneStore.util;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -205,6 +207,8 @@ namespace ManagementPhoneStore
         public void initInfo()
         {
             ten.Text=ncc.Tennhacungcap;
+            ten.SelectionStart = 0;
+            ten.SelectionLength = 0;
             diachi.Text=ncc.Diachi;
             email.Text=ncc.Email;
             sodienthoai.Text = ncc.Sdt;
@@ -213,6 +217,8 @@ namespace ManagementPhoneStore
         public void initView()
         {
             ten.ReadOnly = true;
+            ten.SelectionStart = 0;
+            ten.SelectionLength = 0;
             diachi.ReadOnly = true;
             email.ReadOnly = true;
             sodienthoai.ReadOnly = true;
@@ -269,6 +275,17 @@ namespace ManagementPhoneStore
             if (Validation.IsEmpty(ten.Text))
             {
                 MessageBox.Show("Tên nhà cung cấp không được rỗng", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            // Kiểm tra trùng lặp
+            List<NhaCungCap> danhSachNhaCungCap = nccForm.nccService.GetAll();
+            string tenMoi = ten.Text.Trim();
+            bool isDuplicate = danhSachNhaCungCap.Any(ncc =>
+            string.Equals(ncc.Tennhacungcap, tenMoi, StringComparison.OrdinalIgnoreCase));
+
+            if (isDuplicate)
+            {
+                MessageBox.Show("Tên nhà cung cấp đã tồn tại", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (Validation.IsEmpty(diachi.Text))
