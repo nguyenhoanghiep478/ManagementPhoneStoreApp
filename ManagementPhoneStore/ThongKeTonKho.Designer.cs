@@ -60,10 +60,10 @@
             this.searchPanel.Controls.Add(this.datePickerTo);
             this.searchPanel.Controls.Add(this.labelFrom);
             this.searchPanel.Controls.Add(this.labelTo);
-            this.searchPanel.Location = new System.Drawing.Point(8, 8);
-            this.searchPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.searchPanel.Location = new System.Drawing.Point(11, 10);
+            this.searchPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(225, 514);
+            this.searchPanel.Size = new System.Drawing.Size(300, 582);
             this.searchPanel.TabIndex = 0;
             // 
             // button7
@@ -71,10 +71,10 @@
             this.button7.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(95, 191);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button7.Location = new System.Drawing.Point(127, 235);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(101, 41);
+            this.button7.Size = new System.Drawing.Size(135, 50);
             this.button7.TabIndex = 7;
             this.button7.Text = "Làm mới";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -91,10 +91,10 @@
             this.button6.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(8, 174);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Location = new System.Drawing.Point(11, 214);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(70, 73);
+            this.button6.Size = new System.Drawing.Size(107, 92);
             this.button6.TabIndex = 6;
             this.button6.Text = "XUẤT EXCEL";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -104,58 +104,55 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(8, 24);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearch.Location = new System.Drawing.Point(11, 30);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(188, 20);
+            this.txtSearch.Size = new System.Drawing.Size(249, 22);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // labelSearch
             // 
             this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(8, 8);
-            this.labelSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelSearch.Location = new System.Drawing.Point(11, 10);
             this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(98, 13);
+            this.labelSearch.Size = new System.Drawing.Size(124, 16);
             this.labelSearch.TabIndex = 1;
             this.labelSearch.Text = "Tìm kiếm sản phẩm";
             // 
             // datePickerFrom
             // 
-            this.datePickerFrom.Location = new System.Drawing.Point(8, 73);
-            this.datePickerFrom.Margin = new System.Windows.Forms.Padding(2);
+            this.datePickerFrom.Location = new System.Drawing.Point(11, 90);
+            this.datePickerFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.datePickerFrom.Name = "datePickerFrom";
-            this.datePickerFrom.Size = new System.Drawing.Size(188, 20);
+            this.datePickerFrom.Size = new System.Drawing.Size(249, 22);
             this.datePickerFrom.TabIndex = 2;
             this.datePickerFrom.ValueChanged += new System.EventHandler(this.datePickerFrom_ValueChanged);
             // 
             // datePickerTo
             // 
-            this.datePickerTo.Location = new System.Drawing.Point(8, 122);
-            this.datePickerTo.Margin = new System.Windows.Forms.Padding(2);
+            this.datePickerTo.Location = new System.Drawing.Point(11, 150);
+            this.datePickerTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.datePickerTo.Name = "datePickerTo";
-            this.datePickerTo.Size = new System.Drawing.Size(188, 20);
+            this.datePickerTo.Size = new System.Drawing.Size(249, 22);
             this.datePickerTo.TabIndex = 3;
             this.datePickerTo.ValueChanged += new System.EventHandler(this.datePickerTo_ValueChanged);
             // 
             // labelFrom
             // 
             this.labelFrom.AutoSize = true;
-            this.labelFrom.Location = new System.Drawing.Point(8, 57);
-            this.labelFrom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFrom.Location = new System.Drawing.Point(11, 70);
             this.labelFrom.Name = "labelFrom";
-            this.labelFrom.Size = new System.Drawing.Size(46, 13);
+            this.labelFrom.Size = new System.Drawing.Size(56, 16);
             this.labelFrom.TabIndex = 4;
             this.labelFrom.Text = "Từ ngày";
             // 
             // labelTo
             // 
             this.labelTo.AutoSize = true;
-            this.labelTo.Location = new System.Drawing.Point(8, 106);
-            this.labelTo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTo.Location = new System.Drawing.Point(11, 130);
             this.labelTo.Name = "labelTo";
-            this.labelTo.Size = new System.Drawing.Size(53, 13);
+            this.labelTo.Size = new System.Drawing.Size(64, 16);
             this.labelTo.TabIndex = 5;
             this.labelTo.Text = "Đến ngày";
             // 
@@ -171,57 +168,64 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            this.dataGridView.Location = new System.Drawing.Point(240, 8);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView.Location = new System.Drawing.Point(320, 10);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(802, 514);
+            this.dataGridView.Size = new System.Drawing.Size(1069, 582);
             this.dataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Mã SP";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Tên sản phẩm";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Tồn đầu kỳ";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Nhập trong kỳ";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.HeaderText = "Xuất trong kỳ";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.HeaderText = "Tồn cuối kỳ";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // ThongKeTonKho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 533);
+            this.ClientSize = new System.Drawing.Size(1390, 602);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.searchPanel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ThongKeTonKho";
             this.Text = "Thống Kê Tồn Kho";
             this.Load += new System.EventHandler(this.ThongKeTonKho_Load);

@@ -1,7 +1,10 @@
-﻿using ManagementPhoneStore;
+﻿using Entity;
+using ManagementPhoneStore;
 using Service.impl;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI
@@ -9,9 +12,11 @@ namespace GUI
     public partial class HomeGUI : Form
     {
         private int manv;
-        private TaiKhoanService taiKhoanService=new TaiKhoanService();
-        private NhanVienService NhanVienService = new NhanVienService();
-        private NhomQuyenService NhomQuyenService = new NhomQuyenService();
+        private TaiKhoanService taiKhoanService=TaiKhoanService.Instance;
+        private NhanVienService NhanVienService = NhanVienService.Instance;
+        private NhomQuyenService NhomQuyenService = NhomQuyenService.Instace;
+        private NhomQuyen nhomQuyens;
+        private List<ChiTietQuyen> authors;
         public HomeGUI(int manv)
         {
             this.manv = manv;
@@ -19,6 +24,72 @@ namespace GUI
             this.StartPosition = FormStartPosition.CenterScreen;
             label1.Text=NhanVienService.GetNameById(manv);
             label2.Text=NhomQuyenService.getNameByMA(manv);
+
+            this.nhomQuyens = taiKhoanService.GetNhomQuyen(manv);
+            this.authors = NhomQuyenService.GetChiTietQuyen(nhomQuyens.Tennhomquyen);
+            handleAuthor();
+        }
+
+        private void handleAuthor()
+        {
+            if (!authors.Any(g => g.MaChucNang.Equals("sanpham")))
+            {
+                this.panel2.Controls.Remove(button2);
+                this.panel2.Controls.Remove(pictureBox7);
+            }
+
+            if (!authors.Any(g => g.MaChucNang.Equals("khachhang")))
+            {
+                this.panel2.Controls.Remove(button7);
+                this.panel2.Controls.Remove(pictureBox12);
+            }
+
+            if (!authors.Any(g => g.MaChucNang.Equals("khuvuckho")))
+            {
+                this.panel2.Controls.Remove(button4);
+                this.panel2.Controls.Remove(pictureBox9);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("nhacungcap")))
+            {
+                this.panel2.Controls.Remove(button8);
+                this.panel2.Controls.Remove(pictureBox13);
+
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("nhaphang")))
+            {
+                this.panel2.Controls.Remove(button5);
+                this.panel2.Controls.Remove(pictureBox10);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("nhomquyen")))
+            {
+                this.panel2.Controls.Remove(button12);
+                this.panel2.Controls.Remove(pictureBox17);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("taikhoan")))
+            {
+                this.panel2.Controls.Remove(button10);
+                this.panel2.Controls.Remove(pictureBox15);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("thongke")))
+            {
+                this.panel2.Controls.Remove(button11);
+                this.panel2.Controls.Remove(pictureBox16);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("thuoctinh")))
+            {
+                this.panel2.Controls.Remove(button3);
+                this.panel2.Controls.Remove(pictureBox8);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("nhanvien")))
+            {
+                this.panel2.Controls.Remove(button9);
+                this.panel2.Controls.Remove(pictureBox14);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("xuathang")))
+            {
+                this.panel2.Controls.Remove(button6);
+                this.panel2.Controls.Remove(pictureBox11);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -100,8 +171,14 @@ namespace GUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //AreaGUI kvform = new AreaGUI();
-            //kvform.Show();
+            KhuVucKhoForm kvk = new KhuVucKhoForm();
+            kvk.TopLevel = false;
+            kvk.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(kvk);
+
+            kvk.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -119,37 +196,66 @@ namespace GUI
         private void button7_Click(object sender, EventArgs e)
         {
             KhachHangForm khachHangform = new KhachHangForm();
+            khachHangform.TopLevel = false;
+            khachHangform.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(khachHangform);
             khachHangform.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             NhaCungCapForm nhaCungcap = new NhaCungCapForm();
+            nhaCungcap.TopLevel = false;
+            nhaCungcap.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(nhaCungcap);
             nhaCungcap.Show();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             ListNhanVien nhanVienform = new ListNhanVien();
+            nhanVienform.TopLevel = false;
+            nhanVienform.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(nhanVienform);
             nhanVienform.Show();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             TaiKhoanForm taiKhoanform = new TaiKhoanForm();
+            taiKhoanform.TopLevel = false;
+            taiKhoanform.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(taiKhoanform);
             taiKhoanform.Show();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            //ThongKeTonKho thongkeForm = new ThongKeTonKho();
-            //thongkeForm.Show();
+            ThongKeTonKho thongkeForm = new ThongKeTonKho();
+            thongkeForm.TopLevel = false;
+            thongkeForm.Dock = DockStyle.Fill;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(thongkeForm);
+            thongkeForm.Show();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            //PhanquyenGUI phanquyenForm = new PhanquyenGUI();
-            //phanquyenForm.Show();
+            PhanQuyenGUI phanquyenForm = new PhanQuyenGUI();
+            phanquyenForm.TopLevel = false;
+            phanquyenForm.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(phanquyenForm);
+            phanquyenForm.Show();
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -161,7 +267,7 @@ namespace GUI
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -180,6 +286,41 @@ namespace GUI
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
         {
 
         }

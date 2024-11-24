@@ -170,5 +170,10 @@ namespace Service
             }
             return false;
         }
+
+        public int getIncreasementId()
+        {
+            return nhaCungCapList.Count + 1;
+        }
     }
 }

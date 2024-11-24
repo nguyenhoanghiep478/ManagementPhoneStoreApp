@@ -12,6 +12,7 @@ using DAO.impl;
 using Google.Protobuf.WellKnownTypes;
 using static System.Net.Mime.MediaTypeNames;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace DAO.DAO.impl
 {
@@ -113,7 +114,7 @@ namespace DAO.DAO.impl
 
             try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
+                using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
                     string sql = @"
                     WITH nhap AS (
@@ -172,14 +173,14 @@ namespace DAO.DAO.impl
                 "
                     ;
 
-                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
                         cmd.Parameters.AddWithValue("@timeStart", timeStart);
                         cmd.Parameters.AddWithValue("@timeEnd", timeEnd);
                         cmd.Parameters.AddWithValue("@text", "%" + filterText + "%");
 
                         con.Open();
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {

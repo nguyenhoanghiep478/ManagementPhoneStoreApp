@@ -14,6 +14,8 @@ namespace Service.impl
     {
         private List<NhanVien> _nhanVien = new NhanVienDAO().GetAll().Where(nv=>nv.Trangthai.Equals(1)).ToList();
         private readonly INhanVienDAO nvDAO = new NhanVienDAO();
+        private static Lazy<NhanVienService> instace = new Lazy<NhanVienService>(()=> new NhanVienService());
+        public static NhanVienService Instance => instace.Value;
         public List<NhanVien> GetAll()
         {
             return _nhanVien;
@@ -62,7 +64,7 @@ namespace Service.impl
         public void InsertNv(NhanVien nv)
         {
             long i= nvDAO.insert(nv);
-            nv.Manv = (int?)i;
+            nv.Manv = (int)i;
             _nhanVien.Add(nv);
             //if (nv != null && !_nhanVien.Any(n => n.Manv == nv.Manv))
             //{

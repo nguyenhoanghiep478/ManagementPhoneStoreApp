@@ -41,7 +41,6 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhaCungCapForm));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -193,6 +192,7 @@ namespace ManagementPhoneStore
             this.search_ncc.Name = "search_ncc";
             this.search_ncc.Size = new System.Drawing.Size(300, 50);
             this.search_ncc.TabIndex = 6;
+            this.search_ncc.TextChanged += new System.EventHandler(this.search_ncc_TextChanged_1);
             // 
             // import
             // 
@@ -288,6 +288,7 @@ namespace ManagementPhoneStore
             this.add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click_1);
             // 
             // NhaCungCapForm
             // 
@@ -425,7 +426,7 @@ namespace ManagementPhoneStore
                         {
                             IRow excelRow = excelSheet.GetRow(row);
                             if (excelRow == null) continue;
-
+                            int id = nccService.getIncreasementId();
                             string tenncc = excelRow.GetCell(0)?.StringCellValue;
                             string diachi = excelRow.GetCell(1)?.StringCellValue.ToString();
                             string email = excelRow.GetCell(2)?.StringCellValue;
@@ -442,7 +443,8 @@ namespace ManagementPhoneStore
                             else
                             {
                                 // Giả định khService là một dịch vụ để thêm nhà cung cấp
-                                nccService.Add(new NhaCungCap(null, tenncc, diachi, email, sdt,1));  
+                             
+                                nccService.Add(new NhaCungCap(id, tenncc, diachi, email, sdt,1));  
                             }
                         }
                     }

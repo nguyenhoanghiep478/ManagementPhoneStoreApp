@@ -14,12 +14,16 @@ namespace DAO.DAO.impl
     public class ChiTietQuyenDAO : AbstractDAO<ChiTietQuyen>, IChiTietQuyenDAO
     {
         private readonly ChiTietQuyenRowMapper _rowMapper = new ChiTietQuyenRowMapper();
-        public void delete(long id)
+        public void delete(ChiTietQuyen ctQuyen)
         {
-            String query = "update ctquyen set trangthai = 0 where manhomquyen = ?";
-            Update(query, id);
+            String query = "delete from ctquyen where manhomquyen = @param0 and machucnang = @param1 and hanhdong = @param2";
+            Update(query, ctQuyen.MaNhomQuyen,ctQuyen.MaChucNang,ctQuyen.HanhDong);
         }
-
+        
+        public List<ChiTietQuyen> getAll()
+        {
+            return SearchBy(null, _rowMapper, "ctquyen");
+        }
         public ChiTietQuyen FindBy(int manhomquyen)
         {
             List<Criteria> criterias = new List<Criteria>();
@@ -30,13 +34,13 @@ namespace DAO.DAO.impl
                 Value = manhomquyen,
             };
             criterias.Add(criteria);
-            return SearchBy(criterias, _rowMapper, "chitietsanpham").FirstOrDefault(null);
+            return SearchBy(criterias, _rowMapper, "ctquyen").FirstOrDefault(null);
         }
 
         public long insert(Entity.ChiTietQuyen chiTietQuyen)
         {
             string query = @"
-        INSERT INTO ChiTietQuyen 
+        INSERT INTO ctquyen 
         (
             manhomquyen, machucnang, hanhdong
         ) 
@@ -55,7 +59,7 @@ namespace DAO.DAO.impl
         public void update(Entity.ChiTietQuyen chiTietQuyen)
         {
             string query = @"
-        UPDATE ChiTietQuyen
+        UPDATE ctquyen
         SET 
             machucnang = @param0,
             hanhdong = @param1
@@ -69,6 +73,11 @@ namespace DAO.DAO.impl
                );
 
 
+        }
+
+        public void delete(long id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

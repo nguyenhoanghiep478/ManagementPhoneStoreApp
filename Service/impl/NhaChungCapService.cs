@@ -22,6 +22,11 @@ namespace Service
             dao = new NhaCungCapDAO();
             nhaCungCapList = dao.GetAll().Where(ncc=>ncc.Trangthai.Equals(1)).ToList();
         }
+
+        public int getIncreasementId()
+        {
+            return nhaCungCapList.Count+1;
+        }
         public static NhaChungCapService Instance
         {
             get
@@ -57,7 +62,7 @@ namespace Service
             i = dao.insert(nhaCungCap);
             if (!CheckDup(nhaCungCap.Tennhacungcap)&&i>0)
             {
-                nhaCungCap.Manhacungcap = (int?)i;
+                nhaCungCap.Manhacungcap = (int)i;
                 nhaCungCapList.Add(nhaCungCap);
                 return true;
             }

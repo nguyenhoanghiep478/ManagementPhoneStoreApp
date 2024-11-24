@@ -16,3 +16,9 @@ D:\nam2\c#\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.csproj.AssemblyRefere
 D:\nam2\c#\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 D:\nam2\c#\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.dll
 D:\nam2\c#\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.pdb
+D:\ManagementPhoneStoreApp\Entity\bin\Debug\Entity.dll
+D:\ManagementPhoneStoreApp\Entity\bin\Debug\Entity.pdb
+D:\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+D:\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+D:\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.dll
+D:\ManagementPhoneStoreApp\Entity\obj\Debug\Entity.pdb

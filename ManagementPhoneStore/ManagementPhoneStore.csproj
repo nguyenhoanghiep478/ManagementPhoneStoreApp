@@ -160,6 +160,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomeGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeGUI.Designer.cs">
+      <DependentUpon>HomeGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemBar.cs" />
     <Compile Include="KhachHangDialog.cs">
       <SubType>Form</SubType>
@@ -202,6 +208,18 @@
     </Compile>
     <Compile Include="Log_InGUI.Designer.cs">
       <DependentUpon>Log_InGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanQuyenDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanQuyenDialog.Designer.cs">
+      <DependentUpon>PhanQuyenDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanQuyenGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanQuyenGUI.Designer.cs">
+      <DependentUpon>PhanQuyenGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -265,6 +283,9 @@
     <Compile Include="util\MyBcrypt.cs" />
     <Compile Include="util\ListViewExport.cs" />
     <Compile Include="util\Validation.cs" />
+    <EmbeddedResource Include="HomeGUI.resx">
+      <DependentUpon>HomeGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhachHangDialog.resx">
       <DependentUpon>KhachHangDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +303,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Log_InGUI.resx">
       <DependentUpon>Log_InGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanQuyenDialog.resx">
+      <DependentUpon>PhanQuyenDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanQuyenGUI.resx">
+      <DependentUpon>PhanQuyenGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SanPhamDialog.resx">
       <DependentUpon>SanPhamDialog.cs</DependentUpon>

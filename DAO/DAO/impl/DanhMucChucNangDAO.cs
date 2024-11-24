@@ -20,6 +20,11 @@ namespace DAO.DAO.impl
             Update(query, id);
         }
 
+        public List<DanhMucChucNang> getAll()
+        {
+            return SearchBy(null,_rowMapper,"danhmucchucnang");
+        }
+
         public DanhMucChucNang FindByMaImei(string machucnang)
         {
             List<Criteria> criterias = new List<Criteria>();

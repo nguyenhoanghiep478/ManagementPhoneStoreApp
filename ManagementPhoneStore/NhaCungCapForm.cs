@@ -26,5 +26,15 @@ namespace ManagementPhoneStore
         {
 
         }
+
+        private void add_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void search_ncc_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

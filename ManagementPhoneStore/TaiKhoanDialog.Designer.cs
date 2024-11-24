@@ -38,7 +38,6 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -189,13 +188,13 @@ namespace ManagementPhoneStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 694);
+            this.ClientSize = new System.Drawing.Size(622, 699);
             this.Controls.Add(this.trangthai);
             this.Controls.Add(this.nhomquyen);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cancel);
-            this.Controls.Add(add);
-            this.Controls.Add(update);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.update);
             this.Controls.Add(this.matkhau);
             this.Controls.Add(this.ten);
             this.Controls.Add(this.label5);

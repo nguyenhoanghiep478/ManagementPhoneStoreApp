@@ -29,6 +29,7 @@
         private void InitializeComponent()
 
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhuVucKhoDialog));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -130,6 +131,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "KhuVucKhoDialog";
+            this.Text = resources.GetString("$this.Text");
             this.Load += new System.EventHandler(this.KhuVucKhoDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

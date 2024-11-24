@@ -55,8 +55,17 @@ namespace ManagementPhoneStore
 
         private void cancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            DialogResult result = MessageBox.Show(
+                            "Bạn có chắc muốn hủy không?",
+                            "Xác nhận",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question
+                        );
+            if (result == DialogResult.Yes)
+            {
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ namespace DAO.DAO.impl
     public class NhomQuyenDAO : AbstractDAO<NhomQuyen>, INhomQuyenDAO
     {
         private readonly NhomQuyenRowMapper _rowMapper = new NhomQuyenRowMapper();
-        public void delete(long id)
+        public void delete(int id)
         {
             String query = "update  nhomquyen set trangthai=@param0 where manhomquyen=@param1 ";
             Update(query,0,id);
@@ -64,7 +64,7 @@ namespace DAO.DAO.impl
                 tennhomquyen = @param0,
                 trangthai = @param1
                 WHERE 
-            masp = @param2;";
+            manhomquyen = @param2;";
 
             Update(query,
                 nhomquyen.Tennhomquyen,
