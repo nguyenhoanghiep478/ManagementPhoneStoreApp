@@ -665,13 +665,18 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PhieuNhapPanel phieuNhapPanel = new PhieuNhapPanel(manv);
-            SetPanel(phieuNhapPanel);
+           
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            PhieuNhapPanel phieuNhapPanel = new PhieuNhapPanel(manv);
+            SetPanel(phieuNhapPanel);
         }
     }
 }

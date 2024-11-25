@@ -7,6 +7,7 @@ using DAO.impl;
 using DAO.Mapper;
 using DAO.Mapper.impl;
 using Entity;
+using MySql.Data.MySqlClient;
 using State.Utils;
 
 
@@ -82,6 +83,40 @@ namespace DAO.DAO.impl
                 phieuxuat.Trangthai ?? (object)DBNull.Value,
                 phieuxuat.Maphieuxuat
             );
+        }
+        public int GetAutoIncrement()
+        {
+            int result = 0;
+
+            string query = @"
+    SELECT maphieuxuat 
+    FROM phieuxuat
+    ORDER BY maphieuxuat DESC LIMIT 1;";
+
+            try
+            {
+                using (var connection = new MySqlConnection("Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306;"))
+                {
+                    connection.Open();
+
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        var scalarResult = command.ExecuteScalar();
+
+                        if (scalarResult != DBNull.Value && scalarResult != null)
+                        {
+                            result = Convert.ToInt32(scalarResult);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+
+            // Increment the result by 1 and return it
+            return result + 1;
         }
     }
 }

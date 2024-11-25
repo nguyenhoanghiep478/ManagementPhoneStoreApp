@@ -155,6 +155,7 @@ namespace DAO.DAO.impl
             return this.Query(query, _rowMapper, mapbsp);
         }
 
+
         public void UpdateXuat(ChiTietSanPham chiTietSanPham)
         {
             string query = @"
@@ -171,6 +172,7 @@ namespace DAO.DAO.impl
                 chiTietSanPham.MaImei
             );
         }
+
 
 
 

@@ -605,3 +605,7 @@ C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Deb
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\Manageme.DEBAEFFE.Up2Date
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienChiTietForm.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.PhieuXuatPanel.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ThemPhieuXuat.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ChiTietPhieuXuatDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ImeiSelection.resources

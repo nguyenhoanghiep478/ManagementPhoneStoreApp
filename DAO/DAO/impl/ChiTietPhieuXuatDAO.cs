@@ -78,5 +78,10 @@ namespace DAO.DAO.impl
 
             return SearchBy(criterias, _rowMapper, "ctphieuxuat");
         }
+        public List<ChiTietPhieuXuat> GetAll()
+        {
+            return SearchBy(null, _rowMapper, "ctphieuxuat");
+        }
     }
+
 }

@@ -12,6 +12,12 @@ namespace Service.impl
     {
         private List<KhachHang> _khachhangs;
         private KhachHangDAO dao=new KhachHangDAO();
+        public KhachHangService()
+        {
+            // Initialize the list with active KhachHang records
+            _khachhangs = dao.GetAll().Where(kh => kh.TrangThai.Equals(1)).ToList();
+        }
+
         public List<KhachHang> getAll()
         {
             _khachhangs=dao.GetAll().Where(kh=>kh.TrangThai.Equals(1)).ToList();
@@ -103,14 +109,17 @@ namespace Service.impl
             }
             return new List<KhachHang>();
         }
-        public string getTenKhachHang(int makhachhang)
+        public String getTenKhachHang(int makh)
         {
-            var khachhang = _khachhangs.FirstOrDefault(kh => kh.MakH == makhachhang);
-            if (khachhang != null)
+            String name = "";
+            foreach (KhachHang khachHang in _khachhangs)
             {
-                return khachhang.TenKhachHang;
+                if (khachHang.MakH == makh)
+                {
+                    name = khachHang.TenKhachHang;
+                }
             }
-            throw new Exception("Error");
+            return name;
         }
 
         public string[] getArrTenKhachHang()

@@ -118,6 +118,7 @@
             // 
             // time
             // 
+            this.time.Enabled = false;
             this.time.Location = new System.Drawing.Point(1001, 79);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(215, 46);
