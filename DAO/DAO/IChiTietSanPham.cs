@@ -9,7 +9,7 @@ namespace DAO.DAO
 {
     public interface IChiTietSanPham
     {
-        long insert(ChiTietSanPham sanPham);
+        int insert(ChiTietSanPham sanPham);
         void update(ChiTietSanPham sanPham);
         void delete(long id);
         ChiTietSanPham FindByMaImei(string maImei);

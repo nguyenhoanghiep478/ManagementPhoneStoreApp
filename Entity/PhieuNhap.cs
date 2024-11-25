@@ -51,5 +51,19 @@ namespace Entity
         {
             return $"Maphieunhap: {maphieunhap}, Thoigian: {thoigian}, Manhacungcap: {manhacungcap}, Nguoitao: {nguoitao}, Tongtien: {tongtien}, Trangthai: {trangthai}";
         }
+        public PhieuNhap()
+        {
+        }
+
+        // Parameterized Constructor
+        public PhieuNhap(int maphieunhap, DateTime thoigian, int manhacungcap, string nguoitao, long tongtien, int trangthai)
+        {
+            this.maphieunhap = maphieunhap;
+            this.thoigian = thoigian;
+            this.manhacungcap = manhacungcap;
+            this.nguoitao = nguoitao;
+            this.tongtien = tongtien;
+            this.trangthai = trangthai;
+        }
     }
 }

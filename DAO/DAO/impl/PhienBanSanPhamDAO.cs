@@ -14,8 +14,8 @@ namespace DAO.DAO.impl
     public class PhienBanSanPhamDAO : AbstractDAO<PhienBanSanPham>, IPhienBanSanPham
     {
         private readonly PhienBanSanPhamRowMapper _rowMapper = new PhienBanSanPhamRowMapper();
+        private SanPhamDAO spDAO=new SanPhamDAO();
 
-       
 
         public void delete(long id)
         {
@@ -25,21 +25,35 @@ namespace DAO.DAO.impl
 
         public PhienBanSanPham FindByMaPhienBanSanPham(int maphienban)
         {
-            List<Criteria> criterias = new List<Criteria>();
-            Criteria criteria = new Criteria()
+            if (maphienban <= 0)
             {
-                Key = "maphienbansp",
-                Operation = ":",
-                Value = maphienban,
-            };
-            criterias.Add(criteria);
-            return SearchBy(criterias, _rowMapper, "phienbansanpham").FirstOrDefault(null);
+                throw new ArgumentException("Invalid maphienban value. It must be greater than 0.");
+            }
+
+            // Create criteria for the SQL query (checking by "maphienbansp")
+            var criterias = new List<Criteria>
+    {
+        new Criteria
+        {
+            Key = "maphienbansp",  // Correct field name in the database
+            Operation = ":",
+            Value = maphienban
         }
+    };
+
+            // Search for matching records using the criteria
+            var result = SearchBy(criterias, _rowMapper, "phienbansanpham");
+
+            // If result is null or empty, return null or handle the case
+            return result?.FirstOrDefault();
+        }
+
+
 
         public List<PhienBanSanPham> FindByMaSp(string masp)
         {
             String sql = "SELECT * FROM phienbansanpham WHERE masp = ? and trangthai = 1";
-            return this.Query(sql,_rowMapper, masp);
+            return this.Query(sql, _rowMapper, masp);
         }
 
         public long insert(PhienBanSanPham phienBanSanPham)
@@ -83,17 +97,42 @@ namespace DAO.DAO.impl
                 WHERE 
                     maphienbansp = @param9;";
 
-             Update(query,
-                phienBanSanPham.MaSanPham ?? (object)DBNull.Value,
-                phienBanSanPham.Rom,
-                phienBanSanPham.Ram ?? (object)DBNull.Value,
-                phienBanSanPham.MauSac,
-                phienBanSanPham.GiaNhap ?? (object)DBNull.Value,
-                phienBanSanPham.GiaXuat ?? (object)DBNull.Value,
-                phienBanSanPham.SoLuongTon,
-                phienBanSanPham.TrangThai ? 1 : 0, 
-                phienBanSanPham.MaPhienBanSanPham 
-            );
+            Update(query,
+               phienBanSanPham.MaSanPham ?? (object)DBNull.Value,
+               phienBanSanPham.Rom,
+               phienBanSanPham.Ram ?? (object)DBNull.Value,
+               phienBanSanPham.MauSac,
+               phienBanSanPham.GiaNhap ?? (object)DBNull.Value,
+               phienBanSanPham.GiaXuat ?? (object)DBNull.Value,
+               phienBanSanPham.SoLuongTon,
+               phienBanSanPham.TrangThai ? 1 : 0,
+               phienBanSanPham.MaPhienBanSanPham
+           );
         }
+        public void UpdateSoLuongTon(int maphienbansp, int soluong)
+        {
+            var phienBanSanPham = FindByMaPhienBanSanPham(maphienbansp);
+
+            if (phienBanSanPham != null)
+            {
+                int newSoLuongTon = phienBanSanPham.SoLuongTon + soluong;
+                string query = "UPDATE phienbansanpham SET soluongton = @param0 WHERE maphienbansp = @param1;";
+
+                try
+                {
+                    Update(query, newSoLuongTon, maphienbansp);
+                    spDAO.updateSoLuongTon((long)phienBanSanPham.MaSanPham, soluong);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error in UpdateSoLuongTon: " + ex.Message);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Product version not found with maphienbansp: " + maphienbansp);
+            }
+        }
+
     }
 }

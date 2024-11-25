@@ -4,29 +4,51 @@ using System.Linq;
 using DAO.DAO;
 using DAO.DAO.impl;
 using Entity;
+
 using Service.impl;
 
 namespace Service
 {
     public class PhieuNhapService : IPhieuNhapService
     {
-        private readonly PhieuNhapDAO _phieuNhapDAO = new PhieuNhapDAO();
+        private static PhieuNhapService _instance;
+        private static readonly object _lock = new object();
+
+        private readonly PhieuNhapDAO phieuNhapDAO;
         private readonly ChiTietPhieuNhapDAO _ctPhieuNhapDAO = new ChiTietPhieuNhapDAO();
         private readonly ChiTietSanPhamDAO _chiTietSanPhamDAO = new ChiTietSanPhamDAO();
 
         private readonly NhaChungCapService _nccService = NhaChungCapService.Instance;
-        private readonly NhanVienService _nvService = new NhanVienService();
+        private readonly NhanVienService _nvService = NhanVienService.Instance;
 
         private List<PhieuNhap> listPhieuNhap;
 
-        public PhieuNhapService()
+        // Private constructor to prevent external instantiation
+        private PhieuNhapService()
         {
+            phieuNhapDAO = new PhieuNhapDAO();
             listPhieuNhap = new List<PhieuNhap>();
+        }
+
+        // Public static property to access the single instance
+        public static PhieuNhapService Instance
+        {
+            get
+            {
+                lock (_lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new PhieuNhapService();
+                    }
+                    return _instance;
+                }
+            }
         }
 
         public List<PhieuNhap> GetAll()
         {
-            listPhieuNhap = _phieuNhapDAO.GetAll();
+            listPhieuNhap = phieuNhapDAO.GetAll();
             return listPhieuNhap;
         }
 
@@ -45,16 +67,13 @@ namespace Service
             return _ctPhieuNhapDAO.GetAll().Where(ct => ct.Maphieunhap == maphieunhap).ToList();
         }
 
-
         public List<ChiTietPhieu> GetChiTietPhieu_Type(int maphieunhap)
         {
-            // Get all ChiTietPhieuNhap objects from DAO
             var arr = _ctPhieuNhapDAO.GetAll();
 
-            // Filter by maphieunhap and map to ChiTietPhieu
             var result = arr
-                .Where(ct => ct.Maphieunhap == maphieunhap) // Filter relevant entries
-                .Select(ct => new ChiTietPhieu  // Convert each ChiTietPhieuNhap to ChiTietPhieu
+                .Where(ct => ct.Maphieunhap == maphieunhap)
+                .Select(ct => new ChiTietPhieu
                 {
                     MaPhieu = ct.Maphieunhap,
                     MaPhienBanSanPham = ct.Maphienbansp,
@@ -66,7 +85,6 @@ namespace Service
             return result;
         }
 
-
         private ChiTietPhieu ConvertToChiTietPhieu(ChiTietPhieuNhap chiTietPhieuNhap)
         {
             return new ChiTietPhieu
@@ -74,120 +92,125 @@ namespace Service
                 MaPhienBanSanPham = chiTietPhieuNhap.Maphienbansp,
                 SoLuong = chiTietPhieuNhap.Soluong,
                 Dongia = chiTietPhieuNhap.Dongia,
-                // Map other properties if needed
             };
         }
 
         public bool Add(PhieuNhap phieu, List<ChiTietPhieuNhap> ctPhieu, Dictionary<int, List<ChiTietSanPham>> chitietsanpham)
         {
-            // Step 1: Insert the PhieuNhap (main receipt)
-            long insertedPhieuId = _phieuNhapDAO.insert(phieu);
-            if (insertedPhieuId == 0)
+            bool phieuInserted = phieuNhapDAO.insert(phieu) != 0;
+
+            if (!phieuInserted) { 
+                Console.WriteLine("fail 1");
+                return false;  }        
+
+            bool chiTietPhieuInserted = _ctPhieuNhapDAO.insert(ctPhieu) > 0;
+            if (!chiTietPhieuInserted)
             {
-                return false; // Insertion failed
-            }
-
-            // Step 2: Insert each ChiTietPhieuNhap individually
-            foreach (var item in ctPhieu)
-            {
-                item.Maphieunhap = (int)insertedPhieuId; // Set foreign key to the inserted receipt ID
-                long insertedCtId = _ctPhieuNhapDAO.insert(item);
-                if (insertedCtId == 0)
-                {
-                    return false; // If any insertion fails, return false
-                }
-            }
-
-            // Step 3: Convert Dictionary to List<ChiTietSanPham>
-            List<ChiTietSanPham> chiTietSanPhamList = ConvertHashMapToArray(chitietsanpham);
-
-            // Step 4: Insert each ChiTietSanPham individually
-            foreach (var sanPham in chiTietSanPhamList)
-            {
-                sanPham.MaPhieuNhap = (int)insertedPhieuId; // Set foreign key
-                long insertedSanPhamId = _chiTietSanPhamDAO.insert(sanPham);
-                if (insertedSanPhamId == 0)
-                {
-                    return false; // Return false if any insertion fails
-                }
-            }
-
-            // All insertions succeeded
+                Console.WriteLine("fail 2");
+                return false;
+            }             
+            bool chiTietSanPhamInserted = _chiTietSanPhamDAO.insert_mutiple(ConvertDictionaryToList(chitietsanpham)) ==true;
+            if (!chiTietSanPhamInserted) { Console.WriteLine("failed"); return false; }            
             return true;
         }
 
+       
+        public List<ChiTietSanPham> ConvertDictionaryToList(Dictionary<int, List<ChiTietSanPham>> chitietsanpham)
+        {
+            List<ChiTietSanPham> result = new List<ChiTietSanPham>();
+            foreach (var ctspList in chitietsanpham.Values)
+            {
+                result.AddRange(ctspList);
+            }
+            return result;
+        }
 
 
 
         public ChiTietPhieuNhap FindCT(List<ChiTietPhieuNhap> ctphieu, int mapb)
         {
-            return ctphieu.FirstOrDefault(ct => ct.Maphienbansp == mapb);
+            ChiTietPhieuNhap p = null;
+            int i = 0;
+
+            while (i < ctphieu.Count && p == null)
+            {
+                if (ctphieu[i].Maphienbansp == mapb)
+                {
+                    p = ctphieu[i];
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            return p;
         }
+
 
         public long GetTongTien(List<ChiTietPhieuNhap> ctphieu)
         {
             return ctphieu.Sum(item => item.Dongia * item.Soluong);
         }
 
-
-        public List<PhieuNhap> FilterPhieuNhap(int type, string input, int mancc, int manv, DateTime time_s, DateTime time_e, string price_min, string price_max)
+        public List<PhieuNhap> FilterPhieuNhap(
+       int type,
+       string input,
+       int mancc,
+       int manv,
+       DateTime time_start,
+       DateTime time_end,
+       string price_minnn,
+       string price_maxxx)
         {
-            var allPhieuNhap = GetAllList();
+            // Parse price range, setting defaults if fields are empty
+            long price_min = !string.IsNullOrEmpty(price_minnn) ? long.Parse(price_minnn) : 0L;
+            long price_max = !string.IsNullOrEmpty(price_maxxx) ? long.Parse(price_maxxx) : long.MaxValue;
+
+            // Set time range
+            DateTime time_s = time_start.Date;
+            DateTime time_e = time_end.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
+
+            // Initialize result list
             List<PhieuNhap> result = new List<PhieuNhap>();
 
-            foreach (var phieuNhap in allPhieuNhap)
+            // Iterate over all PhieuNhap entries
+            foreach (var phieuNhap in GetAllList())
             {
                 bool match = false;
 
-                // Switch statement for filtering based on 'type'
+                // Filter by type
                 switch (type)
                 {
-                    case 0:
-                        // Match if either Maphieunhap contains input or other criteria can be added here
-                        if (phieuNhap.Maphieunhap.ToString().Contains(input) ||
-                            (manv > 0 && phieuNhap.Nguoitao.ToString() == manv.ToString()))
-                        {
-                            match = true;
-                        }
+                    case 0: // Match any field
+                        match = phieuNhap.Maphieunhap.ToString().Contains(input) ||
+                                _nccService.GetTenNhaCungCap(phieuNhap.Manhacungcap).ToLower().Contains(input) ||
+                                _nvService.GetNameById(int.Parse(phieuNhap.Nguoitao)).ToLower().Contains(input);
                         break;
 
-                    case 1:
-                        // Match if only Maphieunhap contains input
-                        if (phieuNhap.Maphieunhap.ToString().Contains(input))
-                        {
-                            match = true;
-                        }
+                    case 1: // Match Maphieunhap
+                        match = phieuNhap.Maphieunhap.ToString().Contains(input);
                         break;
 
-                    case 2:
-                        // Match if creator's ID matches exactly
-                        if (manv > 0 && phieuNhap.Nguoitao.ToString() == manv.ToString())
+                    case 2: // Match Manhacungcap
+                        match = _nccService.GetTenNhaCungCap(phieuNhap.Manhacungcap).ToLower().Contains(input);
+                        break;
 
-                        {
-                            match = true;
-                        }
+                    case 3: // Match Nguoitao
+                        match = _nvService.GetNameById(int.Parse(phieuNhap.Nguoitao)).ToLower().Contains(input);
                         break;
                 }
 
-                // Additional filters
-                if (match && (mancc == 0 || phieuNhap.Manhacungcap == mancc)
-                    && (time_s != DateTime.MinValue && time_e != DateTime.MinValue
-                        && phieuNhap.Thoigian >= time_s && phieuNhap.Thoigian <= time_e))
+                // Apply additional filters
+                if (match &&
+                    (manv == 0 || int.Parse(phieuNhap.Nguoitao) == manv) &&
+                    (mancc == 0 || phieuNhap.Manhacungcap == mancc) &&
+                    phieuNhap.Thoigian >= time_s &&
+                    phieuNhap.Thoigian <= time_e &&
+                    phieuNhap.Tongtien >= price_min &&
+                    phieuNhap.Tongtien <= price_max)
                 {
-                    // Optional price filtering
-                    if (decimal.TryParse(price_min, out decimal minPrice) &&
-                        decimal.TryParse(price_max, out decimal maxPrice))
-                    {
-                        if (phieuNhap.Tongtien >= minPrice && phieuNhap.Tongtien <= maxPrice)
-                        {
-                            result.Add(phieuNhap);
-                        }
-                    }
-                    else if (string.IsNullOrEmpty(price_min) && string.IsNullOrEmpty(price_max))
-                    {
-                        // Add to result if no price filtering is applied
-                        result.Add(phieuNhap);
-                    }
+                    result.Add(phieuNhap);
                 }
             }
 
@@ -195,36 +218,18 @@ namespace Service
         }
 
 
-        public bool CheckCancelPn(int maphieu)
+        public int GetAutoIncrement()
         {
-            // Retrieve the PhieuNhap object by ID using GetAll()
-            var phieu = listPhieuNhap.FirstOrDefault(pn => pn.Maphieunhap == maphieu);
-
-            // Check if the object exists and is active (status != 0)
-            return phieu != null && phieu.Trangthai != 0;
+            return phieuNhapDAO.GetAutoIncrement();
+        }
+        public bool checkCancelPn(int maphieu)
+        {
+            return phieuNhapDAO.CheckCancelPn(maphieu);
         }
 
-        public int CancelPhieuNhap(int maphieu)
+        public int cancelPhieuNhap(int maphieu)
         {
-            // Retrieve the PhieuNhap object from the in-memory list
-            var phieu = listPhieuNhap.FirstOrDefault(pn => pn.Maphieunhap == maphieu);
-
-            // If the object doesn't exist or is already canceled, return 0
-            if (phieu == null || phieu.Trangthai == 0)
-            {
-                return 0;
-            }
-
-            // Update the status to canceled (0)
-            phieu.Trangthai = 0;
-
-            // Call the update method (which returns void)
-            _phieuNhapDAO.update(phieu);
-
-            // Return 1 to indicate success
-            return 1;
+            return phieuNhapDAO.CancelPhieuNhap(maphieu);
         }
-
-
     }
 }

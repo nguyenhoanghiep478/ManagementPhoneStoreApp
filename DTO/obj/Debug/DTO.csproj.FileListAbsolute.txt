@@ -19,3 +19,10 @@ D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.AssemblyRefe
 D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.exe
 D:\Hiep\Project C#\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.pdb
+C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.exe.config
+C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.exe
+C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DTO\bin\Debug\DTO.pdb
+C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.exe
+C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DTO\obj\Debug\DTO.pdb

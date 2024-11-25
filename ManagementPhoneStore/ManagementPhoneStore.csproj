@@ -209,6 +209,18 @@
     <Compile Include="Log_InGUI.Designer.cs">
       <DependentUpon>Log_InGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienChiTietForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienChiTietForm.Designer.cs">
+      <DependentUpon>NhanVienChiTietForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienForm.Designer.cs">
+      <DependentUpon>NhanVienForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhanQuyenDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +232,24 @@
     </Compile>
     <Compile Include="PhanQuyenGUI.Designer.cs">
       <DependentUpon>PhanQuyenGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="phieucontrol\ChiTietPhieuDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="phieucontrol\ChiTietPhieuDialog.Designer.cs">
+      <DependentUpon>ChiTietPhieuDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="phieucontrol\PhieuNhapPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="phieucontrol\PhieuNhapPanel.Designer.cs">
+      <DependentUpon>PhieuNhapPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="phieucontrol\ThemPhieuPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="phieucontrol\ThemPhieuPanel.Designer.cs">
+      <DependentUpon>ThemPhieuPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -304,11 +334,23 @@
     <EmbeddedResource Include="Log_InGUI.resx">
       <DependentUpon>Log_InGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienChiTietForm.resx">
+      <DependentUpon>NhanVienChiTietForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhanQuyenDialog.resx">
       <DependentUpon>PhanQuyenDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhanQuyenGUI.resx">
       <DependentUpon>PhanQuyenGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="phieucontrol\ChiTietPhieuDialog.resx">
+      <DependentUpon>ChiTietPhieuDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="phieucontrol\PhieuNhapPanel.resx">
+      <DependentUpon>PhieuNhapPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="phieucontrol\ThemPhieuPanel.resx">
+      <DependentUpon>ThemPhieuPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SanPhamDialog.resx">
       <DependentUpon>SanPhamDialog.cs</DependentUpon>
@@ -406,8 +448,6 @@
   <ItemGroup>
     <None Include="Resources\login1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserControl\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
