@@ -464,3 +464,7 @@ D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.xml
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\Manageme.DEBAEFFE.Up2Date
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.PhanQuyenGUI.resources
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.PhanQuyenDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienForm.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienChiTietForm.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\dotenv.net.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeGUI.resources

@@ -1,13 +1,100 @@
 # Ignore Visual Studio folder and files
+.env
+.env.local
+.env.*.local
 .vs/
 .vs/ManagementPhoneStoreApp/v17/.wsuo
 .vs/slnx.sqlite
-ManagementPhoneStore/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-ManagementPhoneStore/obj/Debug/GUI.HomeGUI.resources
-ManagementPhoneStore/obj/Debug/ManagementPhoneStore.csproj.AssemblyReference.cache
-ManagementPhoneStore/obj/Debug/ManagementPhoneStore.csproj.CoreCompileInputs.cache
-ManagementPhoneStore/obj/Debug/ManagementPhoneStore.csproj.FileListAbsolute.txt
-ManagementPhoneStore/obj/Debug/ManagementPhoneStore.csproj.GenerateResource.cache
-ManagementPhoneStore/obj/Debug/ManagementPhoneStore.exe
-ManagementPhoneStore/obj/Debug/ManagementPhoneStore.LoginGUI.resources
-ManagementPhoneStore/obj/Debug/ManagementPhoneStore.pdb
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Rider and Visual Studio files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Visual Studio Code files
+.vscode/
+*.code-workspace
+
+# Packages
+*.nupkg
+*.snupkg
+*.psmdcp
+
+# Logs
+*.log
+*.tlog
+
+# IDE settings and configuration
+*.vs/
+.idea/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Temporary files
+*.tmp
+*.temp
+*.TMP
+*.TEMP
+*.cache
+
+# NuGet
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Windows Thumbnail cache
+Thumbs.db
+
+# Exclude compiled DLLs and EXEs
+*.dll
+*.exe
+*.pdb
+
+# Files generated during publishing
+.publish/
+*.publishsettings
+
+# Backup and temporary files
+~$*
+*.bak
+*.swp
+*.swo
+
+# Database files
+*.mdf
+*.ldf
+
+# Deployment files
+*.deploy
+*.publishproj
+
+# Other binary files
+*.obj
+*.log
+*.rdlc
+*.idb
+*.tlog
+*.lastbuildstate
+
+# Test results
+TestResults/
+*.trx
+*.testsettings
+*.coverage
+*.coveragexml
+*.codecoverage
+
+# Coverage tools
+coverage/
+*.coverage/
+*.coveragexml/
+
+# Web-specific files
+_DistCache/
+**/appsettings*.json

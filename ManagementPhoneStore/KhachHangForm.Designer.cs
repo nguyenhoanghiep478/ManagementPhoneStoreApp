@@ -105,7 +105,7 @@ namespace ManagementPhoneStore
             // columnHeader4
             // 
             this.columnHeader4.Text = "Số điện thoại";
-            this.columnHeader4.Width = 280;
+            this.columnHeader4.Width = 224;
             // 
             // columnHeader5
             // 

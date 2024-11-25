@@ -54,6 +54,9 @@
     <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="dotenv.net, Version=3.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\dotenv.net.3.2.1\lib\netstandard2.0\dotenv.net.dll</HintPath>
+    </Reference>
     <Reference Include="Enums.NET, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
       <HintPath>..\packages\Enums.NET.4.0.1\lib\net45\Enums.NET.dll</HintPath>
     </Reference>
@@ -209,6 +212,18 @@
     <Compile Include="Log_InGUI.Designer.cs">
       <DependentUpon>Log_InGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienChiTietForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienChiTietForm.Designer.cs">
+      <DependentUpon>NhanVienChiTietForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienForm.Designer.cs">
+      <DependentUpon>NhanVienForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhanQuyenDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +271,12 @@
     <Compile Include="TaiKhoanForm.Designer.cs">
       <DependentUpon>TaiKhoanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongKeGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKeGUI.Designer.cs">
+      <DependentUpon>ThongKeGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongKeTongQuanGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +301,7 @@
     <Compile Include="ThuocTinhGUI.Designer.cs">
       <DependentUpon>ThuocTinhGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="util\EmailHelper.cs" />
     <Compile Include="util\MyBcrypt.cs" />
     <Compile Include="util\ListViewExport.cs" />
     <Compile Include="util\Validation.cs" />
@@ -304,6 +326,12 @@
     <EmbeddedResource Include="Log_InGUI.resx">
       <DependentUpon>Log_InGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienChiTietForm.resx">
+      <DependentUpon>NhanVienChiTietForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienForm.resx">
+      <DependentUpon>NhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhanQuyenDialog.resx">
       <DependentUpon>PhanQuyenDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TaiKhoanForm.resx">
       <DependentUpon>TaiKhoanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKeGUI.resx">
+      <DependentUpon>ThongKeGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeTongQuanGUI.resx">
       <DependentUpon>ThongKeTongQuanGUI.cs</DependentUpon>
