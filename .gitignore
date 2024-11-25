@@ -2,3 +2,12 @@
 .vs/
 .vs/ManagementPhoneStoreApp/v17/.wsuo
 .vs/slnx.sqlite
+ManagementPhoneStore/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+ManagementPhoneStore/obj/Debug/GUI.HomeGUI.resources
+ManagementPhoneStore/obj/Debug/ManagementPhoneStore.csproj.AssemblyReference.cache
+ManagementPhoneStore/obj/Debug/ManagementPhoneStore.csproj.CoreCompileInputs.cache
+ManagementPhoneStore/obj/Debug/ManagementPhoneStore.csproj.FileListAbsolute.txt
+ManagementPhoneStore/obj/Debug/ManagementPhoneStore.csproj.GenerateResource.cache
+ManagementPhoneStore/obj/Debug/ManagementPhoneStore.exe
+ManagementPhoneStore/obj/Debug/ManagementPhoneStore.LoginGUI.resources
+ManagementPhoneStore/obj/Debug/ManagementPhoneStore.pdb
