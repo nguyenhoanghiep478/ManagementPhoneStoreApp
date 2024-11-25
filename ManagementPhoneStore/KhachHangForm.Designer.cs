@@ -82,7 +82,7 @@ namespace ManagementPhoneStore
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 161);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1447, 321);
+            this.listView1.Size = new System.Drawing.Size(1372, 321);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -106,7 +106,7 @@ namespace ManagementPhoneStore
             // columnHeader4
             // 
             this.columnHeader4.Text = "Số điện thoại";
-            this.columnHeader4.Width = 280;
+            this.columnHeader4.Width = 224;
             // 
             // columnHeader5
             // 
@@ -141,7 +141,7 @@ namespace ManagementPhoneStore
             "Tên đăng nhập",
             "Mã nhân viên",
             ""});
-            this.kh_prop.Location = new System.Drawing.Point(837, 32);
+            this.kh_prop.Location = new System.Drawing.Point(646, 31);
             this.kh_prop.Name = "kh_prop";
             this.kh_prop.Size = new System.Drawing.Size(141, 25);
             this.kh_prop.TabIndex = 7;
@@ -153,10 +153,10 @@ namespace ManagementPhoneStore
             this.refresh.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refresh.Image = ((System.Drawing.Image)(resources.GetObject("refresh.Image")));
             this.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.refresh.Location = new System.Drawing.Point(1303, 32);
+            this.refresh.Location = new System.Drawing.Point(1149, 31);
             this.refresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(139, 50);
+            this.refresh.Size = new System.Drawing.Size(152, 50);
             this.refresh.TabIndex = 5;
             this.refresh.Text = "Làm mới";
             this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -186,7 +186,7 @@ namespace ManagementPhoneStore
             // search_kh
             // 
             this.search_kh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_kh.Location = new System.Drawing.Point(996, 32);
+            this.search_kh.Location = new System.Drawing.Point(818, 30);
             this.search_kh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.search_kh.Multiline = true;
             this.search_kh.Name = "search_kh";
@@ -294,7 +294,7 @@ namespace ManagementPhoneStore
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1471, 553);
+            this.ClientSize = new System.Drawing.Size(1396, 553);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listView1);
             this.Name = "KhachHangForm";

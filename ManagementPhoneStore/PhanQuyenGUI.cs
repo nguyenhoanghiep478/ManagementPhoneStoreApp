@@ -156,7 +156,7 @@ namespace ManagementPhoneStore
 
                 // Xác nhận trước khi xóa
                 DialogResult confirmResult = MessageBox.Show(
-                    "Bạn có chắc chắn muốn cập nhật khu vực kho này?",
+                    "Bạn có chắc chắn muốn cập nhật nhóm quyền này?",
                     "Xác nhận cập nhật",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question

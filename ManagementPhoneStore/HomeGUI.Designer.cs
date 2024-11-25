@@ -1,4 +1,7 @@
-﻿namespace GUI
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace GUI
 {
     partial class HomeGUI
     {
@@ -144,6 +147,9 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 571);
             this.panel2.TabIndex = 1;
+
+            //CreateItemPanel(pictureBox6, button1);
+            //CreateItemPanel(pictureBox18, button13);
             // 
             // button1
             // 
@@ -546,7 +552,44 @@
             this.ResumeLayout(false);
 
         }
+        private void RemoveControl(Control controlToRemove)
+        {
+           
+            panel2.Controls.Remove(controlToRemove);
 
+            
+            int y = 0; 
+            foreach (Control control in panel2.Controls)
+            {
+                control.Location = new Point(control.Location.X, y);
+                y += control.Height + 5; 
+            }
+        }
+
+        private void CreateItemPanel(PictureBox pictureBox, Button button)
+        {
+            Panel itemPanel = new Panel
+            {
+                Size = new Size(230, 80), // Kích thước phù hợp với PictureBox và Button
+                BackColor = Color.Transparent // Không cần màu nền
+            };
+
+            // Đặt PictureBox vào Panel
+            pictureBox.Location = new Point(10, 10);
+            pictureBox.Size = new Size(50, 50);
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Đặt Button vào Panel
+            button.Location = new Point(70, 10);
+            button.Size = new Size(150, 50);
+            button.TextAlign = ContentAlignment.MiddleLeft;
+
+            // Thêm PictureBox và Button vào Panel
+            itemPanel.Controls.Add(pictureBox);
+            itemPanel.Controls.Add(button);
+
+            panel2.Controls.Add(itemPanel) ;
+        }
         #endregion
 
         private System.Windows.Forms.Panel panel1;
