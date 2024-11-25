@@ -17,7 +17,7 @@ namespace DAO.DAO.impl
         private readonly TaiKhoanRowMapper _rowMapper = new TaiKhoanRowMapper();
         public void delete(long id)
         {
-            String query = "update from taikhoan set trangthai=0 where manv=@param0";
+            String query = "update  taikhoan set trangthai=0 where manv=@param0";
             Update(query, id);
         }
 
