@@ -228,7 +228,7 @@ namespace GUI
 
         private void button11_Click(object sender, EventArgs e)
         {
-            ThongKeTonKho thongkeForm = new ThongKeTonKho();
+            ThongKeGUI thongkeForm = new ThongKeGUI();
             thongkeForm.TopLevel = false;
             thongkeForm.Dock = DockStyle.Fill;
             panelContainer.Controls.Clear();

@@ -467,3 +467,4 @@ D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.P
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienForm.resources
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienChiTietForm.resources
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\dotenv.net.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeGUI.resources
