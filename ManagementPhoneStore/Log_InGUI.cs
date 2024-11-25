@@ -44,17 +44,22 @@ namespace ManagementPhoneStore
         {
             TaiKhoanService taiKhoanService= new TaiKhoanService();
             List<TaiKhoan> listTaikhoan = taiKhoanService.GetTaiKhoanAll();
+            bool exist=false;
             foreach(TaiKhoan taiKhoan in listTaikhoan)
             {
                 if (taiKhoan.Tendangnhap.Equals(textBox1.Text) && MyBcrypt.VerifyPassword(textBox2.Text, taiKhoan.Matkhau))
                 {
                     this.Hide();
+                    exist = true;
                     HomeGUI homeGUI = new HomeGUI(taiKhoan.Manv);
                     homeGUI.ShowDialog();
                     this.Close();
                 }
             }
-            MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (exist == false)
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

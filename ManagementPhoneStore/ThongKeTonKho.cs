@@ -21,6 +21,8 @@ namespace ManagementPhoneStore
         public ThongKeTonKho()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
+            this.TopLevel = false;
         }
 
         private void ThongKeTonKho_Load(object sender, EventArgs e)

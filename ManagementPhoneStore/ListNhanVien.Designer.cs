@@ -64,9 +64,10 @@ namespace ManagementPhoneStore
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 118);
+            this.listView1.Location = new System.Drawing.Point(12, 96);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1036, 305);
+            this.listView1.Size = new System.Drawing.Size(778, 249);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -105,18 +106,20 @@ namespace ManagementPhoneStore
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 43);
+            this.label1.Size = new System.Drawing.Size(76, 35);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tìm kiếm";
             // 
             // search
             // 
-            this.search.Location = new System.Drawing.Point(119, 18);
+            this.search.Location = new System.Drawing.Point(89, 15);
+            this.search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.search.Multiline = true;
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(758, 43);
+            this.search.Size = new System.Drawing.Size(570, 36);
             this.search.TabIndex = 2;
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             // 
@@ -126,24 +129,27 @@ namespace ManagementPhoneStore
             this.select.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.select.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.select.ForeColor = System.Drawing.SystemColors.Window;
-            this.select.Location = new System.Drawing.Point(897, 18);
+            this.select.Location = new System.Drawing.Point(673, 15);
+            this.select.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.select.Name = "select";
-            this.select.Size = new System.Drawing.Size(151, 43);
+            this.select.Size = new System.Drawing.Size(113, 35);
             this.select.TabIndex = 3;
             this.select.Text = "Chọn nhân viên";
             this.select.UseVisualStyleBackColor = false;
+            this.select.Click += new System.EventHandler(this.select_Click);
             // 
-            // TaiKhoanDialog
+            // ListNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1059, 512);
+            this.ClientSize = new System.Drawing.Size(794, 416);
             this.Controls.Add(this.select);
             this.Controls.Add(this.search);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
-            this.Name = "TaiKhoanDialog";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "ListNhanVien";
             this.Text = "NhaCungCap";
             this.Load += new System.EventHandler(this.NhaCungCap_Load);
             this.ResumeLayout(false);

@@ -27,5 +27,10 @@ namespace ManagementPhoneStore
         {
 
         }
+
+        private void select_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

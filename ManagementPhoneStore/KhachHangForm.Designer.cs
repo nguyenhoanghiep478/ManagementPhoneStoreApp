@@ -43,7 +43,8 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
+            this.TopLevel = false;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHangForm));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -142,9 +143,10 @@ namespace ManagementPhoneStore
             ""});
             this.kh_prop.Location = new System.Drawing.Point(837, 32);
             this.kh_prop.Name = "kh_prop";
-            this.kh_prop.Size = new System.Drawing.Size(141, 28);
+            this.kh_prop.Size = new System.Drawing.Size(141, 25);
             this.kh_prop.TabIndex = 7;
             this.kh_prop.Text = "Tất cả";
+            this.kh_prop.SelectedIndexChanged += new System.EventHandler(this.kh_prop_SelectedIndexChanged);
             // 
             // refresh
             // 
@@ -289,7 +291,7 @@ namespace ManagementPhoneStore
             // 
             // KhachHangForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1471, 553);

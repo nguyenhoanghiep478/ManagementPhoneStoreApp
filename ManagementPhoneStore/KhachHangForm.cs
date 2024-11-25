@@ -26,5 +26,10 @@ namespace ManagementPhoneStore
         {
 
         }
+
+        private void kh_prop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

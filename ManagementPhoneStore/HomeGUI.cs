@@ -35,60 +35,49 @@ namespace GUI
             if (!authors.Any(g => g.MaChucNang.Equals("sanpham")))
             {
                 this.panel2.Controls.Remove(button2);
-                this.panel2.Controls.Remove(pictureBox7);
             }
 
             if (!authors.Any(g => g.MaChucNang.Equals("khachhang")))
             {
                 this.panel2.Controls.Remove(button7);
-                this.panel2.Controls.Remove(pictureBox12);
             }
 
             if (!authors.Any(g => g.MaChucNang.Equals("khuvuckho")))
             {
                 this.panel2.Controls.Remove(button4);
-                this.panel2.Controls.Remove(pictureBox9);
             }
             if (!authors.Any(g => g.MaChucNang.Equals("nhacungcap")))
             {
                 this.panel2.Controls.Remove(button8);
-                this.panel2.Controls.Remove(pictureBox13);
 
             }
             if (!authors.Any(g => g.MaChucNang.Equals("nhaphang")))
             {
                 this.panel2.Controls.Remove(button5);
-                this.panel2.Controls.Remove(pictureBox10);
             }
             if (!authors.Any(g => g.MaChucNang.Equals("nhomquyen")))
             {
                 this.panel2.Controls.Remove(button12);
-                this.panel2.Controls.Remove(pictureBox17);
             }
             if (!authors.Any(g => g.MaChucNang.Equals("taikhoan")))
             {
                 this.panel2.Controls.Remove(button10);
-                this.panel2.Controls.Remove(pictureBox15);
             }
             if (!authors.Any(g => g.MaChucNang.Equals("thongke")))
             {
                 this.panel2.Controls.Remove(button11);
-                this.panel2.Controls.Remove(pictureBox16);
             }
             if (!authors.Any(g => g.MaChucNang.Equals("thuoctinh")))
             {
                 this.panel2.Controls.Remove(button3);
-                this.panel2.Controls.Remove(pictureBox8);
             }
             if (!authors.Any(g => g.MaChucNang.Equals("nhanvien")))
             {
                 this.panel2.Controls.Remove(button9);
-                this.panel2.Controls.Remove(pictureBox14);
             }
             if (!authors.Any(g => g.MaChucNang.Equals("xuathang")))
             {
                 this.panel2.Controls.Remove(button6);
-                this.panel2.Controls.Remove(pictureBox11);
             }
         }
 
@@ -127,8 +116,8 @@ namespace GUI
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
-            HomeGUI homeForm = new HomeGUI(manv);
-            homeForm.Show();
+            //HomeGUI homeForm = new HomeGUI(manv);
+            //homeForm.Show();
         }
 
         private void HomeGUI_Load(object sender, EventArgs e)
@@ -217,7 +206,7 @@ namespace GUI
 
         private void button9_Click(object sender, EventArgs e)
         {
-            ListNhanVien nhanVienform = new ListNhanVien();
+            NhanVienForm nhanVienform = new NhanVienForm();
             nhanVienform.TopLevel = false;
             nhanVienform.Dock = DockStyle.Fill;
 
@@ -262,7 +251,7 @@ namespace GUI
         {
             Log_InGUI loginForm = new Log_InGUI();
             this.Hide();
-            loginForm.Show();
+            loginForm.ShowDialog();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -321,6 +310,11 @@ namespace GUI
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
         {
 
         }

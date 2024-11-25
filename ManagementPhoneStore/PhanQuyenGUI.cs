@@ -24,6 +24,8 @@ namespace ManagementPhoneStore
             InitializeComponent();
             LoadData();
             LoadFieldSelect();
+            this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
+            this.TopLevel = false;
         }
         private void LoadData()
         {

@@ -39,7 +39,6 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaiKhoanForm));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -130,7 +129,7 @@ namespace ManagementPhoneStore
             "Tên đăng nhập"});
             this.tk_prop.Location = new System.Drawing.Point(837, 32);
             this.tk_prop.Name = "tk_prop";
-            this.tk_prop.Size = new System.Drawing.Size(141, 28);
+            this.tk_prop.Size = new System.Drawing.Size(141, 25);
             this.tk_prop.TabIndex = 7;
             this.tk_prop.Text = "Tất cả";
             // 
@@ -148,6 +147,7 @@ namespace ManagementPhoneStore
             this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click_1);
             // 
             // export
             // 
@@ -275,7 +275,7 @@ namespace ManagementPhoneStore
             // 
             // TaiKhoanForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1471, 553);
             this.Controls.Add(this.panel2);

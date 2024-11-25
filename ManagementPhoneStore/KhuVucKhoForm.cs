@@ -49,6 +49,8 @@ namespace ManagementPhoneStore
             listSanPham = sanPhamService.GetAll();
             LoadDataTable(listKvk);
             LoadFieldSelect();
+            this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
+            this.TopLevel = false;
         }
         private void LoadDataTable(List<KhuVucKho> result)
         {

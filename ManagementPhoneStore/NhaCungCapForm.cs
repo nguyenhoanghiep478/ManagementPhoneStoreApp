@@ -36,5 +36,10 @@ namespace ManagementPhoneStore
         {
 
         }
+
+        private void refresh1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

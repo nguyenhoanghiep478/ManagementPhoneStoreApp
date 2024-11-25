@@ -16,5 +16,16 @@ namespace ManagementPhoneStore
         {
 
         }
+
+        private void nv_prop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NhanVienForm_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
+            this.TopLevel = false;
+        }
     }
 }

@@ -14,10 +14,16 @@ namespace ManagementPhoneStore
     {
         private void TaiKhoanForm_Load(object sender, EventArgs e)
         {
-
+            this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
+            this.TopLevel = false;
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refresh_Click_1(object sender, EventArgs e)
         {
 
         }

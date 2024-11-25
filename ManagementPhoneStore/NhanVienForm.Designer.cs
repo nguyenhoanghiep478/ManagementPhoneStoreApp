@@ -42,7 +42,6 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienForm));
             this.listViewNhanVien = new System.Windows.Forms.ListView();
             this.maNhanVien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -155,9 +154,10 @@ namespace ManagementPhoneStore
             "Email"});
             this.nv_prop.Location = new System.Drawing.Point(837, 32);
             this.nv_prop.Name = "nv_prop";
-            this.nv_prop.Size = new System.Drawing.Size(141, 28);
+            this.nv_prop.Size = new System.Drawing.Size(141, 25);
             this.nv_prop.TabIndex = 7;
             this.nv_prop.Text = "Tất cả";
+            this.nv_prop.SelectedIndexChanged += new System.EventHandler(this.nv_prop_SelectedIndexChanged);
             // 
             // refresh
             // 
@@ -300,7 +300,7 @@ namespace ManagementPhoneStore
             // 
             // NhanVienForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1470, 553);
@@ -308,6 +308,7 @@ namespace ManagementPhoneStore
             this.Controls.Add(this.panel2);
             this.Name = "NhanVienForm";
             this.Text = "NhanVienGUI";
+            this.Load += new System.EventHandler(this.NhanVienForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
