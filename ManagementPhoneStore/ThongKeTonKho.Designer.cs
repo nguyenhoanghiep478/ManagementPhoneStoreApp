@@ -175,6 +175,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(1069, 582);
             this.dataGridView.TabIndex = 8;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -222,12 +223,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1390, 602);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.searchPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ThongKeTonKho";
-            this.Text = "Thống Kê Tồn Kho";
+            this.Size = new System.Drawing.Size(1390, 602);
             this.Load += new System.EventHandler(this.ThongKeTonKho_Load);
             this.searchPanel.ResumeLayout(false);
             this.searchPanel.PerformLayout();

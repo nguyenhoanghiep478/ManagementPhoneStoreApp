@@ -25,6 +25,9 @@ namespace ManagementPhoneStore
 
         private void ThongKe_Load(object sender, EventArgs e)
         {
+            this.TopLevel = false;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Dock = DockStyle.Fill;
             LoadData();
             AddGUIOverviewPanel();
             AddChartPanel();
@@ -225,6 +228,11 @@ namespace ManagementPhoneStore
             AddDataGridPanel();
             chartPanel.Controls.Clear();
             AddChartPanel();
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

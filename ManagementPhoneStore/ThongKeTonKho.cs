@@ -20,9 +20,11 @@ namespace ManagementPhoneStore
         Dictionary<int, List<ThongKeTonKhoDTO>> data;
         public ThongKeTonKho()
         {
-            InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
             this.TopLevel = false;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Dock = DockStyle.Fill;
+            InitializeComponent();
+           
         }
 
         private void ThongKeTonKho_Load(object sender, EventArgs e)
@@ -169,6 +171,11 @@ namespace ManagementPhoneStore
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             ApplyFilters();
+        }
+
+        private void dataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
