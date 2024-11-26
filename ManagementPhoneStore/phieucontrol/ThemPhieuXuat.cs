@@ -11,6 +11,7 @@ using NPOI.XSSF.UserModel;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using DAO.DAO.impl;
 using Mysqlx.Crud;
+using DAO.DAO;
 namespace GUI
 {
 
@@ -28,9 +29,10 @@ namespace GUI
         private NhanVien nvnhap = new NhanVien();
         private ChiTietSanPhamService ctspBus = ChiTietSanPhamService.Instance;
         private ChiTietSanPhamDAO ctspdao = new ChiTietSanPhamDAO();
+        private Dictionary<int, List<ChiTietSanPham>> chitietsanpham = new Dictionary<int, List<ChiTietSanPham>>();
 
         private List<ChiTietPhieuXuat> chitietpx = new List<ChiTietPhieuXuat>();
-        private int maphieunhap = 1133311;
+  
         private int rowPhieuSelect = -1;
         private List<PhienBanSanPham> ch = new List<PhienBanSanPham>();
         private List<SanPham> sp = new List<SanPham>();
@@ -624,13 +626,7 @@ namespace GUI
             SetPanel(phieuNhapPanel);
         }
 
-        //private void button2_Click_1(object sender, EventArgs e)
-        //{
-        //    int mapb = ch[cbxCauhinh.SelectedIndex].MaPhienBanSanPham;
-        //    ctsp = ct.SelectAllByPb(mapb);
-        //    ImeiSelection imeiSelection = new ImeiSelection(ctsp, this);
-        //    imeiSelection.Visible = true;
-        //}
+    
         public bool CheckInfo()
         {
             bool check = true;
@@ -660,9 +656,53 @@ namespace GUI
             }
         }
 
+ 
+        private void btnNhaphang_Click(object sender, EventArgs e)
+        {
+            if (chitietpx.Count == 0)
+            {
+                MessageBox.Show("Chưa có sản phẩm nào trong phiếu!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult input = MessageBox.Show("Bạn có chắc chắn muốn tạo phiếu xuất!",
+                                                     "Xác nhận tạo phiếu",
+                                                     MessageBoxButtons.OKCancel,
+                                                     MessageBoxIcon.Information);
+
+                if (input == DialogResult.OK)
+                {
+                    int kh = (int)khService.getByIndex(cbxkh.SelectedIndex).MakH;
+                    DateTime now = DateTime.Now;
+                    PhieuXuat px = new PhieuXuat(
+                        maPhieuXuat,
+                         now,
+                        kh,
+                        listnv[0].Manv.ToString(),
+                        pnService.GetTongTien(chitietpx),
+                        1
+                    );
+
+                    bool result = pnService.Add(px, chitietpx, chitietsanpham);
+                    if (result)
+                    {
+                        MessageBox.Show("Xuất hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        maPhieuXuat = pnService.GetAutoIncrement() + 1;
+                        LoadDataTableSanPham(sp);
+                        PhieuXuatPanel newpan = new PhieuXuatPanel(manv);
+                        SetPanel(newpan);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xuất hàng không thành công!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
         private void button2_Click_1(object sender, EventArgs e)
         {
-            string selectedText = cbxCauhinh.SelectedItem.ToString();
+                string selectedText = cbxCauhinh.SelectedItem.ToString();
 
             if (selectedText == "Chọn sản phẩm")
             {
@@ -673,6 +713,7 @@ namespace GUI
             ctsp = ct.SelectAllByPb(mapb);
             ImeiSelection imeiSelection = new ImeiSelection(ctsp, this);
             imeiSelection.Visible = true;
+
         }
     }
 }

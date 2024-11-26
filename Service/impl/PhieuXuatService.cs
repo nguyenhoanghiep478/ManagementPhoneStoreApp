@@ -74,7 +74,7 @@ namespace Service
                         Dongia = chiTiet.Dongia
                     };
 
-                    _ctPhieuXuatDAO.insert(chiTietPhieuXuat);
+                    //_ctPhieuXuatDAO.insert(chiTietPhieuXuat);
                 }
             }
             catch (Exception ex)
@@ -208,6 +208,38 @@ namespace Service
 
             return result;
         }
+
+        public bool Add(PhieuXuat phieu, List<ChiTietPhieuXuat> ctPhieu, Dictionary<int, List<ChiTietSanPham>> chitietsanpham)
+        {
+            bool phieuInserted = phieuXuatDAO.insert(phieu) != 0;
+
+            if (!phieuInserted)
+            {
+                Console.WriteLine("fail 1");
+                return false;
+            }
+
+            bool chiTietPhieuInserted =_ctPhieuXuatDAO.insert(ctPhieu) > 0;
+            if (!chiTietPhieuInserted)
+            {
+                Console.WriteLine("fail 2");
+                return false;
+            }
+            bool chiTietSanPhamInserted = _chiTietSanPhamDAO.insert_mutiple(ConvertDictionaryToList(chitietsanpham)) == true;
+            if (!chiTietSanPhamInserted) { Console.WriteLine("failed"); return false; }
+            return true;
+        }
+        public List<ChiTietSanPham> ConvertDictionaryToList(Dictionary<int, List<ChiTietSanPham>> chitietsanpham)
+        {
+            List<ChiTietSanPham> result = new List<ChiTietSanPham>();
+            foreach (var ctspList in chitietsanpham.Values)
+            {
+                result.AddRange(ctspList);
+            }
+            return result;
+        }
+
+
         public int GetAutoIncrement()
         {
             return phieuXuatDAO.GetAutoIncrement();

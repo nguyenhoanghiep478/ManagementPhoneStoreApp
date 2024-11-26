@@ -61,6 +61,27 @@ namespace DAO.DAO.impl
                 phieuxuat.Trangthai ?? (object)DBNull.Value
             );
         }
+            
+        public long insert(PhieuXuat phieuXuat)
+        {
+            string query = @"
+                INSERT INTO phieuxuat 
+                (
+                    maphieuxuat, thoigian, makh, nguoitaophieuxuat, tongtien, trangthai
+                ) 
+                VALUES 
+                (
+                    @param0, @param1, @param2, @param3, @param4, @param5
+                );";
+            return Save(query,
+                phieuXuat.Maphieuxuat,
+               phieuXuat.Thoigian,
+              phieuXuat.Makh,
+              phieuXuat.Nguoitaophieuxuat,
+               phieuXuat.Tongtien,
+               phieuXuat.Trangthai
+            );
+        }
 
         public void Update(PhieuXuat phieuxuat)
         {
@@ -118,5 +139,6 @@ namespace DAO.DAO.impl
             // Increment the result by 1 and return it
             return result + 1;
         }
+
     }
 }

@@ -2,6 +2,7 @@
 using DAO.Mapper.impl;
 using DAO.utils;
 using Entity;
+using MySql.Data.MySqlClient;
 using State.Utils;
 using System;
 using System.Collections.Generic;
@@ -15,27 +16,58 @@ namespace DAO.DAO.impl
     public class ChiTietPhieuXuatDAO : AbstractDAO<ChiTietPhieuXuat>, IChiTietPhieuXuatDAO
     {
         private readonly ChiTietPhieuXuatRowMapper _rowMapper = new ChiTietPhieuXuatRowMapper();
-
-        // Insert new ChiTietPhieuXuat
-        public long insert(ChiTietPhieuXuat chiTietPhieuXuat)
+        private PhienBanSanPhamDAO pbsp=new PhienBanSanPhamDAO();
+          public int insert(List<ChiTietPhieuXuat> list)
         {
+            int result = 0;
             string query = @"
-                INSERT INTO ctphieuxuat
-                (
-                    maphieuxuat, maphienbansp, soluong, dongia
-                ) 
-                VALUES 
-                (
-                    @param0, @param1, @param2, @param3
-                );";
+    INSERT INTO ctphieuxuat
+    (
+        maphieuxuat, maphienbansp, soluong, dongia
+    ) 
+    VALUES 
+    (@param0, @param1, @param2, @param3);";
 
-            return Save(query,
-                chiTietPhieuXuat.Maphieuxuat,
-                chiTietPhieuXuat.Maphienbansp,
-                chiTietPhieuXuat.Soluong,
-                chiTietPhieuXuat.Dongia
-            );
+            string ConnectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306";
+
+            using (var con = new MySqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                using (var transaction = con.BeginTransaction())
+                {
+                    try
+                    {
+                        using (var cmd = new MySqlCommand(query, con, transaction))
+                        {
+                            foreach (var item in list)
+                            {
+                                cmd.Parameters.Clear();
+                                cmd.Parameters.AddWithValue("@param0", item.Maphieuxuat);
+                                cmd.Parameters.AddWithValue("@param1", item.Maphienbansp);
+                                cmd.Parameters.AddWithValue("@param2", item.Soluong);
+                                cmd.Parameters.AddWithValue("@param3", item.Dongia);
+                               
+                                cmd.ExecuteNonQuery();
+
+                                pbsp.UpdateSoLuongTon(item.Maphienbansp, -item.Soluong);
+                            }
+                        }
+
+                        transaction.Commit();
+                        result = list.Count; 
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                }
+            }
+
+            return result;
         }
+
 
         // Update existing ChiTietPhieuXuat
         public void update(ChiTietPhieuXuat chiTietPhieuXuat)
