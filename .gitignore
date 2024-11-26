@@ -98,3 +98,6 @@ coverage/
 # Web-specific files
 _DistCache/
 **/appsettings*.json
+*.cache
+*.dll
+*.pdb
