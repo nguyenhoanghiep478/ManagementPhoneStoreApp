@@ -322,3 +322,5 @@ C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DAO\bin\Debug\System.Runtime
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DAO\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DAO\bin\Debug\BCrypt.Net-Next.xml
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.Up2Date
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\DAO\bin\Debug\Entity.dll.config
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\DAO\bin\Debug\State.dll.config

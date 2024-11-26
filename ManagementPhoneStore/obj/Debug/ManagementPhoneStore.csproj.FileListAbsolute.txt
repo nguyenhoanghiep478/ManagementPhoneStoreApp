@@ -605,3 +605,14 @@ C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Deb
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\Manageme.DEBAEFFE.Up2Date
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienChiTietForm.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\dotenv.net.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeDoanhThu.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeGUI.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.dll.config
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.dll.config
