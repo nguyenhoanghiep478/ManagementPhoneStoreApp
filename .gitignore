@@ -2,3 +2,11 @@
 .vs/
 .vs/ManagementPhoneStoreApp/v17/.wsuo
 .vs/slnx.sqlite
+*.dll
+*.pdb
+*.exe
+*.cache
+bin/
+obj/
+
+/ManagementPhoneStore.sln
