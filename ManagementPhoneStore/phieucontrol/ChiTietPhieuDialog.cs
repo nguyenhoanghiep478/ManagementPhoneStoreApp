@@ -29,7 +29,7 @@ namespace GUI
             this.Visible   = false;
         }
         public ChiTietPhieuDialog(PhieuNhap pn)
-        {
+        { 
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             this.Visible=true;

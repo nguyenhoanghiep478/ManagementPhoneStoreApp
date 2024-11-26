@@ -207,13 +207,21 @@ namespace GUI
         }
         public void LoadDataTableSanPham(List<SanPham> result)
         {
+            // Clear the existing rows to avoid duplicating data
             dataGridView1.Rows.Clear();
-            foreach (SanPham sp in result)
+            result = sanPhamService.GetAll();
+            for (int i = 0; i < result.Count; i++)
             {
-                dataGridView1.Rows.Add(sp.Masp, sp.Tensp, sp.Soluongton);
+                var SanPham = result[i];
+                string masp = SanPham.Masp.ToString();
+                string tensp= SanPham.Tensp.ToString();
+                string solg= SanPham.Soluongton.ToString();
+
+                dataGridView1.Rows.Add(masp, tensp,solg);
             }
 
         }
+
         private void LoadKhachHangDropdown()
         {
 
@@ -603,7 +611,6 @@ namespace GUI
             }
         }
 
- 
         private void btnNhaphang_Click(object sender, EventArgs e)
         {
             if (chitietpx.Count == 0)
@@ -613,9 +620,9 @@ namespace GUI
             else
             {
                 DialogResult input = MessageBox.Show("Bạn có chắc chắn muốn tạo phiếu xuất!",
-                                                     "Xác nhận tạo phiếu",
-                                                     MessageBoxButtons.OKCancel,
-                                                     MessageBoxIcon.Information);
+                                                      "Xác nhận tạo phiếu",
+                                                      MessageBoxButtons.OKCancel,
+                                                      MessageBoxIcon.Information);
 
                 if (input == DialogResult.OK)
                 {
@@ -623,10 +630,10 @@ namespace GUI
                     DateTime now = DateTime.Now;
                     PhieuXuat px = new PhieuXuat(
                         maPhieuXuat,
-                         now,
-                            pnService.GetTongTien(chitietpx),
-                             listnv[0].Manv,
-                            kh,
+                        now,
+                        pnService.GetTongTien(chitietpx),
+                        listnv[0].Manv,
+                        kh,
                         1
                     );
 
@@ -634,8 +641,12 @@ namespace GUI
                     if (result)
                     {
                         MessageBox.Show("Xuất hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             
-                        LoadDataTableSanPham(sp);
+
+                        // Reload the list of products from the database to get updated quantities
+                       
+                       
+                        dataGridView1.Refresh(); // Refresh the DataGridView
+
                         PhieuXuatPanel newpan = new PhieuXuatPanel(manv);
                         SetPanel(newpan);
                     }
@@ -646,6 +657,7 @@ namespace GUI
                 }
             }
         }
+
 
         private void button2_Click_1(object sender, EventArgs e)
         {

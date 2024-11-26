@@ -13,6 +13,8 @@ using AForge.Video.DirectShow;
 using AForge.Video;
 using System.Drawing;
 using ManagementPhoneStore;
+using DAO.DAO.impl;
+using System.Linq;
 namespace GUI
 {
 
@@ -57,6 +59,9 @@ namespace GUI
 
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            txtMasp.Enabled = false;
+            txtTensp.Enabled = false;
+            txtDongia.Enabled = false;
 
             add.Click += ActionPerformed;
             delete.Click += ActionPerformed;
@@ -76,10 +81,12 @@ namespace GUI
                     ChiTietPhieuNhap ctp = CheckTonTai();
                     if (ctp == null)
                     {
+                        cbxPtNhap.Enabled =true;
                         ActionBtn("add");
                     }
                     else
                     {
+                        cbxPtNhap.Enabled = false;
                         ActionBtn("update");
                         SetFormChiTietPhieu(ctp);
                     }
@@ -92,23 +99,23 @@ namespace GUI
                 int index = dataGridView2.SelectedRows.Count > 0 ? dataGridView2.SelectedRows[0].Index : -1;
                 if (index != -1)
                 {
+
                     var chitietPhieu = chitietpn[index];
+                    cbxPtNhap.Enabled = false;
                     SetFormChiTietPhieu(chitietPhieu);
                     rowPhieuSelect = index;
+                    ActionBtn("update");
 
                 }
             };
 
             cbxCauhinh.SelectedIndexChanged += (s, e) =>
             {
+                cbxPtNhap.Enabled = true;
                 int index = cbxCauhinh.SelectedIndex;
-
                 if (index >= 0 && index < ch.Count)
                 {
-
                     txtDongia.Text = ch[index].GiaNhap.ToString();
-
-
                     var ctp = CheckTonTai();
                     if (ctp == null)
                     {
@@ -119,6 +126,7 @@ namespace GUI
                     }
                     else
                     {
+                        cbxPtNhap.Enabled = false;
                         ActionBtn("update");
 
                     }
@@ -156,6 +164,9 @@ namespace GUI
             {
                 EventBtnNhapHang();
             };
+            QuetImei.Click += button1_Click;
+
+            SetPlaceholder(txtSearchbox, "Tìm kiếm...");
         }
 
 
@@ -251,42 +262,32 @@ namespace GUI
                 txtDongia.Text = ch[0].GiaNhap.ToString();
             }
         }
-        public void SetFormChiTietPhieu(ChiTietPhieuNhap phieu)// cauhinh tra ve sai
+        public void SetFormChiTietPhieu(ChiTietPhieuNhap phieu)
         {
-
+            // Retrieve PhienBanSanPham details by Maphienbansp
             PhienBanSanPham pb = pbspService.GetByMaPhienBan(phieu.Maphienbansp);
-            if (pb == null)
-            {
-                MessageBox.Show("Product version not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
-
+            // Set the product ID in txtMasp TextBox
             this.txtMasp.Text = pb.MaSanPham.ToString();
+
+            // Set the product name in txtTensp TextBox
             this.txtTensp.Text = sanPhamService.GetByMaSP((int)pb.MaSanPham).Tensp;
 
-            var cauHinhList = GetCauHinhPhienBan((int)pb.MaSanPham);
+            // Populate the ComboBox with items
+            var cauHinhItems = GetCauHinhPhienBan((int)pb.MaSanPham);
+            this.cbxCauhinh.Items.Clear();  // Clear existing items
+            this.cbxCauhinh.Items.AddRange(cauHinhItems.ToArray());  // Add new items to ComboBox
 
+            // Set the selected index for ComboBox
+            this.cbxCauhinh.SelectedIndex = pbspService.GetIndexByMaPhienBan(ch, phieu.Maphienbansp);
 
-            this.cbxCauhinh.Items.Clear();
-            this.cbxCauhinh.Items.AddRange(cauHinhList);
-
-
-            if (cauHinhList.Length > 0)
-            {
-                int selectedIndex = pbspService.GetIndexByMaPhienBan(ch, phieu.Maphienbansp);
-
-            }
-            else
-            {
-                MessageBox.Show("No configurations available for this product.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+            // Set the unit price in txtDongia TextBox
             this.txtDongia.Text = phieu.Dongia.ToString();
 
-
+            // Set the IMEI or perform additional setup
             SetImei(phieu);
         }
+
 
 
 
@@ -356,7 +357,6 @@ namespace GUI
         public ChiTietPhieuNhap CheckTonTai()
         {
             int mapb = ch[cbxCauhinh.SelectedIndex].MaPhienBanSanPham;
-
             ChiTietPhieuNhap p = pnService.FindCT(chitietpn, mapb);
 
             return p;
@@ -406,7 +406,7 @@ namespace GUI
             }
             else if (phuongthuc == 1) // Nhập theo imei
             {
-                if (string.IsNullOrEmpty(txtMaImeiTheoLo.Text) || !Validation.IsNumber(txtMaImeiTheoLo.Text))
+                if (string.IsNullOrEmpty(textAreaImei.Text) || !Validation.IsNumber(textAreaImei.Text))
                 {
                     MessageBox.Show("Mã imei không được để rỗng và phải là số!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
@@ -706,8 +706,30 @@ namespace GUI
             }
 
         }
+        private void SetPlaceholder(RichTextBox richTextBox, string placeholder)
+        {
+            richTextBox.Text = placeholder;
+            richTextBox.ForeColor = Color.Gray;
 
-        
+            richTextBox.Enter += (sender, e) =>
+            {
+                if (richTextBox.Text == placeholder)
+                {
+                    richTextBox.Text = "";
+                    richTextBox.ForeColor = Color.Black;
+                }
+            };
+
+            richTextBox.Leave += (sender, e) =>
+            {
+                if (string.IsNullOrEmpty(richTextBox.Text))
+                {
+                    richTextBox.Text = placeholder;
+                    richTextBox.ForeColor = Color.Gray;
+                }
+            };
+        }
+
         private void textAreaImei_TextChanged(object sender, EventArgs e)
         {
 
@@ -716,6 +738,12 @@ namespace GUI
         private void add_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            PhieuNhapPanel phieuNhapPanel = new PhieuNhapPanel(manv);
+            SetPanel(phieuNhapPanel);
         }
     }
 }

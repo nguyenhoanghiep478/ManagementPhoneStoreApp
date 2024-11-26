@@ -118,6 +118,7 @@
             // 
             // time
             // 
+            this.time.Enabled = false;
             this.time.Location = new System.Drawing.Point(1001, 79);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(215, 46);
@@ -129,6 +130,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,

@@ -53,7 +53,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textAreaImei = new System.Windows.Forms.RichTextBox();
             this.importImei = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.QuetImei = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -129,6 +129,7 @@
             this.back.TabIndex = 21;
             this.back.Text = "Back";
             this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // tongtien
             // 
@@ -390,7 +391,7 @@
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.textAreaImei);
             this.panel3.Controls.Add(this.importImei);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.QuetImei);
             this.panel3.Location = new System.Drawing.Point(-3, 327);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.MaximumSize = new System.Drawing.Size(800, 199);
@@ -433,17 +434,17 @@
             this.importImei.Text = "Nhập Excel";
             this.importImei.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // QuetImei
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Location = new System.Drawing.Point(389, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Quét Imei";
-            this.button1.UseVisualStyleBackColor = true;
+            this.QuetImei.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.QuetImei.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.QuetImei.Location = new System.Drawing.Point(389, 0);
+            this.QuetImei.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.QuetImei.Name = "QuetImei";
+            this.QuetImei.Size = new System.Drawing.Size(84, 39);
+            this.QuetImei.TabIndex = 0;
+            this.QuetImei.Text = "Quét Imei";
+            this.QuetImei.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -703,7 +704,7 @@
             this.txtSearchbox.Name = "txtSearchbox";
             this.txtSearchbox.Size = new System.Drawing.Size(462, 46);
             this.txtSearchbox.TabIndex = 10;
-            this.txtSearchbox.Text = "Tìm kiếm";
+            this.txtSearchbox.Text = "";
             // 
             // ThemPhieuPanel
             // 
@@ -751,7 +752,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox textAreaImei;
         private System.Windows.Forms.Button importImei;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button QuetImei;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

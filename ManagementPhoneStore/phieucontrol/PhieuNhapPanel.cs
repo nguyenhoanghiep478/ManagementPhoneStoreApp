@@ -53,7 +53,7 @@ namespace GUI
             //ResizeButtonImage(export, GUI.Properties.Resources.sheets, 60, 60);
             //ResizeButtonImage(resetbutton, GUI.Properties.Resources.refresh, 60, 60);
 
-
+            SetPlaceholder(textBox1, "Search...");
 
             listPhieu = pnService.GetAll();
             dateStart.Value = DateTime.Now;
@@ -257,7 +257,29 @@ namespace GUI
                 Console.WriteLine("Error: " + ex.Message);
             }
         }
+        private void SetPlaceholder(TextBox textBox, string placeholder)
+        {
+            textBox.Text = placeholder;
+            textBox.ForeColor = Color.Gray;
 
+            textBox.Enter += (sender, e) =>
+            {
+                if (textBox.Text == placeholder)
+                {
+                    textBox.Text = "";
+                    textBox.ForeColor = Color.Black;
+                }
+            };
+
+            textBox.Leave += (sender, e) =>
+            {
+                if (string.IsNullOrEmpty(textBox.Text))
+                {
+                    textBox.Text = placeholder;
+                    textBox.ForeColor = Color.Gray;
+                }
+            };
+        }
         public void ResetForm(object sender, EventArgs e)
         {
             dateStart.Value = DateTime.Now.AddDays(-1).AddHours(-1); ;
