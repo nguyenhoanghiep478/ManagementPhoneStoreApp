@@ -616,3 +616,7 @@ C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Deb
 C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Configuration.ConfigurationManager.xml
 C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.dll.config
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ChiTietPhieuXuatDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ImeiSelection.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.PhieuXuatPanel.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ThemPhieuXuat.resources

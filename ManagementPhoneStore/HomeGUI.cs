@@ -183,8 +183,11 @@ namespace GUI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //PhieuxuatGUI phieuXuatform = new PhieuxuatGUI();
-            //phieuXuatform.Show();
+            PhieuXuatPanel pn = new PhieuXuatPanel(manv);
+
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(pn);
         }
 
         private void button7_Click(object sender, EventArgs e)
