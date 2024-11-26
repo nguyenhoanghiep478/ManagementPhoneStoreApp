@@ -9,6 +9,10 @@ using System.Text.RegularExpressions;
 using System.IO;
 using NPOI.XSSF.UserModel;
 using DocumentFormat.OpenXml.Drawing.Charts;
+using AForge.Video.DirectShow;
+using AForge.Video;
+using System.Drawing;
+using ManagementPhoneStore;
 namespace GUI
 {
 
@@ -23,7 +27,6 @@ namespace GUI
         private PhieuNhapService pnService = PhieuNhapService.Instance;
         private PhienBanSanPhamService pbspService = PhienBanSanPhamService.Instance;
         private MauSacService mausacService = new MauSacService();
-        
 
         private List<ChiTietPhieuNhap> chitietpn = new List<ChiTietPhieuNhap>();
         private Dictionary<int, List<ChiTietSanPham>> chitietsanpham = new Dictionary<int, List<ChiTietSanPham>>();
@@ -40,6 +43,7 @@ namespace GUI
         public ThemPhieuPanel(String tennv, int manvien)
         {
             InitializeComponent();
+            
             manv = manvien;
             sp = sanPhamService.GetAll();
             maphieunhap = pnService.GetAutoIncrement();             
@@ -155,7 +159,7 @@ namespace GUI
         }
 
 
-
+        
 
 
         public static class Validation
@@ -450,7 +454,7 @@ namespace GUI
 
             if (hinhthuc == 1)
             {
-                string[] arrImei = txtMaImeiTheoLo.Text.Split('\n');
+                string[] arrImei = textAreaImei.Text.Split('\n');
                 foreach (var imei in arrImei)
                 {
                     result.Add(new ChiTietSanPham(imei, maphienbansp, maphieunhap, 0, true));
@@ -670,6 +674,46 @@ namespace GUI
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtMaphieu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (ImeiScannerDialog scannerDialog = new ImeiScannerDialog())
+            {
+
+                if (scannerDialog.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Quét IMEI thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string imei = scannerDialog.IMEI;
+                    textAreaImei.Text = imei;
+                }
+                else
+                {
+                    MessageBox.Show("Quét IMEI đã bị hủy.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+        }
+
+        
+        private void textAreaImei_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void add_Click(object sender, EventArgs e)
         {
 
         }

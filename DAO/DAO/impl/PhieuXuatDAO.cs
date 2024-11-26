@@ -110,13 +110,13 @@ namespace DAO.DAO.impl
             int result = 0;
 
             string query = @"
-    SELECT maphieuxuat 
-    FROM phieuxuat
-    ORDER BY maphieuxuat DESC LIMIT 1;";
+            SELECT maphieuxuat 
+            FROM phieuxuat
+            ORDER BY maphieuxuat DESC LIMIT 1;";
 
             try
             {
-                using (var connection = new MySqlConnection("Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306;"))
+                using (var connection = new MySqlConnection("Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306;"))
                 {
                     connection.Open();
 

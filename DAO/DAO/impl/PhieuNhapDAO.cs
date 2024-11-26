@@ -92,13 +92,13 @@ namespace DAO.DAO.impl
             int result = 0;
 
             string query = @"
-    SELECT maphieunhap 
-    FROM phieunhap 
-    ORDER BY maphieunhap DESC LIMIT 1;";
+                SELECT maphieunhap 
+                FROM phieunhap 
+                ORDER BY maphieunhap DESC LIMIT 1;";
 
             try
             {
-                using (var connection = new MySqlConnection("Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306;"))
+                using (var connection = new MySqlConnection("Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306;"))
                 {
                     connection.Open();
 

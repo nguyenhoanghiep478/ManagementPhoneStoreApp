@@ -31,6 +31,7 @@ namespace GUI
         }
         public ChiTietPhieuXuatDialog(PhieuXuat px)
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             this.Visible = true;
             phieuxuat = px;

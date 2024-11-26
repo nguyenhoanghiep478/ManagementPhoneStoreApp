@@ -190,3 +190,11 @@ C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\Service\bin\Debug\System.Con
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\Service\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\Service\bin\Debug\Entity.dll.config
 C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\Service\bin\Debug\State.dll.config
+D:\ManagementPhoneStoreApp\Service\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\ManagementPhoneStoreApp\Service\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\ManagementPhoneStoreApp\Service\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\ManagementPhoneStoreApp\Service\bin\Debug\Entity.dll.config
+D:\ManagementPhoneStoreApp\Service\bin\Debug\State.dll.config
+D:\ManagementPhoneStoreApp\Service\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\ManagementPhoneStoreApp\Service\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\ManagementPhoneStoreApp\Service\bin\Debug\System.Diagnostics.DiagnosticSource.xml
