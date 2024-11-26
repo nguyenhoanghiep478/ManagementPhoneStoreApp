@@ -11,6 +11,7 @@ using Entity;
 using Service.impl;
 using Service;
 using ClosedXML.Excel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace ManagementPhoneStore
 {
@@ -381,6 +382,16 @@ namespace ManagementPhoneStore
             }
 
             // Tìm kiếm theo type và value
+            if(searchType.Equals( "makhuvuc"))
+            {
+                bool isNumber = int.TryParse(value, out int number);
+                if (!isNumber)
+                {
+                    MessageBox.Show($"Tìm theo mã kho chỉ có thể nhập số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.textBox1.Text = string.Empty;
+                    return;
+                }
+            }
             var result = khuVucKhoService.Search(value, searchType);
             if(result.Count > 0)
             {
@@ -399,6 +410,36 @@ namespace ManagementPhoneStore
                 MessageBox.Show("Vui lòng chọn khu vực kho cần cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            ListViewItem selectedItem = listView1.SelectedItems[0];
+            int maKvk = int.Parse(selectedItem.Text);
+
+            int index = khuVucKhoService.GetIndexByMaKVK(maKvk);
+            KhuVucKho kvk = khuVucKhoService.GetByIndex(index);
+
+            using (KhuVucKhoDialog khuVucKhoDialog = new KhuVucKhoDialog(kvk))
+            {
+                try
+                {
+                    if (khuVucKhoDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string tenKhuVuc = khuVucKhoDialog.TenKhuVuc;
+                        string ghiChu = khuVucKhoDialog.GhiChu;
+
+                        kvk.Tenkhuvuc = tenKhuVuc;
+                        kvk.Ghichu = ghiChu;
+
+                        this.khuVucKhoService.Update(kvk);
+                        listKvk = khuVucKhoService.GetAll();
+                        LoadDataTable(listKvk);
+
+                        MessageBox.Show("Cập nhật khu vực kho thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }catch(Exception ex)
+                {
+                    MessageBox.Show($"Lỗi khi cập nhật khu vực kho: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
     }
 }

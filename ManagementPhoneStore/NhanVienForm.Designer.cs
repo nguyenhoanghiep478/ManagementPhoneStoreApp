@@ -79,7 +79,7 @@ namespace ManagementPhoneStore
             this.listViewNhanVien.GridLines = true;
             this.listViewNhanVien.HideSelection = false;
             this.listViewNhanVien.Location = new System.Drawing.Point(20, 188);
-            this.listViewNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.listViewNhanVien.Name = "listViewNhanVien";
             this.listViewNhanVien.Size = new System.Drawing.Size(1446, 489);
             this.listViewNhanVien.TabIndex = 0;
@@ -155,7 +155,7 @@ namespace ManagementPhoneStore
             "Số điện thoại",
             "Email"});
             this.nv_prop.Location = new System.Drawing.Point(812, 42);
-            this.nv_prop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nv_prop.Margin = new System.Windows.Forms.Padding(4);
             this.nv_prop.Name = "nv_prop";
             this.nv_prop.Size = new System.Drawing.Size(187, 28);
             this.nv_prop.TabIndex = 7;
@@ -310,7 +310,7 @@ namespace ManagementPhoneStore
             this.ClientSize = new System.Drawing.Size(1475, 681);
             this.Controls.Add(this.listViewNhanVien);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NhanVienForm";
             this.Text = "NhanVienGUI";
             this.Load += new System.EventHandler(this.NhanVienForm_Load);

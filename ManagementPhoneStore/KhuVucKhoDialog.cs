@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Service.impl;
 using Service;
+using Entity;
 
 namespace ManagementPhoneStore
 {
@@ -17,11 +18,20 @@ namespace ManagementPhoneStore
 
         private IKhuVucKhoService khuVucKhoService = KhuVucKhoService.Instance;
         public string TenKhuVuc { get => tenKhuVucKho.Text.Trim(); }
+        private KhuVucKho kvk;
         public string GhiChu { get => ghichu.Text.Trim(); }
 
         public KhuVucKhoDialog()
         {
             InitializeComponent();
+        }
+
+        public KhuVucKhoDialog(KhuVucKho khuVucKho)
+        {
+            InitializeComponent();
+            this.kvk = khuVucKho;
+            this.tenKhuVucKho.Text = kvk.Tenkhuvuc;
+            this.ghichu.Text = kvk.Ghichu;
         }
 
         private void KhuVucKhoDialog_Load(object sender, EventArgs e)

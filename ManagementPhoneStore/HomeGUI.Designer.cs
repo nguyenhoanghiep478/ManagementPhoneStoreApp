@@ -1,7 +1,4 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-
-namespace GUI
+﻿namespace GUI
 {
     partial class HomeGUI
     {
@@ -88,7 +85,7 @@ namespace GUI
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1); 
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(251, 108);
@@ -147,9 +144,6 @@ namespace GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 571);
             this.panel2.TabIndex = 1;
-
-            //CreateItemPanel(pictureBox6, button1);
-            //CreateItemPanel(pictureBox18, button13);
             // 
             // button1
             // 
@@ -510,7 +504,6 @@ namespace GUI
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1114, 749);
             this.panelContainer.TabIndex = 4;
-
             // 
             // panel8
             // 
@@ -523,11 +516,8 @@ namespace GUI
             // 
             // HomeGUI
             // 
-     panel2.Dock = DockStyle.Left;
-panelContainer.Dock = DockStyle.Fill;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScaleMode = AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1366, 749);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panelContainer);
@@ -556,44 +546,7 @@ panelContainer.Dock = DockStyle.Fill;
             this.ResumeLayout(false);
 
         }
-        private void RemoveControl(Control controlToRemove)
-        {
-           
-            panel2.Controls.Remove(controlToRemove);
 
-            
-            int y = 0; 
-            foreach (Control control in panel2.Controls)
-            {
-                control.Location = new Point(control.Location.X, y);
-                y += control.Height + 5; 
-            }
-        }
-
-        private void CreateItemPanel(PictureBox pictureBox, Button button)
-        {
-            Panel itemPanel = new Panel
-            {
-                Size = new Size(230, 80), // Kích thước phù hợp với PictureBox và Button
-                BackColor = Color.Transparent // Không cần màu nền
-            };
-
-            // Đặt PictureBox vào Panel
-            pictureBox.Location = new Point(10, 10);
-            pictureBox.Size = new Size(50, 50);
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            // Đặt Button vào Panel
-            button.Location = new Point(70, 10);
-            button.Size = new Size(150, 50);
-            button.TextAlign = ContentAlignment.MiddleLeft;
-
-            // Thêm PictureBox và Button vào Panel
-            itemPanel.Controls.Add(pictureBox);
-            itemPanel.Controls.Add(button);
-
-            panel2.Controls.Add(itemPanel) ;
-        }
         #endregion
 
         private System.Windows.Forms.Panel panel1;
