@@ -9,7 +9,7 @@ namespace DAO.DAO
 {
     public interface IChiTietPhieuXuatDAO
     {
-        long insert(ChiTietPhieuXuat chiTietPhieuXuat);
+        int insert(List<ChiTietPhieuXuat> chiTietPhieuXuat);
         void update(ChiTietPhieuXuat chiTietPhieuXuat);
         void delete(int maphieuxuat, int maphienbansp);
         List<ChiTietPhieuXuat> GetByPhieuXuatId(int maphieuxuat);

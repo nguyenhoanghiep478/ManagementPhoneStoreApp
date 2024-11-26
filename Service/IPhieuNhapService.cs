@@ -19,7 +19,7 @@ namespace Service
         ChiTietPhieuNhap FindCT(List<ChiTietPhieuNhap> ctphieu, int mapb);
         long GetTongTien(List<ChiTietPhieuNhap> ctphieu);
         List<PhieuNhap> FilterPhieuNhap(int type, string input, int mancc, int manv, DateTime time_s, DateTime time_e, string price_min, string price_max);
-        bool CheckCancelPn(int maphieu);
-        int CancelPhieuNhap(int maphieu);
+        bool checkCancelPn(int maphieu);
+        int cancelPhieuNhap(int maphieu);
     }
 }

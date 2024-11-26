@@ -15,6 +15,11 @@ namespace Entity
         private int? nguoitaophieuxuat;
         private int? makh;
         private int? trangthai;
+        private DateTime now;
+        private int kh;
+        private string v1;
+        private long v2;
+        private int v3;
 
         // Default constructor
         public PhieuXuat() { }
@@ -29,6 +34,16 @@ namespace Entity
             this.nguoitaophieuxuat = nguoitaophieuxuat;
             this.makh = makh;
             this.trangthai = trangthai;
+        }
+
+        public PhieuXuat(int maPhieuXuat, DateTime now, int kh, string v1, long v2, int v3)
+        {
+            maphieuxuat = maPhieuXuat;
+            this.now = now;
+            this.kh = kh;
+            this.v1 = v1;
+            this.v2 = v2;
+            this.v3 = v3;
         }
 
         public int? Maphieuxuat

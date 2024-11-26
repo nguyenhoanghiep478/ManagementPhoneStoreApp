@@ -365,15 +365,15 @@ namespace ManagementPhoneStore
             if (!string.IsNullOrEmpty(ten.Text)) // Kiểm tra xem tên đăng nhập có rỗng không
             {
                 string tendangnhap = ten.Text; // Lấy tên đăng nhập từ TextBox
-                string pass =MyBcrypt.HashPassword(matkhau.Text); // Mã hóa mật khẩu
+                string pass =tk.Matkhau; // Mã hóa mật khẩu
                 int manhom = (int)lnq[nhomquyen.SelectedIndex].Manhomquyen; // Lấy mã nhóm quyền từ danh sách
                 int tt = trangthai.SelectedIndex; // Lấy trạng thái đã chọn
-
+                
                 // Tạo đối tượng TaiKhoanDTO mới
-                TaiKhoan tk = new TaiKhoan(id_nv, pass, manhom, tendangnhap, tt, "123");
+                TaiKhoan tk1 = new TaiKhoan(id_nv, pass, manhom, tendangnhap, tt, "123");
 
                 // Cập nhật tài khoản trong cơ sở dữ liệu
-                TaiKhoanService.Instance.UpdateAcc(tkForm.GetSelectedIndex(),tk);
+                TaiKhoanService.Instance.UpdateAcc(tkForm.GetSelectedIndex(),tk1);
 
                 // Cập nhật tài khoản trong bus
                

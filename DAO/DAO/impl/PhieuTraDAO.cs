@@ -20,9 +20,9 @@ namespace DAO.DAO.impl
         {
             string query = "UPDATE phieutra SET trangthai = 0 WHERE maphieutra = @param0";
             Update(query, id); // Assuming '0' represents a "deleted" status
-            //need altering
-        }
+                               //need altering
 
+        }
         public List<PhieuTra> FindLikeName(string name)
         {
             List<Criteria> criterias = new List<Criteria>();

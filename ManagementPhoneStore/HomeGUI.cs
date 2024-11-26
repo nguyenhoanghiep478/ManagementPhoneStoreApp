@@ -1,4 +1,5 @@
-﻿using Entity;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using Entity;
 using ManagementPhoneStore;
 using Service.impl;
 using System;
@@ -123,7 +124,7 @@ namespace GUI
         private void HomeGUI_Load(object sender, EventArgs e)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.BackColor = Color.DarkGray;
+            this.BackColor = System.Drawing.Color.DarkGray;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -172,16 +173,22 @@ namespace GUI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PhieuNhapPanel phieuNhapPanel = new PhieuNhapPanel(manv);
 
+           
+            PhieuNhapPanel pn = new PhieuNhapPanel(manv);
+    
+    
             panelContainer.Controls.Clear();
-            panelContainer.Controls.Add(phieuNhapPanel);
+            panelContainer.Controls.Add(pn);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //PhieuxuatGUI phieuXuatform = new PhieuxuatGUI();
-            //phieuXuatform.Show();
+            PhieuXuatPanel pn = new PhieuXuatPanel(manv);
+
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(pn);
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -208,13 +215,13 @@ namespace GUI
 
         private void button9_Click(object sender, EventArgs e)
         {
-            NhanVienForm nhanVienform = new NhanVienForm();
-            nhanVienform.TopLevel = false;
-            nhanVienform.Dock = DockStyle.Fill;
+            //NhanVienForm nhanVienform = new NhanVienForm();
+            //nhanVienform.TopLevel = false;
+            //nhanVienform.Dock = DockStyle.Fill;
 
-            panelContainer.Controls.Clear();
-            panelContainer.Controls.Add(nhanVienform);
-            nhanVienform.Show();
+            //panelContainer.Controls.Clear();
+            //panelContainer.Controls.Add(nhanVienform);
+            //nhanVienform.Show();
         }
 
         private void button10_Click(object sender, EventArgs e)

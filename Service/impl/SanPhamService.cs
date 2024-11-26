@@ -28,7 +28,7 @@ namespace Service.impl
             if (check)
             {
                 cauhinhBus.Add(listch);
-                listSP.Add(sp);
+                listSP = spDAO.GetAll();  
             }
             return check;
         }

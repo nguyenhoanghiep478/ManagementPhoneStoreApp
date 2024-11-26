@@ -11,7 +11,7 @@ namespace DAO.DAO
     {
         List<ChiTietPhieuNhap> GetAll();
 
-        long insert(ChiTietPhieuNhap chiTietPhieuNhap);
+        int insert(List<ChiTietPhieuNhap> chiTietPhieuNhap);
         void update(ChiTietPhieuNhap chiTietPhieuNhap);
         void delete(long id);
     }

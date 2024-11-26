@@ -39,6 +39,15 @@ namespace Entity
             get { return hinhthucnhap; }
             set { hinhthucnhap = value; }
         }
+        public ChiTietPhieuNhap(int hinhthucnhap, int maphieunhap, int maphienbansp, int soluong, int dongia)
+        {
+            this.hinhthucnhap = hinhthucnhap;
+            this.maphieunhap = maphieunhap;
+            this.maphienbansp = maphienbansp;
+            this.soluong = soluong;
+            this.dongia = dongia;
+        }
+        public ChiTietPhieuNhap() { }
 
         public override string ToString()
         {
