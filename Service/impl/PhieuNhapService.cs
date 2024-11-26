@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management.Instrumentation;
 using DAO.DAO;
 using DAO.DAO.impl;
 using Entity;
@@ -13,7 +14,8 @@ namespace Service
         private readonly PhieuNhapDAO _phieuNhapDAO = new PhieuNhapDAO();
         private readonly ChiTietPhieuNhapDAO _ctPhieuNhapDAO = new ChiTietPhieuNhapDAO();
         private readonly ChiTietSanPhamDAO _chiTietSanPhamDAO = new ChiTietSanPhamDAO();
-
+        private static Lazy<PhieuNhapService> instance = new Lazy<PhieuNhapService>(() => new PhieuNhapService());
+        public static PhieuNhapService Instance => instance.Value;
         private readonly NhaChungCapService _nccService = NhaChungCapService.Instance;
         private readonly NhanVienService _nvService = new NhanVienService();
 

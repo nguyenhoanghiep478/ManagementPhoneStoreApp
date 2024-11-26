@@ -13,7 +13,9 @@ namespace Service
         private readonly ChiTietPhieuXuatDAO _chiTietPhieuXuatDAO = new ChiTietPhieuXuatDAO();
         private readonly NhanVienService _nvService = new NhanVienService();
         private readonly KhachHangService _khService = new KhachHangService();
+        private static Lazy<PhieuXuatService> instance = new Lazy<PhieuXuatService>(() => new PhieuXuatService());
 
+        public static PhieuXuatService Instance => instance.Value;
         public List<PhieuXuat> GetAll()
         {
             return _phieuXuatDAO.GetAll();

@@ -172,8 +172,10 @@ namespace GUI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //PhieunhapGUI phieuNhapform = new PhieunhapGUI();
-            //phieuNhapform.Show();
+            PhieuNhapPanel phieuNhapPanel = new PhieuNhapPanel(manv);
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(phieuNhapPanel);
         }
 
         private void button6_Click(object sender, EventArgs e)

@@ -469,3 +469,11 @@ D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.N
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\dotenv.net.dll
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeGUI.resources
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeDoanhThu.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ChiTietPhieuDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ChiTietPhieuXuatDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ImeiSelection.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginGUI.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.PhieuNhapPanel.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.PhieuXuatPanel.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ThemPhieuPanel.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ThemPhieuXuat.resources
