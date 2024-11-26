@@ -59,7 +59,7 @@ namespace GUI
             LoadDataTableChiTietPhieu(chitietpx);
             LoadKhachHangDropdown();
             listnv = nvService.GetAll();
-            setKhachHang(cbxkh.SelectedIndex);
+           (cbxkh.SelectedIndex)=0;
 
 
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -106,44 +106,7 @@ namespace GUI
                 MessageBox.Show("Chức năng không khả dụng !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             };
 
-            btnNhaphang.Click += (sender, e) =>
-            {
-                if (chitietpx == null)
-                {
-                    MessageBox.Show("Vui lòng chọn sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (makh == -1)
-                {
-                    MessageBox.Show("Vui lòng chọn khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    var input = MessageBox.Show("Bạn có chắc chắn muốn tạo phiếu xuất !",
-                                                "Xác nhận tạo phiếu",
-                                                MessageBoxButtons.OKCancel,
-                                                MessageBoxIcon.Information);
-
-                    if (input == DialogResult.OK)
-                    {
-
-                        DateTime now = DateTime.Now;
-
-                        PhieuXuat phieuXuat = new PhieuXuat(maPhieuXuat, DateTime.Now, pnService.GetTongTien(chitietpx), 3, makh, 0);
-
-                        pnService.Insert(phieuXuat, chitietpx);
-
-                        ctspBus.updateXuat(ctsp);
-
-                        MessageBox.Show("Xuất hàng thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
-                    }
-                }
-            };
-
-
-
+           
             cbxCauhinh.SelectedIndex = 0;
 
 
@@ -218,13 +181,7 @@ namespace GUI
 
 
         }
-        public void setKhachHang(int index)
-        {
-            makh = 1;
-
-        }
-
-
+   
         public static class Validation
         {
             public static bool IsEmail(string value)
@@ -614,18 +571,8 @@ namespace GUI
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            PhieuXuatPanel phieuNhapPanel = new PhieuXuatPanel(manv);
-            SetPanel(phieuNhapPanel);
-        }
-
-        private void back_Click(object sender, EventArgs e)
-        {
-            PhieuXuatPanel phieuNhapPanel = new PhieuXuatPanel(manv);
-            SetPanel(phieuNhapPanel);
-        }
-
+   
+     
     
         public bool CheckInfo()
         {
@@ -677,9 +624,9 @@ namespace GUI
                     PhieuXuat px = new PhieuXuat(
                         maPhieuXuat,
                          now,
-                        kh,
-                        listnv[0].Manv.ToString(),
-                        pnService.GetTongTien(chitietpx),
+                            pnService.GetTongTien(chitietpx),
+                             listnv[0].Manv,
+                            kh,
                         1
                     );
 
@@ -687,7 +634,7 @@ namespace GUI
                     if (result)
                     {
                         MessageBox.Show("Xuất hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        maPhieuXuat = pnService.GetAutoIncrement() + 1;
+             
                         LoadDataTableSanPham(sp);
                         PhieuXuatPanel newpan = new PhieuXuatPanel(manv);
                         SetPanel(newpan);
@@ -715,5 +662,14 @@ namespace GUI
             imeiSelection.Visible = true;
 
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+         
+            PhieuXuatPanel phieuNhapPanel = new PhieuXuatPanel(manv);
+            SetPanel(phieuNhapPanel);
+       
+
     }
+}
 }

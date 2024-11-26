@@ -30,6 +30,7 @@ namespace GUI
         }
         public ChiTietPhieuDialog(PhieuNhap pn)
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             this.Visible=true;
             phieunhap = pn;

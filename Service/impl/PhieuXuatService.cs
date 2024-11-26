@@ -225,8 +225,7 @@ namespace Service
                 Console.WriteLine("fail 2");
                 return false;
             }
-            bool chiTietSanPhamInserted = _chiTietSanPhamDAO.insert_mutiple(ConvertDictionaryToList(chitietsanpham)) == true;
-            if (!chiTietSanPhamInserted) { Console.WriteLine("failed"); return false; }
+          
             return true;
         }
         public List<ChiTietSanPham> ConvertDictionaryToList(Dictionary<int, List<ChiTietSanPham>> chitietsanpham)
