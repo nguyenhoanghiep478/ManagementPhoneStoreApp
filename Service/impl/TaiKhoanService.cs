@@ -12,7 +12,7 @@ namespace Service.impl
 {
     public class TaiKhoanService : ITaiKhoanService
     {
-        private  List<TaiKhoan> _taikhoans = new List<TaiKhoan>();
+        private List<TaiKhoan> _taikhoans = new List<TaiKhoan>();
         private List<NhomQuyen> _nhomquyen = new List<NhomQuyen>();
         private ITaiKhoanDao _taiKhoanDAO = new TaiKhoanDAO();
         private INhomQuyenDAO _nhomQuyenDAO = new NhomQuyenDAO();
@@ -22,7 +22,7 @@ namespace Service.impl
 
         public TaiKhoanService()
         {
-            this._taikhoans = _taiKhoanDAO.GetAll();
+            this._taikhoans = _taiKhoanDAO.GetAll().Where(tk => tk.Trangthai.Equals(1)).ToList();
             _nhomquyen=_nhomQuyenDAO.GetAll();
         }
         public TaiKhoan getByIndex(int index)
@@ -54,7 +54,7 @@ namespace Service.impl
         {
             if (tk != null && !_taikhoans.Any(x => x.Manv == tk.Manv))
             {
-                tk.Matkhau = PasswordHelper.HashPassword(tk.Matkhau);      
+                //tk.Matkhau = PasswordHelper.HashPassword(tk.Matkhau);      
                 _taiKhoanDAO.insert(tk);
                 _taikhoans.Add(tk);
             }
@@ -119,7 +119,10 @@ namespace Service.impl
                 throw new Exception("Error");
             }
         }
-
+        public List<TaiKhoan> getTaiKhoanAllStatus()
+        {
+            return _taiKhoanDAO.GetAll();
+        }
         public List<TaiKhoan> GetTaiKhoanAll()
         {
           return this._taikhoans;

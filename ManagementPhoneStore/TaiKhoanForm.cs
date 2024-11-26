@@ -27,5 +27,25 @@ namespace ManagementPhoneStore
         {
 
         }
+
+        private void add_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void update_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tk_prop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

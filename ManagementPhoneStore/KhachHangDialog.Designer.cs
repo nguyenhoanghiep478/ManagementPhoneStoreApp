@@ -288,8 +288,8 @@ namespace ManagementPhoneStore
                
                 KhachHang temp = new KhachHang();
                 temp.TenKhachHang = ten.Text;
-                temp.DiaChi = sodienthoai.Text;
-                temp.Sdt= diachi.Text;
+                temp.DiaChi =diachi.Text;
+                temp.Sdt= sodienthoai.Text;
                 temp.TrangThai = 1;
                 temp.MakH = kh.MakH;
                 temp.NgayThamGia = DateTime.Now;

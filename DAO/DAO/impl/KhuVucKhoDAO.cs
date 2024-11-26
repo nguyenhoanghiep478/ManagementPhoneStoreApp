@@ -47,7 +47,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                   @param0, @param1, @param2, @param3, @param4
+                   @param0, @param1, @param2, @param3
                 );";
             return Save(query,
                  khuvuckho.Makhuvuc,

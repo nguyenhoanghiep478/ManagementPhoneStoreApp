@@ -52,18 +52,20 @@ namespace ManagementPhoneStore
             // overviewPanel
             // 
             this.overviewPanel.BackColor = System.Drawing.Color.White;
-            this.overviewPanel.Location = new System.Drawing.Point(10, 10);
+            this.overviewPanel.Location = new System.Drawing.Point(13, 12);
+            this.overviewPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.overviewPanel.Name = "overviewPanel";
-            this.overviewPanel.Size = new System.Drawing.Size(880, 100);
+            this.overviewPanel.Size = new System.Drawing.Size(1173, 123);
             this.overviewPanel.TabIndex = 0;
             this.overviewPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.overviewPanel_Paint_2);
             // 
             // chartPanel
             // 
             this.chartPanel.BackColor = System.Drawing.Color.White;
-            this.chartPanel.Location = new System.Drawing.Point(10, 120);
+            this.chartPanel.Location = new System.Drawing.Point(13, 148);
+            this.chartPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chartPanel.Name = "chartPanel";
-            this.chartPanel.Size = new System.Drawing.Size(880, 300);
+            this.chartPanel.Size = new System.Drawing.Size(1173, 369);
             this.chartPanel.TabIndex = 1;
             this.chartPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.chartPanel_Paint);
             // 
@@ -71,9 +73,10 @@ namespace ManagementPhoneStore
             // 
             this.dataGridPanel.BackColor = System.Drawing.Color.White;
             this.dataGridPanel.Controls.Add(this.dataGridView);
-            this.dataGridPanel.Location = new System.Drawing.Point(10, 430);
+            this.dataGridPanel.Location = new System.Drawing.Point(13, 529);
+            this.dataGridPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridPanel.Name = "dataGridPanel";
-            this.dataGridPanel.Size = new System.Drawing.Size(880, 120);
+            this.dataGridPanel.Size = new System.Drawing.Size(1173, 148);
             this.dataGridPanel.TabIndex = 2;
             // 
             // dataGridView
@@ -87,47 +90,55 @@ namespace ManagementPhoneStore
             this.dataGridViewTextBoxColumn4});
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(880, 120);
+            this.dataGridView.Size = new System.Drawing.Size(1173, 148);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Ngày";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Vốn";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Doanh thu";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Lợi nhuận";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // comboBoxMonth
             // 
             this.comboBoxMonth.FormattingEnabled = true;
-            this.comboBoxMonth.Location = new System.Drawing.Point(896, 28);
+            this.comboBoxMonth.Location = new System.Drawing.Point(1195, 34);
+            this.comboBoxMonth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxMonth.Name = "comboBoxMonth";
-            this.comboBoxMonth.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxMonth.Size = new System.Drawing.Size(160, 24);
             this.comboBoxMonth.TabIndex = 3;
             this.comboBoxMonth.SelectedIndexChanged += new System.EventHandler(this.comboBoxMonth_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(896, 9);
+            this.label1.Location = new System.Drawing.Point(1195, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Tháng";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -135,9 +146,10 @@ namespace ManagementPhoneStore
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(896, 58);
+            this.label2.Location = new System.Drawing.Point(1195, 71);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.Size = new System.Drawing.Size(36, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Năm";
             this.label2.UseWaitCursor = true;
@@ -146,9 +158,10 @@ namespace ManagementPhoneStore
             // comboBoxYear
             // 
             this.comboBoxYear.FormattingEnabled = true;
-            this.comboBoxYear.Location = new System.Drawing.Point(896, 77);
+            this.comboBoxYear.Location = new System.Drawing.Point(1195, 95);
+            this.comboBoxYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxYear.Name = "comboBoxYear";
-            this.comboBoxYear.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxYear.Size = new System.Drawing.Size(160, 24);
             this.comboBoxYear.TabIndex = 5;
             this.comboBoxYear.Text = "Năm";
             this.comboBoxYear.UseWaitCursor = true;
@@ -156,9 +169,9 @@ namespace ManagementPhoneStore
             // 
             // ThongKeTongQuanGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 570);
+            this.ClientSize = new System.Drawing.Size(1384, 702);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxYear);
             this.Controls.Add(this.label1);
@@ -166,6 +179,7 @@ namespace ManagementPhoneStore
             this.Controls.Add(this.dataGridPanel);
             this.Controls.Add(this.chartPanel);
             this.Controls.Add(this.overviewPanel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ThongKeTongQuanGUI";
             this.Text = "Thống Kê Tổng Quan";
             this.Load += new System.EventHandler(this.ThongKe_Load);
@@ -241,5 +255,6 @@ namespace ManagementPhoneStore
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxYear;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }
