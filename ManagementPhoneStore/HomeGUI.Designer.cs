@@ -88,7 +88,7 @@ namespace GUI
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBox1); 
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(251, 108);
@@ -510,6 +510,7 @@ namespace GUI
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1114, 749);
             this.panelContainer.TabIndex = 4;
+
             // 
             // panel8
             // 
@@ -522,8 +523,11 @@ namespace GUI
             // 
             // HomeGUI
             // 
+     panel2.Dock = DockStyle.Left;
+panelContainer.Dock = DockStyle.Fill;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1366, 749);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panelContainer);

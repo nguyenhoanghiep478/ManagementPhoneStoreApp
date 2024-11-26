@@ -63,7 +63,7 @@
             this.searchPanel.Location = new System.Drawing.Point(11, 10);
             this.searchPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(300, 582);
+            this.searchPanel.Size = new System.Drawing.Size(300, 647);
             this.searchPanel.TabIndex = 0;
             // 
             // button7
@@ -173,7 +173,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1069, 582);
+            this.dataGridView.Size = new System.Drawing.Size(1137, 647);
             this.dataGridView.TabIndex = 8;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
             // 
@@ -227,7 +227,7 @@
             this.Controls.Add(this.searchPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ThongKeTonKho";
-            this.Size = new System.Drawing.Size(1390, 602);
+            this.Size = new System.Drawing.Size(1474, 677);
             this.Load += new System.EventHandler(this.ThongKeTonKho_Load);
             this.searchPanel.ResumeLayout(false);
             this.searchPanel.PerformLayout();

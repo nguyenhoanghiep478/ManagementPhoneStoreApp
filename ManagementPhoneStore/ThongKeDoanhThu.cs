@@ -12,7 +12,7 @@ using Service;
 
 namespace ManagementPhoneStore
 {
-    public partial class ThongKeDoanhThu : Form
+    public partial class ThongKeDoanhThu : UserControl
     {
         private ThongKeService thongKeService = ThongKeService.Instance;
         private List<ThongKeTungNgayTrongThangDTO> thongKeTungNgayTrongThangs;
@@ -25,8 +25,7 @@ namespace ManagementPhoneStore
         int monthInYear = DateTime.Now.Year;
         public ThongKeDoanhThu()
         {
-            this.TopLevel = false;
-            this.FormBorderStyle = FormBorderStyle.None;
+            
             this.Dock = DockStyle.Fill;
             InitializeComponent();
             LoadYearCombobox();
@@ -502,6 +501,11 @@ namespace ManagementPhoneStore
                     }
                 }
             }
+        }
+
+        private void chart_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

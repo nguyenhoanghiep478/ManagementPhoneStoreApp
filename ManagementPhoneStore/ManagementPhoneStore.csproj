@@ -273,25 +273,25 @@
       <DependentUpon>TaiKhoanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKeDoanhThu.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ThongKeDoanhThu.Designer.cs">
       <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKeGUI.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ThongKeGUI.Designer.cs">
       <DependentUpon>ThongKeGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKeTongQuanGUI.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ThongKeTongQuanGUI.Designer.cs">
       <DependentUpon>ThongKeTongQuanGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKeTonKho.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ThongKeTonKho.Designer.cs">
       <DependentUpon>ThongKeTonKho.cs</DependentUpon>

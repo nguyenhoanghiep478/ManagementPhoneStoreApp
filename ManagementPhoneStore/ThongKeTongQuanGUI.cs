@@ -12,7 +12,7 @@ using Service;
 
 namespace ManagementPhoneStore
 {
-    public partial class ThongKeTongQuanGUI : Form
+    public partial class ThongKeTongQuanGUI : UserControl
     {
         private List<ThongKeTungNgayTrongThangDTO> data ;
         private ThongKeService service = ThongKeService.Instance;
@@ -25,8 +25,7 @@ namespace ManagementPhoneStore
 
         private void ThongKe_Load(object sender, EventArgs e)
         {
-            this.TopLevel = false;
-            this.FormBorderStyle = FormBorderStyle.None;
+           
             this.Dock = DockStyle.Fill;
             LoadData();
             AddGUIOverviewPanel();

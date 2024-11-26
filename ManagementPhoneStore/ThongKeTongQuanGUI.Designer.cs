@@ -53,7 +53,7 @@ namespace ManagementPhoneStore
             // 
             this.overviewPanel.BackColor = System.Drawing.Color.White;
             this.overviewPanel.Location = new System.Drawing.Point(13, 12);
-            this.overviewPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.overviewPanel.Margin = new System.Windows.Forms.Padding(4);
             this.overviewPanel.Name = "overviewPanel";
             this.overviewPanel.Size = new System.Drawing.Size(1173, 123);
             this.overviewPanel.TabIndex = 0;
@@ -63,7 +63,7 @@ namespace ManagementPhoneStore
             // 
             this.chartPanel.BackColor = System.Drawing.Color.White;
             this.chartPanel.Location = new System.Drawing.Point(13, 148);
-            this.chartPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chartPanel.Margin = new System.Windows.Forms.Padding(4);
             this.chartPanel.Name = "chartPanel";
             this.chartPanel.Size = new System.Drawing.Size(1173, 369);
             this.chartPanel.TabIndex = 1;
@@ -74,7 +74,7 @@ namespace ManagementPhoneStore
             this.dataGridPanel.BackColor = System.Drawing.Color.White;
             this.dataGridPanel.Controls.Add(this.dataGridView);
             this.dataGridPanel.Location = new System.Drawing.Point(13, 529);
-            this.dataGridPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridPanel.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridPanel.Name = "dataGridPanel";
             this.dataGridPanel.Size = new System.Drawing.Size(1173, 148);
             this.dataGridPanel.TabIndex = 2;
@@ -90,7 +90,7 @@ namespace ManagementPhoneStore
             this.dataGridViewTextBoxColumn4});
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
@@ -126,7 +126,7 @@ namespace ManagementPhoneStore
             // 
             this.comboBoxMonth.FormattingEnabled = true;
             this.comboBoxMonth.Location = new System.Drawing.Point(1195, 34);
-            this.comboBoxMonth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxMonth.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxMonth.Name = "comboBoxMonth";
             this.comboBoxMonth.Size = new System.Drawing.Size(160, 24);
             this.comboBoxMonth.TabIndex = 3;
@@ -159,7 +159,7 @@ namespace ManagementPhoneStore
             // 
             this.comboBoxYear.FormattingEnabled = true;
             this.comboBoxYear.Location = new System.Drawing.Point(1195, 95);
-            this.comboBoxYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxYear.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(160, 24);
             this.comboBoxYear.TabIndex = 5;
@@ -171,7 +171,6 @@ namespace ManagementPhoneStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 702);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxYear);
             this.Controls.Add(this.label1);
@@ -179,9 +178,9 @@ namespace ManagementPhoneStore
             this.Controls.Add(this.dataGridPanel);
             this.Controls.Add(this.chartPanel);
             this.Controls.Add(this.overviewPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ThongKeTongQuanGUI";
-            this.Text = "Thống Kê Tổng Quan";
+            this.Size = new System.Drawing.Size(1448, 712);
             this.Load += new System.EventHandler(this.ThongKe_Load);
             this.dataGridPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

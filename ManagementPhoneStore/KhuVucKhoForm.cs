@@ -269,7 +269,7 @@ namespace ManagementPhoneStore
 
                 // Lấy mục được chọn từ ListView
                 ListViewItem selectedItem = listView1.SelectedItems[0];
-                int makhuvuc = int.Parse(selectedItem.Text); // Giả sử mã khu vực là cột đầu tiên
+                int makhuvuc = int.Parse(selectedItem.Text); 
 
                 // Xác nhận trước khi xóa
                 DialogResult confirmResult = MessageBox.Show(
@@ -394,7 +394,11 @@ namespace ManagementPhoneStore
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn khu vực kho cần cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
     }
 }
