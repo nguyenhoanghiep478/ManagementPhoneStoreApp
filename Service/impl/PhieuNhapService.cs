@@ -33,8 +33,7 @@ namespace Service
         }
 
         // Public static property to access the single instance
-  
-
+       
         public List<PhieuNhap> GetAll()
         {
             listPhieuNhap = phieuNhapDAO.GetAll();

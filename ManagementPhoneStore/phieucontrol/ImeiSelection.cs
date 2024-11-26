@@ -14,6 +14,7 @@ namespace GUI
 
         public ImeiSelection(List<ChiTietSanPham> ct, ThemPhieuXuat parentControl)
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -119,12 +120,14 @@ namespace GUI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+           
             foreach (var imei in selectedImeiList)
             {
                 parentControl.TextAreaImei.AppendText(imei + Environment.NewLine);
             }
 
             this.Close();
-        }
+       
+    }
     }
 }

@@ -423,9 +423,9 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Tất cả",
-            "Mã phiếu nhập",
-            "Nhà cung cấp",
-            "Nhân viên nhập"});
+            "Mã phiếu xuất",
+            "Khách hàng",
+            "Nhân viên xuất"});
             this.comboBox1.Location = new System.Drawing.Point(494, 112);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboBox1.Name = "comboBox1";
