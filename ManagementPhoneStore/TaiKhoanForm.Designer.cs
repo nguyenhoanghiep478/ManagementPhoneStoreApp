@@ -72,9 +72,10 @@ namespace ManagementPhoneStore
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 138);
+            this.listView1.Location = new System.Drawing.Point(16, 170);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1447, 344);
+            this.listView1.Size = new System.Drawing.Size(1446, 422);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -83,22 +84,22 @@ namespace ManagementPhoneStore
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã nhân viên";
-            this.columnHeader1.Width = 350;
+            this.columnHeader1.Width = 361;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên đăng nhập";
-            this.columnHeader2.Width = 397;
+            this.columnHeader2.Width = 361;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Nhóm quyền";
-            this.columnHeader3.Width = 350;
+            this.columnHeader3.Width = 361;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Trạng thái";
-            this.columnHeader4.Width = 350;
+            this.columnHeader4.Width = 361;
             // 
             // panel2
             // 
@@ -115,10 +116,11 @@ namespace ManagementPhoneStore
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1471, 110);
+            this.panel2.Size = new System.Drawing.Size(1471, 135);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // tk_prop
             // 
@@ -127,21 +129,23 @@ namespace ManagementPhoneStore
             "Tất cả",
             "Mã nhân viên",
             "Tên đăng nhập"});
-            this.tk_prop.Location = new System.Drawing.Point(837, 32);
+            this.tk_prop.Location = new System.Drawing.Point(844, 41);
+            this.tk_prop.Margin = new System.Windows.Forms.Padding(4);
             this.tk_prop.Name = "tk_prop";
-            this.tk_prop.Size = new System.Drawing.Size(141, 25);
+            this.tk_prop.Size = new System.Drawing.Size(180, 28);
             this.tk_prop.TabIndex = 7;
             this.tk_prop.Text = "Tất cả";
+            this.tk_prop.SelectedIndexChanged += new System.EventHandler(this.tk_prop_SelectedIndexChanged);
             // 
             // refresh
             // 
             this.refresh.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refresh.Image = ((System.Drawing.Image)(resources.GetObject("refresh.Image")));
             this.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.refresh.Location = new System.Drawing.Point(1303, 32);
-            this.refresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.refresh.Location = new System.Drawing.Point(1303, 40);
+            this.refresh.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(139, 50);
+            this.refresh.Size = new System.Drawing.Size(159, 50);
             this.refresh.TabIndex = 5;
             this.refresh.Text = "Làm mới";
             this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -158,10 +162,10 @@ namespace ManagementPhoneStore
             this.export.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.export.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.export.Image = ((System.Drawing.Image)(resources.GetObject("export.Image")));
-            this.export.Location = new System.Drawing.Point(336, 11);
-            this.export.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.export.Location = new System.Drawing.Point(424, 14);
+            this.export.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(93, 90);
+            this.export.Size = new System.Drawing.Size(94, 111);
             this.export.TabIndex = 2;
             this.export.Text = "XUẤT EXCEL";
             this.export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -171,11 +175,12 @@ namespace ManagementPhoneStore
             // search_tk
             // 
             this.search_tk.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_tk.Location = new System.Drawing.Point(996, 32);
-            this.search_tk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search_tk.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.search_tk.Location = new System.Drawing.Point(1032, 40);
+            this.search_tk.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.search_tk.Multiline = true;
             this.search_tk.Name = "search_tk";
-            this.search_tk.Size = new System.Drawing.Size(300, 50);
+            this.search_tk.Size = new System.Drawing.Size(263, 50);
             this.search_tk.TabIndex = 6;
             // 
             // import
@@ -187,10 +192,10 @@ namespace ManagementPhoneStore
             this.import.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.import.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.import.Image = ((System.Drawing.Image)(resources.GetObject("import.Image")));
-            this.import.Location = new System.Drawing.Point(435, 11);
-            this.import.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.import.Location = new System.Drawing.Point(526, 14);
+            this.import.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.import.Name = "import";
-            this.import.Size = new System.Drawing.Size(84, 90);
+            this.import.Size = new System.Drawing.Size(94, 111);
             this.import.TabIndex = 2;
             this.import.Text = "NHẬP EXCEL";
             this.import.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -206,10 +211,10 @@ namespace ManagementPhoneStore
             this.detail.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detail.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.detail.Image = ((System.Drawing.Image)(resources.GetObject("detail.Image")));
-            this.detail.Location = new System.Drawing.Point(255, 11);
-            this.detail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detail.Location = new System.Drawing.Point(322, 14);
+            this.detail.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.detail.Name = "detail";
-            this.detail.Size = new System.Drawing.Size(75, 90);
+            this.detail.Size = new System.Drawing.Size(94, 111);
             this.detail.TabIndex = 2;
             this.detail.Text = "CHI TIẾT";
             this.detail.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -225,10 +230,10 @@ namespace ManagementPhoneStore
             this.delete.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.delete.Image = ((System.Drawing.Image)(resources.GetObject("delete.Image")));
-            this.delete.Location = new System.Drawing.Point(175, 11);
-            this.delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.delete.Location = new System.Drawing.Point(220, 14);
+            this.delete.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(75, 90);
+            this.delete.Size = new System.Drawing.Size(94, 111);
             this.delete.TabIndex = 2;
             this.delete.Text = "XÓA";
             this.delete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -244,15 +249,16 @@ namespace ManagementPhoneStore
             this.update.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.update.Image = ((System.Drawing.Image)(resources.GetObject("update.Image")));
-            this.update.Location = new System.Drawing.Point(95, 11);
-            this.update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.update.Location = new System.Drawing.Point(118, 11);
+            this.update.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(75, 90);
+            this.update.Size = new System.Drawing.Size(94, 111);
             this.update.TabIndex = 1;
             this.update.Text = "SỬA";
             this.update.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.update.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click_1);
             // 
             // add
             // 
@@ -263,23 +269,25 @@ namespace ManagementPhoneStore
             this.add.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.add.Image = ((System.Drawing.Image)(resources.GetObject("add.Image")));
-            this.add.Location = new System.Drawing.Point(15, 11);
-            this.add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.add.Location = new System.Drawing.Point(16, 11);
+            this.add.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(75, 90);
+            this.add.Size = new System.Drawing.Size(94, 111);
             this.add.TabIndex = 0;
             this.add.Text = "THÊM";
             this.add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click_1);
             // 
             // TaiKhoanForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1471, 553);
+            this.ClientSize = new System.Drawing.Size(1475, 681);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listView1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TaiKhoanForm";
             this.Text = "TaiKhoan";
             this.Load += new System.EventHandler(this.TaiKhoanForm_Load);

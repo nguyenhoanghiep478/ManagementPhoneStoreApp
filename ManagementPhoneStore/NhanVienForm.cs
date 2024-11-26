@@ -27,5 +27,15 @@ namespace ManagementPhoneStore
             this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
             this.TopLevel = false;
         }
+
+        private void search_nv_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

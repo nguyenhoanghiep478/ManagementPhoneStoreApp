@@ -16,7 +16,7 @@ namespace DAO.DAO.impl
         private readonly DLRomRowMapper _rowMapper = new DLRomRowMapper();
         public void delete(long id)
         {
-            String query = "UPDATE dungluongrom SET trangthai = 0 WHERE madlrom = ?";
+            String query = "UPDATE dungluongrom SET trangthai = 0 WHERE madlrom = @param0";
             Update(query, id);
         }
 

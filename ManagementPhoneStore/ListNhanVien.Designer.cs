@@ -179,7 +179,7 @@ namespace ManagementPhoneStore
         }
         public List<NhanVien> getNV()
         {
-            List<int>id_TK=tkService.GetTaiKhoanAll().Select(tk=>tk.Manv).ToList();
+            List<int>id_TK=tkService.getTaiKhoanAllStatus().Select(tk=>tk.Manv).ToList();
             List<NhanVien>l=nvService.GetAll().Where(nv=>!id_TK.Contains((int)nv.Manv)).ToList();
             return l;
         }
