@@ -391,5 +391,10 @@ namespace ManagementPhoneStore
             // Hiển thị kết quả tìm kiếm
             LoadDataTable(result);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

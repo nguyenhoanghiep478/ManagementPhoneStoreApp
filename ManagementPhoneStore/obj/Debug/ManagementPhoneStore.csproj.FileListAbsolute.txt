@@ -468,3 +468,4 @@ D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.N
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienChiTietForm.resources
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\dotenv.net.dll
 D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeGUI.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeDoanhThu.resources
