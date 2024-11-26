@@ -286,6 +286,12 @@ namespace ManagementPhoneStore
             switch (this.thuoctinh)
             {
                 case "thuonghieu":
+                    if (string.IsNullOrEmpty(textBox1.Text))
+                    {
+                        MessageBox.Show("Tên thương hiệu không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+
                     ThuongHieu thuongHieu = new ThuongHieu();
                     thuongHieu.Tenthuonghieu = textBox1.Text;
                     thuongHieu.Trangthai = 1;
@@ -301,6 +307,11 @@ namespace ManagementPhoneStore
                     break;
 
                 case "xuatxu":
+                    if (string.IsNullOrEmpty(textBox1.Text))
+                    {
+                        MessageBox.Show("Tên xuất xứ không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
                     XuatXu xuatXu = new XuatXu();
                     xuatXu.Tenxuatxu = textBox1.Text;
                     xuatXu.Trangthai = true;
@@ -316,6 +327,11 @@ namespace ManagementPhoneStore
                     break;
 
                 case "hedieuhanh":
+                    if (string.IsNullOrEmpty(textBox1.Text))
+                    {
+                        MessageBox.Show("Tên hệ điều hành không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
                     HeDieuHanh heDieuHanh = new HeDieuHanh();
                     heDieuHanh.Tenhedieuhanh = textBox1.Text;
                     heDieuHanh.Trangthai = 1;
@@ -335,6 +351,11 @@ namespace ManagementPhoneStore
                     int kichThuocRom;
                     if (int.TryParse(textBox1.Text, out kichThuocRom))
                     {
+                        if (kichThuocRom <= 0)
+                        {
+                            MessageBox.Show("Giá trị nhập không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         rom.Kichthuocrom = kichThuocRom;
                     }
                     else
@@ -361,6 +382,11 @@ namespace ManagementPhoneStore
                     int kichThuocRam;
                     if (int.TryParse(textBox1.Text, out kichThuocRam))
                     {
+                        if(kichThuocRam <= 0)
+                        {
+                            MessageBox.Show("Giá trị nhập không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         ram.Kichthuocram = kichThuocRam;
                     }
                     else
@@ -383,6 +409,11 @@ namespace ManagementPhoneStore
                     break;
 
                 case "mausac":
+                    if (string.IsNullOrEmpty(textBox1.Text))
+                    {
+                        MessageBox.Show("Tên màu sắc không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
                     MauSac mauSac = new MauSac();
                     mauSac.Tenmau = textBox1.Text;
                     mauSac.Trangthai = true;
@@ -474,16 +505,21 @@ namespace ManagementPhoneStore
                         {
                             HeDieuHanh heDieuHanh = heDieuHanhService.getByIndex(heDieuHanhService.getIndexByMaHdh(mahdh));
                             bool isDeleted =heDieuHanhService.remove(heDieuHanh,heDieuHanhService.getIndexByMaHdh(mahdh));
-                            initHedieuhanh();
+                         
                             if (isDeleted)
                             {
                                 MessageBox.Show("Xóa thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
+                            initHedieuhanh();
                         }
                         else
                         {
                             MessageBox.Show("Mã hệ điều hành không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn chưa chọn dòng nào trong danh sách.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     break;
 
@@ -507,6 +543,10 @@ namespace ManagementPhoneStore
                             MessageBox.Show("Mã ram không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Bạn chưa chọn dòng nào trong danh sách.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                     break;
 
                 case "rom":
@@ -529,6 +569,10 @@ namespace ManagementPhoneStore
                             MessageBox.Show("Mã rom không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Bạn chưa chọn dòng nào trong danh sách.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                     break;
 
                 case "mausac":
@@ -550,6 +594,10 @@ namespace ManagementPhoneStore
                         {
                             MessageBox.Show("Mã màu không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn chưa chọn dòng nào trong danh sách.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     break;
             }

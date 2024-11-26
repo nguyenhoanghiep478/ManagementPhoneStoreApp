@@ -18,7 +18,7 @@ namespace DAO.DAO.impl
 
         public void delete(long id)
         {
-            string query = "UPDATE thuonghieu SET trangthai = 0 WHERE mathuonghieu = ?";
+            string query = "UPDATE thuonghieu SET trangthai = 0 WHERE mathuonghieu = @param0";
             Update(query, id);
         }
 

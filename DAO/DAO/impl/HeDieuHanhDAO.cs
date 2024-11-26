@@ -15,7 +15,7 @@ namespace DAO.DAO.impl
         private readonly HeDieuHanhRowMapper _rowMapper = new HeDieuHanhRowMapper();
         public void delete(long id)
         {
-            String query = @"UPDATE hedieuhanh set trangthai=0 where mahedieuhanh=@param0";
+            String query = "UPDATE hedieuhanh set trangthai=0 where mahedieuhanh=@param0";
             Update(query,id);
         }
 

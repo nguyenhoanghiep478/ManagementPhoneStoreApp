@@ -16,7 +16,7 @@ namespace DAO.DAO.impl
         private readonly DLRamRowMapper _rowMapper = new DLRamRowMapper();
         public void delete(long id)
         {
-            String query = "DELETE from dung luong ram Where Id = ?";
+            String query = "DELETE from dungluongram Where madlram = @param0";
             Update(query, id);
         }
 
@@ -41,7 +41,7 @@ namespace DAO.DAO.impl
         public long insert(DLRam dLRam)
         {
             string query = @"
-                INSERT INTO DLRam 
+                INSERT INTO dungluongram 
                 (
                     madlram, kichthuocram, trangthai
                 ) 
@@ -59,7 +59,7 @@ namespace DAO.DAO.impl
         public void update(DLRam dLRam)
         {
             string query = @"
-            UPDATE DLRam 
+            UPDATE dungluongram 
             SET 
                 kichthuocram = @param0,
                 trangthai = @param1
