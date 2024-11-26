@@ -54,7 +54,7 @@ namespace Service.impl
         {
             if (tk != null && !_taikhoans.Any(x => x.Manv == tk.Manv))
             {
-                tk.Matkhau = PasswordHelper.HashPassword(tk.Matkhau);      
+                //tk.Matkhau = PasswordHelper.HashPassword(tk.Matkhau);      
                 _taiKhoanDAO.insert(tk);
                 _taikhoans.Add(tk);
             }
