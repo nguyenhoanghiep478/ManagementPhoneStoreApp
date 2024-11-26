@@ -18,7 +18,7 @@ namespace DAO.DAO.impl
 {
     public class ThongKeDAO
     {
-        const string connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306;";
+        const string connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306;";
         public static List<ThongKeKhachHangDTO> GetThongKeKhachHang(string filterText, DateTime start, DateTime end)
         {
             var result = new List<ThongKeKhachHangDTO>();

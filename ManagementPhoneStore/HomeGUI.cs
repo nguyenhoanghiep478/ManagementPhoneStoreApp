@@ -176,8 +176,8 @@ namespace GUI
 
            
             PhieuNhapPanel pn = new PhieuNhapPanel(manv);
-    
-    
+            pn.Dock = DockStyle.Fill;
+
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(pn);
         }
@@ -185,7 +185,7 @@ namespace GUI
         private void button6_Click(object sender, EventArgs e)
         {
             PhieuXuatPanel pn = new PhieuXuatPanel(manv);
-
+            pn.Dock = DockStyle.Fill;
 
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(pn);
@@ -215,13 +215,13 @@ namespace GUI
 
         private void button9_Click(object sender, EventArgs e)
         {
-            //NhanVienForm nhanVienform = new NhanVienForm();
-            //nhanVienform.TopLevel = false;
-            //nhanVienform.Dock = DockStyle.Fill;
+            NhanVienForm nhanVienform = new NhanVienForm();
+            nhanVienform.TopLevel = false;
+            nhanVienform.Dock = DockStyle.Fill;
 
-            //panelContainer.Controls.Clear();
-            //panelContainer.Controls.Add(nhanVienform);
-            //nhanVienform.Show();
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(nhanVienform);
+            nhanVienform.Show();
         }
 
         private void button10_Click(object sender, EventArgs e)

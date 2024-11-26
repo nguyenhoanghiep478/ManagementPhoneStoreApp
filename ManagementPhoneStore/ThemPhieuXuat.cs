@@ -714,5 +714,10 @@ namespace GUI
             imeiSelection.Visible = true;
 
         }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -324,3 +324,5 @@ C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DAO\bin\Debug\BCrypt.Net-Nex
 C:\Users\ADMIN\Source\Repos\ManagementPhoneStoreApp\DAO\obj\Debug\DAO.csproj.Up2Date
 C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\DAO\bin\Debug\Entity.dll.config
 C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\DAO\bin\Debug\State.dll.config
+D:\ManagementPhoneStoreApp\DAO\bin\Debug\Entity.dll.config
+D:\ManagementPhoneStoreApp\DAO\bin\Debug\State.dll.config

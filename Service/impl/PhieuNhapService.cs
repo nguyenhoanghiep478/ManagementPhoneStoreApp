@@ -33,20 +33,7 @@ namespace Service
         }
 
         // Public static property to access the single instance
-        public static PhieuNhapService Instance
-        {
-            get
-            {
-                lock (_lock)
-                {
-                    if (_instance == null)
-                    {
-                        _instance = new PhieuNhapService();
-                    }
-                    return _instance;
-                }
-            }
-        }
+  
 
         public List<PhieuNhap> GetAll()
         {

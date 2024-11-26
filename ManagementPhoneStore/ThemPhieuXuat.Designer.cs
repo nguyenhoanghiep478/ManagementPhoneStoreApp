@@ -598,6 +598,7 @@
             this.add.TabIndex = 3;
             this.add.Text = "Thêm sản phẩm";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // dataGridView2
             // 
