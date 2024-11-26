@@ -25,7 +25,7 @@ namespace GUI
             this.StartPosition = FormStartPosition.CenterScreen;
             label1.Text=NhanVienService.GetNameById(manv);
             label2.Text=NhomQuyenService.getNameByMA(manv);
-
+            panelContainer.AutoSize = false;
             this.nhomQuyens = taiKhoanService.GetNhomQuyen(manv);
             this.authors = NhomQuyenService.GetChiTietQuyen(nhomQuyens.Tennhomquyen);
             handleAuthor();
@@ -173,6 +173,7 @@ namespace GUI
 
         private void button5_Click(object sender, EventArgs e)
         {
+
            
             PhieuNhapPanel pn = new PhieuNhapPanel(manv);
     
@@ -237,8 +238,8 @@ namespace GUI
         private void button11_Click(object sender, EventArgs e)
         {
             ThongKeGUI thongkeForm = new ThongKeGUI();
-            thongkeForm.TopLevel = false;
             thongkeForm.Dock = DockStyle.Fill;
+           
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(thongkeForm);
             thongkeForm.Show();

@@ -95,7 +95,7 @@ namespace ManagementPhoneStore
             this.tabTungNgay.Controls.Add(this.buttonXuatExcel);
             this.tabTungNgay.Location = new System.Drawing.Point(4, 25);
             this.tabTungNgay.Name = "tabTungNgay";
-            this.tabTungNgay.Size = new System.Drawing.Size(1090, 703);
+            this.tabTungNgay.Size = new System.Drawing.Size(1467, 744);
             this.tabTungNgay.TabIndex = 2;
             this.tabTungNgay.Text = "Thống kê từng ngày trong tháng";
             this.tabTungNgay.UseVisualStyleBackColor = true;
@@ -149,29 +149,30 @@ namespace ManagementPhoneStore
             // 
             // chart
             // 
-            this.chart.Location = new System.Drawing.Point(20, 60);
+            this.chart.Location = new System.Drawing.Point(20, 81);
             this.chart.Name = "chart";
-            this.chart.Size = new System.Drawing.Size(1062, 300);
+            this.chart.Size = new System.Drawing.Size(1425, 292);
             this.chart.TabIndex = 5;
+            this.chart.Click += new System.EventHandler(this.chart_Click);
             // 
             // dataGridView
             // 
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.EnableHeadersVisualStyles = false;
-            this.dataGridView.Location = new System.Drawing.Point(20, 367);
+            this.dataGridView.Location = new System.Drawing.Point(15, 389);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(1062, 328);
+            this.dataGridView.Size = new System.Drawing.Size(1430, 328);
             this.dataGridView.TabIndex = 6;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(665, 16);
+            this.button1.Location = new System.Drawing.Point(665, 10);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
+            this.button1.Size = new System.Drawing.Size(100, 43);
             this.button1.TabIndex = 9;
             this.button1.Text = "Làm mới";
             this.button1.UseVisualStyleBackColor = true;
@@ -179,9 +180,9 @@ namespace ManagementPhoneStore
             // 
             // buttonThongKe
             // 
-            this.buttonThongKe.Location = new System.Drawing.Point(559, 16);
+            this.buttonThongKe.Location = new System.Drawing.Point(559, 10);
             this.buttonThongKe.Name = "buttonThongKe";
-            this.buttonThongKe.Size = new System.Drawing.Size(100, 30);
+            this.buttonThongKe.Size = new System.Drawing.Size(100, 43);
             this.buttonThongKe.TabIndex = 3;
             this.buttonThongKe.Text = "Thống kê";
             this.buttonThongKe.UseVisualStyleBackColor = true;
@@ -189,9 +190,9 @@ namespace ManagementPhoneStore
             // 
             // buttonXuatExcel
             // 
-            this.buttonXuatExcel.Location = new System.Drawing.Point(773, 16);
+            this.buttonXuatExcel.Location = new System.Drawing.Point(773, 10);
             this.buttonXuatExcel.Name = "buttonXuatExcel";
-            this.buttonXuatExcel.Size = new System.Drawing.Size(100, 30);
+            this.buttonXuatExcel.Size = new System.Drawing.Size(100, 43);
             this.buttonXuatExcel.TabIndex = 4;
             this.buttonXuatExcel.Text = "Xuất Excel";
             this.buttonXuatExcel.UseVisualStyleBackColor = true;
@@ -202,11 +203,11 @@ namespace ManagementPhoneStore
             this.dataGridViewthangInNam.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewthangInNam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewthangInNam.EnableHeadersVisualStyles = false;
-            this.dataGridViewthangInNam.Location = new System.Drawing.Point(20, 367);
+            this.dataGridViewthangInNam.Location = new System.Drawing.Point(25, 408);
             this.dataGridViewthangInNam.Name = "dataGridViewthangInNam";
             this.dataGridViewthangInNam.RowHeadersWidth = 51;
             this.dataGridViewthangInNam.RowTemplate.Height = 24;
-            this.dataGridViewthangInNam.Size = new System.Drawing.Size(1062, 328);
+            this.dataGridViewthangInNam.Size = new System.Drawing.Size(1425, 328);
             this.dataGridViewthangInNam.TabIndex = 6;
             this.dataGridViewthangInNam.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
             // 
@@ -214,7 +215,7 @@ namespace ManagementPhoneStore
             // 
             this.button3.Location = new System.Drawing.Point(592, 16);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 30);
+            this.button3.Size = new System.Drawing.Size(100, 38);
             this.button3.TabIndex = 9;
             this.button3.Text = "Làm mới";
             this.button3.UseVisualStyleBackColor = true;
@@ -224,7 +225,7 @@ namespace ManagementPhoneStore
             // 
             this.buttonThongKeThangInNam.Location = new System.Drawing.Point(469, 16);
             this.buttonThongKeThangInNam.Name = "buttonThongKeThangInNam";
-            this.buttonThongKeThangInNam.Size = new System.Drawing.Size(100, 30);
+            this.buttonThongKeThangInNam.Size = new System.Drawing.Size(100, 38);
             this.buttonThongKeThangInNam.TabIndex = 3;
             this.buttonThongKeThangInNam.Text = "Thống kê";
             this.buttonThongKeThangInNam.UseVisualStyleBackColor = true;
@@ -234,7 +235,7 @@ namespace ManagementPhoneStore
             // 
             this.buttonXuatExcelThangInNam.Location = new System.Drawing.Point(713, 16);
             this.buttonXuatExcelThangInNam.Name = "buttonXuatExcelThangInNam";
-            this.buttonXuatExcelThangInNam.Size = new System.Drawing.Size(100, 30);
+            this.buttonXuatExcelThangInNam.Size = new System.Drawing.Size(100, 38);
             this.buttonXuatExcelThangInNam.TabIndex = 4;
             this.buttonXuatExcelThangInNam.Text = "Xuất Excel";
             this.buttonXuatExcelThangInNam.UseVisualStyleBackColor = true;
@@ -242,7 +243,7 @@ namespace ManagementPhoneStore
             // 
             // comboBoxYearFrom
             // 
-            this.comboBoxYearFrom.Location = new System.Drawing.Point(211, 20);
+            this.comboBoxYearFrom.Location = new System.Drawing.Point(211, 27);
             this.comboBoxYearFrom.Name = "comboBoxYearFrom";
             this.comboBoxYearFrom.Size = new System.Drawing.Size(107, 24);
             this.comboBoxYearFrom.TabIndex = 7;
@@ -250,7 +251,7 @@ namespace ManagementPhoneStore
             // 
             // comboBoxYearTo
             // 
-            this.comboBoxYearTo.Location = new System.Drawing.Point(418, 20);
+            this.comboBoxYearTo.Location = new System.Drawing.Point(418, 27);
             this.comboBoxYearTo.Name = "comboBoxYearTo";
             this.comboBoxYearTo.Size = new System.Drawing.Size(100, 24);
             this.comboBoxYearTo.TabIndex = 8;
@@ -268,7 +269,7 @@ namespace ManagementPhoneStore
             // 
             this.button2.Location = new System.Drawing.Point(665, 16);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 30);
+            this.button2.Size = new System.Drawing.Size(100, 44);
             this.button2.TabIndex = 9;
             this.button2.Text = "Làm mới";
             this.button2.UseVisualStyleBackColor = true;
@@ -278,7 +279,7 @@ namespace ManagementPhoneStore
             // 
             this.buttonThongKeNam.Location = new System.Drawing.Point(559, 16);
             this.buttonThongKeNam.Name = "buttonThongKeNam";
-            this.buttonThongKeNam.Size = new System.Drawing.Size(100, 30);
+            this.buttonThongKeNam.Size = new System.Drawing.Size(100, 44);
             this.buttonThongKeNam.TabIndex = 3;
             this.buttonThongKeNam.Text = "Thống kê";
             this.buttonThongKeNam.UseVisualStyleBackColor = true;
@@ -288,7 +289,7 @@ namespace ManagementPhoneStore
             // 
             this.buttonXuatExcelNam.Location = new System.Drawing.Point(773, 16);
             this.buttonXuatExcelNam.Name = "buttonXuatExcelNam";
-            this.buttonXuatExcelNam.Size = new System.Drawing.Size(100, 30);
+            this.buttonXuatExcelNam.Size = new System.Drawing.Size(100, 44);
             this.buttonXuatExcelNam.TabIndex = 4;
             this.buttonXuatExcelNam.Text = "Xuất Excel";
             this.buttonXuatExcelNam.UseVisualStyleBackColor = true;
@@ -296,17 +297,17 @@ namespace ManagementPhoneStore
             // 
             // chartNam
             // 
-            this.chartNam.Location = new System.Drawing.Point(20, 60);
+            this.chartNam.Location = new System.Drawing.Point(18, 80);
             this.chartNam.Name = "chartNam";
-            this.chartNam.Size = new System.Drawing.Size(1062, 300);
+            this.chartNam.Size = new System.Drawing.Size(1427, 300);
             this.chartNam.TabIndex = 0;
             this.chartNam.Click += new System.EventHandler(this.chartNam_Click);
             // 
             // chartthangInNam
             // 
-            this.chartthangInNam.Location = new System.Drawing.Point(20, 60);
+            this.chartthangInNam.Location = new System.Drawing.Point(20, 92);
             this.chartthangInNam.Name = "chartthangInNam";
-            this.chartthangInNam.Size = new System.Drawing.Size(1062, 300);
+            this.chartthangInNam.Size = new System.Drawing.Size(1425, 300);
             this.chartthangInNam.TabIndex = 0;
             this.chartthangInNam.Click += new System.EventHandler(this.chartNam_Click);
             // 
@@ -315,11 +316,11 @@ namespace ManagementPhoneStore
             this.dataGridViewNam.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewNam.EnableHeadersVisualStyles = false;
-            this.dataGridViewNam.Location = new System.Drawing.Point(20, 367);
+            this.dataGridViewNam.Location = new System.Drawing.Point(20, 399);
             this.dataGridViewNam.Name = "dataGridViewNam";
             this.dataGridViewNam.RowHeadersWidth = 51;
             this.dataGridViewNam.RowTemplate.Height = 24;
-            this.dataGridViewNam.Size = new System.Drawing.Size(1062, 328);
+            this.dataGridViewNam.Size = new System.Drawing.Size(1425, 328);
             this.dataGridViewNam.TabIndex = 6;
             this.dataGridViewNam.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick_1);
             // 
@@ -334,7 +335,7 @@ namespace ManagementPhoneStore
             this.tabTungThang.Controls.Add(this.buttonXuatExcelThangInNam);
             this.tabTungThang.Location = new System.Drawing.Point(4, 25);
             this.tabTungThang.Name = "tabTungThang";
-            this.tabTungThang.Size = new System.Drawing.Size(1090, 703);
+            this.tabTungThang.Size = new System.Drawing.Size(1467, 744);
             this.tabTungThang.TabIndex = 1;
             this.tabTungThang.Text = "Thống kê từng tháng trong năm";
             this.tabTungThang.UseVisualStyleBackColor = true;
@@ -362,7 +363,7 @@ namespace ManagementPhoneStore
             this.tabTheoNam.Location = new System.Drawing.Point(4, 25);
             this.tabTheoNam.Name = "tabTheoNam";
             this.tabTheoNam.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTheoNam.Size = new System.Drawing.Size(1090, 703);
+            this.tabTheoNam.Size = new System.Drawing.Size(1467, 744);
             this.tabTheoNam.TabIndex = 0;
             this.tabTheoNam.Text = "Thống kê theo năm";
             this.tabTheoNam.UseVisualStyleBackColor = true;
@@ -370,7 +371,7 @@ namespace ManagementPhoneStore
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(153, 23);
+            this.label4.Location = new System.Drawing.Point(153, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 11;
@@ -379,7 +380,7 @@ namespace ManagementPhoneStore
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(352, 23);
+            this.label3.Location = new System.Drawing.Point(352, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 16);
             this.label3.TabIndex = 10;
@@ -394,12 +395,18 @@ namespace ManagementPhoneStore
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1098, 732);
+            this.tabControl.Size = new System.Drawing.Size(1475, 773);
             this.tabControl.TabIndex = 0;
+            this.tabControl.Dock = DockStyle.Fill; // Đảm bảo TabControl chiếm toàn bộ form
+            this.tabTheoNam.Dock = DockStyle.Fill;
+            this.tabTungNgay.Dock = DockStyle.Fill;
+            this.tabTungThang.Dock = DockStyle.Fill;
+
+     
             // 
             // ThongKeDoanhThu
             // 
-            this.ClientSize = new System.Drawing.Size(1098, 732);
+            this.ClientSize = new System.Drawing.Size(1475, 773);
             this.Controls.Add(this.tabControl);
             this.Name = "ThongKeDoanhThu";
             this.Text = "Thống Kê Doanh Thu";

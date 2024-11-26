@@ -284,7 +284,7 @@ namespace ManagementPhoneStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1475, 681);
+            this.ClientSize = new System.Drawing.Size(1474, 679);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listView1);
             this.Margin = new System.Windows.Forms.Padding(4);

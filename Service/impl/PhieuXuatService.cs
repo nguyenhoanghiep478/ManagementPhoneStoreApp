@@ -23,6 +23,9 @@ namespace Service
         private readonly NhaChungCapService _nccService = NhaChungCapService.Instance;
         private readonly NhanVienService _nvService = NhanVienService.Instance;
         private readonly KhachHangService _khService = new KhachHangService();
+
+        private static Lazy<PhieuXuatService> instance = new Lazy<PhieuXuatService>(() => new PhieuXuatService());
+
         private List<PhieuXuat> listPhieuXuat;
 
         private PhieuXuatService()
@@ -32,10 +35,7 @@ namespace Service
 
         }
 
-        // Public property to access the singleton instance
-        public static PhieuXuatService Instance => _instance.Value;
-
-
+        public static PhieuXuatService Instance => instance.Value;
         public List<PhieuXuat> GetAll()
         {
             return phieuXuatDAO.GetAll();

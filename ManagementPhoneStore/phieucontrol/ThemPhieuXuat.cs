@@ -10,7 +10,7 @@ using System.IO;
 using NPOI.XSSF.UserModel;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using DAO.DAO.impl;
-using Mysqlx.Crud;
+
 using DAO.DAO;
 namespace GUI
 {

@@ -13,15 +13,14 @@ using Service;
 
 namespace ManagementPhoneStore
 {
-    public partial class ThongKeTonKho : Form
+    public partial class ThongKeTonKho : UserControl
     {
 
         private ThongKeService service = ThongKeService.Instance;
         Dictionary<int, List<ThongKeTonKhoDTO>> data;
         public ThongKeTonKho()
         {
-            this.TopLevel = false;
-            this.FormBorderStyle = FormBorderStyle.None;
+          
             this.Dock = DockStyle.Fill;
             InitializeComponent();
            
