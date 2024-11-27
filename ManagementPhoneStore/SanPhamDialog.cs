@@ -304,6 +304,18 @@ namespace ManagementPhoneStore
             sanPham.Tensp = textBox_Tensp.Text;
             sanPham.Xuatxu = FindXuatxu(comboBox_Xuatxu.Text).Maxuatxu;
             sanPham.Chipxuly = textBox_chip.Text;
+            //Để trống
+            if (sanPham.Tensp.Trim() == "")
+            {
+                MessageBox.Show("Tên sản phẩm không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (sanPham.Chipxuly.Trim() == "")
+            {
+                MessageBox.Show("Chip xử lí không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //Dung lượng pin
             if (int.TryParse(textBox_Pin.Text, out int pin))
             {
                 sanPham.Dungluongpin = pin;
@@ -314,6 +326,12 @@ namespace ManagementPhoneStore
                 return;
             }
 
+            if (sanPham.Dungluongpin < 0)
+            {
+                MessageBox.Show("Dung lượng pin không được là số âm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //Kích thước màn
             if(double.TryParse(textBox_Kichthuocman.Text, out double kichthuocman))
             {
                 sanPham.Kichthuocman = kichthuocman;
@@ -323,9 +341,15 @@ namespace ManagementPhoneStore
                 MessageBox.Show("Kích thước màn không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (sanPham.Kichthuocman < 0)
+            {
+                MessageBox.Show("Kích thước màn không được là số âm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             sanPham.Camerasau = textBox_Camerasau.Text;
             sanPham.Cameratruoc = textBox_Cameratruoc.Text;
             sanPham.Hedieuhanh = FindHedieuhanh(comboBox_Hedieuhanh.Text).Mahedieuhanh;
+            //Phiên bản hệ điều hành
             if (int.TryParse(textBox_Phienbanhdh.Text, out int pb))
             {
                 sanPham.Phienbanhdh = pb;
@@ -335,7 +359,12 @@ namespace ManagementPhoneStore
                 MessageBox.Show("Phiên bản hệ điều hành không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if( sanPham.Phienbanhdh < 0){
+                MessageBox.Show("Phiên bản hệ điều hành không được là số âm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            //Thời gian bảo hành
             if (int.TryParse(textBox_Thoigianbh.Text, out int thoigianbh))
             {
                 sanPham.Thoigianbaohanh = thoigianbh;
@@ -345,6 +374,12 @@ namespace ManagementPhoneStore
                 MessageBox.Show("Thời gian bảo hành không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (sanPham.Thoigianbaohanh < 0)
+            {
+                MessageBox.Show("Thời gian bảo hành không được là số âm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             sanPham.Thuonghieu = FindThuonghieu(comboBox_Thuonghieu.Text).Mathuonghieu;
             sanPham.Khuvuckho = FindKhuvuckho(comboBox_Khuvuckho.Text).Makhuvuc;
             sanPham.Trangthai = true;
@@ -536,6 +571,15 @@ namespace ManagementPhoneStore
             phienBanSanPham.Ram = FindRam(comboBox_Ram.Text.Substring(0, comboBox_Ram.Text.Length - 2)).Madlram;
             phienBanSanPham.MauSac = FindMausac(comboBox_Mausac.Text).Mamau;
             phienBanSanPham.SoLuongTon = 0;
+            foreach (PhienBanSanPham pb in PhienBanSanPhamService.GetAll(this.masp))
+            {
+                if (pb.Rom == phienBanSanPham.Rom && pb.Ram == phienBanSanPham.Ram && pb.MauSac.Equals(phienBanSanPham.MauSac))
+                {
+                    MessageBox.Show("Cấu hình đã tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
             if (int.TryParse(textBox1.Text, out int gianhap))
             {
                 phienBanSanPham.GiaNhap = gianhap;
@@ -546,6 +590,11 @@ namespace ManagementPhoneStore
                 return;
 
             }
+            if (phienBanSanPham.GiaNhap < 0)
+            {
+                MessageBox.Show("Giá nhập không được là số âm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (int.TryParse(textBox2.Text, out int giaxuat))
             {
                 phienBanSanPham.GiaXuat = giaxuat;
@@ -553,6 +602,16 @@ namespace ManagementPhoneStore
             else
             {
                 MessageBox.Show("Giá xuất không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (phienBanSanPham.GiaXuat < 0)
+            {
+                MessageBox.Show("Giá xuất không được là số âm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (phienBanSanPham.GiaNhap > phienBanSanPham.GiaXuat)
+            {
+                MessageBox.Show("Giá nhập phải bé hơn giá xuất.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             phienBanSanPhams.Add(phienBanSanPham);
@@ -646,6 +705,18 @@ namespace ManagementPhoneStore
             sanPham.Tensp = textBox_Tensp.Text;
             sanPham.Xuatxu = FindXuatxu(comboBox_Xuatxu.Text).Maxuatxu;
             sanPham.Chipxuly = textBox_chip.Text;
+            //Để trống
+            if (sanPham.Tensp.Trim() == "")
+            {
+                MessageBox.Show("Tên sản phẩm không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (sanPham.Chipxuly.Trim() == "")
+            {
+                MessageBox.Show("Chip xử lí không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //Dung lượng pin
             if (int.TryParse(textBox_Pin.Text, out int pin))
             {
                 sanPham.Dungluongpin = pin;
@@ -655,7 +726,12 @@ namespace ManagementPhoneStore
                 MessageBox.Show("Dung lượng pin không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            if (sanPham.Dungluongpin < 0)
+            {
+                MessageBox.Show("Dung lượng pin không được là số âm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            //Kích thước màn
             if (double.TryParse(textBox_Kichthuocman.Text, out double kichthuocman))
             {
                 sanPham.Kichthuocman = kichthuocman;
@@ -665,9 +741,16 @@ namespace ManagementPhoneStore
                 MessageBox.Show("Kích thước màn không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (sanPham.Kichthuocman < 0)
+            {
+                MessageBox.Show("Kích thước màn không được là số âm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             sanPham.Camerasau = textBox_Camerasau.Text;
             sanPham.Cameratruoc = textBox_Cameratruoc.Text;
             sanPham.Hedieuhanh = FindHedieuhanh(comboBox_Hedieuhanh.Text).Mahedieuhanh;
+            //Phiên bản hệ điều hành
             if (int.TryParse(textBox_Phienbanhdh.Text, out int pb))
             {
                 sanPham.Phienbanhdh = pb;
@@ -677,7 +760,13 @@ namespace ManagementPhoneStore
                 MessageBox.Show("Phiên bản hệ điều hành không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (sanPham.Phienbanhdh < 0)
+            {
+                MessageBox.Show("Phiên bản hệ điều hành không được là số âm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            //Thời gian bảo hành
             if (int.TryParse(textBox_Thoigianbh.Text, out int thoigianbh))
             {
                 sanPham.Thoigianbaohanh = thoigianbh;
@@ -687,6 +776,12 @@ namespace ManagementPhoneStore
                 MessageBox.Show("Thời gian bảo hành không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (sanPham.Thoigianbaohanh < 0)
+            {
+                MessageBox.Show("Thời gian bảo hành không được là số âm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             sanPham.Thuonghieu = FindThuonghieu(comboBox_Thuonghieu.Text).Mathuonghieu;
             sanPham.Khuvuckho = FindKhuvuckho(comboBox_Khuvuckho.Text).Makhuvuc;
             sanPham.Trangthai = true;
@@ -724,6 +819,31 @@ namespace ManagementPhoneStore
         private void textBox_Tensp_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = true;
+            listView1.Visible = true;
+            listView2.Visible = false;
+            listView1.Items.Clear();
+            listView1.View = View.Details;
+            List<PhienBanSanPham> phienBanSanPhams = PhienBanSanPhamService.GetAll(this.masp);
+            int stt = 1;
+            foreach (PhienBanSanPham pb in phienBanSanPhams)
+            {
+                if (pb.TrangThai == true)
+                {
+                    ListViewItem item = new ListViewItem(stt.ToString());
+                    item.SubItems.Add(dungLuongRomService.getKichThuocById(pb.Rom).ToString() + "GB");
+                    item.SubItems.Add(dungLuongRamService.getKichThuocById((int)pb.Ram).ToString() + "GB");
+                    item.SubItems.Add(mauSacService.GetTenMau(pb.MauSac));
+                    item.SubItems.Add(pb.GiaNhap.ToString());
+                    item.SubItems.Add(pb.GiaXuat.ToString());
+                    listView1.Items.Add(item);
+                    stt++;
+                }
+            }
         }
     }
 }

@@ -185,7 +185,12 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             SanPhamDialog sanPhamDialog = new SanPhamDialog("them",0);
+            sanPhamDialog.FormClosed += SanPhamDialog_FormClosed;
             sanPhamDialog.ShowDialog();
+        }
+        private void SanPhamDialog_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadDanhSachSanPham();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -198,6 +203,7 @@ namespace GUI
                 if (int.TryParse(selectedItem.SubItems[0].Text, out masp))
                 {
                     SanPhamDialog sanPhamDialog = new SanPhamDialog("sua", masp);
+                    sanPhamDialog.FormClosed += SanPhamDialog_FormClosed;
                     sanPhamDialog.ShowDialog();
                 }
                 else
