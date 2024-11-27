@@ -38,7 +38,7 @@ namespace Service
         public static PhieuXuatService Instance => instance.Value;
         public List<PhieuXuat> GetAll()
         {
-            return phieuXuatDAO.GetAll();
+            return phieuXuatDAO.GetAllActive();
         }
 
         public PhieuXuat GetSelect(int index)
@@ -242,6 +242,11 @@ namespace Service
         public int GetAutoIncrement()
         {
             return phieuXuatDAO.GetAutoIncrement();
+        }
+    
+        public int cancelPhieuXuat(int maphieu)
+        {
+            return phieuXuatDAO.CancelPhieuXuat(maphieu);
         }
     }
 }

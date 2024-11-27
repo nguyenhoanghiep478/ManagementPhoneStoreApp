@@ -62,8 +62,8 @@ namespace GUI
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             addbutton.Click += Action_Performed;
             detail.Click += Action_Performed;
-            //cancel.Click += Action_Performed;
-            //export.Click += Action_Performed;
+            cancel.Click += Action_Performed;
+            export.Click += Action_Performed;
 
 
             comboBox2.SelectedIndexChanged += (s, e) => Filter();
@@ -303,65 +303,62 @@ namespace GUI
 
                 }
             }
+
+            else if (source == cancel)
+            {
+                int index = GetRowSelected();
+                if (index != -1)
+                {
+                    var confirmResult = MessageBox.Show(
+                        "Bạn có chắc chắn muốn huỷ phiếu?\nThao tác này không thể hoàn tác nên hãy suy nghĩ kỹ!",
+                        "Huỷ phiếu",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Information);
+
+                    if (confirmResult == DialogResult.OK)
+                    {
+                        var pn = listPhieu[index];
+                      
+                            int cancelResult = pxService.cancelPhieuXuat(pn.Maphieuxuat);
+                            if (cancelResult == 0)
+                            {
+                                MessageBox.Show("Hủy phiếu không thành công!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Hủy phiếu thành công!");
+                                LoadphieuXuatTable1(pxService.GetAll());
+                            }
+                        
+                    }
+                }
+            }
+        
+            
+            else if (source == export)
+            {
+                try
+                {
+                    // File save dialog
+                    using (var saveFileDialog = new SaveFileDialog())
+                    {
+                        saveFileDialog.Filter = "Excel Files|*.xlsx";
+                        saveFileDialog.Title = "Save as Excel File";
+                        saveFileDialog.FileName = "phieuXuatExport.xlsx";
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            ExportToExcel(dataGridView1, saveFileDialog.FileName);
+        MessageBox.Show("Xuất dữ liệu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+}
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xuất dữ liệu thất bại: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
-        //    else if (source == cancel)
-        //    {
-        //        int index = GetRowSelected();
-        //        if (index != -1)
-        //        {
-        //            var confirmResult = MessageBox.Show(
-        //                "Bạn có chắc chắn muốn huỷ phiếu?\nThao tác này không thể hoàn tác nên hãy suy nghĩ kỹ!",
-        //                "Huỷ phiếu",
-        //                MessageBoxButtons.OKCancel,
-        //                MessageBoxIcon.Information);
-
-        //            if (confirmResult == DialogResult.OK)
-        //            {
-        //                var pn = listPhieu[index];
-        //                if (!pnService.CheckCancelPn(pn.MaphieuXuat))
-        //                {
-        //                    MessageBox.Show("Sản phẩm trong phiếu này đã được xuất đi không thể hủy phiếu này!");
-        //                }
-        //                else
-        //                {
-        //                    int cancelResult = pnService.CancelphieuXuat(pn.MaphieuXuat);
-        //                    if (cancelResult == 0)
-        //                    {
-        //                        MessageBox.Show("Hủy phiếu không thành công!");
-        //                    }
-        //                    else
-        //                    {
-        //                        MessageBox.Show("Hủy phiếu thành công!");
-        //                        LoadphieuXuatTable1(pnService.GetAll());
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else if (source == export)
-        //    {
-        //        try
-        //        {
-        //            // File save dialog
-        //            using (var saveFileDialog = new SaveFileDialog())
-        //            {
-        //                saveFileDialog.Filter = "Excel Files|*.xlsx";
-        //                saveFileDialog.Title = "Save as Excel File";
-        //                saveFileDialog.FileName = "phieuXuatExport.xlsx";
-
-        //                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-        //                {
-        //                    ExportToExcel(dataGridView1, saveFileDialog.FileName);
-        //                    MessageBox.Show("Xuất dữ liệu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                }
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Xuất dữ liệu thất bại: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //    }
-        //}
         private int GetRowSelected()
         {
             int index = -1;

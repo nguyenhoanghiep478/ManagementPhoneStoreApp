@@ -192,5 +192,17 @@ namespace DAO.impl
 
             return results;
         }
+        public T QueryScalar<T>(string sql, params object[] parameters)
+        {
+            using (var connection = GetConnection())
+            using (var command = new MySqlCommand(sql, connection))
+            {
+                SetParameter(command, parameters);
+                connection.Open();
+                var result = command.ExecuteScalar();
+                return result == DBNull.Value || result == null ? default(T) : (T)Convert.ChangeType(result, typeof(T));
+            }
+        }
+
     }
 }

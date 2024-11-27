@@ -16,7 +16,9 @@ namespace DAO.DAO.impl
     public class PhieuXuatDAO : AbstractDAO<PhieuXuat>, IPhieuXuatDAO
     {
         private readonly PhieuXuatRowMapper _rowMapper = new PhieuXuatRowMapper();
-
+        private ChiTietSanPhamDAO ctspDAO=new ChiTietSanPhamDAO();
+        private ChiTietPhieuXuatDAO ctpxDAO=new ChiTietPhieuXuatDAO();
+        private PhienBanSanPhamDAO pbspDAO = new PhienBanSanPhamDAO();
         public void Delete(long id)
         {
             string query = "UPDATE phieuxuat SET trangthai = 0 WHERE maphieuxuat = @param0";
@@ -40,6 +42,11 @@ namespace DAO.DAO.impl
         {
             return SearchBy(null, _rowMapper, "phieuxuat");
         }
+        public List<PhieuXuat> GetAllActive()
+        {
+            return this.GetAll().Where(px => px.Trangthai == 1).ToList();
+        }
+
 
         public long Insert(PhieuXuat phieuxuat)
         {
@@ -107,37 +114,44 @@ namespace DAO.DAO.impl
         }
         public int GetAutoIncrement()
         {
+            string query = @"
+        SELECT COALESCE(MAX(maphieuxuat), 0) 
+        FROM phieuxuat";
+
+            return QueryScalar<int>(query) + 1;
+        }
+
+      
+
+        public int CancelPhieuXuat(int maphieu)
+        {
             int result = 0;
 
-            string query = @"
-            SELECT maphieuxuat 
-            FROM phieuxuat
-            ORDER BY maphieuxuat DESC LIMIT 1;";
+            ctspDAO.delete(maphieu);
 
+            var chiTietPhieuXuatList = ctpxDAO.SelectAll(maphieu.ToString());
+
+            // Update the stock quantity based on the canceled PhieuNhap details
+            foreach (var chiTietPhieuNhap in chiTietPhieuXuatList)
+            {
+                pbspDAO.UpdateSoLuongTon(chiTietPhieuNhap.Maphienbansp, +(chiTietPhieuNhap.Soluong));
+            }
+
+            // Delete the PhieuNhap record from the database
+            string query = "DELETE FROM phieuxuat WHERE maphieuxuat = @param0";
             try
             {
-                using (var connection = new MySqlConnection("Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306;"))
-                {
-                    connection.Open();
+                // Execute the update query (no result expected from the Update method)
+                this.Delete(maphieu);
 
-                    using (var command = new MySqlCommand(query, connection))
-                    {
-                        var scalarResult = command.ExecuteScalar();
-
-                        if (scalarResult != DBNull.Value && scalarResult != null)
-                        {
-                            result = Convert.ToInt32(scalarResult);
-                        }
-                    }
-                }
+                result = 1;  // Indicating success (you can adjust this based on your needs)
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error occurred: {ex.Message}");
+                Console.WriteLine($"Error during cancellation: {ex.Message}");
             }
 
-            // Increment the result by 1 and return it
-            return result + 1;
+            return result;
         }
 
     }

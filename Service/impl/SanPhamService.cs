@@ -42,7 +42,7 @@ namespace Service.impl
 
         public List<SanPham> GetAll()
         {
-            return listSP;
+            return listSP=spDAO.GetAll();
         }
 
         public SanPham GetByIndex(int index)

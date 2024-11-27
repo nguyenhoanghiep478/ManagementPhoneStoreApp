@@ -414,6 +414,7 @@
             this.textAreaImei.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textAreaImei.Enabled = false;
             this.textAreaImei.Location = new System.Drawing.Point(3, 36);
             this.textAreaImei.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textAreaImei.MaximumSize = new System.Drawing.Size(800, 200);

@@ -9,7 +9,7 @@ namespace Entity
 {
     public class PhieuXuat
     {
-        private int? maphieuxuat;
+        private int maphieuxuat;
         private DateTime thoigian;
         private long? tongtien;
         private int? nguoitaophieuxuat;
@@ -25,7 +25,7 @@ namespace Entity
         public PhieuXuat() { }
 
         // Parameterized constructor
-        public PhieuXuat(int? maphieuxuat, DateTime thoigian, long? tongtien,
+        public PhieuXuat(int maphieuxuat, DateTime thoigian, long? tongtien,
                          int? nguoitaophieuxuat, int? makh, int? trangthai)
         {
             this.maphieuxuat = maphieuxuat;
@@ -46,7 +46,7 @@ namespace Entity
             this.v3 = v3;
         }
 
-        public int? Maphieuxuat
+        public int Maphieuxuat
         {
             get { return maphieuxuat; }
             set { maphieuxuat = value; }
@@ -84,7 +84,7 @@ namespace Entity
 
         public override string ToString()
         {
-            return $"maphieuxuat: {maphieuxuat?.ToString() ?? "null"}, " +
+            return $"maphieuxuat: {maphieuxuat.ToString() ?? "null"}, " +
                    $"thoigian: {thoigian.ToString("yyyy-MM-dd HH:mm:ss")}, " +
                    $"tongtien: {tongtien?.ToString() ?? "null"}, " +
                    $"nguoitaophieuxuat: {nguoitaophieuxuat?.ToString() ?? "null"}, " +

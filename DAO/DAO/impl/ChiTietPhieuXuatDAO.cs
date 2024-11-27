@@ -1,4 +1,5 @@
 ﻿using DAO.impl;
+using DAO.Mapper;
 using DAO.Mapper.impl;
 using DAO.utils;
 using Entity;
@@ -94,8 +95,11 @@ namespace DAO.DAO.impl
             string query = "DELETE FROM ctphieuxuat WHERE maphieuxuat = @param0 AND maphienbansp = @param2;";
             Update(query, maphieuxuat, maphienbansp);
         }
-
-        // Find by maphieuxuat
+        public List<ChiTietPhieuXuat> SelectAll(string maphieuxuat)
+        {
+            string query = "SELECT * FROM ctphieuxuat WHERE maphieuxuat = @param0";
+            return Query(query, new ChiTietPhieuXuatRowMapper(), maphieuxuat);
+        }
         public List<ChiTietPhieuXuat> GetByPhieuXuatId(int maphieuxuat)
         {
             List<Criteria> criterias = new List<Criteria>

@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using State.Utils;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DAO.DAO.impl
 {
@@ -123,58 +124,21 @@ namespace DAO.DAO.impl
         }
         public bool CheckCancelPn(int maphieu)
         {
-            List<ChiTietSanPham> result = new List<ChiTietSanPham>();
-            string query = "SELECT * FROM ctsanpham WHERE maphieunhap = @maphieunhap";
+            string query = "SELECT * FROM ctsanpham WHERE maphieunhap = @param0";
 
             try
             {
-                using (var connection = new MySqlConnection("Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306;"))
-                {
-                    connection.Open();
-                    using (var command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@maphieunhap", maphieu);
+                var result = Query(query, _rowMapper, maphieu);
 
-                        using (var reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                string imei = reader.GetString("maimei");
-                                int macauhinh = reader.GetInt32("maphienbansp");
-                                int maphieunhap = reader.GetInt32("maphieunhap");
-                                int maphieuxuat = reader.GetInt32("maphieuxuat");
-                                int tinhtrang = reader.GetInt32("tinhtrang");
-                                bool tt;
-                                if (tinhtrang==0)
-                                {
-                                    tt= false;
-                                }
-                                else
-                                {
-                                    tt = true;
-                                }
-
-                                var ct = new ChiTietSanPham(imei, macauhinh, maphieunhap, maphieuxuat, tt);
-                                result.Add(ct);
-                            }
-                        }
-                    }
-                }
+                // Check if all ChiTietSanPham have MaPhieuXuat as 0
+                return result.All(ct => ct.Maphieunhap == 0);
             }
             catch (Exception ex)
             {
+                // Handle errors
                 Console.WriteLine($"Error checking cancel: {ex.Message}");
                 return false;
             }
-
-            foreach (var chiTietSanPhamDTO in result)
-            {
-                if (chiTietSanPhamDTO.MaPhieuXuat != 0)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
 
         public int CancelPhieuNhap(int maphieu)
@@ -182,30 +146,25 @@ namespace DAO.DAO.impl
             int result = 0;
 
             // Delete details of the PhieuNhap from ChiTietSanPham and update the stock
-             ctspDAO.delete(maphieu);
+            ctspDAO.delete(maphieu);
 
+            // Fetch the list of details associated with the PhieuNhap
             var chiTietPhieuNhapList = ctpnDAO.SelectAll(maphieu.ToString());
+
+            // Update the stock quantity based on the canceled PhieuNhap details
             foreach (var chiTietPhieuNhap in chiTietPhieuNhapList)
             {
                 pbsp.UpdateSoLuongTon(chiTietPhieuNhap.Maphienbansp, -(chiTietPhieuNhap.Soluong));
             }
 
-            // Delete the PhieuNhap record itself
-            ctpnDAO.delete(maphieu);
-
-            // Perform the delete query on the PhieuNhap table
-            string query = "DELETE FROM phieunhap WHERE maphieunhap = @maphieunhap";
+            // Delete the PhieuNhap record from the database
+            string query = "DELETE FROM phieunhap WHERE maphieunhap = @param0";
             try
             {
-                using (var connection = new MySqlConnection("Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306;"))
-                {
-                    connection.Open();
-                    using (var command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@maphieunhap", maphieu);
-                        result = command.ExecuteNonQuery();
-                    }
-                }
+                // Execute the update query (no result expected from the Update method)
+                Update(query, maphieu);
+
+                result = 1;  // Indicating success (you can adjust this based on your needs)
             }
             catch (Exception ex)
             {
@@ -214,6 +173,7 @@ namespace DAO.DAO.impl
 
             return result;
         }
+
 
     }
 

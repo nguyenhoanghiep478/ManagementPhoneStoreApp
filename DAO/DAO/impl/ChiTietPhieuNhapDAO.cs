@@ -102,45 +102,10 @@ namespace DAO.DAO.impl
             );
         }
 
-        public List<ChiTietPhieuNhap> SelectAll(string t)
+        public List<ChiTietPhieuNhap> SelectAll(string maphieunhap)
         {
-            List<ChiTietPhieuNhap> result = new List<ChiTietPhieuNhap>();
-            try
-            {
-                String ConnectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306";
-                using (var con = new MySqlConnection(ConnectionString))
-                {
-                    con.Open();
-                    string sql = "SELECT * FROM ctphieunhap WHERE maphieunhap = @maphieunhap";
-                    using (MySqlCommand cmd = new MySqlCommand(sql, con))
-                    {
-                        // Adding parameter to the SQL command
-                        cmd.Parameters.AddWithValue("@maphieunhap", t);
-
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int maphieu = reader.GetInt32("maphieunhap");
-                                int maphienbansp = reader.GetInt32("maphienbansp");
-                                int dongia = reader.GetInt32("dongia");
-                                int soluong = reader.GetInt32("soluong");
-                                int phuongthucnhap = reader.GetInt32("hinhthucnhap");
-
-                                ChiTietPhieuNhap ctphieu = new ChiTietPhieuNhap(phuongthucnhap, maphieu, maphienbansp, soluong, dongia);
-                                result.Add(ctphieu);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Log or handle the exception as needed
-                Console.WriteLine(ex.Message);
-            }
-
-            return result;
+            string query = "SELECT * FROM ctphieunhap WHERE maphieunhap = @param0";
+            return Query(query, new ChiTietPhieuNhapRowMapper(), maphieunhap);
         }
 
     }
