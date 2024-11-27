@@ -173,8 +173,6 @@ namespace GUI
 
         private void button5_Click(object sender, EventArgs e)
         {
-
-           
             PhieuNhapPanel pn = new PhieuNhapPanel(manv);
             pn.Dock = DockStyle.Fill;
 

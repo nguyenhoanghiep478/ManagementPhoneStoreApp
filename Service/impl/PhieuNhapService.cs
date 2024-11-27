@@ -22,6 +22,8 @@ namespace Service
         public static PhieuNhapService Instance => instance.Value;
         private readonly NhaChungCapService _nccService = NhaChungCapService.Instance;
         private readonly NhanVienService _nvService = NhanVienService.Instance;
+        private readonly SanPhamDAO sanPhamDAO = new SanPhamDAO();
+        private List<SanPham> sanPhams = new List<SanPham>();
 
         private List<PhieuNhap> listPhieuNhap;
 
@@ -30,6 +32,8 @@ namespace Service
         {
             phieuNhapDAO = new PhieuNhapDAO();
             listPhieuNhap = new List<PhieuNhap>();
+            sanPhams = sanPhamDAO.GetAll();
+                
         }
 
         // Public static property to access the single instance
@@ -98,7 +102,10 @@ namespace Service
                 return false;
             }             
             bool chiTietSanPhamInserted = _chiTietSanPhamDAO.insert_mutiple(ConvertDictionaryToList(chitietsanpham)) ==true;
-            if (!chiTietSanPhamInserted) { Console.WriteLine("failed"); return false; }            
+            if (!chiTietSanPhamInserted) { Console.WriteLine("failed");
+         
+                return false; }
+       
             return true;
         }
 

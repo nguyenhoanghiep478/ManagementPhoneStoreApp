@@ -34,7 +34,7 @@ namespace GUI
 
         private int rowPhieuSelect = -1;
         private List<PhienBanSanPham> ch = new List<PhienBanSanPham>();
-        private List<SanPham> sp = new List<SanPham>();
+      
         private List<String> listmaimei = new List<String>();
         private List<PhieuXuat> listPhieu = new List<PhieuXuat>();
 
@@ -136,11 +136,8 @@ namespace GUI
         {
             try
             {
-
                 var khachList = khService.getAll();
-
                 var allOption = new KhachHang { MakH = 0, TenKhachHang = "Tất cả" };
-
                 comboBox2.Items.Clear();
 
                 comboBox2.Items.Add(allOption);
@@ -272,13 +269,15 @@ namespace GUI
             List<PhieuXuat> phieuXuatlist = pxService.GetAll();
             LoadphieuXuatTable1(phieuXuatlist);
         }
-
-
         public void SetPanel(UserControl newPanel)
         {
             Console.WriteLine("Switching to a new panel...");
 
-            this.Controls.Clear();
+            if (this.Controls.Contains(tableLayoutPanel1))
+            {
+                this.Controls.Remove(tableLayoutPanel1);
+            }
+
             newPanel.Dock = DockStyle.Fill;
             this.Controls.Add(newPanel);
 

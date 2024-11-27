@@ -15,6 +15,7 @@ namespace DAO.DAO.impl
     {
         private readonly ChiTietSanPhamRowMapper _rowMapper = new ChiTietSanPhamRowMapper();
 
+
         public bool checkImeiExists(List<long> imeis)
         {
             String query = "select * from ctsanpham where maimei in (";
@@ -122,6 +123,7 @@ namespace DAO.DAO.impl
                 Console.WriteLine("failed here"+ " "+ result);
             }
             bool success= result > 0;
+
             return success;
         }
 

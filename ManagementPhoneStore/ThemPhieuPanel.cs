@@ -42,7 +42,7 @@ namespace GUI
         private List<NhanVien> listnv;
         private int manv;
 
-        public ThemPhieuPanel(String tennv, int manvien)
+        public ThemPhieuPanel(String tennv, int manvien, PhieuNhapPanel phieuNhapPanel)
         {
             InitializeComponent();
             

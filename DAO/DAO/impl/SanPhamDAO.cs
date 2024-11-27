@@ -126,8 +126,7 @@ namespace DAO.DAO.impl
                 string sql = "SELECT * FROM sanpham WHERE masp = ?";
                 return this.Query(sql, _rowMapper, masp).FirstOrDefault();
             }
-
-           
+       
             public void updateSoLuongTon(long masp, int soluong)
             {                
                 SanPham sanPham = this.FindById(masp); 
@@ -151,7 +150,10 @@ namespace DAO.DAO.impl
                     throw new InvalidOperationException("Product not found.");
                 }
             }
-        }
+      
+
+
+    }
 }
 
 

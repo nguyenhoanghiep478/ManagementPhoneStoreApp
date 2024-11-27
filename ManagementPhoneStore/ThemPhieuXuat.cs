@@ -11,6 +11,7 @@ using NPOI.XSSF.UserModel;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using DAO.DAO.impl;
 
+using DAO.DAO;
 namespace GUI
 {
 
@@ -34,7 +35,7 @@ namespace GUI
   
         private int rowPhieuSelect = -1;
         private List<PhienBanSanPham> ch = new List<PhienBanSanPham>();
-        private List<SanPham> sp = new List<SanPham>();
+    
         private List<String> listmaimei = new List<String>();
         private List<ChiTietSanPham> ctsp = new List<ChiTietSanPham>();
         private ChiTietSanPhamDAO ct = new ChiTietSanPhamDAO();
@@ -47,6 +48,7 @@ namespace GUI
         int makh = -1;
         public ThemPhieuXuat(String tennv, int manvien)
         {
+            List<SanPham> sp = new List<SanPham>();
             maPhieuXuat = pnService.GetAutoIncrement();
             InitializeComponent();
             txtNhanvien.Text = tennv;
@@ -58,7 +60,7 @@ namespace GUI
             LoadDataTableChiTietPhieu(chitietpx);
             LoadKhachHangDropdown();
             listnv = nvService.GetAll();
-            setKhachHang(cbxkh.SelectedIndex);
+           (cbxkh.SelectedIndex)=0;
 
 
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -105,44 +107,7 @@ namespace GUI
                 MessageBox.Show("Chức năng không khả dụng !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             };
 
-            btnNhaphang.Click += (sender, e) =>
-            {
-                if (chitietpx == null)
-                {
-                    MessageBox.Show("Vui lòng chọn sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (makh == -1)
-                {
-                    MessageBox.Show("Vui lòng chọn khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    var input = MessageBox.Show("Bạn có chắc chắn muốn tạo phiếu xuất !",
-                                                "Xác nhận tạo phiếu",
-                                                MessageBoxButtons.OKCancel,
-                                                MessageBoxIcon.Information);
-
-                    if (input == DialogResult.OK)
-                    {
-
-                        DateTime now = DateTime.Now;
-
-                        PhieuXuat phieuXuat = new PhieuXuat(maPhieuXuat, DateTime.Now, pnService.GetTongTien(chitietpx), 3, makh, 0);
-
-                        pnService.Insert(phieuXuat, chitietpx);
-
-                        ctspBus.updateXuat(ctsp);
-
-                        MessageBox.Show("Xuất hàng thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
-                    }
-                }
-            };
-
-
-
+           
             cbxCauhinh.SelectedIndex = 0;
 
 
@@ -151,20 +116,18 @@ namespace GUI
                 if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
                 {
                     ResetForm();
-
                     var selectedProduct = sanPhamService.GetByMaSP((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
                     SetInfoSanPham(selectedProduct);
-
-
                     ActionBtn("importImei");
                     ChiTietPhieuXuat ctp = CheckTonTai();
-
                     if (ctp == null)
                     {
+                       
                         ActionBtn("add");
                     }
                     else
                     {
+                    
                         ActionBtn("update");
                         SetFormChiTietPhieu(ctp);
                     }
@@ -180,7 +143,7 @@ namespace GUI
                     var chitietPhieu = chitietpx[index];
                     SetFormChiTietPhieu(chitietPhieu);
                     rowPhieuSelect = index;
-
+                    ActionBtn("update");
                 }
             };
 
@@ -188,11 +151,9 @@ namespace GUI
             {
                 int index = cbxCauhinh.SelectedIndex;
 
-                if (index >= 0 && index < ch.Count)
-                {
+                if (index >= 0 && index < ch.Count)                {
 
                     txtDongia.Text = ch[index].GiaNhap.ToString();
-
 
                     var ctp = CheckTonTai();
                     if (ctp == null)
@@ -217,13 +178,7 @@ namespace GUI
 
 
         }
-        public void setKhachHang(int index)
-        {
-            makh = 1;
-
-        }
-
-
+   
         public static class Validation
         {
             public static bool IsEmail(string value)
@@ -247,15 +202,18 @@ namespace GUI
             }
 
         }
+     
         public void LoadDataTableSanPham(List<SanPham> result)
         {
             dataGridView1.Rows.Clear();
-            foreach (SanPham sp in result)
+            for (int i = 0; i  < result.Count;i++)
             {
+                SanPham sp=sanPhamService.GetByIndex(i);
                 dataGridView1.Rows.Add(sp.Masp, sp.Tensp, sp.Soluongton);
             }
 
         }
+
         private void LoadKhachHangDropdown()
         {
 
@@ -300,15 +258,10 @@ namespace GUI
             var cauHinhList = GetCauHinhPhienBan(sp.Masp);
             cbxCauhinh.Items.Clear();
             cbxCauhinh.Items.AddRange(cauHinhList);
-
-
-
             if (cauHinhList.Length > 0)
             {
                 cbxCauhinh.SelectedIndex = 0;
             }
-
-
             if (ch.Count > 0)
             {
                 txtDongia.Text = ch[0].GiaNhap.ToString();
@@ -613,18 +566,8 @@ namespace GUI
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            PhieuXuatPanel phieuNhapPanel = new PhieuXuatPanel(manv);
-            SetPanel(phieuNhapPanel);
-        }
-
-        private void back_Click(object sender, EventArgs e)
-        {
-            PhieuXuatPanel phieuNhapPanel = new PhieuXuatPanel(manv);
-            SetPanel(phieuNhapPanel);
-        }
-
+   
+     
     
         public bool CheckInfo()
         {
@@ -655,7 +598,6 @@ namespace GUI
             }
         }
 
- 
         private void btnNhaphang_Click(object sender, EventArgs e)
         {
             if (chitietpx.Count == 0)
@@ -665,9 +607,9 @@ namespace GUI
             else
             {
                 DialogResult input = MessageBox.Show("Bạn có chắc chắn muốn tạo phiếu xuất!",
-                                                     "Xác nhận tạo phiếu",
-                                                     MessageBoxButtons.OKCancel,
-                                                     MessageBoxIcon.Information);
+                                                      "Xác nhận tạo phiếu",
+                                                      MessageBoxButtons.OKCancel,
+                                                      MessageBoxIcon.Information);
 
                 if (input == DialogResult.OK)
                 {
@@ -675,10 +617,10 @@ namespace GUI
                     DateTime now = DateTime.Now;
                     PhieuXuat px = new PhieuXuat(
                         maPhieuXuat,
-                         now,
-                        kh,
-                        listnv[0].Manv.ToString(),
+                        now,
                         pnService.GetTongTien(chitietpx),
+                        listnv[0].Manv,
+                        kh,
                         1
                     );
 
@@ -686,8 +628,7 @@ namespace GUI
                     if (result)
                     {
                         MessageBox.Show("Xuất hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        maPhieuXuat = pnService.GetAutoIncrement() + 1;
-                        LoadDataTableSanPham(sp);
+                        this.Dispose();
                         PhieuXuatPanel newpan = new PhieuXuatPanel(manv);
                         SetPanel(newpan);
                     }
@@ -698,6 +639,7 @@ namespace GUI
                 }
             }
         }
+
 
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -715,9 +657,13 @@ namespace GUI
 
         }
 
-        private void add_Click(object sender, EventArgs e)
+        private void back_Click(object sender, EventArgs e)
         {
+         
+            PhieuXuatPanel phieuNhapPanel = new PhieuXuatPanel(manv);
+            SetPanel(phieuNhapPanel);
+       
 
-        }
     }
+}
 }

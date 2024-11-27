@@ -149,6 +149,7 @@
             this.back.TabIndex = 21;
             this.back.Text = "Back";
             this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // tongtien
             // 
@@ -228,6 +229,7 @@
             // txtMaphieu
             // 
             this.txtMaphieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaphieu.Enabled = false;
             this.txtMaphieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaphieu.Location = new System.Drawing.Point(57, 71);
             this.txtMaphieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -239,6 +241,7 @@
             // txtNhanvien
             // 
             this.txtNhanvien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNhanvien.Enabled = false;
             this.txtNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNhanvien.Location = new System.Drawing.Point(57, 163);
             this.txtNhanvien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -482,6 +485,7 @@
             // soluong
             // 
             this.soluong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.soluong.Enabled = false;
             this.soluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soluong.Location = new System.Drawing.Point(47, 195);
             this.soluong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -558,6 +562,7 @@
             // txtDongia
             // 
             this.txtDongia.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtDongia.Enabled = false;
             this.txtDongia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDongia.Location = new System.Drawing.Point(341, 120);
             this.txtDongia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -569,6 +574,7 @@
             // txtTensp
             // 
             this.txtTensp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTensp.Enabled = false;
             this.txtTensp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTensp.Location = new System.Drawing.Point(261, 38);
             this.txtTensp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -580,6 +586,7 @@
             // txtMasp
             // 
             this.txtMasp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtMasp.Enabled = false;
             this.txtMasp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMasp.Location = new System.Drawing.Point(47, 38);
             this.txtMasp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -598,7 +605,6 @@
             this.add.TabIndex = 3;
             this.add.Text = "Thêm sản phẩm";
             this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // dataGridView2
             // 

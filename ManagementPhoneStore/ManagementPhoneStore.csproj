@@ -179,11 +179,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckListItem.cs" />
     <Compile Include="ChiTietPhieuDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChiTietPhieuDialog.Designer.cs">
       <DependentUpon>ChiTietPhieuDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietPhieuXuatDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietPhieuXuatDialog.Designer.cs">
+      <DependentUpon>ChiTietPhieuXuatDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeGUI.cs">
       <SubType>Form</SubType>
@@ -196,6 +203,12 @@
     </Compile>
     <Compile Include="ImeiScannerDialog.Designer.cs">
       <DependentUpon>ImeiScannerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImeiSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImeiSelection.Designer.cs">
+      <DependentUpon>ImeiSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="KhachHangDialog.cs">
       <SubType>Form</SubType>
@@ -266,36 +279,17 @@
     <Compile Include="PhanQuyenGUI.Designer.cs">
       <DependentUpon>PhanQuyenGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="phieucontrol\CheckListItem.cs" />
-    <Compile Include="phieucontrol\ChiTietPhieuXuatDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="phieucontrol\ChiTietPhieuXuatDialog.Designer.cs">
-      <DependentUpon>ChiTietPhieuXuatDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="phieucontrol\ImeiSelection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="phieucontrol\ImeiSelection.Designer.cs">
-      <DependentUpon>ImeiSelection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="phieucontrol\PhieuXuatPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="phieucontrol\PhieuXuatPanel.Designer.cs">
-      <DependentUpon>PhieuXuatPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="phieucontrol\ThemPhieuXuat.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="phieucontrol\ThemPhieuXuat.Designer.cs">
-      <DependentUpon>ThemPhieuXuat.cs</DependentUpon>
-    </Compile>
     <Compile Include="PhieuNhapPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="PhieuNhapPanel.Designer.cs">
       <DependentUpon>PhieuNhapPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuXuatPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhieuXuatPanel.Designer.cs">
+      <DependentUpon>PhieuXuatPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -337,6 +331,12 @@
     </Compile>
     <Compile Include="ThemPhieuPanel.Designer.cs">
       <DependentUpon>ThemPhieuPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemPhieuXuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThemPhieuXuat.Designer.cs">
+      <DependentUpon>ThemPhieuXuat.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKeDoanhThu.cs">
       <SubType>UserControl</SubType>
@@ -381,11 +381,17 @@
     <EmbeddedResource Include="ChiTietPhieuDialog.resx">
       <DependentUpon>ChiTietPhieuDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietPhieuXuatDialog.resx">
+      <DependentUpon>ChiTietPhieuXuatDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeGUI.resx">
       <DependentUpon>HomeGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImeiScannerDialog.resx">
       <DependentUpon>ImeiScannerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImeiSelection.resx">
+      <DependentUpon>ImeiSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHangDialog.resx">
       <DependentUpon>KhachHangDialog.cs</DependentUpon>
@@ -420,20 +426,11 @@
     <EmbeddedResource Include="PhanQuyenGUI.resx">
       <DependentUpon>PhanQuyenGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="phieucontrol\ChiTietPhieuXuatDialog.resx">
-      <DependentUpon>ChiTietPhieuXuatDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="phieucontrol\ImeiSelection.resx">
-      <DependentUpon>ImeiSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="phieucontrol\PhieuXuatPanel.resx">
-      <DependentUpon>PhieuXuatPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="phieucontrol\ThemPhieuXuat.resx">
-      <DependentUpon>ThemPhieuXuat.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PhieuNhapPanel.resx">
       <DependentUpon>PhieuNhapPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhieuXuatPanel.resx">
+      <DependentUpon>PhieuXuatPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SanPhamDialog.resx">
       <DependentUpon>SanPhamDialog.cs</DependentUpon>
@@ -452,6 +449,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemPhieuPanel.resx">
       <DependentUpon>ThemPhieuPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemPhieuXuat.resx">
+      <DependentUpon>ThemPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKeDoanhThu.resx">
       <DependentUpon>ThongKeDoanhThu.cs</DependentUpon>

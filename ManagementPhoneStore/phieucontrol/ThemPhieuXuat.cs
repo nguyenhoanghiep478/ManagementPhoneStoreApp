@@ -35,7 +35,7 @@ namespace GUI
   
         private int rowPhieuSelect = -1;
         private List<PhienBanSanPham> ch = new List<PhienBanSanPham>();
-        private List<SanPham> sp = new List<SanPham>();
+    
         private List<String> listmaimei = new List<String>();
         private List<ChiTietSanPham> ctsp = new List<ChiTietSanPham>();
         private ChiTietSanPhamDAO ct = new ChiTietSanPhamDAO();
@@ -48,6 +48,7 @@ namespace GUI
         int makh = -1;
         public ThemPhieuXuat(String tennv, int manvien)
         {
+            List<SanPham> sp = new List<SanPham>();
             maPhieuXuat = pnService.GetAutoIncrement();
             InitializeComponent();
             txtNhanvien.Text = tennv;
@@ -115,20 +116,18 @@ namespace GUI
                 if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
                 {
                     ResetForm();
-
                     var selectedProduct = sanPhamService.GetByMaSP((int)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
                     SetInfoSanPham(selectedProduct);
-
-
                     ActionBtn("importImei");
                     ChiTietPhieuXuat ctp = CheckTonTai();
-
                     if (ctp == null)
                     {
+                       
                         ActionBtn("add");
                     }
                     else
                     {
+                    
                         ActionBtn("update");
                         SetFormChiTietPhieu(ctp);
                     }
@@ -144,7 +143,7 @@ namespace GUI
                     var chitietPhieu = chitietpx[index];
                     SetFormChiTietPhieu(chitietPhieu);
                     rowPhieuSelect = index;
-
+                    ActionBtn("update");
                 }
             };
 
@@ -152,11 +151,9 @@ namespace GUI
             {
                 int index = cbxCauhinh.SelectedIndex;
 
-                if (index >= 0 && index < ch.Count)
-                {
+                if (index >= 0 && index < ch.Count)                {
 
                     txtDongia.Text = ch[index].GiaNhap.ToString();
-
 
                     var ctp = CheckTonTai();
                     if (ctp == null)
@@ -205,19 +202,14 @@ namespace GUI
             }
 
         }
+     
         public void LoadDataTableSanPham(List<SanPham> result)
         {
-            // Clear the existing rows to avoid duplicating data
             dataGridView1.Rows.Clear();
-            result = sanPhamService.GetAll();
-            for (int i = 0; i < result.Count; i++)
+            for (int i = 0; i  < result.Count;i++)
             {
-                var SanPham = result[i];
-                string masp = SanPham.Masp.ToString();
-                string tensp= SanPham.Tensp.ToString();
-                string solg= SanPham.Soluongton.ToString();
-
-                dataGridView1.Rows.Add(masp, tensp,solg);
+                SanPham sp=sanPhamService.GetByIndex(i);
+                dataGridView1.Rows.Add(sp.Masp, sp.Tensp, sp.Soluongton);
             }
 
         }
@@ -266,15 +258,10 @@ namespace GUI
             var cauHinhList = GetCauHinhPhienBan(sp.Masp);
             cbxCauhinh.Items.Clear();
             cbxCauhinh.Items.AddRange(cauHinhList);
-
-
-
             if (cauHinhList.Length > 0)
             {
                 cbxCauhinh.SelectedIndex = 0;
             }
-
-
             if (ch.Count > 0)
             {
                 txtDongia.Text = ch[0].GiaNhap.ToString();
@@ -641,12 +628,7 @@ namespace GUI
                     if (result)
                     {
                         MessageBox.Show("Xuất hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Reload the list of products from the database to get updated quantities
-                       
-                       
-                        dataGridView1.Refresh(); // Refresh the DataGridView
-
+                        this.Dispose();
                         PhieuXuatPanel newpan = new PhieuXuatPanel(manv);
                         SetPanel(newpan);
                     }
