@@ -12,8 +12,9 @@ namespace GUI
         public List<ChiTietSanPham> ct;
         public int selectedImei;
         private List<string> selectedImeiList;
+        public List<string> beforeSelectedImei;
 
-        public ImeiSelection(List<ChiTietSanPham> ct, ThemPhieuXuat parentControl)
+        public ImeiSelection(List<ChiTietSanPham> ct, ThemPhieuXuat parentControl,List<string> beforeSelectedImei)
         {
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -23,6 +24,7 @@ namespace GUI
 
             this.ct = ct;
             this.parentControl = parentControl;
+            this.beforeSelectedImei = beforeSelectedImei;
             selectedImeiList = new List<string>();
             InitializeComponent();
             LoadImei();
@@ -34,29 +36,25 @@ namespace GUI
             };
 
 
-            list.SelectedIndexChanged += (s, e) =>
+            list.ItemCheck += (s, e) =>
             {
-                // Loop through selected items in the list
-                foreach (int index in list.SelectedIndices)
+                var checkedItem = (CheckListItem)list.Items[e.Index];
+
+                if (e.NewValue == CheckState.Checked)
                 {
-                    var item = (CheckListItem)list.Items[index];
-
-                    item.IsSelected = !item.IsSelected;
-
-                    if (item.IsSelected)
+                    // Nếu item vừa được check
+                    if (!selectedImeiList.Contains(checkedItem.Label))
                     {
-
-                        if (!selectedImeiList.Contains(item.Label))
-                        {
-                            selectedImeiList.Add(item.Label);
-                        }
-                    }
-                    else
-                    {
-                        selectedImeiList.Remove(item.Label);
+                        selectedImeiList.Add(checkedItem.Label);
                     }
                 }
+                else
+                {
+                    // Nếu item vừa bị uncheck
+                    selectedImeiList.Remove(checkedItem.Label);
+                }
             };
+            this.beforeSelectedImei = beforeSelectedImei;
         }
 
         public void LoadImei()
@@ -75,6 +73,10 @@ namespace GUI
             list.Items.Clear();
             foreach (var chiTietSanPham in result)
             {
+                if (beforeSelectedImei.Contains(chiTietSanPham.MaImei))
+                {
+                    continue;
+                }
                 var check = new CheckListItem(chiTietSanPham.MaImei);
 
 
@@ -148,8 +150,10 @@ namespace GUI
         private void button1_Click_1(object sender, EventArgs e)
         {
            
+
             foreach (var imei in selectedImeiList)
             {
+                beforeSelectedImei.Add(imei);
                 parentControl.TextAreaImei.AppendText(imei + Environment.NewLine);
             }
 

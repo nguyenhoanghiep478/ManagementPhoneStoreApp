@@ -23,7 +23,8 @@ namespace Service
         private readonly NhaChungCapService _nccService = NhaChungCapService.Instance;
         private readonly NhanVienService _nvService = NhanVienService.Instance;
         private readonly KhachHangService _khService = new KhachHangService();
-
+        private readonly SanPhamDAO sanPhamDao = new SanPhamDAO();
+        private readonly PhienBanSanPhamService phienBanSanPham = PhienBanSanPhamService.Instance;
         private static Lazy<PhieuXuatService> instance = new Lazy<PhieuXuatService>(() => new PhieuXuatService());
 
         private List<PhieuXuat> listPhieuXuat;
@@ -225,7 +226,15 @@ namespace Service
                 Console.WriteLine("fail 2");
                 return false;
             }
-          
+
+            foreach (int mapb in chitietsanpham.Keys)
+            {
+                int masp = (int)phienBanSanPham.GetByMaPhienBan(mapb).MaSanPham;
+                SanPham sanPham = SanPhamService.Instance.GetByMaSP(masp);
+                sanPham.Soluongton -= chitietsanpham[mapb].Count;
+                sanPhamDao.update(sanPham);
+            }
+
             return true;
         }
         public List<ChiTietSanPham> ConvertDictionaryToList(Dictionary<int, List<ChiTietSanPham>> chitietsanpham)

@@ -35,7 +35,7 @@ namespace GUI
   
         private int rowPhieuSelect = -1;
         private List<PhienBanSanPham> ch = new List<PhienBanSanPham>();
-    
+        private List<String> imeiSelected = new List<String>();
         private List<String> listmaimei = new List<String>();
         private List<ChiTietSanPham> ctsp = new List<ChiTietSanPham>();
         private ChiTietSanPhamDAO ct = new ChiTietSanPhamDAO();
@@ -643,7 +643,7 @@ namespace GUI
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-                string selectedText = cbxCauhinh.SelectedItem.ToString();
+             string selectedText = cbxCauhinh.SelectedItem.ToString();
 
             if (selectedText == "Chọn sản phẩm")
             {
@@ -652,8 +652,12 @@ namespace GUI
             }
             int mapb = ch[cbxCauhinh.SelectedIndex].MaPhienBanSanPham;
             ctsp = ct.SelectAllByPb(mapb);
-            ImeiSelection imeiSelection = new ImeiSelection(ctsp, this);
+           
+
+
+            ImeiSelection imeiSelection = new ImeiSelection(ctsp, this,imeiSelected);
             imeiSelection.Visible = true;
+            imeiSelected = imeiSelection.beforeSelectedImei;
 
         }
 
