@@ -72,6 +72,7 @@
             this.list.Name = "list";
             this.list.Size = new System.Drawing.Size(333, 395);
             this.list.TabIndex = 0;
+            this.list.SelectedIndexChanged += new System.EventHandler(this.list_SelectedIndexChanged);
             // 
             // ImeiSelection
             // 

@@ -154,7 +154,7 @@ namespace GUI
                 if (index >= 0 && index < ch.Count)                {
 
                     txtDongia.Text = ch[index].GiaNhap.ToString();
-
+                    soluong.Text = ch[index].SoLuongTon.ToString();
                     var ctp = CheckTonTai();
                     if (ctp == null)
                     {
@@ -665,5 +665,25 @@ namespace GUI
        
 
     }
-}
+
+        private void cbxCauhinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDongia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void soluong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textAreaImei_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -24,7 +24,7 @@ namespace Service
         private readonly NhanVienService _nvService = NhanVienService.Instance;
         private readonly SanPhamDAO sanPhamDAO = new SanPhamDAO();
         private List<SanPham> sanPhams = new List<SanPham>();
-
+        private readonly PhienBanSanPhamService phienBanSanPham = PhienBanSanPhamService.Instance;
         private List<PhieuNhap> listPhieuNhap;
 
         // Private constructor to prevent external instantiation
@@ -105,7 +105,15 @@ namespace Service
             if (!chiTietSanPhamInserted) { Console.WriteLine("failed");
          
                 return false; }
-       
+            foreach (int mapb in chitietsanpham.Keys)
+            {
+               int masp = (int) phienBanSanPham.GetByMaPhienBan(mapb).MaSanPham;
+               SanPham sanPham = SanPhamService.Instance.GetByMaSP(masp);
+               sanPham.Soluongton += chitietsanpham[mapb].Count;
+               sanPhamDAO.update(sanPham);
+            }
+            
+
             return true;
         }
 

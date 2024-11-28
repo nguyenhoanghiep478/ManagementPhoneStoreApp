@@ -33,13 +33,13 @@ namespace DAO.DAO.impl
         {
             int result = 0;
             string query = @"
-        INSERT INTO ctphieunhap
-        (
-            maphieunhap, maphienbansp, soluong, dongia, hinhthucnhap
-        ) 
-        VALUES 
-        (@param0, @param1, @param2, @param3, @param4);";
-            String ConnectionString =  "Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306";
+                INSERT INTO ctphieunhap
+                (
+                    maphieunhap, maphienbansp, soluong, dongia, hinhthucnhap
+                ) 
+                VALUES 
+                (@param0, @param1, @param2, @param3, @param4);";
+            String ConnectionString =  "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306";
             using (var con = new MySqlConnection(ConnectionString))
             {
                 con.Open();
@@ -76,7 +76,7 @@ namespace DAO.DAO.impl
                 }
             }
 
-            return result; // Return the number of successfully inserted records
+            return result;
         }
 
 

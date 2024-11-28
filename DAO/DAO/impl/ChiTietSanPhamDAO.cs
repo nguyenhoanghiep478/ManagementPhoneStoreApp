@@ -88,7 +88,7 @@ namespace DAO.DAO.impl
             int result = 0;
             try
             {
-                String connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=12345;Port=3306";
+                String connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306";
                 using (var conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();

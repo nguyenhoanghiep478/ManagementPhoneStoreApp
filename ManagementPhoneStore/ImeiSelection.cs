@@ -10,7 +10,7 @@ namespace GUI
     {
         private ThemPhieuXuat parentControl;
         public List<ChiTietSanPham> ct;
-
+        public int selectedImei;
         private List<string> selectedImeiList;
 
         public ImeiSelection(List<ChiTietSanPham> ct, ThemPhieuXuat parentControl)
@@ -95,16 +95,7 @@ namespace GUI
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            foreach (var imei in selectedImeiList)
-            {
-                parentControl.TextAreaImei.AppendText(imei + Environment.NewLine);
-            }
-
-            this.Close();
-        }
+     
         public bool CheckImeiArea(string maImei)
         {
             var arrImei = parentControl.TextAreaImei.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
@@ -165,5 +156,10 @@ namespace GUI
             this.Close();
        
     }
+
+        private void list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

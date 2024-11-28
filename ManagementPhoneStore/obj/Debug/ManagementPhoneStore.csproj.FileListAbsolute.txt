@@ -651,3 +651,5 @@ C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Deb
 C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb
 C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.xml

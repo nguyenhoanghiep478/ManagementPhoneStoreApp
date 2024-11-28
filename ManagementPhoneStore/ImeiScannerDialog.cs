@@ -70,10 +70,10 @@ namespace ManagementPhoneStore
         {
             try
             {
-               
-                if ((DateTime.Now - lastFrameTime).TotalMilliseconds < 1000)
-                    return;
-                lastFrameTime = DateTime.Now;
+
+                //if ((DateTime.Now - lastFrameTime).TotalMilliseconds < 10)
+                //    return;
+                //lastFrameTime = DateTime.Now;
 
                 Bitmap originalBitmap = (Bitmap)eventArgs.Frame.Clone();
                 Bitmap bitmapForDecoding = new Bitmap(originalBitmap);
@@ -90,12 +90,12 @@ namespace ManagementPhoneStore
                     {
                         ZXing.BarcodeReader reader = new ZXing.BarcodeReader
                         {
-                            AutoRotate = true,
-                            Options = new ZXing.Common.DecodingOptions
-                            {
-                                TryHarder = true,
-                                TryInverted = true
-                            }
+                            //AutoRotate = true,
+                            //Options = new ZXing.Common.DecodingOptions
+                            //{
+                            //    TryHarder = true,
+                            //    TryInverted = true
+                            //}
                         };
 
                         var result = reader.Decode(bitmapForDecoding);

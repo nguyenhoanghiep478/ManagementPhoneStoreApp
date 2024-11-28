@@ -116,6 +116,7 @@ namespace GUI
                 if (index >= 0 && index < ch.Count)
                 {
                     txtDongia.Text = ch[index].GiaNhap.ToString();
+                    txtSoLuongHienTai.Text = ch[index].SoLuongTon.ToString();
                     var ctp = CheckTonTai();
                     if (ctp == null)
                     {
@@ -406,7 +407,7 @@ namespace GUI
             }
             else if (phuongthuc == 1) // Nhập theo imei
             {
-                if (string.IsNullOrEmpty(textAreaImei.Text) || !Validation.IsNumber(textAreaImei.Text))
+                if (string.IsNullOrEmpty(textAreaImei.Text) || !Validation.IsValidImei(textAreaImei.Text))
                 {
                     MessageBox.Show("Mã imei không được để rỗng và phải là số!", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
@@ -744,6 +745,31 @@ namespace GUI
         {
             PhieuNhapPanel phieuNhapPanel = new PhieuNhapPanel(manv);
             SetPanel(phieuNhapPanel);
+        }
+
+        private void add_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuetImei_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxCauhinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDongia_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
@@ -79,6 +79,8 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearchbox = new System.Windows.Forms.RichTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtSoLuongHienTai = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -269,6 +271,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.txtSoLuongHienTai);
             this.panel2.Controls.Add(this.back);
             this.panel2.Controls.Add(this.tongtien);
             this.panel2.Controls.Add(this.label11);
@@ -311,14 +315,14 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -446,6 +450,7 @@
             this.QuetImei.TabIndex = 0;
             this.QuetImei.Text = "Quét Imei";
             this.QuetImei.UseVisualStyleBackColor = true;
+            this.QuetImei.Click += new System.EventHandler(this.QuetImei_Click);
             // 
             // label7
             // 
@@ -543,6 +548,7 @@
             this.cbxCauhinh.Name = "cbxCauhinh";
             this.cbxCauhinh.Size = new System.Drawing.Size(205, 28);
             this.cbxCauhinh.TabIndex = 7;
+            this.cbxCauhinh.SelectedIndexChanged += new System.EventHandler(this.cbxCauhinh_SelectedIndexChanged);
             // 
             // txtSoLuongImei
             // 
@@ -576,6 +582,7 @@
             this.txtDongia.Size = new System.Drawing.Size(191, 35);
             this.txtDongia.TabIndex = 4;
             this.txtDongia.Text = "";
+            this.txtDongia.TextChanged += new System.EventHandler(this.txtDongia_TextChanged);
             // 
             // txtTensp
             // 
@@ -609,6 +616,7 @@
             this.add.TabIndex = 3;
             this.add.Text = "Thêm sản phẩm";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click_1);
             // 
             // dataGridView2
             // 
@@ -707,6 +715,29 @@
             this.txtSearchbox.TabIndex = 10;
             this.txtSearchbox.Text = "";
             // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(56, 393);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(192, 16);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Số lượng của phiên bản hiện tại";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // txtSoLuongHienTai
+            // 
+            this.txtSoLuongHienTai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSoLuongHienTai.Enabled = false;
+            this.txtSoLuongHienTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuongHienTai.Location = new System.Drawing.Point(59, 423);
+            this.txtSoLuongHienTai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSoLuongHienTai.Name = "txtSoLuongHienTai";
+            this.txtSoLuongHienTai.Size = new System.Drawing.Size(290, 41);
+            this.txtSoLuongHienTai.TabIndex = 22;
+            this.txtSoLuongHienTai.Text = "";
+            // 
             // ThemPhieuPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -779,5 +810,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.RichTextBox txtSearchbox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RichTextBox txtSoLuongHienTai;
     }
 }
