@@ -46,10 +46,10 @@ namespace ManagementPhoneStore
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -70,6 +70,7 @@ namespace ManagementPhoneStore
             // listView1
             // 
             this.listView1.BackColor = System.Drawing.Color.White;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -77,13 +78,12 @@ namespace ManagementPhoneStore
             this.listView1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.listView1.ForeColor = System.Drawing.Color.Black;
             this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 202);
-            this.listView1.Margin = new System.Windows.Forms.Padding(5);
+            this.listView1.Location = new System.Drawing.Point(13, 136);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(731, 404);
+            this.listView1.Size = new System.Drawing.Size(644, 592);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -97,32 +97,36 @@ namespace ManagementPhoneStore
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên khu vực kho";
-            this.columnHeader2.Width = 350;
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 205;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Ghi chú";
-            this.columnHeader3.Width = 250;
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 316;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(492, 40);
+            this.label1.Size = new System.Drawing.Size(394, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Danh sách sản phẩm hiện có trong kho:\r\n";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(787, 202);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(664, 136);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(515, 405);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(432, 592);
             this.flowLayoutPanel1.TabIndex = 4;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -136,54 +140,43 @@ namespace ManagementPhoneStore
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(3, 11);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.panel2.Location = new System.Drawing.Point(12, 9);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1340, 138);
+            this.panel2.Size = new System.Drawing.Size(1084, 110);
             this.panel2.TabIndex = 4;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 35;
-            this.comboBox1.Location = new System.Drawing.Point(673, 40);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 41);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "Tất cả";
-            this.comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(926, 40);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 41);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(1197, 40);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button7.Location = new System.Drawing.Point(948, 32);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(115, 41);
             this.button7.TabIndex = 5;
             this.button7.Text = "Làm mới";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 35;
+            this.comboBox1.Location = new System.Drawing.Point(536, 32);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(189, 41);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBox1_DrawItem);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button6
             // 
@@ -194,16 +187,27 @@ namespace ManagementPhoneStore
             this.button6.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(321, 14);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button6.Location = new System.Drawing.Point(257, 11);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(116, 112);
+            this.button6.Size = new System.Drawing.Size(93, 90);
             this.button6.TabIndex = 2;
             this.button6.Text = "XUẤT EXCEL";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(731, 32);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(211, 41);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button3
             // 
@@ -214,10 +218,10 @@ namespace ManagementPhoneStore
             this.button3.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(219, 14);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button3.Location = new System.Drawing.Point(175, 11);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 112);
+            this.button3.Size = new System.Drawing.Size(75, 90);
             this.button3.TabIndex = 2;
             this.button3.Text = "XÓA";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -234,10 +238,10 @@ namespace ManagementPhoneStore
             this.button2.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(119, 14);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button2.Location = new System.Drawing.Point(95, 11);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 112);
+            this.button2.Size = new System.Drawing.Size(75, 90);
             this.button2.TabIndex = 1;
             this.button2.Text = "SỬA";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -254,10 +258,10 @@ namespace ManagementPhoneStore
             this.button1.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(19, 14);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button1.Location = new System.Drawing.Point(15, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 112);
+            this.button1.Size = new System.Drawing.Size(75, 90);
             this.button1.TabIndex = 0;
             this.button1.Text = "THÊM";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -267,16 +271,16 @@ namespace ManagementPhoneStore
             // 
             // KhuVucKhoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1340, 661);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(1108, 741);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KhuVucKhoForm";
             this.Text = "KhuVucKhoForm";
             this.Load += new System.EventHandler(this.KhuVucKhoForm_Load);
@@ -345,118 +349,72 @@ namespace ManagementPhoneStore
             }
         }
 
-        public void createItem(FlowLayoutPanel fl,string name,string sl,string imgPath)
+        public void createItem(FlowLayoutPanel fl, string name, string sl, string imgPath)
         {
-            //FlowLayoutPanel flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            // flowLayoutPanel2.Location = new System.Drawing.Point(3, 35);
-            // flowLayoutPanel2.Name = "flowLayoutPanel2";
-            // flowLayoutPanel2.Size = new System.Drawing.Size(394, 45);
-            // flowLayoutPanel2.TabIndex = 8;
-            // flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
-            // flowLayoutPanel2.Padding = new Padding(0);
-            // flowLayoutPanel2.Margin = new Padding(0, 0, 0, 5); // Không còn khoảng cách giữa các control
-            // flowLayoutPanel2.SuspendLayout();
-            // flowLayoutPanel2.ResumeLayout(false);
-            FlowLayoutPanel flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel
+            FlowLayoutPanel flowLayoutPanel2 = new FlowLayoutPanel
             {
-                Location = new System.Drawing.Point(3, 35),
-                Name = "flowLayoutPanel2",
-                Size = new System.Drawing.Size(394, 120),
-                TabIndex = 8,
+                Size = new System.Drawing.Size(400, 70),
                 Padding = new Padding(0),
                 Margin = new Padding(0, 0, 0, 5),
-
+                FlowDirection = FlowDirection.LeftToRight, // Sắp xếp từ trái sang phải
+                BorderStyle = BorderStyle.None
             };
 
             PictureBox pictureBox = new PictureBox
             {
                 Size = new System.Drawing.Size(60, 60),
                 SizeMode = PictureBoxSizeMode.Zoom,
-                Margin = new Padding(5, 5, 5, 5)
+                Margin = new Padding(5)
             };
 
             string imagePath = Path.Combine("./img_product", imgPath);
 
-            // Kiểm tra và tải hình ảnh
             if (File.Exists(imagePath))
             {
                 pictureBox.Image = System.Drawing.Image.FromFile(imagePath);
             }
             else
             {
-                pictureBox.Image = System.Drawing.Image.FromFile("./img_product/default.png"); // Hình mặc định nếu không tìm thấy
+                pictureBox.Image = System.Drawing.Image.FromFile("./img_product/default.png");
             }
 
-            flowLayoutPanel1.Padding = new Padding(0);
-
-            //Label label2 = new System.Windows.Forms.Label();
-            //label2.Location = new System.Drawing.Point(3, 0);
-            //label2.Name = "label2";
-            //label2.Size = new System.Drawing.Size(391, 20);
-            //label2.TabIndex = 6;
-            //label2.Text = name;
-            //label2.Click += new System.EventHandler(this.label2_Click_2);
-            //label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //label2.Click += new System.EventHandler(this.label2_Click_2);
-
-            Label label2 = new System.Windows.Forms.Label
+            // Tạo Panel chứa Label
+            FlowLayoutPanel textPanel = new FlowLayoutPanel
             {
-                Location = new System.Drawing.Point(70, 0), // Cách hình ảnh 70px
-                Name = "label2",
-                Size = new System.Drawing.Size(320, 20),
-                TabIndex = 6,
+                Size = new System.Drawing.Size(350, 60), // Để chứa các label
+                Margin = new Padding(5, 0, 5, 0),
+                FlowDirection = FlowDirection.TopDown,  // Sắp xếp từ trên xuống dưới
+                AutoSize = true
+            };
+
+            Label label2 = new Label
+            {
                 Text = name,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold),
-                Margin = new Padding(5, 5, 5, 0)
+                AutoSize = true, // Đảm bảo chữ hiển thị đầy đủ
+                Margin = new Padding(5, 10, 5, 5)
             };
 
-            //Label label3= new System.Windows.Forms.Label();
-            //label3.Location = new System.Drawing.Point(3, 25);
-            //label3.Name = "label3";
-            //label3.Size = new System.Drawing.Size(391, 23);
-            //label3.TabIndex = 7;
-            //label3.Text = sl;
-            //label3.Click += new System.EventHandler(this.label3_Click_1);
-
-            Label label3 = new System.Windows.Forms.Label
+            Label label3 = new Label
             {
-                Location = new System.Drawing.Point(70, 25), // Cách hình ảnh 70px
-                Name = "label3",
-                Size = new System.Drawing.Size(320, 23),
-                TabIndex = 7,
-                Text = sl,
+                Text = "Số lượng " + sl,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F),
-                Margin = new Padding(5, 0, 5, 5) // Khoảng cách
+                AutoSize = true, // Đảm bảo chữ hiển thị đầy đủ
+                Margin = new Padding(5, 5, 5, 5)
             };
 
+            // Thêm Label vào textPanel
+            textPanel.Controls.Add(label2);
+            textPanel.Controls.Add(label3);
+
+            // Thêm các thành phần vào flowLayoutPanel2
             flowLayoutPanel2.Controls.Add(pictureBox);
-            flowLayoutPanel2.Controls.Add(label2);
-            flowLayoutPanel2.Controls.Add(label3);
+            flowLayoutPanel2.Controls.Add(textPanel);
 
-
-            flowLayoutPanel2.BorderStyle = BorderStyle.FixedSingle;
-
-            // Gắn sự kiện Paint để vẽ viền màu
-            flowLayoutPanel2.Paint += (sender, e) =>
-            {
-                // Màu viền mong muốn
-                System.Drawing.Color borderColor = System.Drawing.Color.Black;
-                int borderWidth = 2; // Độ dày viền
-
-                // Tạo bút để vẽ
-                using (Pen pen = new Pen(borderColor, borderWidth))
-                {
-                    // Vẽ hình chữ nhật bao quanh FlowLayoutPanel
-                    e.Graphics.DrawRectangle(
-                        pen,
-                        new System.Drawing.Rectangle(0, 0, flowLayoutPanel2.Width - 1, flowLayoutPanel2.Height - 1)
-                    );
-                }
-            };
-
-
+            // Thêm flowLayoutPanel2 vào FlowLayoutPanel chính
             fl.Controls.Add(flowLayoutPanel2);
         }
+
         public KhuVucKhoForm()
         {
             InitializeComponent();

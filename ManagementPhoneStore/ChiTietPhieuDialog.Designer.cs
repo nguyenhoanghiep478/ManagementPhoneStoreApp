@@ -55,7 +55,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 43);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 0;
@@ -64,16 +66,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(227, 43);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(169, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nhân viên nhập";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(618, 43);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(463, 46);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 2;
@@ -83,7 +90,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(998, 43);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(748, 46);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 16);
             this.label4.TabIndex = 3;
@@ -92,36 +101,44 @@
             // maphieu
             // 
             this.maphieu.Enabled = false;
-            this.maphieu.Location = new System.Drawing.Point(42, 79);
+            this.maphieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maphieu.Location = new System.Drawing.Point(32, 64);
+            this.maphieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maphieu.Name = "maphieu";
-            this.maphieu.Size = new System.Drawing.Size(137, 46);
+            this.maphieu.Size = new System.Drawing.Size(104, 38);
             this.maphieu.TabIndex = 4;
             this.maphieu.Text = "";
             // 
             // nvnhap
             // 
             this.nvnhap.Enabled = false;
-            this.nvnhap.Location = new System.Drawing.Point(230, 79);
+            this.nvnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nvnhap.Location = new System.Drawing.Point(172, 64);
+            this.nvnhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nvnhap.Name = "nvnhap";
-            this.nvnhap.Size = new System.Drawing.Size(366, 46);
+            this.nvnhap.Size = new System.Drawing.Size(276, 38);
             this.nvnhap.TabIndex = 5;
             this.nvnhap.Text = "";
             // 
             // ncc
             // 
             this.ncc.Enabled = false;
-            this.ncc.Location = new System.Drawing.Point(621, 79);
+            this.ncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ncc.Location = new System.Drawing.Point(466, 64);
+            this.ncc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ncc.Name = "ncc";
-            this.ncc.Size = new System.Drawing.Size(344, 46);
+            this.ncc.Size = new System.Drawing.Size(259, 38);
             this.ncc.TabIndex = 6;
             this.ncc.Text = "";
             // 
             // time
             // 
             this.time.Enabled = false;
-            this.time.Location = new System.Drawing.Point(1001, 79);
+            this.time.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.time.Location = new System.Drawing.Point(751, 64);
+            this.time.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(215, 46);
+            this.time.Size = new System.Drawing.Size(162, 38);
             this.time.TabIndex = 7;
             this.time.Text = "";
             // 
@@ -141,12 +158,13 @@
             this.mausac,
             this.dongia,
             this.soluong});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 151);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 123);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(971, 351);
+            this.dataGridView1.Size = new System.Drawing.Size(728, 285);
             this.dataGridView1.TabIndex = 8;
             // 
             // STT
@@ -215,12 +233,13 @@
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stt2,
             this.maimei});
-            this.dataGridView2.Location = new System.Drawing.Point(989, 151);
+            this.dataGridView2.Location = new System.Drawing.Point(742, 123);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(250, 351);
+            this.dataGridView2.Size = new System.Drawing.Size(188, 285);
             this.dataGridView2.TabIndex = 9;
             // 
             // stt2
@@ -240,9 +259,9 @@
             // 
             // ChiTietPhieuDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 514);
+            this.ClientSize = new System.Drawing.Size(932, 418);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.time);
@@ -254,6 +273,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ChiTietPhieuDialog";
             this.Text = "ChiTietPhieuDialog";
             this.Load += new System.EventHandler(this.ChiTietPhieuDialog_Load);

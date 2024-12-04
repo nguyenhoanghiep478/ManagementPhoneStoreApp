@@ -31,5 +31,20 @@ namespace ManagementPhoneStore
         {
 
         }
+
+        private void NhanVienChiTietForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void add_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancel_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

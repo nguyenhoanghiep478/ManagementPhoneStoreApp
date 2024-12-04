@@ -16,7 +16,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 namespace GUI
 {
-    public partial class PhieuXuatPanel : UserControl
+    public partial class PhieuXuatPanel:UserControl
     {
         private SanPhamService sanPhamService = SanPhamService.Instance;
         private NhanVienService nvService = NhanVienService.Instance;
@@ -77,9 +77,40 @@ namespace GUI
             dateStart.ValueChanged += (s, e) => Filter();
             dateEnd.ValueChanged += (s, e) => Filter();
             resetbutton.Click += ResetForm;
-
+            comboBox1.SelectedIndex = 0;
+            comboBox1.MeasureItem += new MeasureItemEventHandler(ComboBox_MeasureItem);
+            comboBox1.DrawItem += new DrawItemEventHandler(ComboBox_DrawItem);
+        }
+        private void ComboBox_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            e.ItemHeight = 36;  // Điều chỉnh chiều cao mục của ComboBox
         }
 
+        private void ComboBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            // Lấy ComboBox đang được vẽ
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox != null && e.Index >= 0)
+            {
+                string itemText = comboBox.Items[e.Index].ToString();
+
+                StringFormat stringFormat = new StringFormat()
+                {
+                    LineAlignment = StringAlignment.Center
+                };
+
+                if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                {
+                    e.Graphics.FillRectangle(Brushes.CornflowerBlue, e.Bounds);
+                    e.Graphics.DrawString(itemText, e.Font, Brushes.White, e.Bounds, stringFormat);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(Brushes.White, e.Bounds);
+                    e.Graphics.DrawString(itemText, e.Font, Brushes.Black, e.Bounds, stringFormat);
+                }
+            }
+        }
         private void Export_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
@@ -440,6 +471,21 @@ namespace GUI
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void addbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

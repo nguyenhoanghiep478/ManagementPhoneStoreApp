@@ -8,6 +8,7 @@ using NPOI.XSSF.UserModel;
 using System.IO;
 using Service.impl;
 using ManagementPhoneStore.Properties;
+using System.Drawing;
 
 namespace ManagementPhoneStore
 {
@@ -61,6 +62,7 @@ namespace ManagementPhoneStore
             // listView1
             // 
             this.listView1.BackColor = System.Drawing.Color.White;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -69,13 +71,11 @@ namespace ManagementPhoneStore
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.listView1.ForeColor = System.Drawing.Color.Black;
             this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 170);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
+            this.listView1.Location = new System.Drawing.Point(12, 126);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1446, 422);
+            this.listView1.Size = new System.Drawing.Size(1086, 553);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -84,22 +84,22 @@ namespace ManagementPhoneStore
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã nhân viên";
-            this.columnHeader1.Width = 361;
+            this.columnHeader1.Width = 150;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên đăng nhập";
-            this.columnHeader2.Width = 361;
+            this.columnHeader2.Width = 380;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Nhóm quyền";
-            this.columnHeader3.Width = 361;
+            this.columnHeader3.Width = 350;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Trạng thái";
-            this.columnHeader4.Width = 361;
+            this.columnHeader4.Width = 205;
             // 
             // panel2
             // 
@@ -115,37 +115,37 @@ namespace ManagementPhoneStore
             this.panel2.Controls.Add(this.add);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.panel2.Location = new System.Drawing.Point(12, 11);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1471, 135);
+            this.panel2.Size = new System.Drawing.Size(1086, 110);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // tk_prop
             // 
+            this.tk_prop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.tk_prop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tk_prop.FormattingEnabled = true;
+            this.tk_prop.ItemHeight = 36;
             this.tk_prop.Items.AddRange(new object[] {
             "Tất cả",
             "Mã nhân viên",
             "Tên đăng nhập"});
-            this.tk_prop.Location = new System.Drawing.Point(844, 41);
-            this.tk_prop.Margin = new System.Windows.Forms.Padding(4);
+            this.tk_prop.Location = new System.Drawing.Point(609, 36);
             this.tk_prop.Name = "tk_prop";
-            this.tk_prop.Size = new System.Drawing.Size(180, 28);
+            this.tk_prop.Size = new System.Drawing.Size(136, 42);
             this.tk_prop.TabIndex = 7;
-            this.tk_prop.Text = "Tất cả";
             this.tk_prop.SelectedIndexChanged += new System.EventHandler(this.tk_prop_SelectedIndexChanged);
             // 
             // refresh
             // 
             this.refresh.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refresh.Image = ((System.Drawing.Image)(resources.GetObject("refresh.Image")));
-            this.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.refresh.Location = new System.Drawing.Point(1303, 40);
-            this.refresh.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.refresh.Location = new System.Drawing.Point(955, 35);
+            this.refresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(159, 50);
+            this.refresh.Size = new System.Drawing.Size(119, 43);
             this.refresh.TabIndex = 5;
             this.refresh.Text = "Làm mới";
             this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -162,10 +162,10 @@ namespace ManagementPhoneStore
             this.export.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.export.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.export.Image = ((System.Drawing.Image)(resources.GetObject("export.Image")));
-            this.export.Location = new System.Drawing.Point(424, 14);
-            this.export.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.export.Location = new System.Drawing.Point(318, 11);
+            this.export.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(94, 111);
+            this.export.Size = new System.Drawing.Size(70, 90);
             this.export.TabIndex = 2;
             this.export.Text = "XUẤT EXCEL";
             this.export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -176,11 +176,11 @@ namespace ManagementPhoneStore
             // 
             this.search_tk.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_tk.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.search_tk.Location = new System.Drawing.Point(1032, 40);
-            this.search_tk.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.search_tk.Location = new System.Drawing.Point(751, 35);
+            this.search_tk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.search_tk.Multiline = true;
             this.search_tk.Name = "search_tk";
-            this.search_tk.Size = new System.Drawing.Size(263, 50);
+            this.search_tk.Size = new System.Drawing.Size(198, 43);
             this.search_tk.TabIndex = 6;
             // 
             // import
@@ -192,10 +192,10 @@ namespace ManagementPhoneStore
             this.import.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.import.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.import.Image = ((System.Drawing.Image)(resources.GetObject("import.Image")));
-            this.import.Location = new System.Drawing.Point(526, 14);
-            this.import.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.import.Location = new System.Drawing.Point(394, 11);
+            this.import.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.import.Name = "import";
-            this.import.Size = new System.Drawing.Size(94, 111);
+            this.import.Size = new System.Drawing.Size(73, 90);
             this.import.TabIndex = 2;
             this.import.Text = "NHẬP EXCEL";
             this.import.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -211,10 +211,10 @@ namespace ManagementPhoneStore
             this.detail.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detail.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.detail.Image = ((System.Drawing.Image)(resources.GetObject("detail.Image")));
-            this.detail.Location = new System.Drawing.Point(322, 14);
-            this.detail.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.detail.Location = new System.Drawing.Point(242, 11);
+            this.detail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.detail.Name = "detail";
-            this.detail.Size = new System.Drawing.Size(94, 111);
+            this.detail.Size = new System.Drawing.Size(70, 90);
             this.detail.TabIndex = 2;
             this.detail.Text = "CHI TIẾT";
             this.detail.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -230,10 +230,10 @@ namespace ManagementPhoneStore
             this.delete.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.delete.Image = ((System.Drawing.Image)(resources.GetObject("delete.Image")));
-            this.delete.Location = new System.Drawing.Point(220, 14);
-            this.delete.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.delete.Location = new System.Drawing.Point(165, 11);
+            this.delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(94, 111);
+            this.delete.Size = new System.Drawing.Size(70, 90);
             this.delete.TabIndex = 2;
             this.delete.Text = "XÓA";
             this.delete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -249,10 +249,10 @@ namespace ManagementPhoneStore
             this.update.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.update.Image = ((System.Drawing.Image)(resources.GetObject("update.Image")));
-            this.update.Location = new System.Drawing.Point(118, 11);
-            this.update.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.update.Location = new System.Drawing.Point(88, 9);
+            this.update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(94, 111);
+            this.update.Size = new System.Drawing.Size(70, 90);
             this.update.TabIndex = 1;
             this.update.Text = "SỬA";
             this.update.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -269,10 +269,10 @@ namespace ManagementPhoneStore
             this.add.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.add.Image = ((System.Drawing.Image)(resources.GetObject("add.Image")));
-            this.add.Location = new System.Drawing.Point(16, 11);
-            this.add.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.add.Location = new System.Drawing.Point(12, 9);
+            this.add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(94, 111);
+            this.add.Size = new System.Drawing.Size(70, 90);
             this.add.TabIndex = 0;
             this.add.Text = "THÊM";
             this.add.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -282,12 +282,12 @@ namespace ManagementPhoneStore
             // 
             // TaiKhoanForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1474, 679);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(1114, 691);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listView1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TaiKhoanForm";
             this.Text = "TaiKhoan";
             this.Load += new System.EventHandler(this.TaiKhoanForm_Load);
@@ -312,6 +312,69 @@ namespace ManagementPhoneStore
             InitializeComponent();
             LoadDataToListView(tkService.GetTaiKhoanAll() );
             add_Event();
+            listView1.OwnerDraw = true;
+            listView1.DrawColumnHeader += listView_DrawColumnHeader;
+            listView1.DrawSubItem += listView_DrawSubItem;
+            tk_prop.SelectedIndex = 0;
+            tk_prop.MeasureItem += new MeasureItemEventHandler(ComboBox_MeasureItem);
+            tk_prop.DrawItem += new DrawItemEventHandler(ComboBox_DrawItem);
+        }
+
+        private void ComboBox_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            e.ItemHeight = 36;  // Điều chỉnh chiều cao mục của ComboBox
+        }
+
+        private void ComboBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            // Lấy ComboBox đang được vẽ
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox != null && e.Index >= 0)
+            {
+                string itemText = comboBox.Items[e.Index].ToString();
+
+                StringFormat stringFormat = new StringFormat()
+                {
+                    LineAlignment = StringAlignment.Center
+                };
+
+                if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                {
+                    e.Graphics.FillRectangle(Brushes.CornflowerBlue, e.Bounds);
+                    e.Graphics.DrawString(itemText, e.Font, Brushes.White, e.Bounds, stringFormat);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(Brushes.White, e.Bounds);
+                    e.Graphics.DrawString(itemText, e.Font, Brushes.Black, e.Bounds, stringFormat);
+                }
+            }
+        }
+        private void listView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            using (Brush headerBrush = new SolidBrush(Color.FromArgb(235, 235, 235)))
+            {
+                e.Graphics.FillRectangle(headerBrush, e.Bounds);
+            }
+
+            using (Font customFont = new Font("Arial", 9, FontStyle.Bold))
+            {
+                TextFormatFlags flags = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter;
+                TextRenderer.DrawText(e.Graphics, e.Header.Text, customFont, e.Bounds, Color.Black, flags);
+            }
+
+            if (e.ColumnIndex < listView1.Columns.Count - 1)
+            {
+                using (Pen pen = new Pen(Color.LightGray, 1))
+                {
+                    e.Graphics.DrawLine(pen, e.Bounds.Right - 1, e.Bounds.Top, e.Bounds.Right - 1, e.Bounds.Bottom);
+                }
+            }
+        }
+
+        private void listView_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
         private void search_tk_TextChanged(object sender, EventArgs e)
         {

@@ -52,5 +52,15 @@ namespace ManagementPhoneStore
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void add_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

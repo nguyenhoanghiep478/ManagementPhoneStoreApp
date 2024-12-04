@@ -29,6 +29,44 @@ namespace GUI
             this.nhomQuyens = taiKhoanService.GetNhomQuyen(manv);
             this.authors = NhomQuyenService.GetChiTietQuyen((int)nhomQuyens.Manhomquyen);
             handleAuthor();
+            button1.BackColor = System.Drawing.Color.AliceBlue;
+            button1.Click += Button_Click;
+            button2.Click += Button_Click;
+            button3.Click += Button_Click;
+            button4.Click += Button_Click;
+            button5.Click += Button_Click;
+            button6.Click += Button_Click;
+            button7.Click += Button_Click;
+            button8.Click += Button_Click;
+            button9.Click += Button_Click;
+            button10.Click += Button_Click;
+            button11.Click += Button_Click;
+            button12.Click += Button_Click;
+            button13.Click += Button_Click;
+        }
+
+        private void SetButtonColors(Button selectedButton, params Button[] buttons)
+        {
+            System.Drawing.Color defaultColor = System.Drawing.SystemColors.ControlLightLight;
+
+            System.Drawing.Color selectedColor = System.Drawing.SystemColors.GradientInactiveCaption;
+
+            foreach (var button in buttons)
+            {
+                if (button == selectedButton)
+                {
+                    button.BackColor = selectedColor;
+                }
+                else
+                {
+                    button.BackColor = defaultColor;
+                }
+            }
+        }
+        private void Button_Click(object sender, EventArgs e)
+        {
+            // Gọi hàm đổi màu khi nhấn nút
+            SetButtonColors(sender as Button, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13);
         }
 
         private void handleAuthor()

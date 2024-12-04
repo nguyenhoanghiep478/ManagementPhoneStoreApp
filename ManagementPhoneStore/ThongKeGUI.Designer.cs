@@ -32,79 +32,51 @@ namespace ManagementPhoneStore
         private void InitializeComponent()
         {
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tonKhoGUI = new ManagementPhoneStore.ThongKeTonKho();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.thongKeDoanhThu = new ManagementPhoneStore.ThongKeDoanhThu();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.thongQuanGUI = new ManagementPhoneStore.ThongKeTongQuanGUI();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.thongQuanGUI = new ManagementPhoneStore.ThongKeTongQuanGUI();
+            this.tonKhoGUI = new ManagementPhoneStore.ThongKeTonKho();
+            this.thongKeDoanhThu = new ManagementPhoneStore.ThongKeDoanhThu();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            this.FormBorderStyle = FormBorderStyle.None;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tonKhoGUI);
             this.tabPage2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(274, 224);
+            this.tabPage2.Size = new System.Drawing.Size(1094, 603);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thống kê tồn kho";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            // 
-            // tonKhoGUI
-            // 
-            this.tonKhoGUI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tonKhoGUI.Location = new System.Drawing.Point(0, 0);
-            this.tonKhoGUI.Margin = new System.Windows.Forms.Padding(4);
-            this.tonKhoGUI.Name = "tonKhoGUI";
-            this.tonKhoGUI.Size = new System.Drawing.Size(274, 224);
-            this.tonKhoGUI.TabIndex = 0;
-            this.tonKhoGUI.Load += new System.EventHandler(this.tonKhoGUI_Load);
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.thongKeDoanhThu);
             this.tabPage3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(274, 224);
+            this.tabPage3.Size = new System.Drawing.Size(1094, 603);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "Thống kê doanh thu";
-            // 
-            // thongKeDoanhThu
-            // 
-            this.thongKeDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thongKeDoanhThu.Location = new System.Drawing.Point(0, 0);
-            this.thongKeDoanhThu.Margin = new System.Windows.Forms.Padding(4);
-            this.thongKeDoanhThu.Name = "thongKeDoanhThu";
-            this.thongKeDoanhThu.Size = new System.Drawing.Size(274, 224);
-            this.thongKeDoanhThu.TabIndex = 0;
-            this.thongKeDoanhThu.Load += new System.EventHandler(this.thongKeDoanhThu_Load);
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.thongQuanGUI);
             this.tabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1462, 745);
+            this.tabPage1.Size = new System.Drawing.Size(1094, 603);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thống kê tổng quan";
-            // 
-            // thongQuanGUI
-            // 
-            this.thongQuanGUI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thongQuanGUI.Location = new System.Drawing.Point(0, 0);
-            this.thongQuanGUI.Margin = new System.Windows.Forms.Padding(4);
-            this.thongQuanGUI.Name = "thongQuanGUI";
-            this.thongQuanGUI.Size = new System.Drawing.Size(1462, 745);
-            this.thongQuanGUI.TabIndex = 0;
-            this.thongQuanGUI.Load += new System.EventHandler(this.ThongKe_Load);
             // 
             // tabControl1
             // 
@@ -112,18 +84,51 @@ namespace ManagementPhoneStore
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = this.ClientSize;
             this.tabControl1.TabIndex = 0;
             // 
+            // thongQuanGUI
+            // 
+            this.thongQuanGUI.BackColor = System.Drawing.Color.AliceBlue;
+            this.thongQuanGUI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thongQuanGUI.Location = new System.Drawing.Point(0, 0);
+            this.thongQuanGUI.Name = "thongQuanGUI";
+            this.thongQuanGUI.Size = new System.Drawing.Size(1094, 603);
+            this.thongQuanGUI.TabIndex = 0;
+            this.thongQuanGUI.Load += new System.EventHandler(this.ThongKe_Load);
+            // 
+            // tonKhoGUI
+            // 
+            this.tonKhoGUI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tonKhoGUI.Location = new System.Drawing.Point(0, 0);
+            this.tonKhoGUI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tonKhoGUI.Name = "tonKhoGUI";
+            this.tonKhoGUI.Size = new System.Drawing.Size(1094, 603);
+            this.tonKhoGUI.TabIndex = 0;
+            this.tonKhoGUI.Load += new System.EventHandler(this.tonKhoGUI_Load);
+            // 
+            // thongKeDoanhThu
+            // 
+            this.thongKeDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thongKeDoanhThu.Location = new System.Drawing.Point(0, 0);
+            this.thongKeDoanhThu.Name = "thongKeDoanhThu";
+            this.thongKeDoanhThu.Size = new System.Drawing.Size(1094, 603);
+            this.thongKeDoanhThu.TabIndex = 0;
+            this.thongKeDoanhThu.Load += new System.EventHandler(this.thongKeDoanhThu_Load);
+            // 
             // ThongKeGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1470, 774);
+            this.ClientSize = new System.Drawing.Size(1102, 629);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ThongKeGUI";
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);

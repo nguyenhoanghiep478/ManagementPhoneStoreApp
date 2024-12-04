@@ -20,6 +20,7 @@ namespace ManagementPhoneStore
         public ImeiScannerDialog()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void ImeiScannerDialog_Load(object sender, EventArgs e)

@@ -64,10 +64,10 @@ namespace ManagementPhoneStore
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 96);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Location = new System.Drawing.Point(12, 65);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(778, 249);
+            this.listView1.Size = new System.Drawing.Size(771, 340);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -76,63 +76,63 @@ namespace ManagementPhoneStore
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã nhân viên";
-            this.columnHeader1.Width = 150;
+            this.columnHeader1.Width = 100;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Họ tên";
-            this.columnHeader2.Width = 200;
+            this.columnHeader2.Width = 100;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Giới tính";
-            this.columnHeader3.Width = 150;
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Ngày sinh";
-            this.columnHeader4.Width = 150;
+            this.columnHeader4.Width = 100;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "SDT";
-            this.columnHeader5.Width = 150;
+            this.columnHeader5.Width = 120;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Email";
-            this.columnHeader6.Width = 234;
+            this.columnHeader6.Width = 245;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 15);
+            this.label1.Location = new System.Drawing.Point(9, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 35);
+            this.label1.Size = new System.Drawing.Size(76, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tìm kiếm";
             // 
             // search
             // 
             this.search.Location = new System.Drawing.Point(89, 15);
-            this.search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.search.Margin = new System.Windows.Forms.Padding(2);
             this.search.Multiline = true;
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(570, 36);
+            this.search.Size = new System.Drawing.Size(555, 36);
             this.search.TabIndex = 2;
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             // 
             // select
             // 
             this.select.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.select.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.select.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.select.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.select.ForeColor = System.Drawing.SystemColors.Window;
-            this.select.Location = new System.Drawing.Point(673, 15);
-            this.select.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.select.Location = new System.Drawing.Point(648, 15);
+            this.select.Margin = new System.Windows.Forms.Padding(2);
             this.select.Name = "select";
-            this.select.Size = new System.Drawing.Size(113, 35);
+            this.select.Size = new System.Drawing.Size(135, 36);
             this.select.TabIndex = 3;
             this.select.Text = "Chọn nhân viên";
             this.select.UseVisualStyleBackColor = false;
@@ -148,9 +148,10 @@ namespace ManagementPhoneStore
             this.Controls.Add(this.search);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ListNhanVien";
-            this.Text = "NhaCungCap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nhân viên";
             this.Load += new System.EventHandler(this.NhaCungCap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

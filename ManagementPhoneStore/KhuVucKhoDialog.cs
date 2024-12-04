@@ -24,14 +24,18 @@ namespace ManagementPhoneStore
         public KhuVucKhoDialog()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         public KhuVucKhoDialog(KhuVucKho khuVucKho)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.kvk = khuVucKho;
             this.tenKhuVucKho.Text = kvk.Tenkhuvuc;
             this.ghichu.Text = kvk.Ghichu;
+            this.label1.Text = "Sửa khu vực kho";
+            this.add.Text = "Sửa khu vực kho";
         }
 
         private void KhuVucKhoDialog_Load(object sender, EventArgs e)

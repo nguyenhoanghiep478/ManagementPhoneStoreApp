@@ -41,5 +41,10 @@ namespace ManagementPhoneStore
         {
 
         }
+
+        private void ncc_prop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,9 +36,6 @@ namespace ManagementPhoneStore
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHangForm));
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,11 +53,11 @@ namespace ManagementPhoneStore
             // label1
             // 
             this.label1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1083, 45);
+            this.label1.Size = new System.Drawing.Size(1083, 67);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm nhà cung cấp";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,16 +66,17 @@ namespace ManagementPhoneStore
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 57);
+            this.label2.Location = new System.Drawing.Point(12, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(189, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên  nhà cung cấp";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(542, 57);
+            this.label3.Location = new System.Drawing.Point(542, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 23);
             this.label3.TabIndex = 2;
@@ -88,7 +86,7 @@ namespace ManagementPhoneStore
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 166);
+            this.label4.Location = new System.Drawing.Point(12, 179);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(189, 23);
             this.label4.TabIndex = 3;
@@ -97,7 +95,7 @@ namespace ManagementPhoneStore
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(542, 166);
+            this.label5.Location = new System.Drawing.Point(542, 179);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(189, 23);
             this.label5.TabIndex = 4;
@@ -106,37 +104,37 @@ namespace ManagementPhoneStore
             // 
             // ten
             // 
-            this.ten.Location = new System.Drawing.Point(18, 94);
+            this.ten.Location = new System.Drawing.Point(12, 107);
             this.ten.Multiline = true;
             this.ten.Name = "ten";
-            this.ten.Size = new System.Drawing.Size(490, 52);
+            this.ten.Size = new System.Drawing.Size(496, 46);
             this.ten.TabIndex = 5;
             this.ten.TextChanged += new System.EventHandler(this.ten_TextChanged);
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(17, 201);
+            this.email.Location = new System.Drawing.Point(12, 205);
             this.email.Multiline = true;
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(490, 56);
+            this.email.Size = new System.Drawing.Size(496, 46);
             this.email.TabIndex = 6;
             this.email.TextChanged += new System.EventHandler(this.email_TextChanged);
             // 
             // diachi
             // 
-            this.diachi.Location = new System.Drawing.Point(545, 94);
+            this.diachi.Location = new System.Drawing.Point(545, 107);
             this.diachi.Multiline = true;
             this.diachi.Name = "diachi";
-            this.diachi.Size = new System.Drawing.Size(526, 52);
+            this.diachi.Size = new System.Drawing.Size(526, 46);
             this.diachi.TabIndex = 7;
             this.diachi.TextChanged += new System.EventHandler(this.diachi_TextChanged);
             // 
             // sodienthoai
             // 
-            this.sodienthoai.Location = new System.Drawing.Point(545, 201);
+            this.sodienthoai.Location = new System.Drawing.Point(545, 205);
             this.sodienthoai.Multiline = true;
             this.sodienthoai.Name = "sodienthoai";
-            this.sodienthoai.Size = new System.Drawing.Size(526, 56);
+            this.sodienthoai.Size = new System.Drawing.Size(526, 46);
             this.sodienthoai.TabIndex = 8;
             this.sodienthoai.TextChanged += new System.EventHandler(this.sodienthoai_TextChanged);
             // 
@@ -144,25 +142,28 @@ namespace ManagementPhoneStore
             // 
             this.add.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add.ForeColor = System.Drawing.SystemColors.Window;
-            this.add.Location = new System.Drawing.Point(359, 269);
+            this.add.Location = new System.Drawing.Point(359, 275);
             this.add.Margin = new System.Windows.Forms.Padding(0);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(149, 54);
+            this.add.Size = new System.Drawing.Size(149, 38);
             this.add.TabIndex = 9;
-            this.add.Text = "THÊM ĐƠN VỊ";
+            this.add.Text = "Thêm nhà cung cấp";
             this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.add_Click_1);
             // 
             // cancel
             // 
-            this.cancel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.cancel.BackColor = System.Drawing.Color.IndianRed;
             this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel.ForeColor = System.Drawing.SystemColors.Window;
-            this.cancel.Location = new System.Drawing.Point(545, 269);
+            this.cancel.Location = new System.Drawing.Point(545, 275);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(158, 54);
+            this.cancel.Size = new System.Drawing.Size(149, 38);
             this.cancel.TabIndex = 10;
-            this.cancel.Text = "HỦY BỎ";
+            this.cancel.Text = "Hủy bỏ";
             this.cancel.UseVisualStyleBackColor = false;
             this.cancel.Click += new System.EventHandler(this.cancel_Click_1);
             // 
@@ -170,23 +171,22 @@ namespace ManagementPhoneStore
             // 
             this.update.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.update.ForeColor = System.Drawing.SystemColors.Window;
-            this.update.Location = new System.Drawing.Point(359, 269);
+            this.update.Location = new System.Drawing.Point(359, 275);
             this.update.Margin = new System.Windows.Forms.Padding(0);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(149, 54);
+            this.update.Size = new System.Drawing.Size(149, 38);
             this.update.TabIndex = 11;
-            this.update.Text = "Sủa đơn vị";
+            this.update.Text = "Sửa nhà cung cấp";
             this.update.UseVisualStyleBackColor = false;
             // 
             // NhaCungCapDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1083, 335);
-            this.Controls.Add(this.add);
-            this.Controls.Add(this.update);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.sodienthoai);
             this.Controls.Add(this.diachi);
@@ -197,7 +197,10 @@ namespace ManagementPhoneStore
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.update);
             this.Name = "NhaCungCapDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.NhaCungCapDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
