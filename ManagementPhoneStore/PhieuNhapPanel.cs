@@ -56,7 +56,6 @@ namespace GUI
             SetPlaceholder(textBox1, "Search...");
 
             listPhieu = pnService.GetAll();
-            dateStart.Value = DateTime.Now;
             dateEnd.Value = DateTime.Now;
             LoadPhieuNhapTable1(listPhieu);
             LoadEmployeeDropdown();
@@ -231,7 +230,7 @@ namespace GUI
                 int ncc = (int)((comboBox2.SelectedIndex == 0) ? 0 : nccService.GetByIndex(comboBox2.SelectedIndex - 1).Manhacungcap);
                 int nv = (int)((comboBox3.SelectedIndex == 0) ? 0 : nvService.GetByIndex(comboBox3.SelectedIndex - 1).Manv);
                 string input = !string.IsNullOrEmpty(textBox1.Text) ? textBox1.Text : "";
-
+                input = input.Equals("Search...") ? "" : input;
 
                 DateTime timeStart = dateStart.Value;
 
@@ -282,8 +281,8 @@ namespace GUI
         }
         public void ResetForm(object sender, EventArgs e)
         {
-            dateStart.Value = DateTime.Now.AddDays(-1).AddHours(-1); ;
-            dateEnd.Value = DateTime.Now.AddDays(-1);
+            dateStart.Value = new DateTime(2023, 1, 1, 0, 0, 0, 0); 
+            dateEnd.Value = DateTime.Now;
 
 
             dateS.Text = "";
@@ -458,5 +457,34 @@ namespace GUI
             }
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

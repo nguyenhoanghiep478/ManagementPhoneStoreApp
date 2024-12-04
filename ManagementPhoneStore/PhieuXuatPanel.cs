@@ -52,7 +52,7 @@ namespace GUI
 
             listPhieu = pxService.GetAll();
             var khachList = khService.getAll();
-            dateStart.Value = DateTime.Now;
+         
             dateEnd.Value = DateTime.Now;
             LoadphieuXuatTable1(listPhieu);
             LoadKhacHangDropdown();
@@ -425,6 +425,21 @@ namespace GUI
         }
 
         private void detail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

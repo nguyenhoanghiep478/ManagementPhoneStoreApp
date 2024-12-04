@@ -57,11 +57,11 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.resetbutton = new System.Windows.Forms.Button();
+            this.export = new System.Windows.Forms.Button();
             this.addbutton = new System.Windows.Forms.Button();
             this.detail = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
-            this.export = new System.Windows.Forms.Button();
-            this.resetbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -178,6 +178,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(250, 34);
             this.textBox2.TabIndex = 12;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dateStart
             // 
@@ -188,7 +189,7 @@
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(13, 22);
             this.dateStart.TabIndex = 11;
-            this.dateStart.Value = new System.DateTime(2024, 11, 6, 21, 53, 35, 0);
+            this.dateStart.Value = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             // 
             // Column4
             // 
@@ -273,6 +274,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(952, 509);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column2
             // 
@@ -295,6 +297,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(273, 28);
             this.comboBox3.TabIndex = 9;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -308,6 +311,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(273, 28);
             this.comboBox2.TabIndex = 8;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -354,6 +358,7 @@
             this.comboBox1.Size = new System.Drawing.Size(135, 28);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.Text = "Tất cả";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -363,6 +368,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(433, 34);
             this.textBox1.TabIndex = 8;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -395,6 +401,41 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1401, 736);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // resetbutton
+            // 
+            this.resetbutton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resetbutton.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetbutton.Image = ((System.Drawing.Image)(resources.GetObject("resetbutton.Image")));
+            this.resetbutton.Location = new System.Drawing.Point(1141, 52);
+            this.resetbutton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.resetbutton.Name = "resetbutton";
+            this.resetbutton.Size = new System.Drawing.Size(206, 123);
+            this.resetbutton.TabIndex = 27;
+            this.resetbutton.Text = "Làm mới";
+            this.resetbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.resetbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.resetbutton.UseVisualStyleBackColor = true;
+            // 
+            // export
+            // 
+            this.export.AutoSize = true;
+            this.export.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.export.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.export.FlatAppearance.BorderSize = 0;
+            this.export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.export.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.export.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.export.Image = ((System.Drawing.Image)(resources.GetObject("export.Image")));
+            this.export.Location = new System.Drawing.Point(403, 52);
+            this.export.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(118, 123);
+            this.export.TabIndex = 25;
+            this.export.Text = "XUẤT EXCEL";
+            this.export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.export.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.export.UseVisualStyleBackColor = true;
             // 
             // addbutton
             // 
@@ -455,41 +496,6 @@
             this.cancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.cancel.UseVisualStyleBackColor = true;
-            // 
-            // export
-            // 
-            this.export.AutoSize = true;
-            this.export.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.export.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.export.FlatAppearance.BorderSize = 0;
-            this.export.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.export.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.export.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.export.Image = ((System.Drawing.Image)(resources.GetObject("export.Image")));
-            this.export.Location = new System.Drawing.Point(403, 52);
-            this.export.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(118, 123);
-            this.export.TabIndex = 25;
-            this.export.Text = "XUẤT EXCEL";
-            this.export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.export.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.export.UseVisualStyleBackColor = true;
-            // 
-            // resetbutton
-            // 
-            this.resetbutton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resetbutton.Font = new System.Drawing.Font("Calibri Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetbutton.Image = ((System.Drawing.Image)(resources.GetObject("resetbutton.Image")));
-            this.resetbutton.Location = new System.Drawing.Point(1141, 52);
-            this.resetbutton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.resetbutton.Name = "resetbutton";
-            this.resetbutton.Size = new System.Drawing.Size(206, 123);
-            this.resetbutton.TabIndex = 27;
-            this.resetbutton.Text = "Làm mới";
-            this.resetbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.resetbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.resetbutton.UseVisualStyleBackColor = true;
             // 
             // PhieuNhapPanel
             // 

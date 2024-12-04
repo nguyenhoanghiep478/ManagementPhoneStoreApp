@@ -157,14 +157,15 @@ namespace Service
         }
 
         public List<PhieuNhap> FilterPhieuNhap(
-       int type,
-       string input,
-       int mancc,
-       int manv,
-       DateTime time_start,
-       DateTime time_end,
-       string price_minnn,
-       string price_maxxx)
+               int type,
+               string input,
+               int mancc,
+               int manv,
+               DateTime time_start,
+               DateTime time_end,
+               string price_minnn,
+               string price_maxxx
+        )
         {
             // Parse price range, setting defaults if fields are empty
             long price_min = !string.IsNullOrEmpty(price_minnn) ? long.Parse(price_minnn) : 0L;

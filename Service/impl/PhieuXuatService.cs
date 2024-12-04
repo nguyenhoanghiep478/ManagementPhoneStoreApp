@@ -5,6 +5,7 @@ using Service.impl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Service
 {
@@ -139,9 +140,11 @@ namespace Service
             foreach (var phieuXuat in allPhieuXuat)
             {
                 bool match = false;
-
+                long price_min_long = !string.IsNullOrEmpty(price_min) ? long.Parse(price_min) : 0L;
+                long price_max_long = !string.IsNullOrEmpty(price_max) ? long.Parse(price_max) : long.MaxValue;
                 switch (type)
                 {
+                    
                     case 0:
                         if (phieuXuat.Maphieuxuat.ToString().Contains(input) ||
                             _nvService.GetNameById((int)phieuXuat.Nguoitaophieuxuat).ToLower().Contains(input) ||
@@ -175,19 +178,15 @@ namespace Service
 
                 if (match && (makh == 0 || phieuXuat.Makh == makh)
                     && (manv == 0 || phieuXuat.Nguoitaophieuxuat == manv)
-                    && (phieuXuat.Thoigian >= time_s && phieuXuat.Thoigian <= time_e))
+                    && (phieuXuat.Thoigian >= time_s && phieuXuat.Thoigian <= time_e
+                    && phieuXuat.Tongtien >= price_min_long
+                    && phieuXuat.Tongtien <= price_max_long
+                    )
+                    )
                 {
-                    if (decimal.TryParse(price_min, out decimal minPrice) &&
-                        decimal.TryParse(price_max, out decimal maxPrice) &&
-                        phieuXuat.Tongtien >= minPrice && phieuXuat.Tongtien <= maxPrice)
-                    {
-                        result.Add(phieuXuat);
-                    }
-                    else if (string.IsNullOrEmpty(price_min) && string.IsNullOrEmpty(price_max))
-                    {
-                        result.Add(phieuXuat);
-                    }
+                    result.Add(phieuXuat);
                 }
+              
             }
 
             return result;
