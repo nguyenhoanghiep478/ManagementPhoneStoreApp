@@ -330,6 +330,7 @@ namespace GUI
 
         public List<ChiTietSanPham> FindMaPhienBan(int mapb, Dictionary<int, List<ChiTietSanPham>> chitietsanpham)
         {
+            
             if (chitietsanpham.ContainsKey(mapb))
             {
                 return chitietsanpham[mapb];
@@ -768,6 +769,11 @@ namespace GUI
         }
 
         private void txtDongia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNhaphang_Click(object sender, EventArgs e)
         {
 
         }

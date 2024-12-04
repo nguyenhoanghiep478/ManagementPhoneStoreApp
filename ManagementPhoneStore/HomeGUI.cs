@@ -27,7 +27,7 @@ namespace GUI
             label2.Text=NhomQuyenService.getNameByMA(manv);
             panelContainer.AutoSize = false;
             this.nhomQuyens = taiKhoanService.GetNhomQuyen(manv);
-            this.authors = NhomQuyenService.GetChiTietQuyen(nhomQuyens.Tennhomquyen);
+            this.authors = NhomQuyenService.GetChiTietQuyen((int)nhomQuyens.Manhomquyen);
             handleAuthor();
         }
 
@@ -237,7 +237,7 @@ namespace GUI
         {
             ThongKeGUI thongkeForm = new ThongKeGUI();
             thongkeForm.Dock = DockStyle.Fill;
-           
+            thongkeForm.TopLevel = false;
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(thongkeForm);
             thongkeForm.Show();

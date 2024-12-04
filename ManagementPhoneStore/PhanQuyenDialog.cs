@@ -41,8 +41,8 @@ namespace ManagementPhoneStore
             foreach (var chucnangs in chucnangs)
             {
                
-                List<ChiTietQuyen> ctquyen = this.nhomQuyenService.GetChiTietQuyen(nhomQuyen.Tennhomquyen);
-                List<ChiTietQuyen> filterHanhDong = ctquyen.Where(ct => ct.MaChucNang.Equals(chucnangs.TenChucNang)).ToList();
+                List<ChiTietQuyen> ctquyen = this.nhomQuyenService.GetChiTietQuyen((int)nhomQuyen.Manhomquyen);
+                List<ChiTietQuyen> filterHanhDong = ctquyen.Where(ct => ct.MaChucNang.Equals(chucnangs.MaChucNang)).ToList();
 
                 Boolean isHaveView = false,isHaveCreate = false,isHaveUpdate = false,isHaveDelete = false;
                 
@@ -54,7 +54,7 @@ namespace ManagementPhoneStore
                     isHaveDelete = filterHanhDong.Any(ct => ct.HanhDong.Equals("delete"));
                 }
 
-                this.dgvPermissions.Rows.Add(chucnangs.TenChucNang, isHaveView, isHaveCreate, isHaveUpdate, isHaveDelete);
+                this.dgvPermissions.Rows.Add(chucnangs.MaChucNang, isHaveView, isHaveCreate, isHaveUpdate, isHaveDelete);
             }
         }
 
@@ -65,7 +65,7 @@ namespace ManagementPhoneStore
             this.dgvPermissions.Rows.Clear();
             foreach (var chuc in chucnangs)
             {
-                this.dgvPermissions.Rows.Add(chuc.TenChucNang, false, false, false, false);
+                this.dgvPermissions.Rows.Add(chuc.MaChucNang, false, false, false, false);
             }
         }
 

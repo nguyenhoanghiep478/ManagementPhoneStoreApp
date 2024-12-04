@@ -14,9 +14,9 @@ namespace Service
         bool Add(string tennhomquyen, List<ChiTietQuyen> ctquyen);
         bool Update(NhomQuyen nhomquyen, List<ChiTietQuyen> chitietquyen, int index,string NewName);
         bool Delete(NhomQuyen nhomquyen);
-        List<ChiTietQuyen> GetChiTietQuyen(string manhomquyen);
+        List<ChiTietQuyen> GetChiTietQuyen(int manhomquyen);
         bool AddChiTietQuyen(List<ChiTietQuyen> listctquyen);
-        bool RemoveChiTietQuyen(string manhomquyen);
+        bool RemoveChiTietQuyen(int manhomquyen);
         bool CheckPermission(int maquyen, string chucnang, string hanhdong);
         List<NhomQuyen> Search(string type,string text);
 

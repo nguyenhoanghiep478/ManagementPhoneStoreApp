@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ManagementPhoneStore
 {
-    public partial class ThongKeGUI : UserControl
+    public partial class ThongKeGUI : Form
     {
         public ThongKeGUI()
         {
@@ -40,7 +40,6 @@ namespace ManagementPhoneStore
         }
         private void ThongKe_Load(object sender, EventArgs e)
         {
-            
             this.thongQuanGUI.Dock = DockStyle.Fill;
         }
     }

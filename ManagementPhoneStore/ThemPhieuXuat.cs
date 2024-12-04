@@ -12,6 +12,7 @@ using DocumentFormat.OpenXml.Drawing.Charts;
 using DAO.DAO.impl;
 
 using DAO.DAO;
+using System.Linq;
 namespace GUI
 {
 
@@ -30,7 +31,6 @@ namespace GUI
         private ChiTietSanPhamService ctspBus = ChiTietSanPhamService.Instance;
         private ChiTietSanPhamDAO ctspdao = new ChiTietSanPhamDAO();
         private Dictionary<int, List<ChiTietSanPham>> chitietsanpham = new Dictionary<int, List<ChiTietSanPham>>();
-
         private List<ChiTietPhieuXuat> chitietpx = new List<ChiTietPhieuXuat>();
   
         private int rowPhieuSelect = -1;
@@ -71,7 +71,7 @@ namespace GUI
                 if (CheckInfo())
                 {
                     GetInfoChiTietPhieu();
-
+                   
 
                     LoadDataTableChiTietPhieu(chitietpx);
                     ActionBtn("update");
@@ -95,7 +95,10 @@ namespace GUI
                         {
                             ctSpDel.Add(chiTietSanPham);
                         }
+
+                        
                     }
+                    chitietsanpham.Remove(maphienban);
                     chitietpx.RemoveAt(index);
                     ctsp = ctSpDel;
                     LoadDataTableChiTietPhieu(chitietpx);
@@ -152,7 +155,6 @@ namespace GUI
                 int index = cbxCauhinh.SelectedIndex;
 
                 if (index >= 0 && index < ch.Count)                {
-
                     txtDongia.Text = ch[index].GiaNhap.ToString();
                     soluong.Text = ch[index].SoLuongTon.ToString();
                     var ctp = CheckTonTai();
@@ -231,7 +233,8 @@ namespace GUI
             for (int i = 0; i < size; i++)
             {
                 PhienBanSanPham pb = pbspService.GetByMaPhienBan(chitietpx[i].Maphienbansp);
-
+                List<ChiTietSanPham> chiTietSanPhams = GetListChiTietSanPham();
+                chitietsanpham.Add(pb.MaPhienBanSanPham,chiTietSanPhams);
                 dataGridView2.Rows.Add(
                     i + 1,
                     pb.MaSanPham,
@@ -401,6 +404,30 @@ namespace GUI
             }
 
             return imei.Length;
+        }
+
+        public List<ChiTietSanPham> GetListChiTietSanPham()
+        {
+           
+            int maphienbansp = (int)ch[cbxCauhinh.SelectedIndex].MaPhienBanSanPham;
+            PhienBanSanPham phienBanSanPham = pbspService.GetByMaPhienBan(maphienbansp);
+            List<ChiTietSanPham> result = new List<ChiTietSanPham>();
+            string[] arrImei = textAreaImei.Text.Split('\n');
+
+            foreach (var imei in arrImei)
+            {
+                if (string.IsNullOrEmpty(imei))
+                {
+                    continue;
+                }
+
+                ChiTietSanPham ctsp = ctspBus.findByPhienBanAndImeiAndMaSp(imei, (int)(phienBanSanPham.MaSanPham), maphienbansp).Where(item => item.MaImei.Equals(imei)).First();
+                ctsp.MaPhieuXuat = maPhieuXuat;
+                ctsp.TinhTrang = false;
+                result.Add(ctsp);
+            }
+
+            return result;
         }
 
 
@@ -686,6 +713,16 @@ namespace GUI
         }
 
         private void textAreaImei_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delete_Click(object sender, EventArgs e)
         {
 
         }

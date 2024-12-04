@@ -21,7 +21,7 @@ namespace Service.impl
         private ChiTietSanPhamService()
         {
             chiTietSanPhamDao = new ChiTietSanPhamDAO();
-            pbspService = new PhienBanSanPhamService(); // Initialize IPhienBanSanPhamService implementation
+            pbspService = new PhienBanSanPhamService();
             listpbsp = pbspService.GetAll(0);
             listctsp = new List<ChiTietSanPham>();
         }

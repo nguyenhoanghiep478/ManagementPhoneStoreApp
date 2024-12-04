@@ -17,7 +17,7 @@ namespace Service.impl
         public static NhomQuyenService Instace => instance.Value; 
         private  ChiTietQuyenDAO ChiTietQuyenDAO = new ChiTietQuyenDAO();
         private NhomQuyenDAO NhomQuyenDAO = new NhomQuyenDAO();
-        private Dictionary<string, List<ChiTietQuyen>> _chitietquyen = new Dictionary<string, List<ChiTietQuyen>>();
+        private Dictionary<int, List<ChiTietQuyen>> _chitietquyen = new Dictionary<int, List<ChiTietQuyen>>();
         
       
         public List<NhomQuyen> GetAll()
@@ -33,7 +33,7 @@ namespace Service.impl
                 foreach (var nhomquyen in _nhomquyen)
                 {
                     List<ChiTietQuyen> quyenCuaNhomQuyen = allChiTietQuyen.Where(ctquyen => ctquyen.MaNhomQuyen.Equals(nhomquyen.Manhomquyen)).ToList();
-                    _chitietquyen.Add(nhomquyen.Tennhomquyen, quyenCuaNhomQuyen);
+                    _chitietquyen.Add((int)nhomquyen.Manhomquyen, quyenCuaNhomQuyen);
                 }
             }
         }
@@ -74,9 +74,9 @@ namespace Service.impl
           
             NhomQuyen nhomQuyenOld = _nhomquyen[index];
             handleUpdateChiTietQuyenForNhomQuyen(nhomQuyenOld, chitietquyen);
-            List<ChiTietQuyen> ctQuyen = _chitietquyen[nhomquyen.Tennhomquyen];
-            _chitietquyen.Remove(nhomquyen.Tennhomquyen);
-            _chitietquyen.Add(newName, ctQuyen);
+            List<ChiTietQuyen> ctQuyen = _chitietquyen[(int)nhomquyen.Manhomquyen];
+            _chitietquyen.Remove((int)nhomquyen.Manhomquyen);
+            _chitietquyen.Add((int)nhomquyen.Manhomquyen, ctQuyen);
 
             nhomquyen.Tennhomquyen = newName;
             this.NhomQuyenDAO.update(nhomquyen);
@@ -86,7 +86,7 @@ namespace Service.impl
                 if (chitietquyen != null)
                 {
                    
-                    _chitietquyen[nhomquyen.Manhomquyen.ToString()] = chitietquyen;
+                    _chitietquyen[(int)nhomquyen.Manhomquyen] = chitietquyen;
                 }
                 return true;
             }
@@ -96,16 +96,16 @@ namespace Service.impl
 
         public void handleUpdateChiTietQuyenForNhomQuyen(NhomQuyen nhomQuyen,List<ChiTietQuyen> chiTietQuyens)
         {
-            List<ChiTietQuyen> currentQuyen = _chitietquyen[nhomQuyen.Tennhomquyen];
+            List<ChiTietQuyen> currentQuyen = _chitietquyen[(int)nhomQuyen.Manhomquyen];
            
-            handleUpdateCtQuyenInNhomQuyen(currentQuyen, chiTietQuyens,nhomQuyen.Tennhomquyen);
+            handleUpdateCtQuyenInNhomQuyen(currentQuyen, chiTietQuyens,(int)nhomQuyen.Manhomquyen);
         }
 
-        private void handleUpdateCtQuyenInNhomQuyen(List<ChiTietQuyen> currentQuyen , List<ChiTietQuyen> updatedQuyen,String tenNhomQuyen)
+        private void handleUpdateCtQuyenInNhomQuyen(List<ChiTietQuyen> currentQuyen , List<ChiTietQuyen> updatedQuyen,int maNhomQuyen)
         {
             if(updatedQuyen.Count == 0)
             {
-                removeChiTietQuyen(currentQuyen, tenNhomQuyen);
+                removeChiTietQuyen(currentQuyen, maNhomQuyen);
             }
             else 
             {
@@ -120,7 +120,7 @@ namespace Service.impl
             
                 if(removed.Count > 0)
                 {
-                    removeChiTietQuyen(removed, tenNhomQuyen);
+                    removeChiTietQuyen(removed, maNhomQuyen);
                 }
 
                 List<ChiTietQuyen> added = updatedQuyen.Where( ct => !currentQuyen.Contains(ct)).ToList();
@@ -137,13 +137,13 @@ namespace Service.impl
             this.NhomQuyenDAO.delete((int)nhomquyen.Manhomquyen);
             if (_nhomquyen.Remove(nhomquyen))
             {
-                _chitietquyen.Remove(nhomquyen.Manhomquyen.ToString());
+                _chitietquyen.Remove((int)nhomquyen.Manhomquyen);
                 return true;
             }
             return false;
         }
 
-        public List<ChiTietQuyen> GetChiTietQuyen(string manhomquyen)
+        public List<ChiTietQuyen> GetChiTietQuyen(int manhomquyen)
         {
             if (_chitietquyen.ContainsKey(manhomquyen))
             {
@@ -162,16 +162,16 @@ namespace Service.impl
             {
                 int maNhomQuyen = listctquyen[0].MaNhomQuyen;
                 int index = getIndexByMaNhomQuyen(maNhomQuyen);
-                string tenNhomQuyen = GetByIndex(index).Tennhomquyen;
+               
 
-                if (_chitietquyen.ContainsKey(tenNhomQuyen))
+                if (_chitietquyen.ContainsKey(maNhomQuyen))
                 {
-                    _chitietquyen[tenNhomQuyen].AddRange(listctquyen);
+                    _chitietquyen[maNhomQuyen].AddRange(listctquyen);
                     return true;
                 }
                 else
                 {
-                    _chitietquyen.Add(tenNhomQuyen, listctquyen);
+                    _chitietquyen.Add(maNhomQuyen, listctquyen);
                 }
 
                 return true;
@@ -180,19 +180,19 @@ namespace Service.impl
             //throw new NotImplementedException();
         }
 
-        private void removeChiTietQuyen(List<ChiTietQuyen> chiTietQuyens,string tenNhomQuyen)
+        private void removeChiTietQuyen(List<ChiTietQuyen> chiTietQuyens,int maNhomQuyen)
         {
-            List<ChiTietQuyen> inList = _chitietquyen[tenNhomQuyen];
+            List<ChiTietQuyen> inList = _chitietquyen[maNhomQuyen];
             foreach (var ctquyen in chiTietQuyens)
             {
                 ChiTietQuyenDAO.delete(ctquyen);
                inList.Remove(ctquyen);
             }
-            _chitietquyen.Remove(tenNhomQuyen);
-            _chitietquyen.Add(tenNhomQuyen, inList);
+            _chitietquyen.Remove(maNhomQuyen);
+            _chitietquyen.Add(maNhomQuyen, inList);
         }
 
-        public bool RemoveChiTietQuyen(string manhomquyen)
+        public bool RemoveChiTietQuyen(int manhomquyen)
         {
             if (_chitietquyen.ContainsKey(manhomquyen))
             {
@@ -250,7 +250,7 @@ namespace Service.impl
 
         public int getIncreasementId()
         {
-            return this._nhomquyen.Count+1;
+            return this._nhomquyen.Max(item => (int)item.Manhomquyen)+1;
         }
 
         public int getIndexByMaNhomQuyen(int maNhomQuyen)

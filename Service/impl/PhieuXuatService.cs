@@ -235,6 +235,16 @@ namespace Service
                 sanPhamDao.update(sanPham);
             }
 
+            foreach(List<ChiTietSanPham> ctsp in chitietsanpham.Values)
+            {
+                foreach(var item in ctsp)
+                {
+                    item.MaPhieuXuat = phieu.Maphieuxuat;
+                    item.TinhTrang = false;
+                    _chiTietSanPhamDAO.update(item);
+                }
+            }
+
             return true;
         }
         public List<ChiTietSanPham> ConvertDictionaryToList(Dictionary<int, List<ChiTietSanPham>> chitietsanpham)
