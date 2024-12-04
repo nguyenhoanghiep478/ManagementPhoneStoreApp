@@ -32,7 +32,7 @@ namespace GUI
         private Dictionary<int, List<ChiTietSanPham>> chitietsanpham = new Dictionary<int, List<ChiTietSanPham>>();
 
         private List<ChiTietPhieuXuat> chitietpx = new List<ChiTietPhieuXuat>();
-  
+        private List<ChiTietSanPham> ctsptemp = new List<ChiTietSanPham>();
         private int rowPhieuSelect = -1;
         private List<PhienBanSanPham> ch = new List<PhienBanSanPham>();
         private List<String> imeiSelected = new List<String>();
@@ -96,6 +96,15 @@ namespace GUI
                             ctSpDel.Add(chiTietSanPham);
                         }
                     }
+                    List<ChiTietSanPham>l=new List<ChiTietSanPham>();
+                    foreach (var chiTietSanPham in ctsptemp)
+                    {
+                        if (!chiTietSanPham.MaPhienBanSanPham.Equals(maphienban))
+                        {
+                            l.Add(chiTietSanPham);
+                        }
+                    }
+                    ctsptemp = l;
                     chitietpx.RemoveAt(index);
                     ctsp = ctSpDel;
                     LoadDataTableChiTietPhieu(chitietpx);
@@ -398,6 +407,7 @@ namespace GUI
             {
                 ChiTietSanPham ch = new ChiTietSanPham(itemimei, maphienbansp, 0, maPhieuXuat, false);
                 ctsp.Add(ch);
+                ctsptemp.Add(ch);
             }
 
             return imei.Length;
@@ -623,9 +633,10 @@ namespace GUI
                         kh,
                         1
                     );
-
-                    bool result = pnService.Add(px, chitietpx, chitietsanpham);
-                    if (result)
+                   
+                   bool result = pnService.Add(px, chitietpx, chitietsanpham);
+                    ctspBus.updateXuat(ctsptemp);
+                        if (result)
                     {
                         MessageBox.Show("Xuất hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Dispose();

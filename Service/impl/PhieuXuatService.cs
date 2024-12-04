@@ -234,7 +234,6 @@ namespace Service
                 sanPham.Soluongton -= chitietsanpham[mapb].Count;
                 sanPhamDao.update(sanPham);
             }
-
             return true;
         }
         public List<ChiTietSanPham> ConvertDictionaryToList(Dictionary<int, List<ChiTietSanPham>> chitietsanpham)

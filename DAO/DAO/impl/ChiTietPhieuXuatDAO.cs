@@ -29,43 +29,48 @@ namespace DAO.DAO.impl
     VALUES 
     (@param0, @param1, @param2, @param3);";
 
-            string ConnectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306";
+            //string ConnectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=minhmankieu456;Port=3306";
 
-            using (var con = new MySqlConnection(ConnectionString))
+            //using (var con = new MySqlConnection(ConnectionString))
+            //{
+            //    con.Open();
+
+            //    using (var transaction = con.BeginTransaction())
+            //    {
+            //        try
+            //        {
+            //            using (var cmd = new MySqlCommand(query, con, transaction))
+            //            {
+            //                foreach (var item in list)
+            //                {
+            //                    cmd.Parameters.Clear();
+            //                    cmd.Parameters.AddWithValue("@param0", item.Maphieuxuat);
+            //                    cmd.Parameters.AddWithValue("@param1", item.Maphienbansp);
+            //                    cmd.Parameters.AddWithValue("@param2", item.Soluong);
+            //                    cmd.Parameters.AddWithValue("@param3", item.Dongia);
+
+            //                    cmd.ExecuteNonQuery();
+
+            //                    pbsp.UpdateSoLuongTon(item.Maphienbansp, -item.Soluong);
+            //                }
+            //            }
+
+            //            transaction.Commit();
+            //            result = list.Count; 
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            transaction.Rollback();
+            //            Console.WriteLine($"Error: {ex.Message}");
+            //        }
+            //    }
+            //}
+            foreach (var item in list)
             {
-                con.Open();
-
-                using (var transaction = con.BeginTransaction())
-                {
-                    try
-                    {
-                        using (var cmd = new MySqlCommand(query, con, transaction))
-                        {
-                            foreach (var item in list)
-                            {
-                                cmd.Parameters.Clear();
-                                cmd.Parameters.AddWithValue("@param0", item.Maphieuxuat);
-                                cmd.Parameters.AddWithValue("@param1", item.Maphienbansp);
-                                cmd.Parameters.AddWithValue("@param2", item.Soluong);
-                                cmd.Parameters.AddWithValue("@param3", item.Dongia);
-                               
-                                cmd.ExecuteNonQuery();
-
-                                pbsp.UpdateSoLuongTon(item.Maphienbansp, -item.Soluong);
-                            }
-                        }
-
-                        transaction.Commit();
-                        result = list.Count; 
-                    }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                        Console.WriteLine($"Error: {ex.Message}");
-                    }
-                }
+                Save(query, item.Maphieuxuat, item.Maphienbansp, item.Soluong, item.Dongia);
+                pbsp.UpdateSoLuongTon(item.Maphienbansp, -item.Soluong);
             }
-
+            result = list.Count;
             return result;
         }
 

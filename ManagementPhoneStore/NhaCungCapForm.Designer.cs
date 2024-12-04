@@ -142,7 +142,7 @@ namespace ManagementPhoneStore
             "Mã ncc",
             "Tên ncc",
             "Địa chỉ",
-            "Emai",
+            "Email",
             "Số điện thoại"});
             this.ncc_prop.Location = new System.Drawing.Point(837, 32);
             this.ncc_prop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

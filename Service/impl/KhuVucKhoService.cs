@@ -128,6 +128,7 @@ namespace Service.impl
 
                 case "trangthai":
                     // Tìm kiếm theo trangthai khuvuckho
+                    
                     ketQua = listKhuVucKho.Where(ncc => ncc.Trangthai.Equals(Convert.ToInt32(txt))).ToList();
                     break;
                 default:

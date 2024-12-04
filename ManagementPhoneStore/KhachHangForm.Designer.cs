@@ -53,8 +53,8 @@ namespace ManagementPhoneStore
             this.panel2 = new System.Windows.Forms.Panel();
             this.kh_prop = new System.Windows.Forms.ComboBox();
             this.refresh = new System.Windows.Forms.Button();
-            this.export = new System.Windows.Forms.Button();
             this.search_kh = new System.Windows.Forms.TextBox();
+            this.export = new System.Windows.Forms.Button();
             this.import = new System.Windows.Forms.Button();
             this.detail = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
@@ -79,7 +79,7 @@ namespace ManagementPhoneStore
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(16, 198);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(1446, 394);
             this.listView1.TabIndex = 0;
@@ -138,11 +138,12 @@ namespace ManagementPhoneStore
             this.kh_prop.FormattingEnabled = true;
             this.kh_prop.Items.AddRange(new object[] {
             "Tất cả",
-            "Tên đăng nhập",
-            "Mã nhân viên",
-            ""});
+            "Mã khách hàng",
+            "Tên khách hàng",
+            "Địa chỉ",
+            "Số điện thoại"});
             this.kh_prop.Location = new System.Drawing.Point(823, 48);
-            this.kh_prop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kh_prop.Margin = new System.Windows.Forms.Padding(4);
             this.kh_prop.Name = "kh_prop";
             this.kh_prop.Size = new System.Drawing.Size(180, 28);
             this.kh_prop.TabIndex = 7;
@@ -165,6 +166,16 @@ namespace ManagementPhoneStore
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.button7_Click);
             // 
+            // search_kh
+            // 
+            this.search_kh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_kh.Location = new System.Drawing.Point(1023, 47);
+            this.search_kh.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.search_kh.Multiline = true;
+            this.search_kh.Name = "search_kh";
+            this.search_kh.Size = new System.Drawing.Size(263, 61);
+            this.search_kh.TabIndex = 6;
+            // 
             // export
             // 
             this.export.AutoSize = true;
@@ -183,16 +194,6 @@ namespace ManagementPhoneStore
             this.export.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.export.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.export.UseVisualStyleBackColor = true;
-            // 
-            // search_kh
-            // 
-            this.search_kh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_kh.Location = new System.Drawing.Point(1023, 47);
-            this.search_kh.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.search_kh.Multiline = true;
-            this.search_kh.Name = "search_kh";
-            this.search_kh.Size = new System.Drawing.Size(263, 61);
-            this.search_kh.TabIndex = 6;
             // 
             // import
             // 
@@ -299,7 +300,7 @@ namespace ManagementPhoneStore
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.listView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KhachHangForm";
             this.Text = "Khách hàng";
             this.Load += new System.EventHandler(this.NhaCungCap_Load);
