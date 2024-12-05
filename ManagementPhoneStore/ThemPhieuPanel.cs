@@ -417,7 +417,14 @@ namespace GUI
 
             return true;
         }
-
+        public bool isImeiExistInDB()
+        {
+            List<ChiTietSanPham> ctSP = GetChiTietSanPham();
+            List<string>imeisInDB=ctSP.Select(ctsptemp=>ctsptemp.MaImei).ToList();
+            List<ChiTietSanPham> l = ChiTietSanPhamService.Instance.getAll();
+            return imeisInDB.Any(imei => l.Any(imeidb => imeidb.MaImei.Equals(imei)));
+        
+        }
         public bool CheckImeiExists()
         {
             List<ChiTietSanPham> ctSP = GetChiTietSanPham();
@@ -483,7 +490,12 @@ namespace GUI
 
             if (source == add && ValidateNhap())
             {
-                if (CheckImeiExists())
+                if (isImeiExistInDB())
+                {
+                    MessageBox.Show("Dãy Imeis đã tồn tại", "Lỗi", MessageBoxButtons.OK);
+                    return;
+                }
+                if (CheckImeiExists() )
                 {
                     AddCtPhieu();
                 }
@@ -555,7 +567,7 @@ namespace GUI
 
             int gianhap = int.Parse(txtDongia.Text);
             int phuongthucnhap = cbxPtNhap.SelectedIndex;
-            MessageBox.Show(maphienbansp.ToString());
+            MessageBox.Show("Thêm sản phẩm thành công !","Thông Báo",MessageBoxButtons.OK);
 
             List<ChiTietSanPham> ctSP = GetChiTietSanPham();
             int soluong = ctSP.Count;

@@ -17,5 +17,6 @@ namespace DAO.DAO
         List<ChiTietSanPham> FindByMaPhieuNhap(int maphieunhap);
         List<ChiTietSanPham> FindByPhienBanSanPham(int pbsp);
         bool checkImeiExists(List<long> imeis);
+        List<ChiTietSanPham> getAll();
     }
 }

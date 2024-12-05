@@ -109,7 +109,7 @@ namespace DAO.DAO.impl
             catch (MySqlException ex)
             {
                 Console.WriteLine("Error during insert: " + ex.Message);
-                            }
+            }
             return result; 
         }
 
@@ -120,7 +120,7 @@ namespace DAO.DAO.impl
             foreach (ChiTietSanPham sp in list)
             {
                 result += this.insert(sp);
-                Console.WriteLine("failed here"+ " "+ result);
+                //Console.WriteLine("failed here"+ " "+ result);
             }
             bool success= result > 0;
 
@@ -174,8 +174,9 @@ namespace DAO.DAO.impl
             );
         }
 
-
-
-
+        public List<ChiTietSanPham> getAll()
+        {
+            return this.SearchBy(null,_rowMapper,"ctsanpham");
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace Service.impl
             chiTietSanPhamDao = new ChiTietSanPhamDAO();
             pbspService = new PhienBanSanPhamService();
             listpbsp = pbspService.GetAll(0);
-            listctsp = new List<ChiTietSanPham>();
+            listctsp = chiTietSanPhamDao.getAll();
         }
 
         public static ChiTietSanPhamService Instance => instance.Value;
