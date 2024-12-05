@@ -12,6 +12,8 @@ using DocumentFormat.OpenXml.Drawing.Charts;
 using DAO.DAO.impl;
 
 using DAO.DAO;
+using ManagementPhoneStore;
+using System.Linq;
 namespace GUI
 {
 
@@ -697,6 +699,39 @@ namespace GUI
         }
 
         private void textAreaImei_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void importImei_Click(object sender, EventArgs e)
+        {
+            using (ImeiScannerDialog scannerDialog = new ImeiScannerDialog())
+            {
+
+                if (scannerDialog.ShowDialog() == DialogResult.OK)
+                {
+                   
+                    string imei = scannerDialog.IMEI;
+                    if(!ctsp.Any(ct => ct.MaImei.Equals(imei)))
+                    {
+                        MessageBox.Show("Mã imei: " + imei+" không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    imeiSelected.Add(imei);
+                    textAreaImei.Text = imei;
+                    MessageBox.Show("Quét IMEI thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Quét IMEI đã bị hủy.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+
+
+        }
+
+        private void add_Click(object sender, EventArgs e)
         {
 
         }
