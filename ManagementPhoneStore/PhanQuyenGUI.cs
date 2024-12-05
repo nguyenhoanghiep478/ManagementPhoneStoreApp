@@ -19,13 +19,27 @@ namespace ManagementPhoneStore
         private INhomQuyenService nhomQuyenService = NhomQuyenService.Instace;
         private List<NhomQuyen> nhomQuyens;
         private string searchType = "all";
+        private List<string> actions;
+
         public PhanQuyenGUI()
+        {
+            init();
+        }
+        public PhanQuyenGUI(List<string> actions)
+        {
+            this.actions=actions;
+            init();
+        }
+        private void init()
         {
             InitializeComponent();
             LoadData();
             LoadFieldSelect();
             this.FormBorderStyle = FormBorderStyle.None; // Loại bỏ viền form
             this.TopLevel = false;
+            listView1.OwnerDraw = true;
+            listView1.DrawColumnHeader += listView_DrawColumnHeader;
+            listView1.DrawSubItem += listView_DrawSubItem;
         }
         private void LoadData()
         {
@@ -72,9 +86,17 @@ namespace ManagementPhoneStore
         {
 
         }
-
+        public Boolean handleAction(string action)
+        {
+            return actions.Contains(action);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!handleAction("create"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             using (PhanQuyenDialog dialog = new PhanQuyenDialog())
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
@@ -88,6 +110,11 @@ namespace ManagementPhoneStore
         {
             try
             {
+                if (!handleAction("delete"))
+                {
+                    MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 // Kiểm tra xem có mục nào được chọn trong ListView không
                 if (listView1.SelectedItems.Count == 0)
                 {
@@ -143,6 +170,11 @@ namespace ManagementPhoneStore
         {
             try
             {
+                if (!handleAction("update"))
+                {
+                    MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 // Kiểm tra xem có mục nào được chọn trong ListView không
                 if (listView1.SelectedItems.Count == 0)
                 {
@@ -307,6 +339,47 @@ namespace ManagementPhoneStore
             LoadData();
             this.comboBox1.SelectedIndex = 0;
             this.textBox1.Text = String.Empty;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!handleAction("view"))
+                {
+                    MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (listView1.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn nhóm quyền cần xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                int maNhomQuyen = int.Parse(selectedItem.Text);
+                // Lấy khu vực kho cần xóa
+                int index = this.nhomQuyenService.getIndexByMaNhomQuyen(maNhomQuyen);
+                if (index != -1)
+                {
+                    NhomQuyen nhomquyen = this.nhomQuyenService.GetByIndex(index);
+                    using (PhanQuyenDialog dialog = new PhanQuyenDialog(nhomquyen, "xemchitiet"))
+                    {
+                        if (dialog.ShowDialog() == DialogResult.OK)
+                        {
+                            LoadData();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy nhóm quyền để cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi khi cập nhật nhóm quyền: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

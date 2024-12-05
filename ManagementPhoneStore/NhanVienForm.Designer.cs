@@ -330,6 +330,15 @@ namespace ManagementPhoneStore
         }
         public NhanVienForm()
         {
+            init();
+        }
+        public NhanVienForm(List<string> actions)
+        {
+            this.actions=actions;
+            init();
+        }
+        private void init()
+        {
             InitializeComponent();
             LoadDataToListView(nvService.GetAll());
             add_Event();
@@ -418,6 +427,11 @@ namespace ManagementPhoneStore
         }
         private void detail_Click(object sender, EventArgs e)
         {
+            if (!handleAction("view"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (GetSelectedIndex() != -1)
             {
                 NhanVienChiTietForm nhanVienChiTietGui = new NhanVienChiTietForm(this, nvService.GetByIndex(GetSelectedIndex()), "THÔNG TIN NHÂN VIÊN", "view");
@@ -428,13 +442,27 @@ namespace ManagementPhoneStore
         {
             ImportExcel();
         }
+        public Boolean handleAction(string action)
+        {
+            return actions.Contains(action);
+        }
         private void add_Click(object sender, EventArgs e)
         {
+            if (!handleAction("create"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             NhanVienChiTietForm nhanVienChiTietGUI = new NhanVienChiTietForm(this, null, "THÊM NHÂN VIÊN", "create");
             nhanVienChiTietGUI.ShowDialog();
         }
         private void update_Click(object sender, EventArgs e)
         {
+            if (!handleAction("update"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (GetSelectedIndex() != -1)
             {
                 NhanVienChiTietForm nhanVienChiTietGui = new NhanVienChiTietForm(this, nvService.GetByIndex(GetSelectedIndex()), "SỬA NHÂN VIÊN", "update");
@@ -443,6 +471,11 @@ namespace ManagementPhoneStore
         }
         private void delete_Click(object sender, EventArgs e)
         {
+            if (!handleAction("delete"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (GetSelectedIndex() != -1)
             {
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên", "Xóa nhân viên",
@@ -688,6 +721,6 @@ namespace ManagementPhoneStore
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.TextBox search_nv;
         private System.Windows.Forms.ComboBox nv_prop;
-
+        private List<string> actions;
     }
 }

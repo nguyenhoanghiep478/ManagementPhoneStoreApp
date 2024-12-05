@@ -22,7 +22,22 @@ namespace GUI
         private ThuongHieuService thuongHieuService = ThuongHieuService.Instance;
         private XuatXuService xuatXuService = new XuatXuService();
         private KhuVucKhoService khuVucKhoService = KhuVucKhoService.Instance;
+        private List<string> actions;
+
         public SanPhamGUI()
+        {
+            init();
+        }
+        public SanPhamGUI(List<string> actions)
+        {
+            this.actions=actions;
+            init();
+        }
+        public Boolean handleAction(string action)
+        {
+            return actions.Contains(action);
+        }
+        private void init()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -184,6 +199,11 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!handleAction("create"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             SanPhamDialog sanPhamDialog = new SanPhamDialog("them",0);
             sanPhamDialog.FormClosed += SanPhamDialog_FormClosed;
             sanPhamDialog.ShowDialog();
@@ -195,6 +215,11 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (!handleAction("update"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (listView1.SelectedItems.Count > 0)
             {
                 var selectedItem = listView1.SelectedItems[0];
@@ -219,6 +244,11 @@ namespace GUI
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (!handleAction("view"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (listView1.SelectedItems.Count > 0)
             {
                 var selectedItem = listView1.SelectedItems[0];
@@ -242,6 +272,11 @@ namespace GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (!handleAction("delete"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (listView1.SelectedItems.Count > 0)
             {
                 var selectedItem = listView1.SelectedItems[0];

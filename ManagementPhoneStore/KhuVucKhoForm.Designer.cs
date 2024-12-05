@@ -424,7 +424,20 @@ namespace ManagementPhoneStore
             }
       
         }
+        public KhuVucKhoForm(List<string> actions)
+        {
+            this.actions=actions;
+            InitializeComponent();
+            foreach(var sp in spserv.GetAll())
+            {
+                createItem(this.flowLayoutPanel1, sp.Tensp.Trim(), sp.Soluongton.ToString(),sp.Hinhanh);
+            }
+        }
 
+        public Boolean handleAction(string action)
+        {
+            return actions.Contains(action);
+        }
 
 
         #endregion
@@ -445,5 +458,6 @@ namespace ManagementPhoneStore
         private Button button3;
         private Button button2;
         private Button button1;
+        private List<string> actions;
     }
 }

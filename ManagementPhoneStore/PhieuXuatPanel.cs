@@ -37,7 +37,7 @@ namespace GUI
       
         private List<String> listmaimei = new List<String>();
         private List<PhieuXuat> listPhieu = new List<PhieuXuat>();
-
+        private List<string> actions;
         private int manv;
         private int maphieuxuat;
         private string tennv;
@@ -53,6 +53,47 @@ namespace GUI
             listPhieu = pxService.GetAll();
             var khachList = khService.getAll();
          
+            dateEnd.Value = DateTime.Now;
+            LoadphieuXuatTable1(listPhieu);
+            LoadKhacHangDropdown();
+            LoadEmployeeDropdown();
+
+
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            addbutton.Click += Action_Performed;
+            detail.Click += Action_Performed;
+            cancel.Click += Action_Performed;
+            export.Click += Action_Performed;
+
+
+            comboBox2.SelectedIndexChanged += (s, e) => Filter();
+            comboBox3.SelectedIndexChanged += (s, e) => Filter();
+            textBox1.TextChanged += (s, e) => Filter();
+            textBox2.TextChanged += (s, e) => Filter();
+            textBox3.TextChanged += (s, e) => Filter();
+
+            dateStart.ValueChanged += dateStart_ValueChanged;
+            dateEnd.ValueChanged += dateEnd_ValueChanged;
+            dateStart.ValueChanged += (s, e) => Filter();
+            dateEnd.ValueChanged += (s, e) => Filter();
+            resetbutton.Click += ResetForm;
+            comboBox1.SelectedIndex = 0;
+            comboBox1.MeasureItem += new MeasureItemEventHandler(ComboBox_MeasureItem);
+            comboBox1.DrawItem += new DrawItemEventHandler(ComboBox_DrawItem);
+        }
+        public PhieuXuatPanel(int manhanvien,List<string> actions)
+        {
+            this.actions = actions;
+            manv = manhanvien;
+            string tennvien = nvService.GetNameById(manhanvien);
+            tennv = tennvien;
+
+            InitializeComponent();
+
+
+            listPhieu = pxService.GetAll();
+            var khachList = khService.getAll();
+
             dateEnd.Value = DateTime.Now;
             LoadphieuXuatTable1(listPhieu);
             LoadKhacHangDropdown();
@@ -313,19 +354,32 @@ namespace GUI
             this.Controls.Add(newPanel);
 
         }
-
+        public Boolean handleAction(string action)
+        {
+            return actions.Contains(action);
+        }
         private void Action_Performed(object sender, EventArgs e)
         {
             var source = sender as Button;
 
             if (source == addbutton)
             {
+                if (!handleAction("create"))
+                {
+                    MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 var nhapKho = new ThemPhieuXuat(tennv, manv);
                 SetPanel(nhapKho);
             }
 
             else if (source == detail)
             {
+                if (!handleAction("view"))
+                {
+                    MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 int index = GetRowSelected();
                 if (index != -1)
                 {
@@ -337,6 +391,11 @@ namespace GUI
 
             else if (source == cancel)
             {
+                if (!handleAction("delete"))
+                {
+                    MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 int index = GetRowSelected();
                 if (index != -1)
                 {

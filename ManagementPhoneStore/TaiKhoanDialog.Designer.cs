@@ -363,7 +363,7 @@ namespace ManagementPhoneStore
         }
         public void load_Combobox()
         {
-            foreach(var nq in tkForm.nqService.GetAll())
+            foreach(var nq in tkForm.nqService.GetAll().Where(nq=>nq.Trangthai==1))
             {
                 nhomquyen.Items.Add(nq.Tennhomquyen);
             }
@@ -391,7 +391,7 @@ namespace ManagementPhoneStore
                 if (check == 0)
                 {
                     string pass =MyBcrypt.HashPassword(matkhau.Text);
-                    int manhom = (int)lnq[nhomquyen.SelectedIndex].Manhomquyen; // Lấy mã nhóm quyền từ danh sách
+                    int manhom =(int)lnq.Where(nq=>nhomquyen.SelectedItem.Equals(nq.Tennhomquyen)).Select(nq=>nq.Manhomquyen).FirstOrDefault(); // Lấy mã nhóm quyền từ danh sách
                     int tt = trangthai.SelectedIndex; // Lấy trạng thái đã chọn
 
                     // Tạo đối tượng TaiKhoanDTO mới
@@ -423,7 +423,7 @@ namespace ManagementPhoneStore
             {
                 string tendangnhap = ten.Text; // Lấy tên đăng nhập từ TextBox
                 string pass =tk.Matkhau; // Mã hóa mật khẩu
-                int manhom = (int)lnq[nhomquyen.SelectedIndex].Manhomquyen; // Lấy mã nhóm quyền từ danh sách
+                int manhom = (int)lnq.Where(nq => nhomquyen.SelectedItem.Equals(nq.Tennhomquyen)).Select(nq => nq.Manhomquyen).FirstOrDefault(); // Lấy mã nhóm quyền từ danh sách
                 int tt = trangthai.SelectedIndex; // Lấy trạng thái đã chọn
                 
                 // Tạo đối tượng TaiKhoanDTO mới

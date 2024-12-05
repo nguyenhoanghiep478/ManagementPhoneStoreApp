@@ -282,6 +282,11 @@ namespace ManagementPhoneStore
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!handleAction("create"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             using (KhuVucKhoDialog dialog = new KhuVucKhoDialog())
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
@@ -320,6 +325,11 @@ namespace ManagementPhoneStore
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (!handleAction("delete"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 // Kiểm tra xem có mục nào được chọn trong ListView không
@@ -466,6 +476,11 @@ namespace ManagementPhoneStore
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (!handleAction("update"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (listView1.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn khu vực kho cần cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

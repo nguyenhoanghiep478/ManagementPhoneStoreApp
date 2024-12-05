@@ -22,12 +22,22 @@ namespace ManagementPhoneStore
         private DungLuongRomService dungLuongRomService = new DungLuongRomService();
         private DungLuongRamService dungLuongRamService = new DungLuongRamService();
         private MauSacService mauSacService = new MauSacService();
+        private List<string> actions;
 
         public ThuocTinhDialog(string thuoctinh)
         {
+            this.thuoctinh = thuoctinh;
+            init();
+        }
+        public ThuocTinhDialog(string thuoctinh,List<string> actions)
+        {
+            this.thuoctinh = thuoctinh;
+            this.actions=actions;   
+            init();
+        }
+        private void init() {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.thuoctinh = thuoctinh;
             listView1.OwnerDraw = true;
             listView1.DrawColumnHeader += listView_DrawColumnHeader;
             listView1.DrawSubItem += listView_DrawSubItem;
@@ -56,7 +66,6 @@ namespace ManagementPhoneStore
                 initMausac();
             }
         }
-
         private void listView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
             using (Brush headerBrush = new SolidBrush(Color.FromArgb(235, 235, 235)))
@@ -280,9 +289,17 @@ namespace ManagementPhoneStore
                 }
             }
         }
-
+        public Boolean handleAction(string action)
+        {
+            return actions.Contains(action);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!handleAction("create"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             switch (this.thuoctinh)
             {
                 case "thuonghieu":
@@ -444,6 +461,11 @@ namespace ManagementPhoneStore
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (!handleAction("update"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             switch (this.thuoctinh)
             {
                 case "thuonghieu":
@@ -601,6 +623,11 @@ namespace ManagementPhoneStore
                     }
                     break;
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

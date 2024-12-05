@@ -365,6 +365,20 @@ namespace ManagementPhoneStore
             listView1.DrawColumnHeader += listView_DrawColumnHeader;
             listView1.DrawSubItem += listView_DrawSubItem;
         }
+
+        public KhachHangForm(List<string> actions)
+        {
+            this.actions = actions;
+            InitializeComponent();
+            LoadDataToListView(khService.getAll());
+            add_Event();
+            kh_prop.SelectedIndex = 0;
+            kh_prop.MeasureItem += new MeasureItemEventHandler(ComboBox_MeasureItem);
+            kh_prop.DrawItem += new DrawItemEventHandler(ComboBox_DrawItem);
+            listView1.OwnerDraw = true;
+            listView1.DrawColumnHeader += listView_DrawColumnHeader;
+            listView1.DrawSubItem += listView_DrawSubItem;
+        }
         private void add_Event()
         {
             add.Click += add_Click;
@@ -392,8 +406,17 @@ namespace ManagementPhoneStore
         {
             LoadDataToListView(khService.getAll());
         }
+        public Boolean handleAction(string action)
+        {
+            return actions.Contains(action);
+        }
         private void detail_Click(object sender, EventArgs e)
         {
+            if (!handleAction("view"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (GetSelectedIndex() != -1)
             {
                 KhachHangDialog khachHangDialog = new KhachHangDialog(this, khService.getByIndex(GetSelectedIndex()), "THÔNG TIN KHÁCH HÀNG", "view");
@@ -406,11 +429,21 @@ namespace ManagementPhoneStore
         }
         private void add_Click(object sender, EventArgs e)
         {
+            if (!handleAction("create"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             KhachHangDialog khachHangDialog = new KhachHangDialog(this,null, "THÊM KHÁCH HÀNG", "create");
             khachHangDialog.ShowDialog();
         }
         private void update_Click(object sender, EventArgs e)
         {
+            if (!handleAction("update"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (GetSelectedIndex() != -1)
             {
                 KhachHangDialog khachHangDialog = new KhachHangDialog(this, khService.getByIndex(GetSelectedIndex()),"SỬA KHÁCH HÀNG", "update");
@@ -419,6 +452,11 @@ namespace ManagementPhoneStore
         }
         private void delete_Click(object sender, EventArgs e)
         {
+            if (!handleAction("delete"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (GetSelectedIndex() != -1)
             {
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng?", "Xóa khách hàng",
@@ -607,5 +645,6 @@ namespace ManagementPhoneStore
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.TextBox search_kh;
         private ComboBox kh_prop;
+        private List<string> actions;
     }
 }

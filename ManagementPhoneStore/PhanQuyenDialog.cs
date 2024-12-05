@@ -18,12 +18,18 @@ namespace ManagementPhoneStore
         private INhomQuyenService nhomQuyenService = NhomQuyenService.Instace;
         private List<DanhMucChucNang> chucnangs;
         private NhomQuyen nhomquyen;
-
+        private string chucnang="";
 
         public PhanQuyenDialog()
         {
             InitializeComponent();
             LoadData();
+        }
+        public PhanQuyenDialog(NhomQuyen nhomQuyen,string chucnang)
+        {
+            this.chucnang = chucnang;
+            InitializeComponent();
+            LoadData(nhomQuyen);
         }
 
         public PhanQuyenDialog(NhomQuyen nhomQuyen)
@@ -55,6 +61,16 @@ namespace ManagementPhoneStore
                 }
 
                 this.dgvPermissions.Rows.Add(chucnangs.MaChucNang, isHaveView, isHaveCreate, isHaveUpdate, isHaveDelete);
+            }
+            if (this.chucnang.Equals("xemchitiet"))
+            {
+                add.Visible = false;
+                cancel.Visible = false;
+            }
+            else
+            {
+                add.Visible=true;
+                cancel.Visible=true;
             }
         }
 

@@ -33,6 +33,7 @@ namespace GUI
         private Dictionary<int, List<ChiTietSanPham>> chitietsanpham = new Dictionary<int, List<ChiTietSanPham>>();
         private int maphieunhap;
         private string tennv;
+        private List<string> actions;
         private int manv;
         private int rowPhieuSelect = -1;
         private List<PhienBanSanPham> ch = new List<PhienBanSanPham>();
@@ -80,6 +81,52 @@ namespace GUI
             comboBox1.SelectedIndex = 0;
             comboBox1.MeasureItem += new MeasureItemEventHandler(ComboBox_MeasureItem);
             comboBox1.DrawItem += new DrawItemEventHandler(ComboBox_DrawItem);
+        }
+        public PhieuNhapPanel(int manhanvien, List<string> actions)
+        {
+            this.actions = actions;
+            manv = manhanvien;
+
+            string ten = nvService.GetNameById(manv);
+            tennv = ten;
+            InitializeComponent();
+            //ResizeButtonImage(addbutton, GUI.Properties.Resources.plus, 60, 60);
+            //ResizeButtonImage(detail, GUI.Properties.Resources.info, 60, 60);
+            //ResizeButtonImage(cancel, GUI.Properties.Resources.remove, 60, 60);
+            //ResizeButtonImage(export, GUI.Properties.Resources.sheets, 60, 60);
+            //ResizeButtonImage(resetbutton, GUI.Properties.Resources.refresh, 60, 60);
+
+            listPhieu = pnService.GetAll();
+            dateEnd.Value = DateTime.Now;
+            LoadPhieuNhapTable1(listPhieu);
+            LoadEmployeeDropdown();
+            LoadNhaCungCapDropdown();
+
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            addbutton.Click += Action_Performed;
+            detail.Click += Action_Performed;
+            cancel.Click += Action_Performed;
+            export.Click += Action_Performed;
+
+
+            comboBox2.SelectedIndexChanged += (s, e) => Filter();
+            comboBox3.SelectedIndexChanged += (s, e) => Filter();
+            textBox1.TextChanged += (s, e) => Filter();
+            textBox2.TextChanged += (s, e) => Filter();
+            textBox3.TextChanged += (s, e) => Filter();
+
+            dateStart.ValueChanged += dateStart_ValueChanged;
+            dateEnd.ValueChanged += dateEnd_ValueChanged;
+            dateStart.ValueChanged += (s, e) => Filter();
+            dateEnd.ValueChanged += (s, e) => Filter();
+            resetbutton.Click += ResetForm;
+            comboBox1.SelectedIndex = 0;
+            comboBox1.MeasureItem += new MeasureItemEventHandler(ComboBox_MeasureItem);
+            comboBox1.DrawItem += new DrawItemEventHandler(ComboBox_DrawItem);
+        }
+        public Boolean handleAction(string action)
+        {
+            return actions.Contains(action);
         }
         private void ComboBox_MeasureItem(object sender, MeasureItemEventArgs e)
         {
@@ -351,11 +398,21 @@ namespace GUI
 
             if (source == addbutton)
             {
+                if (!handleAction("create"))
+                {
+                    MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 ThemPhieuPanel nhapKho = new ThemPhieuPanel(tennv,manv,this);
                 SetPanel(nhapKho);
             }
             else if (source == detail)
             {
+                if (!handleAction("view"))
+                {
+                    MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 int index = GetRowSelected();
                 if (index != -1)
                 {
@@ -365,6 +422,11 @@ namespace GUI
             }
             else if (source == cancel)
             {
+                if (!handleAction("delete"))
+                {
+                    MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 int index = GetRowSelected();
                 if (index != -1)
                 {

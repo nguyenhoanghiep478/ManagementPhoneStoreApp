@@ -88,11 +88,15 @@ namespace ManagementPhoneStore
             this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 36;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Tất cả"});
             this.comboBox1.Location = new System.Drawing.Point(593, 35);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(143, 42);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboBox_DrawItem);
+            this.comboBox1.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.ComboBox_MeasureItem);
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button6
@@ -144,6 +148,7 @@ namespace ManagementPhoneStore
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -250,13 +255,7 @@ namespace ManagementPhoneStore
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            listView1.OwnerDraw = true;
-            listView1.DrawColumnHeader += listView_DrawColumnHeader;
-            listView1.DrawSubItem += listView_DrawSubItem;
-            comboBox1.Items.Add("Tất cả");
-            comboBox1.SelectedIndex = 0;
-            comboBox1.MeasureItem += new MeasureItemEventHandler(ComboBox_MeasureItem);
-            comboBox1.DrawItem += new DrawItemEventHandler(ComboBox_DrawItem);
+
         }
 
         private void ComboBox_MeasureItem(object sender, MeasureItemEventArgs e)

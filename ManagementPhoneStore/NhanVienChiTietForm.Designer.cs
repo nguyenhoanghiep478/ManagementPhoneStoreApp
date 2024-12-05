@@ -405,14 +405,8 @@ namespace ManagementPhoneStore
             bool isDuplicate = danhSachNhanVien.Any(nv =>
             string.Equals(nv.Hoten, tenMoi, StringComparison.OrdinalIgnoreCase));
 
-            if (isDuplicate)
-            {
-                MessageBox.Show("Tên nhân viên đã tồn tại", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
             // Kiểm tra Email
-            else if (Validation.IsEmpty(emailText.Text) || !Validation.IsEmail(emailText.Text))
+             if (Validation.IsEmpty(emailText.Text) || !Validation.IsEmail(emailText.Text))
             {
                 MessageBox.Show("Email không hợp lệ hoặc bị trống", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

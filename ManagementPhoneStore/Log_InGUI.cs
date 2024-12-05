@@ -50,13 +50,17 @@ namespace ManagementPhoneStore
         private void button1_Click(object sender, EventArgs e)
         {
             
-            List<TaiKhoan> listTaikhoan = taiKhoanService.GetTaiKhoanAll();
+            List<TaiKhoan> listTaikhoan = taiKhoanService.getTaiKhoanAllStatus();
             bool exist=false;
             foreach(TaiKhoan taiKhoan in listTaikhoan)
             {
-
                 if (taiKhoan.Tendangnhap.Equals(textBox1.Text) && MyBcrypt.VerifyPassword(textBox2.Text, taiKhoan.Matkhau))
                 {
+                    if (taiKhoan.Trangthai == 0)
+                    {
+                        MessageBox.Show("Tài khoản đã bị ngưng hoạt động.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     this.Hide();
                     exist = true;
                     HomeGUI homeGUI = new HomeGUI(taiKhoan.Manv);

@@ -286,12 +286,7 @@ namespace ManagementPhoneStore
             bool isDuplicate = danhSachNhaCungCap.Any(ncc =>
             string.Equals(ncc.Tennhacungcap, tenMoi, StringComparison.OrdinalIgnoreCase));
 
-            if (isDuplicate)
-            {
-                MessageBox.Show("Tên nhà cung cấp đã tồn tại", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            else if (Validation.IsEmpty(diachi.Text))
+            if (Validation.IsEmpty(diachi.Text))
             {
                 MessageBox.Show("Địa chỉ không được rỗng", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

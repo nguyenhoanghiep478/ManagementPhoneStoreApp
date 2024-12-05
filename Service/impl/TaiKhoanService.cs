@@ -22,7 +22,7 @@ namespace Service.impl
 
         public TaiKhoanService()
         {
-            this._taikhoans = _taiKhoanDAO.GetAll().Where(tk => tk.Trangthai.Equals(1)).ToList();
+            this._taikhoans = _taiKhoanDAO.GetAll();
             _nhomquyen=_nhomQuyenDAO.GetAll();
         }
         public TaiKhoan getByIndex(int index)

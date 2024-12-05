@@ -309,8 +309,17 @@ namespace ManagementPhoneStore
 
         public TaiKhoanForm()
         {
+            init();
+        }
+        public TaiKhoanForm(List<string> actions)
+        {
+            this.actions=actions;
+            init();
+        }
+        private void init()
+        {
             InitializeComponent();
-            LoadDataToListView(tkService.GetTaiKhoanAll() );
+            LoadDataToListView(tkService.getTaiKhoanAllStatus());
             add_Event();
             listView1.OwnerDraw = true;
             listView1.DrawColumnHeader += listView_DrawColumnHeader;
@@ -319,7 +328,6 @@ namespace ManagementPhoneStore
             tk_prop.MeasureItem += new MeasureItemEventHandler(ComboBox_MeasureItem);
             tk_prop.DrawItem += new DrawItemEventHandler(ComboBox_DrawItem);
         }
-
         private void ComboBox_MeasureItem(object sender, MeasureItemEventArgs e)
         {
             e.ItemHeight = 36;  // Điều chỉnh chiều cao mục của ComboBox
@@ -380,7 +388,7 @@ namespace ManagementPhoneStore
         {
             if (Validation.IsEmpty(search_tk.Text))
             {
-                LoadDataToListView(tkService.GetTaiKhoanAll());
+                LoadDataToListView(tkService.getTaiKhoanAllStatus());
             }
             else
             {
@@ -400,10 +408,15 @@ namespace ManagementPhoneStore
         }
         private void refresh_Click(object sender, EventArgs e)
         {
-            LoadDataToListView(tkService.GetTaiKhoanAll());
+            LoadDataToListView(tkService.getTaiKhoanAllStatus());
         }
         private void detail_Click(object sender, EventArgs e)
         {
+            if (!handleAction("view"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (GetSelectedIndex() != -1)
             {
                 TaiKhoanDialog taiKhoanDialog = new TaiKhoanDialog(this, tkService.getByIndex(GetSelectedIndex()).Manv, "TÀI KHOẢN",
@@ -574,13 +587,27 @@ namespace ManagementPhoneStore
                 MessageBox.Show(ex.Message);
             }
         }
+        public Boolean handleAction(string action)
+        {
+            return actions.Contains(action);
+        }
         private void add_Click(object sender, EventArgs e)
         {
-          ListNhanVien listNhanVien = new ListNhanVien();
+            if (!handleAction("create"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ListNhanVien listNhanVien = new ListNhanVien();
             listNhanVien.ShowDialog();
         }
         private void update_Click(object sender, EventArgs e)
         {
+            if (!handleAction("update"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (GetSelectedIndex() != -1)
             {
                 TaiKhoanDialog taiKhoanDialog=new TaiKhoanDialog(this,tkService.getByIndex(GetSelectedIndex()).Manv,"SỬA TÀI KHOẢN",
@@ -590,6 +617,11 @@ namespace ManagementPhoneStore
         }
         private void delete_Click(object sender, EventArgs e)
         {
+            if (!handleAction("delete"))
+            {
+                MessageBox.Show("Bạn không có quyền này.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (GetSelectedIndex() != -1)
             {
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng?", "Xóa khách hàng",
@@ -639,5 +671,6 @@ namespace ManagementPhoneStore
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.TextBox search_tk;
         private ComboBox tk_prop;
+        private List<string> actions;
     }
 }

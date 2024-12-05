@@ -24,9 +24,9 @@ namespace GUI
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             label1.Text=NhanVienService.GetNameById(manv);
-            label2.Text=NhomQuyenService.getNameByMA(manv);
+            label2.Text=NhomQuyenService.getNameByMA((int)taiKhoanService.getByIndex(taiKhoanService.GetTaiKhoanByMaNV(manv)).Manhomquyen);
             panelContainer.AutoSize = false;
-            this.nhomQuyens = taiKhoanService.GetNhomQuyen(manv);
+            this.nhomQuyens = taiKhoanService.GetNhomQuyen((int)taiKhoanService.getByIndex(taiKhoanService.GetTaiKhoanByMaNV(manv)).Manhomquyen);
             this.authors = NhomQuyenService.GetChiTietQuyen((int)nhomQuyens.Manhomquyen);
             handleAuthor();
             button1.BackColor = System.Drawing.Color.AliceBlue;
@@ -43,6 +43,12 @@ namespace GUI
             button11.Click += Button_Click;
             button12.Click += Button_Click;
             button13.Click += Button_Click;
+        }
+
+        private List<string> getAction(string machucnang)
+        {
+            var permission = authors.Where(item => item.MaChucNang.Equals(machucnang)).ToList();
+            return permission.Select(item => item.HanhDong).ToList();
         }
 
         private void SetButtonColors(Button selectedButton, params Button[] buttons)
@@ -63,12 +69,14 @@ namespace GUI
                 }
             }
         }
+
+
+
         private void Button_Click(object sender, EventArgs e)
         {
             // Gọi hàm đổi màu khi nhấn nút
             SetButtonColors(sender as Button, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13);
         }
-
         private void handleAuthor()
         {
             if (!authors.Any(g => g.MaChucNang.Equals("sanpham")))
@@ -132,7 +140,8 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SanPhamGUI sanPhamGUI = new SanPhamGUI();
+            List<string> actions = getAction("sanpham");
+            SanPhamGUI sanPhamGUI = new SanPhamGUI(actions);
             sanPhamGUI.TopLevel = false;
             sanPhamGUI.Dock = DockStyle.Fill;
 
@@ -188,7 +197,8 @@ namespace GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ThuocTinhGUI ttform = new ThuocTinhGUI();
+            List<string> actions = getAction("thuoctinh");
+            ThuocTinhGUI ttform = new ThuocTinhGUI(actions);
             ttform.TopLevel = false;
             ttform.Dock = DockStyle.Fill;
 
@@ -199,7 +209,8 @@ namespace GUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            KhuVucKhoForm kvk = new KhuVucKhoForm();
+            List<string> actions = getAction("khuvuckho");
+            KhuVucKhoForm kvk = new KhuVucKhoForm(actions);
             kvk.TopLevel = false;
             kvk.Dock = DockStyle.Fill;
 
@@ -211,7 +222,8 @@ namespace GUI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PhieuNhapPanel pn = new PhieuNhapPanel(manv);
+            List<string> actions = getAction("nhaphang");
+            PhieuNhapPanel pn = new PhieuNhapPanel(manv,actions);
             pn.Dock = DockStyle.Fill;
 
             panelContainer.Controls.Clear();
@@ -220,7 +232,8 @@ namespace GUI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            PhieuXuatPanel pn = new PhieuXuatPanel(manv);
+            List<string> actions = getAction("xuathang");
+            PhieuXuatPanel pn = new PhieuXuatPanel(manv,actions);
             pn.Dock = DockStyle.Fill;
 
             panelContainer.Controls.Clear();
@@ -229,7 +242,8 @@ namespace GUI
 
         private void button7_Click(object sender, EventArgs e)
         {
-            KhachHangForm khachHangform = new KhachHangForm();
+            List<string> actions = getAction("khachhang");
+            KhachHangForm khachHangform = new KhachHangForm(actions);
             khachHangform.TopLevel = false;
             khachHangform.Dock = DockStyle.Fill;
 
@@ -240,7 +254,8 @@ namespace GUI
 
         private void button8_Click(object sender, EventArgs e)
         {
-            NhaCungCapForm nhaCungcap = new NhaCungCapForm();
+            List<string> actions = getAction("nhacungcap");
+            NhaCungCapForm nhaCungcap = new NhaCungCapForm(actions);
             nhaCungcap.TopLevel = false;
             nhaCungcap.Dock = DockStyle.Fill;
 
@@ -251,7 +266,8 @@ namespace GUI
 
         private void button9_Click(object sender, EventArgs e)
         {
-            NhanVienForm nhanVienform = new NhanVienForm();
+            List<string> actions = getAction("nhanvien");
+            NhanVienForm nhanVienform = new NhanVienForm(actions);
             nhanVienform.TopLevel = false;
             nhanVienform.Dock = DockStyle.Fill;
 
@@ -262,7 +278,8 @@ namespace GUI
 
         private void button10_Click(object sender, EventArgs e)
         {
-            TaiKhoanForm taiKhoanform = new TaiKhoanForm();
+            List<string> actions = getAction("taikhoan");
+            TaiKhoanForm taiKhoanform = new TaiKhoanForm(actions);
             taiKhoanform.TopLevel = false;
             taiKhoanform.Dock = DockStyle.Fill;
 
@@ -283,7 +300,8 @@ namespace GUI
 
         private void button12_Click(object sender, EventArgs e)
         {
-            PhanQuyenGUI phanquyenForm = new PhanQuyenGUI();
+            List<string> actions = getAction("nhomquyen");
+            PhanQuyenGUI phanquyenForm = new PhanQuyenGUI(actions);
             phanquyenForm.TopLevel = false;
             phanquyenForm.Dock = DockStyle.Fill;
 

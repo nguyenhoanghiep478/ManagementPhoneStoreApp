@@ -35,13 +35,13 @@ namespace ManagementPhoneStore
             this.phanQuyenLabel = new System.Windows.Forms.Label();
             this.phanQuyenTextBox = new System.Windows.Forms.TextBox();
             this.dgvPermissions = new System.Windows.Forms.DataGridView();
+            this.add = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
             this.colFunction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colView = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colCreate = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colUpdate = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.add = new System.Windows.Forms.Button();
-            this.cancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermissions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,38 +106,6 @@ namespace ManagementPhoneStore
             this.dgvPermissions.TabIndex = 1;
             this.dgvPermissions.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPermissions_CellContentClick);
             // 
-            // colFunction
-            // 
-            this.colFunction.HeaderText = "Danh mục chức năng";
-            this.colFunction.MinimumWidth = 6;
-            this.colFunction.Name = "colFunction";
-            this.colFunction.ReadOnly = true;
-            this.colFunction.Width = 495;
-            // 
-            // colView
-            // 
-            this.colView.HeaderText = "Xem";
-            this.colView.MinimumWidth = 6;
-            this.colView.Name = "colView";
-            // 
-            // colCreate
-            // 
-            this.colCreate.HeaderText = "Tạo mới";
-            this.colCreate.MinimumWidth = 6;
-            this.colCreate.Name = "colCreate";
-            // 
-            // colUpdate
-            // 
-            this.colUpdate.HeaderText = "Cập nhật";
-            this.colUpdate.MinimumWidth = 6;
-            this.colUpdate.Name = "colUpdate";
-            // 
-            // colDelete
-            // 
-            this.colDelete.HeaderText = "Xóa";
-            this.colDelete.MinimumWidth = 6;
-            this.colDelete.Name = "colDelete";
-            // 
             // add
             // 
             this.add.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -166,6 +134,39 @@ namespace ManagementPhoneStore
             this.cancel.Text = "HỦY BỎ";
             this.cancel.UseVisualStyleBackColor = false;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
+            // 
+            // colFunction
+            // 
+            this.colFunction.HeaderText = "Danh mục chức năng";
+            this.colFunction.MinimumWidth = 6;
+            this.colFunction.Name = "colFunction";
+            this.colFunction.ReadOnly = true;
+            this.colFunction.Width = 490;
+            // 
+            // colView
+            // 
+            this.colView.HeaderText = "Xem";
+            this.colView.MinimumWidth = 6;
+            this.colView.Name = "colView";
+            // 
+            // colCreate
+            // 
+            this.colCreate.HeaderText = "Tạo mới";
+            this.colCreate.MinimumWidth = 6;
+            this.colCreate.Name = "colCreate";
+            // 
+            // colUpdate
+            // 
+            this.colUpdate.HeaderText = "Cập nhật";
+            this.colUpdate.MinimumWidth = 6;
+            this.colUpdate.Name = "colUpdate";
+            // 
+            // colDelete
+            // 
+            this.colDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDelete.HeaderText = "Xóa";
+            this.colDelete.MinimumWidth = 6;
+            this.colDelete.Name = "colDelete";
             // 
             // PhanQuyenDialog
             // 
@@ -196,13 +197,12 @@ namespace ManagementPhoneStore
         private System.Windows.Forms.DataGridView dgvPermissions;
 
         #endregion
-
+        private Button add;
+        private Button cancel;
         private DataGridViewTextBoxColumn colFunction;
         private DataGridViewCheckBoxColumn colView;
         private DataGridViewCheckBoxColumn colCreate;
         private DataGridViewCheckBoxColumn colUpdate;
         private DataGridViewCheckBoxColumn colDelete;
-        private Button add;
-        private Button cancel;
     }
 }
