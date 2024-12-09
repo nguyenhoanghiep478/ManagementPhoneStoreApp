@@ -74,7 +74,7 @@ namespace ManagementPhoneStore
         }
         private void LoadDuLieuComboBox()
         {
-            List<PhienBanSanPham> phienBanSanPhams = phienBanSanPhamService.GetAll(this.masp);
+            List<PhienBanSanPham> phienBanSanPhams= phienBanSanPhamService.GetAll(this.masp);
             foreach (PhienBanSanPham phienBanSanPham in phienBanSanPhams) 
             {
                 string rom = dungLuongRomService.getKichThuocById(phienBanSanPham.Rom).ToString() + "GB";
@@ -236,11 +236,7 @@ namespace ManagementPhoneStore
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            String keyword=textBox2.Text;
-            if (keyword.Equals(""))
-            {
-                //listView1
-            }
+
         }
     }
 }

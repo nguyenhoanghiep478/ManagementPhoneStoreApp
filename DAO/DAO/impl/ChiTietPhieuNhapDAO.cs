@@ -39,48 +39,43 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (@param0, @param1, @param2, @param3, @param4);";
-            //String ConnectionString =  "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306";
-            //using (var con = new MySqlConnection(ConnectionString))
-            //{
-            //    con.Open();
+            String ConnectionString =  "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306";
+            using (var con = new MySqlConnection(ConnectionString))
+            {
+                con.Open();
 
-            //    using (var transaction = con.BeginTransaction())
-            //    {
-            //        try
-            //        {
-            //            using (var cmd = new MySqlCommand(query, con, transaction))
-            //            {
-            //                foreach (var item in list)
-            //                {
-            //                    cmd.Parameters.Clear();
-            //                    cmd.Parameters.AddWithValue("@param0", item.Maphieunhap);
-            //                    cmd.Parameters.AddWithValue("@param1", item.Maphienbansp);
-            //                    cmd.Parameters.AddWithValue("@param2", item.Soluong);
-            //                    cmd.Parameters.AddWithValue("@param3", item.Dongia);
-            //                    cmd.Parameters.AddWithValue("@param4", item.Hinhthucnhap);
-
-            //                    cmd.ExecuteNonQuery();
-
-            //                    pbsp.UpdateSoLuongTon(item.Maphienbansp, item.Soluong);
-            //                }
-            //            }
-
-            //            transaction.Commit();
-            //            result = list.Count; 
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            transaction.Rollback();
-            //            Console.WriteLine($"Error: {ex.Message}");
-            //        }
-            //    }
-            //}
-                foreach (var item in list)
+                using (var transaction = con.BeginTransaction())
                 {
-                    Save(query, item.Maphieunhap, item.Maphienbansp, item.Soluong, item.Dongia, item.Hinhthucnhap);
-                    pbsp.UpdateSoLuongTon(item.Maphienbansp, item.Soluong);
+                    try
+                    {
+                        using (var cmd = new MySqlCommand(query, con, transaction))
+                        {
+                            foreach (var item in list)
+                            {
+                                cmd.Parameters.Clear();
+                                cmd.Parameters.AddWithValue("@param0", item.Maphieunhap);
+                                cmd.Parameters.AddWithValue("@param1", item.Maphienbansp);
+                                cmd.Parameters.AddWithValue("@param2", item.Soluong);
+                                cmd.Parameters.AddWithValue("@param3", item.Dongia);
+                                cmd.Parameters.AddWithValue("@param4", item.Hinhthucnhap);
+
+                                cmd.ExecuteNonQuery();
+
+                                pbsp.UpdateSoLuongTon(item.Maphienbansp, item.Soluong);
+                            }
+                        }
+
+                        transaction.Commit();
+                        result = list.Count; 
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
                 }
-                result = list.Count;
+            }
+
             return result;
         }
 

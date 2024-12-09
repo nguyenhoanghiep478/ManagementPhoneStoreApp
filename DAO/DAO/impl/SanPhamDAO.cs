@@ -17,7 +17,7 @@ namespace DAO.DAO.impl
 
             public void delete(long id)
             {
-                String query = "Update sanpham set status = 0 Where Id = ?";
+                String query = "Update sanpham set trangthai = 0 Where masp = ?";
                 Update(query, id);
             }
 
@@ -57,7 +57,7 @@ namespace DAO.DAO.impl
                 VALUES 
                 (
                    @param0, @param1, @param2, @param3, @param4, @param5,@param6,
-                    @param7,@param8,@param9,@param10,@param11,@param12,@param13,@param14,@param15,@param16
+                    @param7,@param8,@param9,@param10,@param11,@param12,@param13,@param14,@param15
                 );";
                 return Save(query,
                      sanPham.Masp,
