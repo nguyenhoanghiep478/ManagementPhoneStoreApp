@@ -1,7 +1,9 @@
 ﻿using DAO.impl;
+using DAO.Mapper;
 using DAO.Mapper.impl;
 using DAO.utils;
 using Entity;
+using MySql.Data.MySqlClient;
 using State.Utils;
 using System;
 using System.Collections.Generic;
@@ -15,27 +17,58 @@ namespace DAO.DAO.impl
     public class ChiTietPhieuXuatDAO : AbstractDAO<ChiTietPhieuXuat>, IChiTietPhieuXuatDAO
     {
         private readonly ChiTietPhieuXuatRowMapper _rowMapper = new ChiTietPhieuXuatRowMapper();
-
-        // Insert new ChiTietPhieuXuat
-        public long insert(ChiTietPhieuXuat chiTietPhieuXuat)
+        private PhienBanSanPhamDAO pbsp=new PhienBanSanPhamDAO();
+          public int insert(List<ChiTietPhieuXuat> list)
         {
+            int result = 0;
             string query = @"
-                INSERT INTO ctphieuxuat
-                (
-                    maphieuxuat, maphienbansp, soluong, dongia
-                ) 
-                VALUES 
-                (
-                    @maphieuxuat, @maphienbansp, @soluong, @dongia
-                );";
+    INSERT INTO ctphieuxuat
+    (
+        maphieuxuat, maphienbansp, soluong, dongia
+    ) 
+    VALUES 
+    (@param0, @param1, @param2, @param3);";
 
-            return Save(query,
-                chiTietPhieuXuat.Maphieuxuat,
-                chiTietPhieuXuat.Maphienbansp,
-                chiTietPhieuXuat.Soluong,
-                chiTietPhieuXuat.Dongia
-            );
+            string ConnectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306";
+
+            using (var con = new MySqlConnection(ConnectionString))
+            {
+                con.Open();
+
+                using (var transaction = con.BeginTransaction())
+                {
+                    try
+                    {
+                        using (var cmd = new MySqlCommand(query, con, transaction))
+                        {
+                            foreach (var item in list)
+                            {
+                                cmd.Parameters.Clear();
+                                cmd.Parameters.AddWithValue("@param0", item.Maphieuxuat);
+                                cmd.Parameters.AddWithValue("@param1", item.Maphienbansp);
+                                cmd.Parameters.AddWithValue("@param2", item.Soluong);
+                                cmd.Parameters.AddWithValue("@param3", item.Dongia);
+                               
+                                cmd.ExecuteNonQuery();
+
+                                pbsp.UpdateSoLuongTon(item.Maphienbansp, -item.Soluong);
+                            }
+                        }
+
+                        transaction.Commit();
+                        result = list.Count; 
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                }
+            }
+
+            return result;
         }
+
 
         // Update existing ChiTietPhieuXuat
         public void update(ChiTietPhieuXuat chiTietPhieuXuat)
@@ -43,10 +76,10 @@ namespace DAO.DAO.impl
             string query = @"
                 UPDATE ctphieuxuat 
                 SET 
-                    soluong = @soluong,
-                    dongia = @dongia
+                    soluong = @param0,
+                    dongia = @param1
                 WHERE 
-                    maphieuxuat = @maphieuxuat AND maphienbansp = @maphienbansp;";
+                    maphieuxuat = @param2 AND maphienbansp = @param3;";
 
             Update(query,
                 chiTietPhieuXuat.Soluong,
@@ -59,11 +92,14 @@ namespace DAO.DAO.impl
         // Delete by composite key (maphieuxuat and maphienbansp)
         public void delete(int maphieuxuat, int maphienbansp)
         {
-            string query = "DELETE FROM ctphieuxuat WHERE maphieuxuat = @maphieuxuat AND maphienbansp = @maphienbansp;";
+            string query = "DELETE FROM ctphieuxuat WHERE maphieuxuat = @param0 AND maphienbansp = @param2;";
             Update(query, maphieuxuat, maphienbansp);
         }
-
-        // Find by maphieuxuat
+        public List<ChiTietPhieuXuat> SelectAll(string maphieuxuat)
+        {
+            string query = "SELECT * FROM ctphieuxuat WHERE maphieuxuat = @param0";
+            return Query(query, new ChiTietPhieuXuatRowMapper(), maphieuxuat);
+        }
         public List<ChiTietPhieuXuat> GetByPhieuXuatId(int maphieuxuat)
         {
             List<Criteria> criterias = new List<Criteria>
@@ -78,5 +114,10 @@ namespace DAO.DAO.impl
 
             return SearchBy(criterias, _rowMapper, "ctphieuxuat");
         }
+        public List<ChiTietPhieuXuat> GetAll()
+        {
+            return SearchBy(null, _rowMapper, "ctphieuxuat");
+        }
     }
+
 }

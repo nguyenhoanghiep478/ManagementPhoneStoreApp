@@ -1487,6 +1487,7 @@ ALTER TABLE `ctkiemke`
 ALTER TABLE `sanpham`
   ADD CONSTRAINT `FK_sanpham_khuvuckho` FOREIGN KEY (`khuvuckho`) REFERENCES `khuvuckho` (`makhuvuc`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_sanpham_thuonghieu` FOREIGN KEY (`thuonghieu`) REFERENCES `thuonghieu` (`mathuonghieu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_sanpham_xuatxu` FOREIGN KEY (`xuatxu`) REFERENCES `xuatxu` (`maxuatxu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_sanpham_hedieuhanh` FOREIGN KEY (`hedieuhanh`) REFERENCES `hedieuhanh` (`mahedieuhanh`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 --
 -- Constaints for table `ctsanpham`

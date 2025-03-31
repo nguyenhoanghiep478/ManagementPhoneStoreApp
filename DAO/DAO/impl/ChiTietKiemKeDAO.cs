@@ -42,7 +42,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @maphieukiemke, @masanpham, @soluong, @chenhlech, @ghichu
+                   @param0, @param1, @param2, @param3, @param4
                 );";
 
             return Save(query,
@@ -59,12 +59,12 @@ namespace DAO.DAO.impl
             string query = @"
         UPDATE ChiTietKiemKe
         SET 
-            masanpham = @masanpham,
-            soluong = @soluong,
-            chenhlechte = @chenhlech,
-            ghichu = @ghichu
+            masanpham = @param0,
+            soluong = @param1,
+            chenhlechte = @param2,
+            ghichu = @param3
         WHERE 
-            maphieukiemke = @maphieukiemke;";
+            maphieukiemke = @param4;";
 
            Update(query,
                 chiTietKiemKe.MaSanPham,

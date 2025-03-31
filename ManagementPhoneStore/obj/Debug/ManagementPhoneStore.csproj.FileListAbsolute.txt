@@ -48,8 +48,6 @@ D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhon
 D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
 D:\nam2\c#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.AssemblyReference.cache
-D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.SuggestedBindingRedirects.cache
-D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe.config
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Properties.Resources.resources
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.GenerateResource.cache
 D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.CoreCompileInputs.cache
@@ -137,3 +135,684 @@ C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Deb
 C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\Manageme.DEBAEFFE.Up2Date
 C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
 C:\Users\nghoa\ST\ProjectC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Form1.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe.config
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExtendedNumerics.BigDecimal.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MathNet.Numerics.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.Fonts.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.ImageSharp.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.AccessControl.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Xml.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Principal.Windows.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Text.Encoding.CodePages.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.ValueTuple.dll
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll.config
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExtendedNumerics.BigDecimal.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MathNet.Numerics.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.pdb
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.Fonts.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.ImageSharp.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.AccessControl.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Principal.Windows.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Text.Encoding.CodePages.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.ValueTuple.xml
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangDialog.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ListNhanVien.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.TaiKhoanDialog.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.TaiKhoanForm.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangForm.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapDialog.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapForm.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginFormcs.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginGUI.resources
+D:\App bán điện thoại di động\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.AssemblyReference.cache
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangDialog.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhuVucKhoDialog.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhuVucKhoForm.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ListNhanVien.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginFormcs.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Log_InGUI.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.SanPhamDialog.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.SanPhamGUI.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.SanPhamXemDS.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.TaiKhoanDialog.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.TaiKhoanForm.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThuocTinhDialog.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThuocTinhGUI.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Form1.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangForm.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapDialog.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapForm.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Properties.Resources.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.GenerateResource.cache
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.CoreCompileInputs.cache
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.exe.config
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.exe
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BouncyCastle.Cryptography.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.Parser.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExcelNumberFormat.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExtendedNumerics.BigDecimal.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MathNet.Numerics.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\RBush.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.Fonts.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.ImageSharp.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Buffers.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Memory.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Numerics.Vectors.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.AccessControl.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Xml.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Principal.Windows.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Text.Encoding.CodePages.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.ValueTuple.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MySql.Data.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ZstdSharp.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.IO.Pipelines.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll.config
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BouncyCastle.Cryptography.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.Parser.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExcelNumberFormat.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExtendedNumerics.BigDecimal.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MathNet.Numerics.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\RBush.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.Fonts.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.ImageSharp.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Buffers.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Memory.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Numerics.Vectors.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.AccessControl.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Principal.Windows.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Text.Encoding.CodePages.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.ValueTuple.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.dll.config
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe.config
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MySql.Data.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.IO.Pipelines.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\Manageme.DEBAEFFE.Up2Date
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.dll
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.pdb
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.xml
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeTongQuanGUI.resources
+D:\Hiep\Project C#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeTonKho.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.AssemblyReference.cache
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.HomeGUI.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhuVucKhoDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhuVucKhoForm.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ListNhanVien.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginFormcs.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Log_InGUI.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.SanPhamDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.SanPhamGUI.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.SanPhamXemDS.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.TaiKhoanDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.TaiKhoanForm.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeTongQuanGUI.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeTonKho.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThuocTinhDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThuocTinhGUI.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Form1.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangForm.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapForm.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Properties.Resources.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.GenerateResource.cache
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.CoreCompileInputs.cache
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.exe.config
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.exe
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BouncyCastle.Cryptography.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.Parser.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExcelNumberFormat.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExtendedNumerics.BigDecimal.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MathNet.Numerics.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\RBush.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.Fonts.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.ImageSharp.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Buffers.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Memory.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Numerics.Vectors.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.AccessControl.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Xml.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Principal.Windows.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Text.Encoding.CodePages.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.ValueTuple.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MySql.Data.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ZstdSharp.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.IO.Pipelines.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe.config
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll.config
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BouncyCastle.Cryptography.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.Parser.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExcelNumberFormat.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExtendedNumerics.BigDecimal.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MathNet.Numerics.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\RBush.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.Fonts.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.ImageSharp.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Buffers.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Memory.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Numerics.Vectors.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.AccessControl.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Principal.Windows.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Text.Encoding.CodePages.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.ValueTuple.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.dll.config
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MySql.Data.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.pdb
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.IO.Pipelines.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\Manageme.DEBAEFFE.Up2Date
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.PhanQuyenGUI.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.PhanQuyenDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienForm.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienChiTietForm.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\dotenv.net.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeGUI.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeDoanhThu.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ChiTietPhieuDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ChiTietPhieuXuatDialog.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ImeiSelection.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginGUI.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.PhieuNhapPanel.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.PhieuXuatPanel.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ThemPhieuPanel.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ThemPhieuXuat.resources
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.dll.config
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.dll.config
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.DirectShow.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.presentation.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.DirectShow.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.presentation.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ImeiScannerDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.exe.config
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.exe
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.Parser.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\dotenv.net.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExcelNumberFormat.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExtendedNumerics.BigDecimal.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MathNet.Numerics.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\RBush.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.Fonts.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.ImageSharp.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Buffers.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Memory.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Xml.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.ValueTuple.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.presentation.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MySql.Data.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ZstdSharp.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.dll.config
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe.config
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.dll.config
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll.config
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.Parser.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExcelNumberFormat.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExtendedNumerics.BigDecimal.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MathNet.Numerics.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\RBush.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.Fonts.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.ImageSharp.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Buffers.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Memory.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.ValueTuple.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.presentation.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.dll.config
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MySql.Data.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ChiTietPhieuDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ChiTietPhieuXuatDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.HomeGUI.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ImeiScannerDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ImeiSelection.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhuVucKhoDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhuVucKhoForm.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ListNhanVien.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginFormcs.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginGUI.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Log_InGUI.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienChiTietForm.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienForm.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.PhanQuyenDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.PhanQuyenGUI.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.PhieuNhapPanel.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.PhieuXuatPanel.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.SanPhamDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.SanPhamGUI.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.SanPhamXemDS.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.TaiKhoanDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.TaiKhoanForm.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ThemPhieuPanel.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ThemPhieuXuat.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeDoanhThu.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeGUI.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeTongQuanGUI.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeTonKho.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThuocTinhDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThuocTinhGUI.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Form1.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangForm.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapDialog.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapForm.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\Manageme.DEBAEFFE.Up2Date
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\source\repos\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.exe.config
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.exe
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ManagementPhoneStore.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.DirectShow.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BouncyCastle.Cryptography.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.Parser.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\dotenv.net.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExcelNumberFormat.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExtendedNumerics.BigDecimal.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MathNet.Numerics.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\RBush.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.Fonts.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.ImageSharp.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Buffers.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Memory.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Numerics.Vectors.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.AccessControl.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Xml.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Principal.Windows.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Text.Encoding.CodePages.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.ValueTuple.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.presentation.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MySql.Data.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ZstdSharp.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.IO.Pipelines.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.dll
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DAO.dll.config
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DTO.exe.config
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Entity.dll.config
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Service.dll.config
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\AForge.Video.DirectShow.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BCrypt.Net-Next.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\BouncyCastle.Cryptography.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ClosedXML.Parser.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Enums.NET.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExcelNumberFormat.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ExtendedNumerics.BigDecimal.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\ICSharpCode.SharpZipLib.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.WinForms.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\LiveCharts.Wpf.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MathNet.Numerics.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.Core.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OOXML.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXml4Net.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\NPOI.OpenXmlFormats.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\RBush.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.Fonts.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\SixLabors.ImageSharp.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Buffers.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Memory.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Numerics.Vectors.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.AccessControl.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Security.Principal.Windows.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Text.Encoding.CodePages.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.ValueTuple.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\zxing.presentation.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\State.dll.config
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\MySql.Data.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.pdb
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\Google.Protobuf.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Compression.LZ4.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\System.IO.Pipelines.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\bin\Debug\K4os.Hash.xxHash.xml
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.AssemblyReference.cache
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ChiTietPhieuDialog.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ChiTietPhieuXuatDialog.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.HomeGUI.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ImeiScannerDialog.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ImeiSelection.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangDialog.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhuVucKhoDialog.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhuVucKhoForm.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ListNhanVien.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginFormcs.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.LoginGUI.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Log_InGUI.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienChiTietForm.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhanVienForm.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.PhanQuyenDialog.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.PhanQuyenGUI.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.PhieuNhapPanel.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.PhieuXuatPanel.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.SanPhamDialog.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.SanPhamGUI.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.SanPhamXemDS.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.TaiKhoanDialog.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.TaiKhoanForm.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ThemPhieuPanel.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\GUI.ThemPhieuXuat.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeDoanhThu.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeGUI.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeTongQuanGUI.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThongKeTonKho.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThuocTinhDialog.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.ThuocTinhGUI.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Form1.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.KhachHangForm.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapDialog.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.NhaCungCapForm.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.Properties.Resources.resources
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.GenerateResource.cache
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.csproj.CoreCompileInputs.cache
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\Manageme.DEBAEFFE.Up2Date
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.exe
+D:\Hocki1nam3\DoanC#\ManagementPhoneStoreApp\ManagementPhoneStore\obj\Debug\ManagementPhoneStore.pdb

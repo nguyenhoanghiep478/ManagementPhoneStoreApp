@@ -7,6 +7,7 @@ using DAO.impl;
 using DAO.Mapper;
 using DAO.Mapper.impl;
 using Entity;
+using MySql.Data.MySqlClient;
 using State.Utils;
 
 
@@ -15,11 +16,13 @@ namespace DAO.DAO.impl
     public class PhieuXuatDAO : AbstractDAO<PhieuXuat>, IPhieuXuatDAO
     {
         private readonly PhieuXuatRowMapper _rowMapper = new PhieuXuatRowMapper();
-
+        private ChiTietSanPhamDAO ctspDAO=new ChiTietSanPhamDAO();
+        private ChiTietPhieuXuatDAO ctpxDAO=new ChiTietPhieuXuatDAO();
+        private PhienBanSanPhamDAO pbspDAO = new PhienBanSanPhamDAO();
         public void Delete(long id)
         {
-            string query = "UPDATE phieuxuat SET trangthai = @trangthai WHERE maphieuxuat = @maphieuxuat";
-            Update(query, 0, id);  // soft deletion
+            string query = "UPDATE phieuxuat SET trangthai = 0 WHERE maphieuxuat = @param0";
+            Update(query, id);  // soft deletion
         }
 
         public List<PhieuXuat> FindLikeName(string name)
@@ -39,6 +42,11 @@ namespace DAO.DAO.impl
         {
             return SearchBy(null, _rowMapper, "phieuxuat");
         }
+        public List<PhieuXuat> GetAllActive()
+        {
+            return this.GetAll().Where(px => px.Trangthai == 1).ToList();
+        }
+
 
         public long Insert(PhieuXuat phieuxuat)
         {
@@ -49,7 +57,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                   @maphieuxuat, @thoigian, @tongtien, @nguoitaophieuxuat, @makh, @trangthai
+                  @param0, @param1, @param2, @param3, @param4, @param5
                 );";
             return Save(query,
                 phieuxuat.Maphieuxuat,
@@ -60,19 +68,40 @@ namespace DAO.DAO.impl
                 phieuxuat.Trangthai ?? (object)DBNull.Value
             );
         }
+            
+        public long insert(PhieuXuat phieuXuat)
+        {
+            string query = @"
+                INSERT INTO phieuxuat 
+                (
+                    maphieuxuat, thoigian, makh, nguoitaophieuxuat, tongtien, trangthai
+                ) 
+                VALUES 
+                (
+                    @param0, @param1, @param2, @param3, @param4, @param5
+                );";
+            return Save(query,
+                phieuXuat.Maphieuxuat,
+               phieuXuat.Thoigian,
+              phieuXuat.Makh,
+              phieuXuat.Nguoitaophieuxuat,
+               phieuXuat.Tongtien,
+               phieuXuat.Trangthai
+            );
+        }
 
         public void Update(PhieuXuat phieuxuat)
         {
             string query = @"
                 UPDATE phieuxuat 
                 SET 
-                    thoigian = @thoigian,
-                    tongtien = @tongtien,
-                    nguoitaophieuxuat = @nguoitaophieuxuat,
-                    makh = @makh,
-                    trangthai = @trangthai
+                    thoigian = @param0,
+                    tongtien = @param1,
+                    nguoitaophieuxuat = @param2,
+                    makh = @param3,
+                    trangthai = @param4
                 WHERE 
-                    maphieuxuat = @maphieuxuat;";
+                    maphieuxuat = @param5;";
 
             Update(query,
                 phieuxuat.Thoigian,
@@ -83,5 +112,47 @@ namespace DAO.DAO.impl
                 phieuxuat.Maphieuxuat
             );
         }
+        public int GetAutoIncrement()
+        {
+            string query = @"
+        SELECT COALESCE(MAX(maphieuxuat), 0) 
+        FROM phieuxuat";
+
+            return QueryScalar<int>(query) + 1;
+        }
+
+      
+
+        public int CancelPhieuXuat(int maphieu)
+        {
+            int result = 0;
+
+            ctspDAO.delete(maphieu);
+
+            var chiTietPhieuXuatList = ctpxDAO.SelectAll(maphieu.ToString());
+
+            // Update the stock quantity based on the canceled PhieuNhap details
+            foreach (var chiTietPhieuNhap in chiTietPhieuXuatList)
+            {
+                pbspDAO.UpdateSoLuongTon(chiTietPhieuNhap.Maphienbansp, +(chiTietPhieuNhap.Soluong));
+            }
+
+            // Delete the PhieuNhap record from the database
+            string query = "DELETE FROM phieuxuat WHERE maphieuxuat = @param0";
+            try
+            {
+                // Execute the update query (no result expected from the Update method)
+                this.Delete(maphieu);
+
+                result = 1;  // Indicating success (you can adjust this based on your needs)
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error during cancellation: {ex.Message}");
+            }
+
+            return result;
+        }
+
     }
 }

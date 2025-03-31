@@ -20,6 +20,11 @@ namespace DAO.DAO.impl
             Update(query, id);
         }
 
+        public List<DanhMucChucNang> getAll()
+        {
+            return SearchBy(null,_rowMapper,"danhmucchucnang");
+        }
+
         public DanhMucChucNang FindByMaImei(string machucnang)
         {
             List<Criteria> criterias = new List<Criteria>();
@@ -42,7 +47,7 @@ namespace DAO.DAO.impl
                     ) 
                     VALUES 
                     (
-                        @machucnang, @tenchucnang, @trangthai
+                        @param0, @param1, @param2
                      );";
 
             return Save(query,
@@ -57,10 +62,10 @@ namespace DAO.DAO.impl
             string query = @"
                 UPDATE ChucNang
                 SET 
-                    tenchucnang = @tenchucnang,
-                    trangthai = @trangthai
+                    tenchucnang = @param0,
+                    trangthai = @param1
                 WHERE 
-                    machucnang = @machucnang;";
+                    machucnang = @param2;";
 
            Update(query,
                 chucNang.TenChucNang ?? (object)DBNull.Value, 

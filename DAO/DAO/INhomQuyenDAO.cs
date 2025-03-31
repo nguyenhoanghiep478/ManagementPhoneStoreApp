@@ -13,7 +13,7 @@ namespace DAO.DAO
 
         long insert(NhomQuyen nhomquyen);
         void update(NhomQuyen nhomquyen);
-        void delete(long id);
+        void delete(int id);
         List<NhomQuyen> FindLikeName(string name);
     }
 }

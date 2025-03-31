@@ -16,8 +16,8 @@ namespace DAO.DAO.impl
         private readonly PhieuDoiRowMapper _rowMapper = new PhieuDoiRowMapper();
         public void delete(long id)
         {
-            String query = "update from phieudoi set trangthai=@trangthai where maphieudoi=@maphieudoi";
-            Update(query,0, id);
+            String query = "update from phieudoi set trangthai=0 where maphieudoi=@param0";
+            Update(query, id);
         }
 
         public List<PhieuDoi> FindLikeName(string name)
@@ -47,7 +47,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                   @maphieudoi,@maimei,@lydo,@thoigian,@nguoitao
+                   @param0, @param1, @param2, @param3, @param4
                 );";
             return Save(query,
             phieudoi.Maphieudoi,
@@ -63,13 +63,12 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE phieudoi 
             SET 
-                 maphieudoi=@maphieudoi,
-                 maimei=@maimei,
-                lydo=@lydo,
-                thoigain=@thoigian,
-                nguoitao=@nguoitao
+                 maimei=@param1,
+                lydo=@param2,
+                thoigain=@param3,
+                nguoitao=@param4
                 WHERE 
-            maphieudoi = maphieudoi;";
+            maphieudoi = @param0;";
 
             Update(query,
              phieudoi.Maphieudoi,

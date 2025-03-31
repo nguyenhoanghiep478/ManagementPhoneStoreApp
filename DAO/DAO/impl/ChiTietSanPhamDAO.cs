@@ -1,6 +1,7 @@
 ﻿using DAO.impl;
 using DAO.Mapper.impl;
 using Entity;
+using MySql.Data.MySqlClient;
 using State.Utils;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,13 @@ namespace DAO.DAO.impl
     {
         private readonly ChiTietSanPhamRowMapper _rowMapper = new ChiTietSanPhamRowMapper();
 
+
         public bool checkImeiExists(List<long> imeis)
         {
             String query = "select * from ctsanpham where maimei in (";
             query += string.Join(", ", imeis.Select(_ => "?"));
             query += ")";
-            List<ChiTietSanPham> result = this.Query(query,_rowMapper,imeis);
+            List<ChiTietSanPham> result = this.Query(query, _rowMapper, imeis);
             return result.Count > 0;
         }
 
@@ -39,7 +41,7 @@ namespace DAO.DAO.impl
                 Value = maImei,
             };
             criterias.Add(criteria);
-            return SearchBy(criterias, _rowMapper, "chitietsanpham").FirstOrDefault(null);
+            return SearchBy(criterias, _rowMapper, "ctsanpham").FirstOrDefault(null);
         }
 
         public List<ChiTietSanPham> FindByMaPhieuNhap(int maphieunhap)
@@ -52,7 +54,7 @@ namespace DAO.DAO.impl
                 Value = maphieunhap,
             };
             criterias.Add(criteria);
-            return SearchBy(criterias, _rowMapper, "chitietsanpham");
+            return SearchBy(criterias, _rowMapper, "ctsanpham");
         }
 
         public List<ChiTietSanPham> FindByMaPhieuXuat(int maphieuxuat)
@@ -65,7 +67,7 @@ namespace DAO.DAO.impl
                 Value = maphieuxuat,
             };
             criterias.Add(criteria);
-            return SearchBy(criterias, _rowMapper, "chitietsanpham");
+            return SearchBy(criterias, _rowMapper, "ctsanpham");
         }
 
         public List<ChiTietSanPham> FindByPhienBanSanPham(int pbsp)
@@ -78,51 +80,103 @@ namespace DAO.DAO.impl
                 Value = pbsp,
             };
             criterias.Add(criteria);
-            return SearchBy(criterias, _rowMapper, "chitietsanpham");
+            return SearchBy(criterias, _rowMapper, "ctsanpham");
         }
 
-        public long insert(ChiTietSanPham chiTietSanPham)
+        public int insert(ChiTietSanPham t)
         {
-            string query = @"
-                INSERT INTO ChiTietSanPham 
-                (
-                    maimei, maphienbansp, maphieunhap, maphieuxuat, tinhtrang
-                ) 
-                VALUES 
-                (
-                    @maimei, @maphienbansp, @maphieunhap, @maphieuxuat, @tinhtrang
-                );";
+            int result = 0;
+            try
+            {
+                String connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306";
+                using (var conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
 
-            return Save(query,
-                 chiTietSanPham.MaImei, 
-                 chiTietSanPham.MaPhienBanSanPham,
-                 chiTietSanPham.MaPhieuNhap, 
-                 chiTietSanPham.MaPhieuXuat ?? (object)DBNull.Value, 
-                 chiTietSanPham.TinhTrang 
-            );
+                    string sql = "INSERT INTO ctsanpham (maimei, maphienbansp, maphieunhap, tinhtrang) VALUES (@param0, @param1, @param2, @param3)";
+
+                    using (var cmd = new MySqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@param0", t.MaImei);
+                        cmd.Parameters.AddWithValue("@param1", t.MaPhienBanSanPham);
+                        cmd.Parameters.AddWithValue("@param2", t.MaPhieuNhap);
+                        cmd.Parameters.AddWithValue("@param3", t.TinhTrang);
+
+                        result = cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error during insert: " + ex.Message);
+            }
+            return result; 
+        }
+
+        public bool insert_mutiple(List<ChiTietSanPham> list)
+        {
+            long result = 0;
+           
+            foreach (ChiTietSanPham sp in list)
+            {
+                result += this.insert(sp);
+                //Console.WriteLine("failed here"+ " "+ result);
+            }
+            bool success= result > 0;
+
+            return success;
         }
 
         public void update(ChiTietSanPham chiTietSanPham)
         {
             string query = @"
-                UPDATE ChiTietSanPham 
+                UPDATE ctsanpham
                 SET 
-                    maphienbansp = @maphienbansp,
-                    maphieunhap = @maphieunhap,
-                    maphieuxuat = @maphieuxuat,
-                    tinhtrang = @tinhtrang
+                    maphienbansp = @param0,
+                    maphieunhap = @param1,
+                    maphieuxuat = @param2,
+                    tinhtrang = @param3
                 WHERE
-                    maimei = @maimei;";
+                    maimei = @param4;";
 
-             Update(query,
-                 chiTietSanPham.MaPhienBanSanPham, 
-                 chiTietSanPham.MaPhieuNhap, 
-                 chiTietSanPham.MaPhieuXuat ?? (object)DBNull.Value, 
-                 chiTietSanPham.TinhTrang, 
-                 chiTietSanPham.MaImei 
+            Update(query,
+                chiTietSanPham.MaPhienBanSanPham,
+                chiTietSanPham.MaPhieuNhap,
+                chiTietSanPham.MaPhieuXuat ?? (object)DBNull.Value,
+                chiTietSanPham.TinhTrang,
+                chiTietSanPham.MaImei
+           );
+        }
+    
+        public List<ChiTietSanPham> SelectAllByPb(int mapbsp)
+        {
+            // Query to fetch products with specified 'maphienbansp' and 'tinhtrang = 1'
+            string query = "SELECT * FROM ctsanpham WHERE maphienbansp = @param0 AND tinhtrang = 1";
+
+            // Use the Query method to execute the SQL and map the results
+            return this.Query(query, _rowMapper, mapbsp);
+        }
+
+        public void UpdateXuat(ChiTietSanPham chiTietSanPham)
+        {
+            string query = @"
+        UPDATE ctsanpham
+        SET 
+            maphieuxuat = @param0,
+            tinhtrang = @param1
+        WHERE
+            maimei = @param2;";
+
+            Update(query,
+                chiTietSanPham.MaPhieuXuat ?? (object)DBNull.Value, // Handle nullable value
+                chiTietSanPham.TinhTrang,
+                chiTietSanPham.MaImei
             );
         }
 
-     
+        public List<ChiTietSanPham> getAll()
+        {
+            return this.SearchBy(null,_rowMapper,"ctsanpham");
+        }
     }
 }

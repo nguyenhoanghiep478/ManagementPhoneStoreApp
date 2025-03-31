@@ -14,6 +14,10 @@ namespace Service
         private static DungLuongRamService instance = null;
         private DLRamDAO dlRamDAO;
         private static readonly object lockObj = new object();
+
+        public DungLuongRamService() {
+            dLRamList = this.getAll();
+        }
         public bool add(DLRam ram)
         {
            
@@ -28,6 +32,8 @@ namespace Service
 
         public List<DLRam> getAll()
         {
+            dlRamDAO = new DLRamDAO();
+            dLRamList= dlRamDAO.GetAll();
             return dLRamList;
         }
 

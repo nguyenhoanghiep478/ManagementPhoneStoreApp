@@ -17,6 +17,15 @@ namespace Entity
         public int? MaPhieuXuat { get; set; }
 
         public bool TinhTrang { get; set; }
+        public ChiTietSanPham(string maImei, int maPhienBanSanPham, int maPhieuNhap, int? maPhieuXuat, bool tinhTrang)
+        {
+            MaImei = maImei;
+            MaPhienBanSanPham = maPhienBanSanPham;
+            MaPhieuNhap = maPhieuNhap;
+            MaPhieuXuat = maPhieuXuat;
+            TinhTrang = tinhTrang;
+        }
+        public ChiTietSanPham() { }
 
     }
 }

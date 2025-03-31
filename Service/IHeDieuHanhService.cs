@@ -17,5 +17,6 @@ namespace Service
         int getIndexByMaHdh(int mahdhd); // get index of hedieuhanh list
         Boolean isDuplicate(String name); // check is this name exist;
 
+        HeDieuHanh selectById(int mahdh);
     }
 }

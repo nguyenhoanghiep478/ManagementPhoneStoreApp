@@ -16,5 +16,6 @@ namespace DAO.DAO
         void delete(long id);
         List<SanPham> FindLikeName(string name);
         SanPham FindByMaPb(string pb);
+
     }
 }

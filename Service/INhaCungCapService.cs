@@ -10,6 +10,7 @@ namespace Service
     public interface INhaCungCapService
     {
         List<NhaCungCap> GetAll();
+        int getIncreasementId();
         NhaCungCap GetByIndex(int index);
         bool Add(NhaCungCap ncc);
         bool Delete(NhaCungCap ncc, int index);
@@ -19,5 +20,6 @@ namespace Service
         string[] GetArrTenNhaCungCap();
         string GetTenNhaCungCap(int mancc);
         NhaCungCap FindCT(List<NhaCungCap> ncc, string tenncc);
+        bool CheckDup(string text);
     }
 }

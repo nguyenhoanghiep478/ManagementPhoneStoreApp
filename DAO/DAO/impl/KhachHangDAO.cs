@@ -15,8 +15,8 @@ namespace DAO.DAO
         private readonly KhachHangRowMapper _rowMapper = new KhachHangRowMapper();
         public void delete(long id)
         {
-            String query = "update from khachhang set trangthai=@trangthai where makh=@makh";
-            Update(query,0, id);
+            String query = "update khachhang set trangthai=0 where makh=@param0";
+            Update(query,id);
         }
 
         public List<KhachHang> FindLikeName(string name)
@@ -40,13 +40,13 @@ namespace DAO.DAO
         public long insert(KhachHang khachhang)
         {
             string query = @"
-                INSERT INTO nhanvien
+                INSERT INTO khachhang
                 (
                   makh,tenkhachhang,diachi,sdt,trangthai,ngaythamgia
                 ) 
                 VALUES 
                 (
-                   @makh,@tenkhachhang,@diachi,@sdt,@trangthai,@ngaythamgia
+                  @param0, @param1, @param2, @param3, @param4, @param5
                 );";
             return Save(query,
                khachhang.MakH,
@@ -62,16 +62,15 @@ namespace DAO.DAO
         public void update(KhachHang khachhang)
         {
             string query = @"
-            UPDATE nhanvien 
+            UPDATE khachhang
             SET 
-              makh=@makh,
-              tenkhachhang=@tenkhachhang,
-              diachi=@diachi,
-              sdt=@sdt,
-              trangthai=@trangthai,
-              ngaythamgia=@ngaythamgia
+              tenkhachhang=@param1,
+              diachi=@param2,
+              sdt=@param3,
+              trangthai=@param4,
+              ngaythamgia=@param5
               WHERE 
-              makh = @makh;";
+              makh = @param0;";
 
             Update(query,
             khachhang.MakH,

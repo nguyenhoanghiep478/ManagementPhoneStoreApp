@@ -12,15 +12,18 @@ namespace Service.impl
 {
     public class ChiTietSanPhamService : IChiTietSanPhamService
     {
-        private readonly IChiTietSanPham chiTietSanPhamDao = new ChiTietSanPhamDAO();
+        private ChiTietSanPhamDAO chiTietSanPhamDao = new ChiTietSanPhamDAO();
         private readonly IPhienBanSanPhamService pbspService;
 
-        private static readonly Lazy<ChiTietSanPhamService> instance = new Lazy<ChiTietSanPhamService>();
+        private static readonly Lazy<ChiTietSanPhamService> instance = new Lazy<ChiTietSanPhamService>(() => new ChiTietSanPhamService());
+
 
         private ChiTietSanPhamService()
         {
+            chiTietSanPhamDao = new ChiTietSanPhamDAO();
+            pbspService = new PhienBanSanPhamService();
             listpbsp = pbspService.GetAll(0);
-            listctsp = new List<ChiTietSanPham>();
+            listctsp = chiTietSanPhamDao.getAll();
         }
 
         public static ChiTietSanPhamService Instance => instance.Value;
@@ -104,7 +107,13 @@ namespace Service.impl
 
             return result;
         }
-
+        public void updateXuat(List<ChiTietSanPham> ct)
+        {
+            foreach (ChiTietSanPham chiTietSanPhamDTO in ct)
+            {
+                chiTietSanPhamDao.UpdateXuat(chiTietSanPhamDTO);
+            }
+        }
         public ChiTietSanPham getByIndex(int index)
         {
             return this.listctsp[index];

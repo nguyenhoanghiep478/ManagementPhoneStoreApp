@@ -17,7 +17,7 @@ namespace DAO.impl
 {
     public class AbstractDAO<T> : IGenericDAO<T>
     {
-        private string connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=1234567;Port=3306;";
+        private string connectionString = "Server=localhost;Database=quanlikhohang;User ID=root;Password=123456;Port=3306;";
 
         private MySqlConnection GetConnection()
         {
@@ -192,5 +192,17 @@ namespace DAO.impl
 
             return results;
         }
+        public T QueryScalar<T>(string sql, params object[] parameters)
+        {
+            using (var connection = GetConnection())
+            using (var command = new MySqlCommand(sql, connection))
+            {
+                SetParameter(command, parameters);
+                connection.Open();
+                var result = command.ExecuteScalar();
+                return result == DBNull.Value || result == null ? default(T) : (T)Convert.ChangeType(result, typeof(T));
+            }
+        }
+
     }
 }

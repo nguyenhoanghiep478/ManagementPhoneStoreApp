@@ -16,7 +16,7 @@ namespace DAO.DAO.impl
         private readonly DLRomRowMapper _rowMapper = new DLRomRowMapper();
         public void delete(long id)
         {
-            String query = "DELETE from dung luong rom Where Id = ?";
+            String query = "UPDATE dungluongrom SET trangthai = 0 WHERE madlrom = @param0";
             Update(query, id);
         }
 
@@ -41,13 +41,13 @@ namespace DAO.DAO.impl
         public long insert(DLRom dLRom)
         {
             string query = @"
-                INSERT INTO DLRom 
+                INSERT INTO dungluongrom 
                 (
                     madlrom, kichthuocrom, trangthai
                 ) 
                 VALUES 
                 (
-                    @madlrom, @kichthuocrom, @trangthai
+                   @param0, @param1, @param2
                 );";
             return Save(query,
                  dLRom.Madlrom,
@@ -59,12 +59,12 @@ namespace DAO.DAO.impl
         public void update(DLRom dLRom)
         {
             string query = @"
-            UPDATE DLRom 
+            UPDATE dungluongrom 
             SET 
-                kichthuocrom = @kichthuocrom,
-                trangthai = @trangthai
+                kichthuocrom = @param0,
+                trangthai = @param1
                 WHERE 
-            masp = @madlrom;"; 
+            masp = @param2;"; 
 
             Update(query,
                 dLRom.Kichthuocrom,

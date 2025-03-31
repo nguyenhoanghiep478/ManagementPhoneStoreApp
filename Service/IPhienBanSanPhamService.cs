@@ -18,5 +18,6 @@ namespace Service
         bool Add(List<PhienBanSanPham> listch);
         int GetSoluong(int maphienban);
         bool CheckImeiExists(List<ChiTietSanPham> arr);
+        bool delete(PhienBanSanPham phienBanSanPham);
     }
 }

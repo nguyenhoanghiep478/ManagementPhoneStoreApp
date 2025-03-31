@@ -17,5 +17,6 @@ namespace Service
         void UpdateAcc(int index, TaiKhoan tk);
         void DeleteAcc(int manv);
         List<TaiKhoan> Search(string txt, string type);
+
     }
 }

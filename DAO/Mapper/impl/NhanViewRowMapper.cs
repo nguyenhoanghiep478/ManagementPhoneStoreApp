@@ -17,7 +17,7 @@ namespace DAO.Mapper.impl
             return new NhanVien {
                 Manv = dataReader.GetInt32(dataReader.GetOrdinal("manv")),
                 Hoten = dataReader.IsDBNull(dataReader.GetOrdinal("hoten")) ? null : dataReader.GetString(dataReader.GetOrdinal("hoten")),
-                Giotinh = dataReader.IsDBNull(dataReader.GetOrdinal("giotinh")) ? (int?)null : dataReader.GetInt32(dataReader.GetOrdinal("giotinh")),
+                Giotinh = dataReader.IsDBNull(dataReader.GetOrdinal("gioitinh")) ? (int?)null : dataReader.GetInt32(dataReader.GetOrdinal("gioitinh")),
                 Ngaysinh = dataReader.GetDateTime(dataReader.GetOrdinal("ngaysinh")), // Giả sử "ngaysinh" không bao giờ null
                 Sdt = dataReader.IsDBNull(dataReader.GetOrdinal("sdt")) ? null : dataReader.GetString(dataReader.GetOrdinal("sdt")),
                 Email = dataReader.IsDBNull(dataReader.GetOrdinal("email")) ? null : dataReader.GetString(dataReader.GetOrdinal("email")),

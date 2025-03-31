@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DAO.utils;
 using Entity;
 using System.Data;
+using System.Runtime.Remoting.Messaging;
 
 namespace DAO.Mapper.impl
 {
@@ -15,7 +16,7 @@ namespace DAO.Mapper.impl
         {
             return new PhieuXuat
             {
-                Maphieuxuat = dataReader.IsDBNull(dataReader.GetOrdinal("maphieuxuat")) ? (int?)null : dataReader.GetInt32(dataReader.GetOrdinal("maphieuxuat")),
+                Maphieuxuat = dataReader.GetInt32(dataReader.GetOrdinal("maphieuxuat")),
                 Thoigian = dataReader.GetDateTime(dataReader.GetOrdinal("thoigian")),
                 Tongtien = dataReader.IsDBNull(dataReader.GetOrdinal("tongtien")) ? (long?)null : dataReader.GetInt64(dataReader.GetOrdinal("tongtien")),
                 Nguoitaophieuxuat = dataReader.IsDBNull(dataReader.GetOrdinal("nguoitaophieuxuat")) ? (int?)null : dataReader.GetInt32(dataReader.GetOrdinal("nguoitaophieuxuat")),

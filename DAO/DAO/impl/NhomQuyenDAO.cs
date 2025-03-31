@@ -14,10 +14,10 @@ namespace DAO.DAO.impl
     public class NhomQuyenDAO : AbstractDAO<NhomQuyen>, INhomQuyenDAO
     {
         private readonly NhomQuyenRowMapper _rowMapper = new NhomQuyenRowMapper();
-        public void delete(long id)
+        public void delete(int id)
         {
-            String query = "update  nhomquyen set trangthai=@trangthai where manhomquyen=@manhomquyen ";
-            Update(query, id);
+            String query = "update  nhomquyen set trangthai=@param0 where manhomquyen=@param1 ";
+            Update(query,0,id);
         }
 
         public List<NhomQuyen> FindLikeName(string name)
@@ -47,7 +47,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @manhomquyen, @tennhomquyen, @trangthai
+                    @param0, @param1, @param2
                 );";
             return Save(query,
                  nhomquuyen.Manhomquyen,
@@ -61,10 +61,10 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE nhomquyen
             SET 
-                tennhomquyen = @tennhomquyen,
-                trangthai = @trangthai
+                tennhomquyen = @param0,
+                trangthai = @param1
                 WHERE 
-            masp = @masp;";
+            manhomquyen = @param2;";
 
             Update(query,
                 nhomquyen.Tennhomquyen,

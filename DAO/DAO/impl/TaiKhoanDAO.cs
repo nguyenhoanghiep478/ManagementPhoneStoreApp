@@ -17,13 +17,14 @@ namespace DAO.DAO.impl
         private readonly TaiKhoanRowMapper _rowMapper = new TaiKhoanRowMapper();
         public void delete(long id)
         {
-            String query = "update from taikhoan set trangthai=@trangthai where manv=@manv";
-            Update(query, 0, id);
+            String query = "update  taikhoan set trangthai=0 where manv=@param0";
+            Update(query, id);
         }
 
         public List<TaiKhoan> FindLikeMaNv(string tendangnhap)
         {
             List<Criteria> criterias = new List<Criteria>();
+           
             Criteria criteria = new Criteria()
             {
                 Key = "tendangnhap",
@@ -48,7 +49,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                   @manv,@matkhau,@manhomquyen,@tendangnhap,@trangthai,@otp
+                  @param0, @param1, @param2, @param3, @param4, @param5
                 );";
             return Save(query,
                  taiKhoan.Manv,
@@ -64,14 +65,14 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE taikhoan 
             SET 
-                manv=@manv,
-                matkhau=@matkhau,
-                manhomquyen=@manhomquyen,
-                tendangnhap=@tendangnhap,
-                trangthai=@trangthai,
-                otp=@otp
+                manv=@param0,
+                matkhau=@param1,
+                manhomquyen=@param2,
+                tendangnhap=@param3,
+                trangthai=@param4,
+                otp=@param5
                 WHERE 
-                manv = @manv;";
+                manv = @param0;";
 
             Update(query,
                  taiKhoan.Manv,

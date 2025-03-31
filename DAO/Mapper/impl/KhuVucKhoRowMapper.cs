@@ -17,7 +17,8 @@ namespace DAO.Mapper.impl
             return new KhuVucKho
             {
                 Makhuvuc = reader.GetInt32(reader.GetOrdinal("makhuvuc")),
-                Tenkhuvuc = reader.IsDBNull(reader.GetOrdinal("tenkhuvuc")) ? null : reader.GetString(reader.GetOrdinal("tenhedieuhanh")),
+                Tenkhuvuc = reader.IsDBNull(reader.GetOrdinal("tenkhuvuc")) ? null : reader.GetString(reader.GetOrdinal("tenkhuvuc")),
+                Ghichu = reader.IsDBNull(reader.GetOrdinal("ghichu")) ? null : reader.GetString(reader.GetOrdinal("ghichu")),
                 Trangthai = reader.GetInt32(reader.GetOrdinal("trangthai"))
             };
         }

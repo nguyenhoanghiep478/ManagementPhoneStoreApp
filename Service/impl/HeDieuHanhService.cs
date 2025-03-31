@@ -12,11 +12,17 @@ namespace Service
     {
         private List<HeDieuHanh> heDieuHanhList;
         private static HeDieuHanhService instance = null;
-        private HeDieuHanhDAO heDieuHanhDao;
+        private HeDieuHanhDAO heDieuHanhDao = new HeDieuHanhDAO();
         private static readonly object lockObj = new object();
+
+        public HeDieuHanhService() 
+        {
+    
+            heDieuHanhList= heDieuHanhDao.GetAll();
+        }
         public bool add(HeDieuHanh hdh)
         {
-            
+            hdh.Mahedieuhanh = getIncreasementId();
             if (!isDuplicate(hdh.Tenhedieuhanh) && heDieuHanhDao.insert(hdh) > 0)
             {
                 heDieuHanhList.Add(hdh);
@@ -24,7 +30,10 @@ namespace Service
             }
             return false;
         }
-
+        private int getIncreasementId()
+        {
+            return (int) heDieuHanhList.Max(x => x.Mahedieuhanh) + 1;
+        }
         public List<HeDieuHanh> getAll()
         {
             return heDieuHanhList;
@@ -71,13 +80,27 @@ namespace Service
 
         public bool remove(HeDieuHanh hdh, int index)
         {
-            if (heDieuHanhList.Contains(hdh))
+            if (!heDieuHanhList.Contains(hdh))
             {
                 return false;
             }
             heDieuHanhDao.delete((long)hdh.Mahedieuhanh);
             heDieuHanhList.RemoveAt(index);
             return true;
+        }
+        public HeDieuHanh selectById(int mahdh)
+        {
+            HeDieuHanh hdhnull = new HeDieuHanh();
+            heDieuHanhDao = new HeDieuHanhDAO();
+            heDieuHanhList = heDieuHanhDao.GetAll();
+            foreach (HeDieuHanh hdh in heDieuHanhList)
+            {
+                if (hdh.Mahedieuhanh.Equals(mahdh))
+                {
+                    return hdh;
+                }
+            }
+            return hdhnull;
         }
     }
 }

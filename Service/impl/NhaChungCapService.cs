@@ -2,24 +2,30 @@
 using Entity;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Service
 {
-    internal class NhaChungCapService : INhaCungCapService
+    public class NhaChungCapService : INhaCungCapService
     {
         private List<NhaCungCap> nhaCungCapList;
         private static NhaChungCapService instance = null;
         private NhaCungCapDAO dao;
         private static readonly object lockObj = new object();
 
-        private NhaChungCapService()
+        public NhaChungCapService()
         {
 
             dao = new NhaCungCapDAO();
-            nhaCungCapList = dao.GetAll();
+            nhaCungCapList = dao.GetAll().Where(ncc=>ncc.Trangthai.Equals(1)).ToList();
+        }
+
+        public int getIncreasementId()
+        {
+            return nhaCungCapList.Count+1;
         }
         public static NhaChungCapService Instance
         {
@@ -39,6 +45,8 @@ namespace Service
                 return instance;
             }
         }
+       
+       
         public bool CheckDup(string name)
         {
             foreach (NhaCungCap th in nhaCungCapList)
@@ -50,8 +58,11 @@ namespace Service
 
         public bool Add(NhaCungCap nhaCungCap)
         {
-            if (!CheckDup(nhaCungCap.Tennhacungcap)&&dao.insert(nhaCungCap)>0)
+            long i = 0;
+            i = dao.insert(nhaCungCap);
+            if (!CheckDup(nhaCungCap.Tennhacungcap)&&i>0)
             {
+                nhaCungCap.Manhacungcap = (int)i;
                 nhaCungCapList.Add(nhaCungCap);
                 return true;
             }
@@ -63,7 +74,7 @@ namespace Service
             {
                 return false;
             }
-            dao.delete(ncc.Manhacungcap);
+            dao.delete((long)ncc.Manhacungcap);
             nhaCungCapList.RemoveAt(index);
             return true;
         }
@@ -127,35 +138,46 @@ namespace Service
         public List<NhaCungCap> Search(string txt, string type)
         {
             List<NhaCungCap> ketQua = new List<NhaCungCap>();
-
+            txt = txt.Trim().ToLower();
             // Dựa trên 'type', thực hiện tìm kiếm theo các thuộc tính khác nhau
-            switch (type.ToLower())
+            switch (type)
             {
-                case "manhacungcap":
-                    // Tìm kiếm theo tên nhà cung cấp
-                    ketQua = nhaCungCapList.Where(ncc => ncc.Manhacungcap.Equals(Convert.ToInt32(txt))).ToList();
+                case "Tất cả":
+                    // Tìm kiếm theo Mã nhà cung cấp, Tên nhà cung cấp, Địa chỉ, Email, Số điện thoại
+                    ketQua = nhaCungCapList.Where(ncc =>
+                    ncc.Manhacungcap.ToString().Equals(Convert.ToInt32(txt)) ||  // Tìm theo Mã nhà cung cấp
+                    ncc.Tennhacungcap.ToLower().Contains(txt) ||  // Tìm theo Tên nhà cung cấp
+                    ncc.Diachi.ToLower().Contains(txt) ||  // Tìm theo Địa chỉ
+                    ncc.Email.ToLower().Contains(txt) ||  // Tìm theo Email
+                        ncc.Sdt.Contains(txt)  // Tìm theo Số điện thoại
+                    ).ToList();
                     break;
-                case "tennhacungcap":
+                case "Mã ncc":
+                    // Kiểm tra nếu giá trị nhập là số
+                    if (int.TryParse(txt, out int maNCC))
+                    {
+                        // Tìm kiếm theo Mã nhà cung cấp
+                        ketQua = nhaCungCapList.Where(ncc => ncc.Manhacungcap.Equals(maNCC)).ToList();
+                    }
+                   
+                    break;
+                case "Tên ncc":
                     // Tìm kiếm theo tên nhà cung cấp
-                    ketQua = nhaCungCapList.Where(ncc => ncc.Tennhacungcap.Contains(txt)).ToList();
+                    ketQua = nhaCungCapList.Where(ncc => ncc.Tennhacungcap.ToLower().Contains(txt)).ToList();
                     break;
 
-                case "diachi":
+                case "Địa chỉ":
                     // Tìm kiếm theo địa chỉ
-                    ketQua = nhaCungCapList.Where(ncc => ncc.Diachi.Contains(txt)).ToList();
+                    ketQua = nhaCungCapList.Where(ncc => ncc.Diachi.ToLower().Contains(txt)).ToList();
                     break;
 
-                case "email":
+                case "Email":
                     // Tìm kiếm theo email
-                    ketQua = nhaCungCapList.Where(ncc => ncc.Email.Contains(txt)).ToList();
+                    ketQua = nhaCungCapList.Where(ncc => ncc.Email.ToLower().Contains(txt)).ToList();
                     break;
-                case "sdt":
+                case "Số điện thoại":
                     // Tìm kiếm theo số điện thoại
                     ketQua = nhaCungCapList.Where(ncc => ncc.Sdt.Contains(txt)).ToList();
-                    break;
-                case "trangthai":
-                    // Tìm kiếm theo số điện thoại
-                    ketQua = nhaCungCapList.Where(ncc => ncc.Trangthai.Equals(Convert.ToInt32(txt))).ToList();
                     break;
                 default:
                     ketQua = nhaCungCapList;

@@ -19,8 +19,8 @@ namespace Service.impl
         public static SanPhamService Instance => instance.Value;
 
         private readonly ISanPhamDAO spDAO = new SanPhamDAO();
-        private readonly IPhienBanSanPhamService cauhinhBus ;
-        private List<SanPham> listSP = new List<SanPham>();
+        private readonly IPhienBanSanPhamService cauhinhBus=PhienBanSanPhamService.Instance ;
+        private  List<SanPham> listSP = new List<SanPham>();
 
         public bool Add(SanPham sp, List<PhienBanSanPham> listch)
         {
@@ -28,7 +28,7 @@ namespace Service.impl
             if (check)
             {
                 cauhinhBus.Add(listch);
-                listSP.Add(sp);
+                listSP = spDAO.GetAll();  
             }
             return check;
         }
@@ -42,7 +42,7 @@ namespace Service.impl
 
         public List<SanPham> GetAll()
         {
-            return listSP;
+            return listSP=spDAO.GetAll();
         }
 
         public SanPham GetByIndex(int index)

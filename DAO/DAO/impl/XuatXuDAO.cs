@@ -16,7 +16,7 @@ namespace DAO.DAO.impl
         private readonly XuatXuRowMapper _rowMapper = new XuatXuRowMapper();
         public void delete(long id)
         {
-            String query = "DELETE from xuat xu Where Id = ?";
+            String query = "UPDATE xuatxu SET trangthai = 0 WHERE maxuatxu = ?";
             Update(query, id);
         }
 
@@ -47,7 +47,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @maxuatxu, @tenxuatxu, @trangthai
+                    @param0, @param1, @param2
                 );";
             return Save(query,
                  xuatXu.Maxuatxu,
@@ -62,15 +62,15 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE XuatXu 
             SET 
-                tenxuatxu = @tenxuatxu,
-                trangthai = @trangthai
+                tenxuatxu = @param1,
+                trangthai = @param2
                 WHERE 
-            maxuatxu = @maxuatxu;"; 
+            maxuatxu = @param0;"; 
 
             Update(query,
+                xuatXu.Maxuatxu,
                 xuatXu.Tenxuatxu,
-                xuatXu.Trangthai,
-                xuatXu.Maxuatxu
+                xuatXu.Trangthai
             );
         }
 

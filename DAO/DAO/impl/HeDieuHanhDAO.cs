@@ -15,8 +15,8 @@ namespace DAO.DAO.impl
         private readonly HeDieuHanhRowMapper _rowMapper = new HeDieuHanhRowMapper();
         public void delete(long id)
         {
-            String query = @"UPDATE hedieuhanh set trangthai=@trangthai";
-            Update(query, id);
+            String query = "UPDATE hedieuhanh set trangthai=0 where mahedieuhanh=@param0";
+            Update(query,id);
         }
 
         public List<HeDieuHanh> FindLikeName(string name)
@@ -46,7 +46,7 @@ namespace DAO.DAO.impl
                 ) 
                 VALUES 
                 (
-                    @mahedieuhanh,@tenhedieuhanh,@trangthai
+                    @param0, @param1, @param2
                 );";
             return Save(query,
                  hedieuhanh.Mahedieuhanh,
@@ -62,10 +62,10 @@ namespace DAO.DAO.impl
             string query = @"
             UPDATE hedieuhanh
             SET 
-                tenhedieuhanh = @tenhedieuhanh,
-                trangthai = @trangthai
+                tenhedieuhanh = @param0,
+                trangthai = @param1
                 WHERE 
-                mahedieuhanh = @mahedieuhanh;";
+                mahedieuhanh = @param2;";
 
             Update(query,
                 hedieuhanh.Tenhedieuhanh ??(object)DBNull.Value,

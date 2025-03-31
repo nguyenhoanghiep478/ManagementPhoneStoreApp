@@ -1,0 +1,385 @@
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using Entity;
+using ManagementPhoneStore;
+using Service.impl;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+
+namespace GUI
+{
+    public partial class HomeGUI : Form
+    {
+        private int manv;
+        private TaiKhoanService taiKhoanService=TaiKhoanService.Instance;
+        private NhanVienService NhanVienService = NhanVienService.Instance;
+        private NhomQuyenService NhomQuyenService = NhomQuyenService.Instace;
+        private NhomQuyen nhomQuyens;
+        private List<ChiTietQuyen> authors;
+        public HomeGUI(int manv)
+        {
+            this.manv = manv;
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            label1.Text=NhanVienService.GetNameById(manv);
+            label2.Text=NhomQuyenService.getNameByMA((int)taiKhoanService.getByIndex(taiKhoanService.GetTaiKhoanByMaNV(manv)).Manhomquyen);
+            panelContainer.AutoSize = false;
+            this.nhomQuyens = taiKhoanService.GetNhomQuyen((int)taiKhoanService.getByIndex(taiKhoanService.GetTaiKhoanByMaNV(manv)).Manhomquyen);
+            this.authors = NhomQuyenService.GetChiTietQuyen((int)nhomQuyens.Manhomquyen);
+            handleAuthor();
+            button1.BackColor = System.Drawing.Color.AliceBlue;
+            button1.Click += Button_Click;
+            button2.Click += Button_Click;
+            button3.Click += Button_Click;
+            button4.Click += Button_Click;
+            button5.Click += Button_Click;
+            button6.Click += Button_Click;
+            button7.Click += Button_Click;
+            button8.Click += Button_Click;
+            button9.Click += Button_Click;
+            button10.Click += Button_Click;
+            button11.Click += Button_Click;
+            button12.Click += Button_Click;
+            button13.Click += Button_Click;
+        }
+
+        private List<string> getAction(string machucnang)
+        {
+            var permission = authors.Where(item => item.MaChucNang.Equals(machucnang)).ToList();
+            return permission.Select(item => item.HanhDong).ToList();
+        }
+
+        private void SetButtonColors(Button selectedButton, params Button[] buttons)
+        {
+            System.Drawing.Color defaultColor = System.Drawing.SystemColors.ControlLightLight;
+
+            System.Drawing.Color selectedColor = System.Drawing.SystemColors.GradientInactiveCaption;
+
+            foreach (var button in buttons)
+            {
+                if (button == selectedButton)
+                {
+                    button.BackColor = selectedColor;
+                }
+                else
+                {
+                    button.BackColor = defaultColor;
+                }
+            }
+        }
+
+
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            // Gọi hàm đổi màu khi nhấn nút
+            SetButtonColors(sender as Button, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13);
+        }
+        private void handleAuthor()
+        {
+            if (!authors.Any(g => g.MaChucNang.Equals("sanpham")))
+            {
+                this.panel2.Controls.Remove(button2);
+            }
+
+            if (!authors.Any(g => g.MaChucNang.Equals("khachhang")))
+            {
+                this.panel2.Controls.Remove(button7);
+            }
+
+            if (!authors.Any(g => g.MaChucNang.Equals("khuvuckho")))
+            {
+                this.panel2.Controls.Remove(button4);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("nhacungcap")))
+            {
+                this.panel2.Controls.Remove(button8);
+
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("nhaphang")))
+            {
+                this.panel2.Controls.Remove(button5);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("nhomquyen")))
+            {
+                this.panel2.Controls.Remove(button12);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("taikhoan")))
+            {
+                this.panel2.Controls.Remove(button10);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("thongke")))
+            {
+                this.panel2.Controls.Remove(button11);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("thuoctinh")))
+            {
+                this.panel2.Controls.Remove(button3);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("nhanvien")))
+            {
+                this.panel2.Controls.Remove(button9);
+            }
+            if (!authors.Any(g => g.MaChucNang.Equals("xuathang")))
+            {
+                this.panel2.Controls.Remove(button6);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<string> actions = getAction("sanpham");
+            SanPhamGUI sanPhamGUI = new SanPhamGUI(actions);
+            sanPhamGUI.TopLevel = false;
+            sanPhamGUI.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(sanPhamGUI);
+            sanPhamGUI.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(panel3);
+            panelContainer.Controls.Add(panel4);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            //HomeGUI homeForm = new HomeGUI(manv);
+            //homeForm.Show();
+        }
+
+        private void HomeGUI_Load(object sender, EventArgs e)
+        {
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = System.Drawing.Color.DarkGray;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            SanPhamGUI spform = new SanPhamGUI();
+            spform.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            List<string> actions = getAction("thuoctinh");
+            ThuocTinhGUI ttform = new ThuocTinhGUI(actions);
+            ttform.TopLevel = false;
+            ttform.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(ttform);
+            ttform.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<string> actions = getAction("khuvuckho");
+            KhuVucKhoForm kvk = new KhuVucKhoForm(actions);
+            kvk.TopLevel = false;
+            kvk.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(kvk);
+
+            kvk.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            List<string> actions = getAction("nhaphang");
+            PhieuNhapPanel pn = new PhieuNhapPanel(manv,actions);
+            pn.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(pn);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            List<string> actions = getAction("xuathang");
+            PhieuXuatPanel pn = new PhieuXuatPanel(manv,actions);
+            pn.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(pn);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            List<string> actions = getAction("khachhang");
+            KhachHangForm khachHangform = new KhachHangForm(actions);
+            khachHangform.TopLevel = false;
+            khachHangform.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(khachHangform);
+            khachHangform.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            List<string> actions = getAction("nhacungcap");
+            NhaCungCapForm nhaCungcap = new NhaCungCapForm(actions);
+            nhaCungcap.TopLevel = false;
+            nhaCungcap.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(nhaCungcap);
+            nhaCungcap.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            List<string> actions = getAction("nhanvien");
+            NhanVienForm nhanVienform = new NhanVienForm(actions);
+            nhanVienform.TopLevel = false;
+            nhanVienform.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(nhanVienform);
+            nhanVienform.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            List<string> actions = getAction("taikhoan");
+            TaiKhoanForm taiKhoanform = new TaiKhoanForm(actions);
+            taiKhoanform.TopLevel = false;
+            taiKhoanform.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(taiKhoanform);
+            taiKhoanform.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            ThongKeGUI thongkeForm = new ThongKeGUI();
+            thongkeForm.Dock = DockStyle.Fill;
+            thongkeForm.TopLevel = false;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(thongkeForm);
+            thongkeForm.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            List<string> actions = getAction("nhomquyen");
+            PhanQuyenGUI phanquyenForm = new PhanQuyenGUI(actions);
+            phanquyenForm.TopLevel = false;
+            phanquyenForm.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(phanquyenForm);
+            phanquyenForm.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Log_InGUI loginForm = new Log_InGUI();
+            this.Hide();
+            loginForm.ShowDialog();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
